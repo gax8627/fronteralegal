@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Directorio Nacional de Instalaciones Federales | NexBorder</title>
+    <meta name="description" content="Directorio completo de instalaciones del BOP en los 94 distritos judiciales federales. Logística, visitas, FSA y RDAP en cada centro de detención federal.">
+    <meta property="og:title" content="Directorio Nacional de Instalaciones Federales | NexBorder">
+    <meta property="og:description" content="Logística técnica en USP Victorville, FCI Seagoville, USP Coleman, FCI Fort Dix y más. NexBorder cubre los 122 centros BOP.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://nexborder.com/facilities">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="canonical" href="https://nexborder.com/facilities">
+    <link rel="stylesheet" href="index.css">
+    <script src="config.js" defer></script>
+    <script src="translations.js" defer></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Fraunces:wght@700&display=swap" rel="stylesheet">
+</head>
+<body style="background: var(--bg);">
+    <!-- NATIONAL NAV -->
+    <nav role="navigation">
+      <a href="index.html" class="nav-brand">Nex<span>Border</span></a>
+      <div class="nav-links">
+        <a href="index.html#primeros-pasos">Inicio</a>
+        <a href="fsa-guide.html">FSA</a>
+        <a href="rdap-guide.html">RDAP</a>
+        <button class="lang-btn" onclick="toggleLang()">EN / ES</button>
+        <a href="index.html#contact" class="btn-cta">Consulta Nacional</a>
+      </div>
+    </nav>
+
+    <main class="spoke-main">
+        <span style="color: var(--accent-hi); font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em;">Guía de Logística</span>
+        <h1 class="spoke-title">Cobertura en los 94 Distritos Federales</h1>
+        
+        <p style="font-size: 1.25rem; color: var(--text-dim); margin-bottom: 4rem; line-height: 1.8;">NexBorder proporciona asistencia técnica y logística en todos los centros de detención del Bureau of Prisons (BOP) y del Immigration and Customs Enforcement (ICE) en los Estados Unidos.</p>
+        
+        <!-- REGION: CALIFORNIA / WEST -->
+        <section class="spoke-card">
+            <h2 style="margin-bottom: 2rem; color: var(--accent);">Región Oeste (Distrito de California/Arizona)</h2>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem;">
+              <a href="facilities/ca/victorville-usp.html" style="text-decoration:none; color:inherit;">
+                <h4 style="margin-bottom: 0.5rem;">USP Victorville</h4>
+                <p style="font-size: 0.85rem; color: var(--text-dim);">Especialistas en auditoría de créditos FSA para este centro de alta seguridad. →</p>
+              </a>
+              <a href="facilities/ca/terminal-island-fci.html" style="text-decoration:none; color:inherit;">
+                <h4 style="margin-bottom: 0.5rem;">FCI Terminal Island</h4>
+                <p style="font-size: 0.85rem; color: var(--text-dim);">Asistencia en traslados médicos y programas de tratamiento residencial. →</p>
+              </a>
+              <div>
+                <h4 style="margin-bottom: 0.5rem;">FCI Phoenix</h4>
+                <p style="font-size: 0.85rem; color: var(--text-dim);">Enlace familiar y preparación para audiencias de libertad condicional.</p>
+              </div>
+              <div>
+                <h4 style="margin-bottom: 0.5rem;">Otay Mesa Detention</h4>
+                <p style="font-size: 0.85rem; color: var(--text-dim);">Gestión de fianzas de ICE y monitoreo de procesos de deportación.</p>
+              </div>
+            </div>
+        </section>
+
+        <!-- REGION: TEXAS / SOUTH -->
+        <section class="spoke-card">
+            <h2 style="margin-bottom: 2rem; color: var(--accent);">Región Sur (Texas, Louisiana, Florida)</h2>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem;">
+              <a href="facilities/tx/seagoville-fci.html" style="text-decoration:none; color:inherit;">
+                <h4 style="margin-bottom: 0.5rem;">FCI Seagoville</h4>
+                <p style="font-size: 0.85rem; color: var(--text-dim);">Famoso por sus programas de tratamiento; auditamos la entrada prioritaria. →</p>
+              </a>
+              <a href="facilities/fl/coleman-usp.html" style="text-decoration:none; color:inherit;">
+                <h4 style="margin-bottom: 0.5rem;">USP Coleman</h4>
+                <p style="font-size: 0.85rem; color: var(--text-dim);">Gestión de quejas administrativas y seguridad del detenido. →</p>
+              </a>
+              <div>
+                <h4 style="margin-bottom: 0.5rem;">FDC Miami</h4>
+                <p style="font-size: 0.85rem; color: var(--text-dim);">Enlace rápido para arrestos federales en el Distrito Sur de Florida.</p>
+              </div>
+              <div>
+                <h4 style="margin-bottom: 0.5rem;">FCI Oakdale</h4>
+                <p style="font-size: 0.85rem; color: var(--text-dim);">Asistencia legal para familias latinas en el corredor de Louisiana.</p>
+              </div>
+            </div>
+        </section>
+
+        <!-- REGION: NORTHEAST -->
+        <section class="spoke-card">
+            <h2 style="margin-bottom: 2rem; color: var(--accent);">Región Noreste</h2>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem;">
+              <a href="facilities/nj/fort-dix-fci.html" style="text-decoration:none; color:inherit;">
+                <h4 style="margin-bottom: 0.5rem;">FCI Fort Dix</h4>
+                <p style="font-size: 0.85rem; color: var(--text-dim);">Auditamos créditos FSA y reducción de sentencia en New Jersey. →</p>
+              </a>
+              <div>
+                <h4 style="margin-bottom: 0.5rem;">MDC Brooklyn</h4>
+                <p style="font-size: 0.85rem; color: var(--text-dim);">Centro de detención activo para el Distrito Sur y Este de NY. MCC New York está cerrado desde 2021.</p>
+              </div>
+            </div>
+        </section>
+
+        <section style="margin-top: 6rem; text-align: center; background: var(--bg-alt); padding: 5rem; border-radius: 40px;">
+            <h2 style="margin-bottom: 1.5rem;">¿No ve su instalación aquí?</h2>
+            <p style="margin-bottom: 3rem; color: var(--text-dim);">Cubrimos los 122 centros de detención del BOP. Nuestro alcance es total.</p>
+            <a href="index.html#contact" class="btn-cta" style="padding: 1.5rem 4rem;">Consultar Disponibilidad en su Estado</a>
+        </section>
+    </main>
+
+    <footer style="padding: 4rem; text-align: center; border-top: 1px solid var(--border);">
+        <p style="color: var(--text-faint); font-size: 0.85rem;">&copy; 2026 NexBorder National Federal Authority.</p>
+    </footer>
+</body>
+</html>
