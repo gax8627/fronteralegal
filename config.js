@@ -95,6 +95,28 @@ function showFormSuccess(form) {
     </div>`;
 }
 
+// Mobile nav hamburger toggle
+function toggleNav() {
+  const nav = document.querySelector('nav');
+  const btn = document.querySelector('.nav-toggle');
+  if (!nav || !btn) return;
+  const isOpen = nav.classList.toggle('nav-open');
+  btn.setAttribute('aria-expanded', String(isOpen));
+  btn.setAttribute('aria-label', isOpen ? 'Cerrar menú' : 'Abrir menú');
+}
+
+// Close nav when any nav link is clicked (smooth for anchor links)
+document.addEventListener('DOMContentLoaded', function() {
+  document.querySelectorAll('.nav-links a').forEach(function(a) {
+    a.addEventListener('click', function() {
+      const nav = document.querySelector('nav');
+      const btn = document.querySelector('.nav-toggle');
+      if (nav) nav.classList.remove('nav-open');
+      if (btn) { btn.setAttribute('aria-expanded', 'false'); btn.setAttribute('aria-label', 'Abrir menú'); }
+    });
+  });
+});
+
 // Theme toggle
 function toggleTheme() {
   const current = document.documentElement.getAttribute('data-theme');
