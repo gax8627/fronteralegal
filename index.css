@@ -290,6 +290,8 @@ nav.nav-open .nav-toggle span:nth-child(3) { transform: translateY(-7px) rotate(
   object-fit: cover;
   opacity: 0.35;
   filter: brightness(0.7) saturate(0.8);
+  will-change: transform;
+  transform: translateY(0);
 }
 
 .hero::after {

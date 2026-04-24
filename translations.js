@@ -4,7 +4,7 @@ const translations = {
     navFSA:      "Guía FSA",
     navDir:      "Directorio Nacional",
     btnConsult:  "Consulta Gratis",
-    heroTitle:   "Justicia Federal. Presencia Nacional.",
+    heroTitle:   "Guía Federal. Presencia Nacional.",
     heroSub:     "De California a Florida, NexBorder es la autoridad técnica para familias que navegan el sistema federal de EE.UU. en los 94 distritos judiciales.",
     // Wizard
     wizardTitle:  "¿Cuál es la situación de su familiar?",
@@ -22,7 +22,7 @@ const translations = {
     navFSA:      "FSA Guide",
     navDir:      "National Directory",
     btnConsult:  "Free Consultation",
-    heroTitle:   "Federal Justice. National Presence.",
+    heroTitle:   "Federal Guide. National Presence.",
     heroSub:     "From California to Florida, NexBorder is the technical authority for families navigating the U.S. federal system across all 94 judicial districts.",
     // Wizard
     wizardTitle:  "What is your family member's situation?",
