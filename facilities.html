@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Directorio Nacional de Instalaciones Federales | NexBorder</title>
-<meta name="description" content="Directorio completo de instalaciones BOP en los 94 distritos judiciales federales. USP Victorville, FCI Seagoville, USP Coleman, FCI Fort Dix y más. Se Habla Español.">
+<title>Centros de Detención Federal Pre-Trial: MDC y FDC | Directorio NexBorder</title>
+<meta name="description" content="Directorio de centros de detención federal pre-trial (MDC y FDC): MDC Brooklyn, MDC Los Ángeles, FDC Miami, FDC Houston, FDC Philadelphia. Guía para familias. Se Habla Español.">
 <meta property="og:title" content="Directorio Nacional de Instalaciones Federales | NexBorder">
 <meta property="og:description" content="Logística técnica en USP Victorville, FCI Seagoville, USP Coleman, FCI Fort Dix y más. NexBorder cubre los 122 centros BOP.">
 <meta property="og:type" content="website">
@@ -32,22 +32,22 @@
 </head>
 <body>
 
-<nav role="navigation">
+<nav class="pill-nav" role="navigation">
   <a href="index.html" class="nav-brand">Nex<span>Border</span></a>
   <button class="nav-toggle" onclick="toggleNav()" aria-label="Abrir menú" aria-expanded="false">
     <span></span><span></span><span></span>
   </button>
   <div class="nav-links">
-    <a href="index.html" data-t="navHome">Inicio</a>
-    <a href="fsa-guide.html" data-t="navFSA">FSA</a>
-    <a href="rdap-guide.html">RDAP</a>
-    <a href="facilities.html" data-t="navDir" style="color:var(--accent-hi);">Directorio</a>
+    <a href="index.html">Inicio</a>
+    <a href="arrestado-federal.html">Arrestado Federal</a>
+    <a href="audiencia-detencion.html">Audiencia</a>
+    <a href="facilities.html">Directorio</a>
     <a href="blog/index.html">Blog</a>
     <button class="lang-btn" onclick="toggleLang()">EN / ES</button>
     <svg class="theme-toggle-svg" onclick="toggleTheme()" viewBox="0 0 24 24" aria-label="Cambiar tema">
       <path d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364-6.364l-.707.707M6.343 17.657l-.707.707m12.728 0l-.707-.707M6.343 6.343l-.707-.707M12 8a4 4 0 100 8 4 4 0 000-8z"/>
     </svg>
-    <a href="#contact" class="btn-cta wa-link">Consulta</a>
+    <a href="index.html#contact" class="btn-cta wa-link">Consulta Gratis</a>
   </div>
 </nav>
 
@@ -59,9 +59,9 @@
       <img src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&q=80&w=2000" alt="Mapa federal de instalaciones BOP" class="hero-visual">
     </div>
     <div class="hero-content container">
-      <span class="hero-eyebrow">Cobertura Nacional · 94 Distritos Judiciales</span>
+      <span class="hero-eyebrow">MDC · FDC · Pre-Trial · 94 Distritos Judiciales</span>
       <h1>Directorio de<br>Instalaciones Federales</h1>
-      <p>Información técnica sobre los 122 centros del Bureau of Prisons — acceso, programas FSA y RDAP disponibles, logística de visitas y contacto directo para familias latinas.</p>
+      <p>Centros de detención pre-trial (MDC y FDC) donde permanecen los detenidos antes del juicio, más instalaciones post-condena. Información de visitas, contacto y logística para familias.</p>
       <div class="hero-actions">
         <a href="#instalaciones" class="btn-cta">Ver Instalaciones</a>
         <a href="#contact" class="btn-cta-secondary wa-link">Consulta Gratis</a>
@@ -113,6 +113,75 @@
       <h2 class="section-title">Por Región Federal</h2>
       <p class="section-sub">Seleccione la instalación donde se encuentra su familiar para obtener información específica: dirección, teléfono, servicios FSA/RDAP disponibles y cómo contactarnos.</p>
 
+      <!-- PRE-TRIAL MDC/FDC -->
+      <div style="margin-top: 1rem; margin-bottom: 3.5rem;">
+        <div style="background:linear-gradient(135deg,#7f1d1d,#1c1917); border-radius:var(--radius-lg); padding:2rem; margin-bottom:2rem;">
+          <h3 style="color:#fff; font-size:1.1rem; margin-bottom:0.5rem;">🚨 Centros de Detención Pre-Trial — MDC y FDC</h3>
+          <p style="color:#fca5a5; font-size:0.9rem; margin:0;">Si su familiar fue arrestado recientemente, probablemente está en uno de estos centros mientras espera su juicio.</p>
+        </div>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.25rem;">
+
+          <a href="facilities/ny/mdc-brooklyn.html" class="facility-card">
+            <div class="facility-badge" style="background: rgba(239,68,68,0.12); color: #dc2626;">Pre-Trial · MDC</div>
+            <h4>MDC Brooklyn</h4>
+            <p>Brooklyn, Nueva York</p>
+            <ul class="facility-tags">
+              <li>SDNY / EDNY</li>
+              <li>Visitas · CorrLinks</li>
+            </ul>
+            <span class="facility-cta">Ver guía completa →</span>
+          </a>
+
+          <a href="facilities/ca/mdc-los-angeles.html" class="facility-card">
+            <div class="facility-badge" style="background: rgba(239,68,68,0.12); color: #dc2626;">Pre-Trial · MDC</div>
+            <h4>MDC Los Ángeles</h4>
+            <p>Los Ángeles, California</p>
+            <ul class="facility-tags">
+              <li>CDCA</li>
+              <li>Visitas · CorrLinks</li>
+            </ul>
+            <span class="facility-cta">Ver guía completa →</span>
+          </a>
+
+          <a href="facilities/fl/fdc-miami.html" class="facility-card">
+            <div class="facility-badge" style="background: rgba(239,68,68,0.12); color: #dc2626;">Pre-Trial · FDC</div>
+            <h4>FDC Miami</h4>
+            <p>Miami, Florida</p>
+            <ul class="facility-tags">
+              <li>SDFL</li>
+              <li>Visitas · CorrLinks</li>
+            </ul>
+            <span class="facility-cta">Ver guía completa →</span>
+          </a>
+
+          <a href="facilities/tx/fdc-houston.html" class="facility-card">
+            <div class="facility-badge" style="background: rgba(239,68,68,0.12); color: #dc2626;">Pre-Trial · FDC</div>
+            <h4>FDC Houston</h4>
+            <p>Houston, Texas</p>
+            <ul class="facility-tags">
+              <li>SDTX</li>
+              <li>Visitas · CorrLinks</li>
+            </ul>
+            <span class="facility-cta">Ver guía completa →</span>
+          </a>
+
+          <a href="facilities/pa/fdc-philadelphia.html" class="facility-card">
+            <div class="facility-badge" style="background: rgba(239,68,68,0.12); color: #dc2626;">Pre-Trial · FDC</div>
+            <h4>FDC Philadelphia</h4>
+            <p>Filadelfia, Pennsylvania</p>
+            <ul class="facility-tags">
+              <li>EDPA</li>
+              <li>Visitas · CorrLinks</li>
+            </ul>
+            <span class="facility-cta">Ver guía completa →</span>
+          </a>
+
+        </div>
+      </div>
+
+      <!-- POST-SENTENCE FACILITIES -->
+      <h3 style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.15em; color: var(--text-faint); margin-bottom: 1.25rem; margin-top:2rem;">Instalaciones Post-Condena — USP, FCI, Camp</h3>
+
       <!-- WEST -->
       <div style="margin-top: 3.5rem;">
         <h3 style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.15em; color: var(--text-faint); margin-bottom: 1.25rem;">Región Oeste — California · Arizona · Nevada</h3>
@@ -129,16 +198,15 @@
             <span class="facility-cta">Ver guía completa →</span>
           </a>
 
-          <a href="facilities/ca/terminal-island-fci.html" class="facility-card">
-            <div class="facility-badge" style="background: rgba(59,130,246,0.1); color: #2563EB;">Baja Seguridad</div>
+          <div class="facility-card" style="opacity: 0.5; cursor: default;">
+            <div class="facility-badge" style="background: rgba(107,114,128,0.1); color: #6B7280;">CERRADO</div>
             <h4>FCI Terminal Island</h4>
             <p>San Pedro, California</p>
             <ul class="facility-tags">
-              <li>FSA / ETC</li>
-              <li>Nivel Médico 3</li>
+              <li>Instalación Cerrada</li>
             </ul>
-            <span class="facility-cta">Ver guía completa →</span>
-          </a>
+            <span class="facility-cta" style="color:var(--text-faint);">No disponible</span>
+          </div>
 
           <div class="facility-card" style="opacity: 0.65; cursor: default;">
             <div class="facility-badge" style="background: rgba(107,114,128,0.1); color: #6B7280;">Próximamente</div>
@@ -181,15 +249,16 @@
             <span class="facility-cta">Ver guía completa →</span>
           </a>
 
-          <div class="facility-card" style="opacity: 0.65; cursor: default;">
-            <div class="facility-badge" style="background: rgba(107,114,128,0.1); color: #6B7280;">Próximamente</div>
+          <a href="facilities/fl/fdc-miami.html" class="facility-card">
+            <div class="facility-badge" style="background: rgba(239,68,68,0.12); color: #dc2626;">Pre-Trial · FDC</div>
             <h4>FDC Miami</h4>
             <p>Miami, Florida</p>
             <ul class="facility-tags">
-              <li>Detención / Pretrial</li>
+              <li>SDFL</li>
+              <li>Pre-Trial</li>
             </ul>
-            <span class="facility-cta">Consultar disponibilidad</span>
-          </div>
+            <span class="facility-cta">Ver guía completa →</span>
+          </a>
 
         </div>
       </div>
@@ -210,15 +279,16 @@
             <span class="facility-cta">Ver guía completa →</span>
           </a>
 
-          <div class="facility-card" style="opacity: 0.65; cursor: default;">
-            <div class="facility-badge" style="background: rgba(107,114,128,0.1); color: #6B7280;">Próximamente</div>
+          <a href="facilities/ny/mdc-brooklyn.html" class="facility-card">
+            <div class="facility-badge" style="background: rgba(239,68,68,0.12); color: #dc2626;">Pre-Trial · MDC</div>
             <h4>MDC Brooklyn</h4>
             <p>Brooklyn, Nueva York</p>
             <ul class="facility-tags">
-              <li>Detención SDNY / EDNY</li>
+              <li>SDNY / EDNY</li>
+              <li>Pre-Trial</li>
             </ul>
-            <span class="facility-cta">Consultar disponibilidad</span>
-          </div>
+            <span class="facility-cta">Ver guía completa →</span>
+          </a>
 
         </div>
       </div>
