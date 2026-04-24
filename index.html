@@ -119,43 +119,43 @@
         <!-- STEP 1 -->
         <div class="wz-step" id="wz1">
           <p class="wz-progress">Paso 1 de 3</p>
-          <h3 class="wz-question">¿Cuál es la situación actual?</h3>
+          <h3 class="wz-question">Cuál es la situación actual?</h3>
           <div class="wz-options">
-            <button class="wz-btn" onclick="wzNext(2,'Arrestado esta semana — urgente')">🚨 Mi familiar fue arrestado esta semana</button>
-            <button class="wz-btn" onclick="wzNext(2,'Audiencia de detención próxima')">⚖️ Hay audiencia de detención próximamente</button>
-            <button class="wz-btn" onclick="wzNext(2,'No encuentro a mi familiar en el sistema')">🔍 No encuentro a mi familiar en ningún sistema</button>
-            <button class="wz-btn" onclick="wzNext(2,'El abogado no nos llama ni da información')">📵 El abogado no nos llama ni da información</button>
-            <button class="wz-btn" onclick="wzNext(2,'Juicio pendiente o caso en proceso')">📋 Hay juicio pendiente o caso en proceso</button>
+            <button class="wz-btn" onclick="wzNext(2,'Arrestado esta semana — urgente')">Mi familiar fue arrestado esta semana</button>
+            <button class="wz-btn" onclick="wzNext(2,'Audiencia de detención próxima')">Hay audiencia de detención próximamente</button>
+            <button class="wz-btn" onclick="wzNext(2,'No encuentro a mi familiar en el sistema')">No encuentro a mi familiar en ningún sistema</button>
+            <button class="wz-btn" onclick="wzNext(2,'El abogado no nos llama ni da información')">El abogado no nos llama ni da información</button>
+            <button class="wz-btn" onclick="wzNext(2,'Juicio pendiente o caso en proceso')">Hay juicio pendiente o caso en proceso</button>
           </div>
         </div>
 
         <!-- STEP 2 -->
         <div class="wz-step" id="wz2" style="display:none;">
           <p class="wz-progress">Paso 2 de 3</p>
-          <h3 class="wz-question">¿En qué región está detenido?</h3>
+          <h3 class="wz-question">En qué región está detenido?</h3>
           <div class="wz-options">
-            <button class="wz-btn" onclick="wzNext(3,'Región Oeste (CA, AZ, NV, WA)')">🌵 Región Oeste — California, Arizona, Nevada</button>
-            <button class="wz-btn" onclick="wzNext(3,'Región Sur (TX, FL, LA, GA)')">☀️ Región Sur — Texas, Florida, Georgia</button>
-            <button class="wz-btn" onclick="wzNext(3,'Región Noreste (NY, NJ, PA, MA)')">🗽 Región Noreste — Nueva York, Nueva Jersey</button>
-            <button class="wz-btn" onclick="wzNext(3,'Otra región o no sé dónde está')">📍 No sé dónde está o es otra región</button>
+            <button class="wz-btn" onclick="wzNext(3,'Región Oeste (CA, AZ, NV, WA)')">Región Oeste — California, Arizona, Nevada</button>
+            <button class="wz-btn" onclick="wzNext(3,'Región Sur (TX, FL, LA, GA)')">Región Sur — Texas, Florida, Georgia</button>
+            <button class="wz-btn" onclick="wzNext(3,'Región Noreste (NY, NJ, PA, MA)')">Región Noreste — Nueva York, Nueva Jersey</button>
+            <button class="wz-btn" onclick="wzNext(3,'Otra región o no sé dónde está')">No sé dónde está o es otra región</button>
           </div>
         </div>
 
         <!-- STEP 3 -->
         <div class="wz-step" id="wz3" style="display:none;">
           <p class="wz-progress">Paso 3 de 3</p>
-          <h3 class="wz-question">¿Cuándo necesita orientación?</h3>
+          <h3 class="wz-question">Cuándo necesita orientación?</h3>
           <div class="wz-options">
-            <button class="wz-btn" onclick="wzFinish('AHORA — caso urgente, menos de 72h')">🔴 Ahora mismo — es urgente</button>
-            <button class="wz-btn" onclick="wzFinish('Esta semana — audiencia próxima')">🟡 Esta semana — audiencia próxima</button>
-            <button class="wz-btn" onclick="wzFinish('Próximas 2 semanas — planificando')">🟢 Próximas 2 semanas</button>
+            <button class="wz-btn" onclick="wzFinish('AHORA — caso urgente, menos de 72h')">Ahora mismo — es urgente</button>
+            <button class="wz-btn" onclick="wzFinish('Esta semana — audiencia próxima')">Esta semana — audiencia próxima</button>
+            <button class="wz-btn" onclick="wzFinish('Próximas 2 semanas — planificando')">Próximas 2 semanas</button>
           </div>
         </div>
 
         <!-- RESULT -->
         <div class="wz-step" id="wz-result" style="display:none; text-align:center;">
-          <div style="font-size:3rem; margin-bottom:1rem;">✅</div>
-          <h3 style="margin-bottom:0.5rem;">¡Su consulta está lista!</h3>
+          <div style="font-size:3rem; margin-bottom:1rem;"></div>
+          <h3 style="margin-bottom:0.5rem;">Su consulta está lista!</h3>
           <p style="color:var(--text-dim); margin-bottom:1.75rem;" id="wz-summary"></p>
           <a id="wz-wa-link" href="#" target="_blank" rel="noopener" class="btn-cta" style="padding:0.9rem 2.5rem; font-size:1rem; display:inline-block;">Iniciar Consulta por WhatsApp →</a>
           <p style="margin-top:1rem;"><button onclick="wzReset()" style="background:none;border:none;color:var(--text-faint);cursor:pointer;font-size:0.85rem;text-decoration:underline;">Empezar de nuevo</button></p>
@@ -174,31 +174,31 @@
       <div class="bento-grid">
 
         <a href="arrestado-federal.html" class="bento-item" style="grid-column:span 2;">
-          <h3>🚨 Orientación Post-Arresto — Primeras 72 Horas</h3>
+          <h3>Orientación Post-Arresto — Primeras 72 Horas</h3>
           <p>Le explicamos paso a paso qué pasa después de un arresto federal: el proceso de "booking", la comparecencia inicial, la audiencia de detención y sus derechos. Saber qué esperar reduce el pánico y permite actuar a tiempo. Cubrimos arrestos del FBI, DEA, HSI, ATF y CBP.</p>
           <span class="btn-mini">Ver Guía Completa →</span>
         </a>
 
         <a href="audiencia-detencion.html" class="bento-item">
-          <h3>⚖️ Estrategia para la Audiencia de Detención</h3>
+          <h3>Estrategia para la Audiencia de Detención</h3>
           <p>La audiencia de detención bajo 18 U.S.C. § 3142 es la única oportunidad de salir antes del juicio. Le orientamos sobre qué argumentos pesan, qué documentos preparar, y qué preguntar al abogado defensor antes de la audiencia.</p>
           <span class="btn-mini">Ver Guía →</span>
         </a>
 
         <a href="encuentra-familiar.html" class="bento-item">
-          <h3>🔍 Localizar a Su Familiar Detenido</h3>
+          <h3>Localizar a Su Familiar Detenido</h3>
           <p>Le enseñamos a usar el localizador del BOP y el sistema del USMS. Si es un arresto reciente, la persona puede no aparecer en el sistema por 24-48 horas. Sabemos exactamente qué hacer en cada caso.</p>
           <span class="btn-mini">Ver Guía →</span>
         </a>
 
         <a href="segunda-opinion.html" class="bento-item">
-          <h3>📵 Cuando el Abogado No Responde</h3>
+          <h3>Cuando el Abogado No Responde</h3>
           <p>Es normal sentir que el defensor público no comunica suficiente. Le decimos qué debería estar pasando en su caso, qué preguntas tiene derecho a hacer, y cómo documentar la falta de comunicación si es necesario escalar.</p>
           <span class="btn-mini">Ver Orientación →</span>
         </a>
 
         <div class="bento-item" style="grid-column:span 2;">
-          <h3>🏠 Logística de Visitas en Centros Pre-Trial (MDC / FDC)</h3>
+          <h3>Logística de Visitas en Centros Pre-Trial (MDC / FDC)</h3>
           <p>Los centros de detención pre-trial (MDC y FDC) tienen reglas estrictas y diferentes a los FCI/USP post-sentencia. Le orientamos sobre horarios de visita, requisitos de registro, llamadas telefónicas, depósitos de comisaría y comunicación con el detenido mientras espera su juicio.</p>
         </div>
 
@@ -241,21 +241,21 @@
       <div class="bento-grid" style="grid-template-columns:repeat(3,1fr);">
 
         <div class="bento-item" style="border-top:4px solid #dc2626;">
-          <div style="font-size:2.5rem; margin-bottom:1rem;">👨‍👩‍👧</div>
+          
           <h3>Familias en Pánico</h3>
           <p>Recibieron la llamada de que arrestaron a su esposo, padre o hijo. No saben qué pasó, dónde está, ni qué hacer. Les orientamos paso a paso desde el primer momento.</p>
           <a href="arrestado-federal.html" class="btn-mini" style="margin-top:auto;">Guía para Familias →</a>
         </div>
 
         <div class="bento-item" style="border-top:4px solid #d97706;">
-          <div style="font-size:2.5rem; margin-bottom:1rem;">🤝</div>
+          
           <h3>Acusados que Necesitan Información</h3>
           <p>Su defensor público tiene decenas de casos. Usted merece entender qué está pasando con el suyo, qué opciones existen, y cómo participar activamente en su propia defensa.</p>
           <a href="segunda-opinion.html" class="btn-mini" style="margin-top:auto;">Segunda Opinión →</a>
         </div>
 
         <div class="bento-item" style="border-top:4px solid #16a34a;">
-          <div style="font-size:2.5rem; margin-bottom:1rem;">📞</div>
+          
           <h3>Amigos y Comunidad</h3>
           <p>Alguien cercano fue arrestado y usted quiere ayudar pero no sabe cómo. Le orientamos sobre visitas, llamadas, depósitos, y cómo apoyar a la familia durante el proceso.</p>
           <a href="encuentra-familiar.html" class="btn-mini" style="margin-top:auto;">Cómo Ayudar →</a>
@@ -308,15 +308,15 @@
       <h2 class="section-title">Lo que Preguntan las Familias las Primeras Horas</h2>
       <div class="faq-grid">
         <div class="faq-item">
-          <h4>¿Qué pasa en las primeras 72 horas después del arresto?</h4>
+          <h4>Qué pasa en las primeras 72 horas después del arresto?</h4>
           <p>La persona es procesada por el US Marshals Service (USMS) y comparece ante un magistrado federal dentro de 24-48 horas. En esa primera comparecencia se informa de los cargos y se fija la audiencia de detención. Esta audiencia, que debe ocurrir dentro de 3 días hábiles, es la oportunidad de salir antes del juicio.</p>
         </div>
         <div class="faq-item">
-          <h4>¿Cómo localizo a mi familiar si acaba de ser arrestado?</h4>
+          <h4>Cómo localizo a mi familiar si acaba de ser arrestado?</h4>
           <p>En las primeras 24-48 horas, la persona puede no aparecer aún en los sistemas del BOP. El US Marshals Service mantiene su propia base de datos para detenidos pre-sentencia. Contacte a la institución donde cree que está detenido, o comuníquese con nosotros para asistirle en la búsqueda.</p>
         </div>
         <div class="faq-item">
-          <h4>¿Qué es la audiencia de detención y qué decide el juez?</h4>
+          <h4>Qué es la audiencia de detención y qué decide el juez?</h4>
           <p>El juez evalúa dos factores bajo el Bail Reform Act (18 U.S.C. § 3142): si la persona representa riesgo de fuga y si representa peligro para la comunidad. El acusado puede presentar argumentos, documentos de arraigo (familia, trabajo, propiedad) y un "plan de liberación" con condiciones de supervisión. Es la etapa más importante del pre-trial.</p>
         </div>
         <div class="faq-item">
@@ -324,11 +324,11 @@
           <p>Los defensores públicos federales tienen cargas de trabajo muy altas. La familia tiene derecho a comunicarse con el abogado, pero no puede dictar la estrategia legal. NexBorder le orienta sobre qué información tiene derecho a solicitar, qué preguntas hacer en cada etapa, y cómo documentar la comunicación.</p>
         </div>
         <div class="faq-item">
-          <h4>¿Mi familiar puede recibir visitas en el MDC o FDC?</h4>
+          <h4>Mi familiar puede recibir visitas en el MDC o FDC?</h4>
           <p>Sí, pero las reglas son estrictas y varían por instalación. Generalmente se requiere registro previo, identificación oficial, y cumplir con un código de vestimenta. Las visitas de contacto pueden estar restringidas. Le orientamos sobre los procedimientos específicos del centro donde esté su familiar.</p>
         </div>
         <div class="faq-item">
-          <h4>¿NexBorder reemplaza al abogado defensor?</h4>
+          <h4>NexBorder reemplaza al abogado defensor?</h4>
           <p>No. NexBorder es una consultoría técnica federal, no un despacho de abogados. Brindamos orientación sobre el proceso, los derechos del detenido, y cómo entender lo que está pasando — pero no representamos en corte ni reemplazamos la asesoría legal. El abogado defensor es indispensable.</p>
         </div>
       </div>
@@ -343,12 +343,12 @@
       <p class="section-sub">Una vez que hay sentencia federal, existen herramientas legítimas para reducir el tiempo en custodia: créditos del First Step Act y el programa RDAP.</p>
       <div style="display:grid; grid-template-columns:1fr 1fr; gap:2rem; margin-top:2.5rem;">
         <a href="fsa-guide.html" style="display:block; background:var(--surface); border:1px solid var(--border-hi); border-radius:var(--radius-lg); padding:2rem; text-decoration:none; transition:transform 0.2s,box-shadow 0.2s;" onmouseover="this.style.transform='translateY(-3px)';this.style.boxShadow='var(--shadow-lg)'" onmouseout="this.style.transform='';this.style.boxShadow=''">
-          <h3 style="color:var(--text); margin-bottom:0.75rem;">📋 Créditos FSA (First Step Act)</h3>
+          <h3 style="color:var(--text); margin-bottom:0.75rem;">Créditos FSA (First Step Act)</h3>
           <p style="color:var(--text-dim); font-size:0.9rem; margin-bottom:1rem;">Créditos de tiempo ganado por participar en programas aprobados. Hasta 15 días por cada 30 días para internos de riesgo bajo-mínimo.</p>
           <span style="color:var(--accent-hi); font-weight:600; font-size:0.9rem;">Ver Guía FSA →</span>
         </a>
         <a href="rdap-guide.html" style="display:block; background:var(--surface); border:1px solid var(--border-hi); border-radius:var(--radius-lg); padding:2rem; text-decoration:none; transition:transform 0.2s,box-shadow 0.2s;" onmouseover="this.style.transform='translateY(-3px)';this.style.boxShadow='var(--shadow-lg)'" onmouseout="this.style.transform='';this.style.boxShadow=''">
-          <h3 style="color:var(--text); margin-bottom:0.75rem;">🏥 Programa RDAP</h3>
+          <h3 style="color:var(--text); margin-bottom:0.75rem;">Programa RDAP</h3>
           <p style="color:var(--text-dim); font-size:0.9rem; margin-bottom:1rem;">Programa residencial de tratamiento antidrogas. Puede reducir hasta 12 meses de sentencia federal para quienes califican.</p>
           <span style="color:var(--accent-hi); font-weight:600; font-size:0.9rem;">Ver Guía RDAP →</span>
         </a>
@@ -366,16 +366,16 @@
           <p>Hable directamente con un consultor federal. Evaluamos su caso sin costo y le decimos exactamente qué está pasando y qué hacer en los próximos pasos.</p>
           <div class="contact-alt">
             <a href="#" class="wa-link">
-              <span class="alt-icon">💬</span>
+              
               WhatsApp — respuesta en minutos
             </a>
             <a href="mailto:contact@nexborder.com">
-              <span class="alt-icon">✉️</span>
+              
               contact@nexborder.com
             </a>
           </div>
           <div class="legal-disclaimer">
-            <span class="disclaimer-icon">⚖️</span>
+            
             <p><strong>NexBorder no es un despacho de abogados.</strong> Brindamos orientación técnica federal. No ofrecemos representación legal en corte ni reemplazamos al abogado defensor. Toda consulta es confidencial.</p>
           </div>
         </div>
@@ -475,9 +475,11 @@
   window.wzFinish = function(urgency) {
     wzAnswers.urgency = urgency;
     document.querySelectorAll('.wz-step').forEach(function(s) { s.style.display = 'none'; });
-    var summary = '📋 Situación: ' + wzAnswers.situation +
-                  '\n📍 Región: ' + wzAnswers.region +
-                  '\n⏱️ Urgencia: ' + wzAnswers.urgency;
+    var summary = 'Situación: ' + wzAnswers.situation +
+                  '
+Región: ' + wzAnswers.region +
+                  '
+Urgencia: ' + wzAnswers.urgency;
     var waMsg = 'Hola NexBorder, contacto desde su sitio web.\n\n' + summary + '\n\nNecesito orientación sobre el proceso federal.';
     var waNum = (typeof nexConfig !== 'undefined') ? nexConfig.whatsappNumber : '1234567890';
     document.getElementById('wz-summary').textContent = summary.replace(/\n/g, ' · ');
