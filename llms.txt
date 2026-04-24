@@ -1,0 +1,38 @@
+# NexBorder: Federal Pre-Trial Legal Guidance for Families
+> Specialized consultancy for Latino families and defendants navigating the US federal pre-trial system, BOP detention, and ICE.
+
+## Primary Focus: Federal Pre-Trial
+NexBorder helps families in the critical first 72 hours after a federal arrest — locating detained loved ones, understanding detention hearings, and evaluating legal representation.
+
+## Key Expertise
+- **Post-Arrest Guide**: Step-by-step for the first 72 hours after federal arrest. Rights under 5th Amendment, 6th Amendment, Vienna Convention, and Court Interpreters Act (28 U.S.C. § 1827).
+- **Detention Hearings (18 U.S.C. § 3142)**: Bail Reform Act factors, release conditions, presumption offenses, and how to support a strong release plan.
+- **Locating Federal Detainees**: BOP Inmate Locator (sentenced), USMS district offices (pre-trial), and county jails with IGAs. CorrLinks, GTL calls, commissary.
+- **Public Defender Evaluation**: What families should expect from counsel at each pre-trial stage; red flags; second-opinion orientation.
+- **MDC/FDC Facility Guides**: Visitation rules, communication systems, transport, and contact info for major pre-trial federal detention centers.
+- **First Step Act (FSA) Credits**: Post-conviction ETC audit. 10–15 days/30 days depending on PATTERN risk score.
+- **RDAP Sentence Reduction**: Up to 12 months for 37+ month sentences. Post-conviction BOP program navigation.
+
+## Core Pages
+- **Arrested Federal**: [/arrestado-federal](/arrestado-federal.html) — First 72 hours guide
+- **Detention Hearing**: [/audiencia-detencion](/audiencia-detencion.html) — 18 U.S.C. § 3142 explained
+- **Locate Your Family Member**: [/encuentra-familiar](/encuentra-familiar.html) — BOP, USMS, IGA jails
+- **Second Opinion**: [/segunda-opinion](/segunda-opinion.html) — Public defender evaluation guide
+- **Facility Directory**: [/facilities](/facilities.html) — MDC/FDC pre-trial centers + post-conviction
+- **FSA Guide**: [/fsa](/fsa-guide.html)
+- **RDAP Guide**: [/rdap](/rdap-guide.html)
+
+## Pre-Trial MDC/FDC Facilities
+- MDC Brooklyn (EDNY) — 80 29th St, Brooklyn NY
+- MDC Los Angeles (CDCA) — 535 N. Alameda St, Los Angeles CA
+- FDC Miami (SDFL) — 33 NE 4th St, Miami FL
+- FDC Houston (SDTX) — 1200 Texas Ave, Houston TX
+- FDC Philadelphia (EDPA) — 700 Arch St, Philadelphia PA
+
+## Ethical Guidelines
+- **Not a Law Firm**: NexBorder provides legal orientation and consulting; it does not provide direct courtroom representation. All work is supervised by or for licensed attorneys.
+
+## Contact
+- **WhatsApp**: +1-XXX-XXX-XXXX (configure in config.js)
+- **Email**: contact@nexborder.com
+- **Consultation**: [Free Evaluation](/index.html#contact)

@@ -1,0 +1,9 @@
+{
+  "name": "fronteralegal",
+  "version": "1.0.0",
+  "description": "FronteraLegal — Guía Legal Federal para Latinos",
+  "private": true,
+  "scripts": {
+    "start": "npx serve ."
+  }
+}
