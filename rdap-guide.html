@@ -17,6 +17,18 @@
 <link rel="stylesheet" href="index.css">
 <script src="config.js" defer></script>
 <script src="translations.js" defer></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {"@type":"Question","name":"¿Cuánto reduce RDAP la sentencia federal?","acceptedAnswer":{"@type":"Answer","text":"RDAP puede reducir hasta 12 meses para sentencias de 37 meses o más, hasta 9 meses para sentencias de 31 a 36 meses, y hasta 6 meses para sentencias menores de 31 meses. La reducción es discrecional del BOP, no está garantizada por ley."}},
+    {"@type":"Question","name":"¿Quién califica para RDAP?","acceptedAnswer":{"@type":"Answer","text":"Para calificar para RDAP se requiere: historial documentado de abuso de sustancias, al menos 24 meses restantes de sentencia al momento de ingresar, delito no excluido por el BOP, sin impedimentos cognitivos que impidan participar, y ser elegible para preliberación."}},
+    {"@type":"Question","name":"¿Cuánto dura el programa RDAP?","acceptedAnswer":{"@type":"Answer","text":"El programa RDAP tiene tres fases: la fase residencial intensiva de 9 meses dentro de la instalación, seguimiento institucional, y la fase comunitaria (TCCA) en halfway house o confinamiento domiciliario."}},
+    {"@type":"Question","name":"¿Se pueden combinar RDAP y créditos FSA?","acceptedAnswer":{"@type":"Answer","text":"Sí, en muchos casos. La reducción RDAP y los créditos ETC del First Step Act pueden complementarse, maximizando el tiempo de liberación anticipada. NexBorder audita ambos programas simultáneamente."}}
+  ]
+}
+</script>
 </head>
 <body>
 
@@ -195,7 +207,7 @@
         </div>
         <div class="contact-form-card">
           <h3 style="font-size:1.25rem;margin-bottom:1.5rem;">Evaluar Elegibilidad RDAP</h3>
-          <form class="contact-form" method="POST">
+          <form class="contact-form" method="POST" id="contactForm" onsubmit="handleFormSubmit(event)">
             <div class="form-row">
               <input type="text" name="nombre" placeholder="Nombre completo" required class="form-input">
               <input type="tel" name="telefono" placeholder="Teléfono / WhatsApp" required class="form-input">
