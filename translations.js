@@ -1,33 +1,39 @@
 const translations = {
   es: {
-    navHome: "Inicio",
-    heroTitle: "Justicia Federal. Presencia Nacional.",
-    heroSub: "De California a Florida, NexBorder es la autoridad técnica bilingüe para familias que navegan el sistema federal de EE.UU. Somos su aliado en los 94 distritos judiciales.",
-    navSteps: "Primeros Pasos",
-    navDir: "Directorio Nacional",
-    navFSA: "Guía FSA",
-    btnConsult: "Consulta Nacional Directa",
-    wizardTitle: "Inicie su consulta federal:",
-    wizardStep1: "Arresto Reciente (BOP / ICE)",
-    wizardStep2: "Sentencia Existente (Reducción de Tiempo)",
-    logisticTitle: "Logística Nacional Total",
-    logisticSub: "NexBorder elimina la distancia entre la familia y el centro de detención. Nuestra red nacional garantiza que la comunicación y los trámites legales fluyan sin importar el estado.",
-    footText: "© 2026 NexBorder — National Federal Authority. Atendiendo los 94 distritos judiciales federales."
+    navHome:     "Inicio",
+    navFSA:      "Guía FSA",
+    navDir:      "Directorio Nacional",
+    btnConsult:  "Consulta Gratis",
+    heroTitle:   "Justicia Federal. Presencia Nacional.",
+    heroSub:     "De California a Florida, NexBorder es la autoridad técnica para familias que navegan el sistema federal de EE.UU. en los 94 distritos judiciales.",
+    // Wizard
+    wizardTitle:  "¿Cuál es la situación de su familiar?",
+    wizardStep1:  "Recién arrestado (BOP / ICE)",
+    wizardStep2:  "Sentencia activa — reducción de tiempo",
+    wizardStep3:  "Créditos FSA / ETC no aplicados",
+    wizardStep4:  "Quiero acceder al programa RDAP",
+    wizardStep5:  "Necesito solicitar un traslado",
+    wizardRegion: "¿En qué región está la instalación?",
+    wizardUrgency:"¿Qué tan urgente es su caso?",
+    wizardCta:    "Iniciar Consulta por WhatsApp →"
   },
   en: {
-    navHome: "Home",
-    heroTitle: "Federal Justice. National Presence.",
-    heroSub: "From California to Florida, NexBorder is the bilingual technical authority for families navigating the U.S. federal system. We are your ally across all 94 judicial districts.",
-    navSteps: "First Steps",
-    navDir: "National Directory",
-    navFSA: "FSA Guide",
-    btnConsult: "Direct National Consultation",
-    wizardTitle: "Start your federal consultation:",
-    wizardStep1: "Recent Arrest (BOP / ICE)",
-    wizardStep2: "Existing Sentence (Time Reduction)",
-    logisticTitle: "Total National Logistics",
-    logisticSub: "NexBorder eliminates the distance between the family and the detention center. Our national network ensures that communication and legal procedures flow regardless of the state.",
-    footText: "© 2026 NexBorder — National Federal Authority. Serving all 94 federal judicial districts."
+    navHome:     "Home",
+    navFSA:      "FSA Guide",
+    navDir:      "National Directory",
+    btnConsult:  "Free Consultation",
+    heroTitle:   "Federal Justice. National Presence.",
+    heroSub:     "From California to Florida, NexBorder is the technical authority for families navigating the U.S. federal system across all 94 judicial districts.",
+    // Wizard
+    wizardTitle:  "What is your family member's situation?",
+    wizardStep1:  "Recently arrested (BOP / ICE)",
+    wizardStep2:  "Active sentence — time reduction",
+    wizardStep3:  "FSA / ETC credits not applied",
+    wizardStep4:  "I want to access the RDAP program",
+    wizardStep5:  "I need to request a transfer",
+    wizardRegion: "Which region is the facility in?",
+    wizardUrgency:"How urgent is your case?",
+    wizardCta:    "Start WhatsApp Consultation →"
   }
 };
 
@@ -37,8 +43,10 @@ function setLanguage(lang) {
   currentLang = lang;
   document.querySelectorAll('[data-t]').forEach(el => {
     const key = el.getAttribute('data-t');
-    if (translations[lang][key]) {
+    if (translations[lang] && translations[lang][key]) {
       el.textContent = translations[lang][key];
+    } else {
+      console.warn(`[NexBorder i18n] Missing translation: ${lang}.${key}`);
     }
   });
   document.documentElement.lang = lang;

@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Créditos ETC del First Step Act — Guía Completa | NexBorder</title>
+<meta name="description" content="Cómo funcionan los Earned Time Credits (ETC) del First Step Act: tasas de acumulación, programas elegibles, cómo auditar si el BOP los aplicó correctamente y qué hacer si no lo hizo.">
+<meta property="og:title" content="Créditos ETC del First Step Act — Guía Completa">
+<meta property="og:description" content="Todo lo que necesita saber sobre los créditos de tiempo ganado (ETC) de la Ley First Step Act de 2018.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://nexborder.com/blog/first-step-act-creditos-etc.html">
+<link rel="canonical" href="https://nexborder.com/blog/first-step-act-creditos-etc.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../index.css">
+<script src="../config.js" defer></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Cómo funcionan los créditos ETC del First Step Act",
+  "description": "Guía completa sobre los Earned Time Credits del First Step Act de 2018: tasas de acumulación, programas elegibles y cómo auditar si el BOP los aplicó correctamente.",
+  "author": {"@type": "Organization", "name": "NexBorder"},
+  "publisher": {"@type": "Organization", "name": "NexBorder", "url": "https://nexborder.com"},
+  "datePublished": "2026-04-23",
+  "url": "https://nexborder.com/blog/first-step-act-creditos-etc.html"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {"@type":"Question","name":"¿Cuántos créditos ETC se ganan por mes?","acceptedAnswer":{"@type":"Answer","text":"La tasa depende del nivel de riesgo PATTERN: 15 días por cada 30 de participación para niveles Bajo o Mínimo; 10 días por cada 30 para niveles Medio o Alto."}},
+    {"@type":"Question","name":"¿Todos los internos federales califican para ETC?","acceptedAnswer":{"@type":"Answer","text":"No. La ley excluye a internos condenados por ciertos delitos listados en 18 U.S.C. § 3632(d)(4)(D). La elegibilidad debe verificarse caso por caso revisando el PSR y el historial delictivo."}},
+    {"@type":"Question","name":"¿Dónde se aplican los créditos ETC?","acceptedAnswer":{"@type":"Answer","text":"Los créditos ETC se aplican a la fase de preliberación: prisión domiciliaria (home confinement) o centro de reintegración (halfway house / RRC). No reducen directamente la sentencia impuesta, sino el tiempo en custodia carcelaria."}},
+    {"@type":"Question","name":"¿Qué pasa si el BOP no aplicó los créditos?","acceptedAnswer":{"@type":"Answer","text":"Se debe iniciar el proceso de remedio administrativo: BP-8 (informal) → BP-9 (al Warden) → BP-10 (oficina regional) → BP-11 (Central Office). Si el BOP no responde o niega sin fundamento, se puede plantear un habeas corpus bajo 28 U.S.C. § 2241."}}
+  ]
+}
+</script>
+<style>
+  .article-hero {
+    padding: 9rem 0 0;
+    background: var(--bg-alt);
+  }
+  .article-hero-inner {
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 0 1.5rem 3rem;
+  }
+  .article-hero h1 {
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 800;
+    color: var(--text);
+    line-height: 1.2;
+    margin-bottom: 1rem;
+  }
+  .article-meta {
+    font-size: 0.85rem;
+    color: var(--text-dim);
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    margin-bottom: 1.5rem;
+  }
+  .article-hero-img {
+    width: 100%;
+    height: clamp(220px, 40vw, 420px);
+    object-fit: cover;
+    display: block;
+    border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+  }
+  .article-body {
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 3rem 1.5rem 6rem;
+    color: var(--text);
+    font-size: 1.0625rem;
+    line-height: 1.8;
+  }
+  .article-body h2 {
+    font-size: 1.6rem;
+    font-weight: 700;
+    margin: 3rem 0 1rem;
+    color: var(--text);
+  }
+  .article-body h3 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin: 2rem 0 0.75rem;
+    color: var(--accent);
+  }
+  .article-body p { margin-bottom: 1.25rem; }
+  .article-body ul, .article-body ol {
+    margin: 0 0 1.25rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  .info-box {
+    background: rgba(5, 150, 105, 0.08);
+    border-left: 4px solid var(--accent-hi);
+    border-radius: 0 var(--radius) var(--radius) 0;
+    padding: 1.25rem 1.5rem;
+    margin: 2rem 0;
+  }
+  .info-box strong { color: var(--accent-hi); }
+  .warn-box {
+    background: rgba(245, 158, 11, 0.08);
+    border-left: 4px solid #F59E0B;
+    border-radius: 0 var(--radius) var(--radius) 0;
+    padding: 1.25rem 1.5rem;
+    margin: 2rem 0;
+  }
+  .warn-box strong { color: #D97706; }
+  .rate-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1.5rem 0;
+    font-size: 0.95rem;
+  }
+  .rate-table th {
+    background: var(--bg-alt);
+    color: var(--text);
+    font-weight: 600;
+    padding: 0.75rem 1rem;
+    text-align: left;
+    border-bottom: 2px solid var(--border-hi);
+  }
+  .rate-table td {
+    padding: 0.75rem 1rem;
+    border-bottom: 1px solid var(--border);
+    color: var(--text-dim);
+  }
+  .rate-table tr:last-child td { border-bottom: none; }
+  .rate-table .hi { color: var(--accent-hi); font-weight: 600; }
+  .article-cta {
+    background: var(--bg-alt);
+    border: 1px solid var(--border-hi);
+    border-radius: var(--radius-lg);
+    padding: 2.5rem;
+    margin: 3rem 0;
+    text-align: center;
+  }
+  .article-cta h3 { font-size: 1.4rem; margin-bottom: 0.75rem; }
+  .article-cta p { color: var(--text-dim); margin-bottom: 1.5rem; }
+  .faq-list { margin-top: 2rem; display: flex; flex-direction: column; gap: 1.25rem; }
+  .faq-q { font-weight: 600; color: var(--text); margin-bottom: 0.4rem; }
+  .faq-a { color: var(--text-dim); font-size: 0.95rem; line-height: 1.7; }
+  .article-nav {
+    display: flex;
+    gap: 1rem;
+    justify-content: space-between;
+    padding: 2rem 0;
+    border-top: 1px solid var(--border);
+    font-size: 0.9rem;
+  }
+  .article-nav a { color: var(--accent-hi); text-decoration: none; }
+  .article-nav a:hover { text-decoration: underline; }
+  @media (max-width: 768px) {
+    .article-cta { padding: 1.75rem 1.25rem; }
+    .rate-table { font-size: 0.85rem; }
+    .rate-table th, .rate-table td { padding: 0.6rem 0.75rem; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="pill-nav">
+  <a href="../index.html" class="nav-brand">Nex<span>Border</span></a>
+  <div class="nav-links">
+    <a href="../index.html">Inicio</a>
+    <a href="../fsa-guide.html">Guía FSA</a>
+    <a href="../facilities.html">Directorio</a>
+    <a href="index.html" class="active">Blog</a>
+  </div>
+  <div class="nav-actions">
+    <button class="btn-lang" onclick="toggleTheme()">◐</button>
+    <a href="../index.html#contact" class="btn-primary">Consulta Gratis</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="article-hero">
+  <div class="article-hero-inner">
+    <a href="index.html" style="font-size:0.85rem; color:var(--accent-hi); text-decoration:none;">← Blog</a>
+    <div style="height:1.25rem;"></div>
+    <span class="blog-tag" style="display:inline-block; font-size:0.72rem; font-weight:700; text-transform:uppercase; letter-spacing:0.12em; color:var(--accent-hi); background:rgba(5,150,105,0.1); border-radius:100px; padding:0.25rem 0.75rem; margin-bottom:1rem;">FSA / Earned Time Credits</span>
+    <h1>Cómo funcionan los créditos ETC del First Step Act — guía paso a paso</h1>
+    <div class="article-meta">
+      <span>📅 23 de abril de 2026</span>
+      <span>⏱ 8 min de lectura</span>
+      <span>✍️ NexBorder</span>
+    </div>
+    <p style="font-size:1.1rem; color:var(--text-dim); line-height:1.7;">El First Step Act de 2018 creó una de las reformas más importantes al sistema federal de prisiones en décadas. Los créditos ETC permiten reducir el tiempo en custodia federal, pero el BOP no siempre los aplica correctamente. Esta guía le explica todo lo que necesita saber.</p>
+  </div>
+  <img class="article-hero-img"
+    src="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=1200&auto=format&fit=crop&q=80"
+    alt="Documentos legales sobre el First Step Act"
+    loading="eager">
+</div>
+
+<!-- ARTICLE BODY -->
+<div class="article-body">
+
+  <h2>¿Qué es el First Step Act?</h2>
+  <p>El <strong>First Step Act</strong> (Ley Pública 115-391) fue firmado en diciembre de 2018 y representó la reforma más significativa al sistema federal de prisiones en más de 30 años. Entre sus medidas más importantes está la creación de los <strong>Earned Time Credits (ETC)</strong> — créditos de tiempo ganado que los internos pueden acumular participando en programas educativos y de reducción de riesgo aprobados por el Bureau of Prisons (BOP).</p>
+
+  <div class="info-box">
+    <strong>Dato clave:</strong> Los créditos ETC no reducen directamente la sentencia impuesta por el juez. Se aplican al tiempo en custodia carcelaria, acelerando el traslado a una fase de preliberación: prisión domiciliaria (<em>home confinement</em>) o un centro de reintegración comunitaria (<em>Residential Reentry Center / RRC</em>, también llamado <em>halfway house</em>).
+  </div>
+
+  <h2>¿Cómo se acumulan los créditos ETC?</h2>
+  <p>La tasa de acumulación depende directamente del <strong>nivel de riesgo de reincidencia PATTERN</strong> (Prisoner Assessment Tool Targeting Estimated Risk and Needs) del interno:</p>
+
+  <table class="rate-table">
+    <thead>
+      <tr>
+        <th>Nivel PATTERN</th>
+        <th>Créditos por cada 30 días de participación</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Mínimo (Minimum)</td>
+        <td class="hi">15 días</td>
+      </tr>
+      <tr>
+        <td>Bajo (Low)</td>
+        <td class="hi">15 días</td>
+      </tr>
+      <tr>
+        <td>Medio (Medium)</td>
+        <td>10 días</td>
+      </tr>
+      <tr>
+        <td>Alto (High)</td>
+        <td>10 días</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p>Es decir, un interno con nivel PATTERN Bajo o Mínimo que participa en programas durante 12 meses continuos puede acumular hasta <strong>180 días (6 meses)</strong> de créditos ETC. Uno con nivel Medio o Alto acumula hasta <strong>120 días (4 meses)</strong> en el mismo período.</p>
+
+  <div class="warn-box">
+    <strong>⚠️ El nivel PATTERN cambia.</strong> El BOP reevalúa el PATTERN periódicamente. Si el nivel de su familiar bajó de Medio a Bajo pero el BOP no actualizó la tasa de acumulación, los créditos podrían estar siendo calculados incorrectamente.
+  </div>
+
+  <h2>¿Qué programas generan créditos ETC?</h2>
+  <p>Solo los programas clasificados como <strong>Evidence-Based Recidivism Reduction (EBRR)</strong> o <strong>Productive Activities (PA)</strong> por el BOP generan créditos. Entre los más comunes:</p>
+
+  <ul>
+    <li><strong>GED / educación básica</strong> (Adult Continuing Education)</li>
+    <li><strong>Programas vocacionales</strong> certificados por el BOP</li>
+    <li><strong>Cognitive Behavioral Interventions</strong> (CBI, BRAVE, etc.)</li>
+    <li><strong>Drug Education</strong> (no confundir con RDAP, que tiene beneficios separados)</li>
+    <li><strong>Trabajo en UNICOR / Federal Prison Industries</strong> (califica como Productive Activity)</li>
+    <li><strong>Programas de trabajo comunitario</strong> dentro de la instalación</li>
+    <li><strong>Mentoring o tutoring</strong> de otros internos (en instalaciones que lo tienen)</li>
+  </ul>
+
+  <p>La lista completa de programas elegibles varía por instalación. Cada centro publica su <em>Program Statement</em> y su oferta de programas EBRR/PA activos.</p>
+
+  <h2>¿Quién NO califica para ETC?</h2>
+  <p>La ley excluye a internos condenados por ciertos delitos. Los más relevantes son:</p>
+
+  <ul>
+    <li>Delitos sexuales que requieren registro (Tier III)</li>
+    <li>Delitos de terrorismo federales o internacionales</li>
+    <li>Homicidio de funcionario federal</li>
+    <li>Ciertos delitos de armas de fuego</li>
+    <li>Traición o espionaje</li>
+  </ul>
+
+  <p>La lista completa está en <strong>18 U.S.C. § 3632(d)(4)(D)</strong>. Muchos internos asumen que no califican cuando en realidad sí lo hacen — o viceversa. Una auditoría del <em>Presentence Investigation Report (PSR)</em> es la única forma de confirmarlo con certeza.</p>
+
+  <div class="info-box">
+    <strong>Importante:</strong> Calificar para ETC y que el BOP haya aplicado correctamente esos créditos son dos cosas distintas. Hemos visto casos en que el interno califica pero el BOP no registró las horas de programa, calculó mal el nivel PATTERN, o simplemente no actualizó el <em>Individualized Needs Plan (INP)</em>.
+  </div>
+
+  <h2>¿Dónde se aplican los créditos? ¿Qué cambia?</h2>
+  <p>Cuando el saldo de créditos ETC es suficiente, el BOP debe transferir al interno a:</p>
+
+  <ol>
+    <li><strong>Halfway House / RRC (Residential Reentry Center)</strong> — el interno vive en la comunidad con supervisión, puede trabajar y reunirse con su familia.</li>
+    <li><strong>Home Confinement</strong> — el interno regresa a su hogar bajo supervisión electrónica (tobillera). Es la fase más cercana a la libertad antes de la excarcelación completa.</li>
+  </ol>
+
+  <p>El máximo de preliberación es <strong>12 meses en halfway house</strong> más la mitad de la sentencia supervisada en home confinement (para sentencias de 1 año o menos). El First Step Act aumentó significativamente estos límites previos.</p>
+
+  <h2>Paso a paso: cómo auditar los créditos ETC de su familiar</h2>
+
+  <h3>1. Obtener el Individualized Needs Plan (INP)</h3>
+  <p>El INP es el documento donde el BOP registra el nivel PATTERN, las necesidades identificadas y los programas asignados. Su familiar puede solicitarlo directamente al Case Manager.</p>
+
+  <h3>2. Verificar el nivel PATTERN y la tasa correcta</h3>
+  <p>Confirme que el nivel PATTERN actual coincide con la tasa de acumulación aplicada. Si el nivel bajó recientemente (por buen comportamiento o por actualización del sistema), la tasa debería haber aumentado a 15 días/30.</p>
+
+  <h3>3. Revisar el historial de programas completados</h3>
+  <p>Pida una copia del <em>Program Participation Record</em>. Cada programa EBRR o PA completado debe aparecer con fecha de inicio, fecha de fin y horas registradas. Si un programa completado no aparece, los créditos correspondientes no se están contando.</p>
+
+  <h3>4. Calcular el saldo esperado vs. el registrado</h3>
+  <p>Con el historial de participación y la tasa PATTERN correcta, es posible calcular cuántos créditos debería tener acumulados el interno y compararlo con lo que el BOP tiene registrado.</p>
+
+  <h3>5. Iniciar un remedio administrativo si hay discrepancia</h3>
+  <p>Si encuentra una diferencia, el proceso formal es:</p>
+  <ol>
+    <li><strong>BP-8</strong> — solicitud informal al Case Manager o Counselor</li>
+    <li><strong>BP-9</strong> — queja formal al Warden de la instalación</li>
+    <li><strong>BP-10</strong> — apelación a la Oficina Regional del BOP</li>
+    <li><strong>BP-11</strong> — apelación a la Central Office en Washington D.C.</li>
+  </ol>
+  <p>Si el BOP no corrige el error tras este proceso, se puede plantear un <em>habeas corpus</em> federal bajo <strong>28 U.S.C. § 2241</strong>.</p>
+
+  <div class="article-cta">
+    <h3>¿Cree que el BOP no está aplicando los créditos correctamente?</h3>
+    <p>Auditamos el caso de su familiar — revisamos el INP, el nivel PATTERN, el historial de programas y el saldo de créditos. La consulta inicial es gratuita.</p>
+    <a href="../index.html#contact" class="btn-primary" style="display:inline-block; padding:0.875rem 2rem; background:var(--accent-hi); color:#fff; border-radius:100px; text-decoration:none; font-weight:700;">Iniciar consulta gratuita →</a>
+  </div>
+
+  <h2>Preguntas frecuentes</h2>
+  <div class="faq-list">
+    <div>
+      <p class="faq-q">¿Los créditos ETC y la reducción RDAP se pueden combinar?</p>
+      <p class="faq-a">Sí. Un interno puede completar RDAP (que reduce hasta 12 meses de sentencia) y además acumular créditos ETC por otros programas. Son beneficios independientes que no se excluyen mutuamente. De hecho, RDAP califica como programa EBRR y genera créditos ETC durante su duración.</p>
+    </div>
+    <div>
+      <p class="faq-q">¿Cuántos créditos ETC se necesitan para salir antes?</p>
+      <p class="faq-a">No hay un número fijo. Lo que el BOP evalúa es si el saldo acumulado más la fecha de liberación proyectada permite transferir al interno a preliberación dentro de los límites permitidos (12 meses de halfway house más hasta la mitad de la sentencia supervisada en home confinement).</p>
+    </div>
+    <div>
+      <p class="faq-q">¿Qué pasa si el interno es transferido a otra instalación? ¿Se pierden los créditos?</p>
+      <p class="faq-a">No deben perderse — los créditos ETC están registrados en el sistema BOP central (SENTRY), no solo en la instalación. Sin embargo, hemos visto casos donde la transferencia causó discrepancias. Si su familiar fue trasladado recientemente, vale la pena verificar que el saldo sea correcto en la nueva instalación.</p>
+    </div>
+    <div>
+      <p class="faq-q">¿El BOP aplica los créditos automáticamente?</p>
+      <p class="faq-a">En teoría, sí. En la práctica, errores administrativos son frecuentes: programas no registrados, niveles PATTERN no actualizados, o INP desactualizados. La auditoría proactiva es la mejor forma de detectar estos errores antes de que se acerque la fecha de liberación.</p>
+    </div>
+  </div>
+
+  <div class="article-nav">
+    <a href="index.html">← Ver todos los artículos</a>
+    <a href="../fsa-guide.html">Guía FSA completa →</a>
+  </div>
+
+</div>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div class="footer-col">
+      <a href="../index.html" class="nav-brand" style="margin-bottom: 0.75rem; display: inline-block;">Nex<span>Border</span></a>
+      <p style="color: var(--text-faint); font-size: 0.875rem; line-height: 1.6;">Consultoría técnica federal · Se Habla Español · 94 distritos judiciales de EE.UU.</p>
+    </div>
+    <div class="footer-col">
+      <h5>Servicios</h5>
+      <ul>
+        <li><a href="../fsa-guide.html">Auditoría FSA / ETC</a></li>
+        <li><a href="../rdap-guide.html">Reducción RDAP</a></li>
+        <li><a href="../facilities.html">Directorio Nacional</a></li>
+        <li><a href="../index.html#contact">Consulta Gratis</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>Blog</h5>
+      <ul>
+        <li><a href="index.html">Todos los artículos</a></li>
+        <li><a href="../rdap-guide.html">Guía RDAP</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom container">
+    <p>&copy; 2026 NexBorder. Todos los derechos reservados.</p>
+    <p>Consultoría federal · No somos un despacho de abogados</p>
+  </div>
+</footer>
+
+<!-- FLOATING WHATSAPP -->
+<a href="../index.html#contact" class="wa-float wa-link" aria-label="Contactar por WhatsApp">
+  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+
+<script>
+function toggleTheme() {
+  const html = document.documentElement;
+  html.setAttribute('data-theme', html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark');
+}
+</script>
+</body>
+</html>

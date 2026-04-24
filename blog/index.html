@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Blog — NexBorder | Recursos Federales para Familias</title>
+<meta name="description" content="Artículos prácticos sobre el First Step Act, RDAP, créditos ETC y cómo navegar el sistema federal de prisiones de EE.UU.">
+<meta property="og:title" content="Blog NexBorder — Recursos Federales para Familias">
+<meta property="og:description" content="Artículos prácticos sobre FSA, RDAP, créditos ETC y el sistema BOP federal de EE.UU.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://nexborder.com/blog/">
+<link rel="canonical" href="https://nexborder.com/blog/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../index.css">
+<script src="../config.js" defer></script>
+<style>
+  .blog-hero {
+    padding: 9rem 0 4rem;
+    background: var(--bg-alt);
+    text-align: center;
+  }
+  .blog-hero h1 {
+    font-size: clamp(2.5rem, 5vw, 3.75rem);
+    font-weight: 800;
+    color: var(--text);
+    margin-bottom: 1rem;
+  }
+  .blog-hero p {
+    font-size: 1.125rem;
+    color: var(--text-dim);
+    max-width: 540px;
+    margin: 0 auto;
+  }
+  .blog-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+    gap: 2rem;
+    padding: 4rem 0 6rem;
+  }
+  .blog-card {
+    background: var(--surface);
+    border: 1px solid var(--border-hi);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    transition: transform 0.2s, box-shadow 0.2s;
+    display: flex;
+    flex-direction: column;
+  }
+  .blog-card:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-lg);
+  }
+  .blog-card-img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    display: block;
+  }
+  .blog-card-body {
+    padding: 1.75rem;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+  .blog-tag {
+    display: inline-block;
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--accent-hi);
+    background: rgba(5,150,105,0.1);
+    border-radius: 100px;
+    padding: 0.25rem 0.75rem;
+    margin-bottom: 1rem;
+  }
+  .blog-card h2 {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--text);
+    margin-bottom: 0.75rem;
+    line-height: 1.4;
+    flex: 1;
+  }
+  .blog-card p {
+    font-size: 0.9rem;
+    color: var(--text-dim);
+    line-height: 1.65;
+    margin-bottom: 1.25rem;
+  }
+  .blog-meta {
+    font-size: 0.78rem;
+    color: var(--text-faint);
+    margin-bottom: 1.25rem;
+  }
+  .blog-read-link {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--accent-hi);
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    margin-top: auto;
+  }
+  .blog-read-link:hover { text-decoration: underline; }
+  .blog-empty {
+    text-align: center;
+    color: var(--text-dim);
+    padding: 4rem 0;
+  }
+  @media (max-width: 768px) {
+    .blog-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="pill-nav">
+  <a href="../index.html" class="nav-brand">Nex<span>Border</span></a>
+  <div class="nav-links">
+    <a href="../index.html">Inicio</a>
+    <a href="../fsa-guide.html">Guía FSA</a>
+    <a href="../facilities.html">Directorio</a>
+    <a href="index.html" class="active">Blog</a>
+  </div>
+  <div class="nav-actions">
+    <button class="btn-lang" onclick="toggleTheme()">◐</button>
+    <a href="../index.html#contact" class="btn-primary">Consulta Gratis</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="blog-hero">
+  <div class="container">
+    <span class="hero-eyebrow">Recursos · Guías · Noticias Federales</span>
+    <h1>Blog NexBorder</h1>
+    <p>Información práctica sobre el sistema federal de prisiones, el First Step Act, RDAP y los derechos de su familiar.</p>
+  </div>
+</div>
+
+<!-- ARTICLES -->
+<section>
+  <div class="container">
+    <div class="blog-grid">
+
+      <!-- Article 1 -->
+      <article class="blog-card">
+        <img class="blog-card-img"
+          src="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=700&auto=format&fit=crop&q=80"
+          alt="Documentos legales First Step Act"
+          loading="lazy">
+        <div class="blog-card-body">
+          <span class="blog-tag">FSA / ETC</span>
+          <h2>Cómo funcionan los créditos ETC del First Step Act — guía paso a paso</h2>
+          <div class="blog-meta">23 de abril de 2026 · 8 min de lectura</div>
+          <p>El First Step Act permite reducir el tiempo en custodia federal. Explicamos qué son los Earned Time Credits, cómo se acumulan y cómo auditar si el BOP los aplicó correctamente.</p>
+          <a href="first-step-act-creditos-etc.html" class="blog-read-link">Leer artículo →</a>
+        </div>
+      </article>
+
+      <!-- Article 2 — placeholder -->
+      <article class="blog-card">
+        <img class="blog-card-img"
+          src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=700&auto=format&fit=crop&q=80"
+          alt="Programa RDAP reducción de sentencia"
+          loading="lazy">
+        <div class="blog-card-body">
+          <span class="blog-tag">RDAP</span>
+          <h2>RDAP explicado: elegibilidad, duración y cuánto reduce realmente la sentencia</h2>
+          <div class="blog-meta">Próximamente</div>
+          <p>El programa residencial de tratamiento antidrogas puede reducir hasta 12 meses de sentencia federal. Pero hay requisitos estrictos. Le explicamos todo lo que necesita saber antes de solicitarlo.</p>
+          <a href="../rdap-guide.html" class="blog-read-link">Ver guía RDAP →</a>
+        </div>
+      </article>
+
+      <!-- Article 3 — placeholder -->
+      <article class="blog-card">
+        <img class="blog-card-img"
+          src="https://images.unsplash.com/photo-1607968565043-35e0a5b36fef?w=700&auto=format&fit=crop&q=80"
+          alt="Remedio administrativo BP-9 BOP"
+          loading="lazy">
+        <div class="blog-card-body">
+          <span class="blog-tag">Remedios Administrativos</span>
+          <h2>Cómo presentar un BP-9: el primer paso cuando el BOP ignora los derechos de su familiar</h2>
+          <div class="blog-meta">Próximamente</div>
+          <p>Si el BOP no aplica los créditos FSA o ignora una solicitud legítima, el proceso de remedio administrativo BP-8 → BP-9 → BP-10 es la herramienta correcta. Le explicamos cómo funciona.</p>
+          <a href="../index.html#contact" class="blog-read-link">Consultar ahora →</a>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div class="footer-col">
+      <a href="../index.html" class="nav-brand" style="margin-bottom: 0.75rem; display: inline-block;">Nex<span>Border</span></a>
+      <p style="color: var(--text-faint); font-size: 0.875rem; line-height: 1.6;">Consultoría técnica federal · Se Habla Español · 94 distritos judiciales de EE.UU.</p>
+    </div>
+    <div class="footer-col">
+      <h5>Servicios</h5>
+      <ul>
+        <li><a href="../fsa-guide.html">Auditoría FSA / ETC</a></li>
+        <li><a href="../rdap-guide.html">Reducción RDAP</a></li>
+        <li><a href="../facilities.html">Directorio Nacional</a></li>
+        <li><a href="../index.html#contact">Consulta Gratis</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>Blog</h5>
+      <ul>
+        <li><a href="first-step-act-creditos-etc.html">Créditos ETC (FSA)</a></li>
+        <li><a href="index.html">Todos los artículos</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom container">
+    <p>&copy; 2026 NexBorder. Todos los derechos reservados.</p>
+    <p>Consultoría federal · No somos un despacho de abogados</p>
+  </div>
+</footer>
+
+<!-- FLOATING WHATSAPP -->
+<a href="../index.html#contact" class="wa-float wa-link" aria-label="Contactar por WhatsApp">
+  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+
+<script>
+function toggleTheme() {
+  const html = document.documentElement;
+  html.setAttribute('data-theme', html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark');
+}
+</script>
+</body>
+</html>

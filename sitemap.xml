@@ -88,4 +88,19 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://nexborder.com/facilities/nj/fort-dix-fci"/>
   </url>
 
+  <!-- BLOG -->
+  <url>
+    <loc>https://nexborder.com/blog/</loc>
+    <lastmod>2026-04-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://nexborder.com/blog/first-step-act-creditos-etc</loc>
+    <lastmod>2026-04-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
 </urlset>
