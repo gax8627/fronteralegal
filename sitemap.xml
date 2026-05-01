@@ -128,7 +128,14 @@
 
   <url>
     <loc>https://nexborder.com/facilities/nj/fort-dix-fci</loc>
-    <lastmod>2026-04-22</lastmod>
+    <lastmod>2026-05-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+
+  <url>
+    <loc>https://nexborder.com/facilities/ca/terminal-island-fci</loc>
+    <lastmod>2026-05-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>

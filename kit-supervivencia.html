@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kit de Supervivencia: Primeras 72 Horas | Guía Federal</title>
+<meta name="description" content="Descargue gratis la lista de verificación crítica para las primeras 72 horas tras un arresto federal. Localización, abogados y audiencias.">
+<link rel="icon" type="image/png" href="brand-og.png">
+<link rel="stylesheet" href="index.css">
+<style>
+  :root {
+    --primary-gradient: linear-gradient(135deg, #1e1b4b 0%, #312e81 100%);
+  }
+  .magnet-hero {
+    padding: 8rem 0 4rem;
+    background: var(--primary-gradient);
+    color: white;
+    text-align: center;
+  }
+  .magnet-card {
+    background: var(--surface);
+    border: 1px solid var(--border-hi);
+    border-radius: var(--radius-lg);
+    padding: 3rem;
+    max-width: 600px;
+    margin: -4rem auto 4rem;
+    box-shadow: var(--shadow-xl);
+    position: relative;
+    z-index: 10;
+  }
+  .checklist-preview {
+    margin: 2rem 0;
+    padding: 1.5rem;
+    background: var(--bg-alt);
+    border-radius: var(--radius-md);
+    text-align: left;
+  }
+  .checklist-item {
+    display: flex;
+    gap: 0.75rem;
+    margin-bottom: 0.75rem;
+    font-size: 0.95rem;
+    color: var(--text-dim);
+  }
+  .checklist-item span { color: var(--accent-hi); font-weight: bold; }
+  .form-group { margin-bottom: 1.5rem; text-align: left; }
+  .form-label { display: block; font-size: 0.85rem; font-weight: 600; margin-bottom: 0.5rem; color: var(--text-dim); }
+  .magnet-input {
+    width: 100%;
+    padding: 0.875rem;
+    border: 1px solid var(--border-hi);
+    border-radius: var(--radius-md);
+    background: var(--bg);
+    color: var(--text);
+  }
+</style>
+<!-- Global site tag (gtag.js) - Google Analytics Placeholder -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag("js", new Date());
+  gtag("config", "G-XXXXXXXXXX");
+</script>
+</head>
+<body>
+
+<nav class="pill-nav">
+  <a href="index.html" class="nav-brand">Guía<span>Federal</span></a>
+</nav>
+
+<main>
+  <section class="magnet-hero">
+    <div class="container">
+      <h1 style="font-size: clamp(2rem, 5vw, 3rem); margin-bottom: 1rem;">Kit de Supervivencia</h1>
+      <p style="opacity: 0.9; max-width: 600px; margin: 0 auto;">Todo lo que una familia necesita saber en las primeras 72 horas tras un arresto federal. Evite errores costosos.</p>
+    </div>
+  </section>
+
+  <div class="container">
+    <div class="magnet-card">
+      <h2 style="font-size: 1.5rem; margin-bottom: 1rem;">Descarga Gratuita (PDF)</h2>
+      <p style="color: var(--text-dim); font-size: 0.95rem;">Incluye la hoja de ruta crítica y la lista de verificación de emergencia para el tribunal federal.</p>
+      
+      <div class="checklist-preview">
+        <div class="checklist-item"><span>01</span> Localización inmediata (SENTRY / Marshal)</div>
+        <div class="checklist-item"><span>02</span> Qué preguntar al abogado de oficio</div>
+        <div class="checklist-item"><span>03</span> Preparación para la Audiencia de Detención</div>
+        <div class="checklist-item"><span>04</span> Cómo manejar las llamadas de la cárcel</div>
+      </div>
+
+      <form onsubmit="handleMagnetSubmit(event)" id="magnetForm">
+        <div class="form-group">
+          <label class="form-label">Su Nombre</label>
+          <input type="text" class="magnet-input" placeholder="Nombre completo" required>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Correo Electrónico / WhatsApp</label>
+          <input type="text" class="magnet-input" placeholder="Para enviarle el kit" required>
+        </div>
+        <button type="submit" class="btn-submit" style="width: 100%;">Descargar Kit de Supervivencia →</button>
+        <p style="font-size: 0.75rem; color: var(--text-faint); margin-top: 1rem; text-align: center;">Privacidad 100% garantizada. Sin spam.</p>
+      </form>
+    </div>
+  </div>
+</main>
+
+<footer class="site-footer" style="padding: 4rem 0;">
+  <div class="container" style="text-align: center;">
+    <p style="color: var(--text-faint);">© 2026 Guía Federal · Consultoría Técnica</p>
+  </div>
+</footer>
+
+<script>
+function handleMagnetSubmit(event) {
+  event.preventDefault();
+  const form = event.target;
+  form.innerHTML = `
+    <div style="text-align:center; padding: 2rem 0;">
+      <div style="font-size:3rem; margin-bottom:1rem;">📩</div>
+      <h3>¡Enviando su Kit!</h3>
+      <p style="color:var(--text-dim);">Revise su bandeja de entrada o WhatsApp en los próximos 2 minutos.</p>
+      <a href="index.html" class="btn-cta-secondary" style="margin-top:1.5rem; display:inline-block;">Volver al Inicio</a>
+    </div>
+  `;
+}
+</script>
+
+</body>
+</html>

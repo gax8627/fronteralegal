@@ -3,13 +3,15 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Blog — NexBorder | Recursos Federales para Familias</title>
+<title>Blog — Guía Federal | Recursos Federales para Familias</title>
 <meta name="description" content="Artículos prácticos sobre el First Step Act, RDAP, créditos ETC y cómo navegar el sistema federal de prisiones de EE.UU.">
-<meta property="og:title" content="Blog NexBorder — Recursos Federales para Familias">
+<meta property="og:title" content="Blog Guía Federal — Recursos Federales para Familias">
 <meta property="og:description" content="Artículos prácticos sobre FSA, RDAP, créditos ETC y el sistema BOP federal de EE.UU.">
+<meta property="og:image" content="https://nexborder.com/brand-og.png">
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://nexborder.com/blog/">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="canonical" href="https://nexborder.com/blog/">
+<link rel="icon" type="image/png" href="../brand-og.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -115,6 +117,14 @@
     .blog-grid { grid-template-columns: 1fr; }
   }
 </style>
+<!-- Global site tag (gtag.js) - Google Analytics Placeholder -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag("js", new Date());
+  gtag("config", "G-XXXXXXXXXX");
+</script>
 </head>
 <body>
 
@@ -138,8 +148,11 @@
 <!-- HERO -->
 <div class="blog-hero">
   <div class="container">
-    <span class="hero-eyebrow">Recursos · Guías · Noticias Federales</span>
-    <h1>Blog NexBorder</h1>
+    <div style="margin-bottom:1.5rem; display:flex; justify-content:center; gap:0.75rem; align-items:center;">
+      <span class="hero-eyebrow">Recursos · Guías · Noticias</span>
+      <span style="background:rgba(5,150,105,0.1); color:var(--accent-hi); font-size:0.75rem; font-weight:700; text-transform:uppercase; letter-spacing:0.1em; padding:0.4rem 1rem; border-radius:100px; border:1px solid var(--accent-hi);">🇲🇽 Se Habla Español</span>
+    </div>
+    <h1>Blog Guía Federal</h1>
     <p>Información práctica sobre el sistema federal de prisiones, el First Step Act, RDAP y los derechos de su familiar.</p>
   </div>
 </div>
@@ -164,7 +177,22 @@
         </div>
       </article>
 
-      <!-- Article 2 — placeholder -->
+      <!-- Article 2 -->
+      <article class="blog-card">
+        <img class="blog-card-img"
+          src="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=700&auto=format&fit=crop&q=80"
+          alt="Entrevista PSO Pre-Trial"
+          loading="lazy">
+        <div class="blog-card-body">
+          <span class="blog-tag">Pre-Trial</span>
+          <h2>La Entrevista PSO: El secreto para salir libre bajo fianza federal</h2>
+          <div class="blog-meta">01 de mayo de 2026 · 7 min de lectura</div>
+          <p>El oficial de Pre-Trial Services es quien recomienda su libertad al juez. Aprenda cómo prepararse y qué información es vital para su familia.</p>
+          <a href="entrevista-pso.html" class="blog-read-link">Leer artículo →</a>
+        </div>
+      </article>
+
+      <!-- Article 3 -->
       <article class="blog-card">
         <img class="blog-card-img"
           src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=700&auto=format&fit=crop&q=80"
@@ -172,25 +200,10 @@
           loading="lazy">
         <div class="blog-card-body">
           <span class="blog-tag">RDAP</span>
-          <h2>RDAP explicado: elegibilidad, duración y cuánto reduce realmente la sentencia</h2>
-          <div class="blog-meta">Próximamente</div>
-          <p>El programa residencial de tratamiento antidrogas puede reducir hasta 12 meses de sentencia federal. Pero hay requisitos estrictos. Le explicamos todo lo que necesita saber antes de solicitarlo.</p>
-          <a href="../rdap-guide.html" class="blog-read-link">Ver guía RDAP →</a>
-        </div>
-      </article>
-
-      <!-- Article 3 — placeholder -->
-      <article class="blog-card">
-        <img class="blog-card-img"
-          src="https://images.unsplash.com/photo-1607968565043-35e0a5b36fef?w=700&auto=format&fit=crop&q=80"
-          alt="Remedio administrativo BP-9 BOP"
-          loading="lazy">
-        <div class="blog-card-body">
-          <span class="blog-tag">Remedios Administrativos</span>
-          <h2>Cómo presentar un BP-9: el primer paso cuando el BOP ignora los derechos de su familiar</h2>
-          <div class="blog-meta">Próximamente</div>
-          <p>Si el BOP no aplica los créditos FSA o ignora una solicitud legítima, el proceso de remedio administrativo BP-8 → BP-9 → BP-10 es la herramienta correcta. Le explicamos cómo funciona.</p>
-          <a href="../index.html#contact" class="blog-read-link">Consultar ahora →</a>
+          <h2>RDAP explicado: Cómo reducir hasta 12 meses de sentencia federal</h2>
+          <div class="blog-meta">01 de mayo de 2026 · 10 min de lectura</div>
+          <p>El programa residencial de tratamiento puede reducir significativamente el tiempo en prisión. Verifique si su delito califica para este beneficio.</p>
+          <a href="rdap-explicado.html" class="blog-read-link">Ver guía RDAP →</a>
         </div>
       </article>
 
@@ -223,7 +236,7 @@
     </div>
   </div>
   <div class="footer-bottom container">
-    <p>&copy; 2026 NexBorder. Todos los derechos reservados.</p>
+    <p>&copy; 2026 Guía Federal. Todos los derechos reservados.</p>
     <p>Consultoría federal · No somos un despacho de abogados</p>
   </div>
 </footer>

@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kit de Supervivencia: 72 Horas | Guía Federal</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Playfair+Display:wght@700&display=swap');
+  
+  :root {
+    --navy: #0f172a;
+    --gold: #b45309;
+    --text: #1e293b;
+  }
+
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter', sans-serif;
+    color: var(--text);
+    background: #f1f5f9;
+  }
+
+  .page {
+    width: 210mm;
+    min-height: 297mm;
+    padding: 20mm;
+    margin: 10mm auto;
+    background: white;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    box-sizing: border-box;
+    position: relative;
+    overflow: hidden;
+  }
+
+  @media print {
+    body { background: none; }
+    .page { margin: 0; box-shadow: none; page-break-after: always; }
+  }
+
+  /* COVER PAGE */
+  .cover {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 100%;
+    background: var(--navy);
+    color: white;
+    margin: -20mm;
+    padding: 20mm;
+  }
+
+  .cover-img {
+    width: 150mm;
+    height: auto;
+    margin-bottom: 2rem;
+    border: 2px solid var(--gold);
+  }
+
+  .cover h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 3.5rem;
+    margin: 0;
+    color: #fcd34d;
+  }
+
+  .cover h2 {
+    font-size: 1.5rem;
+    font-weight: 400;
+    letter-spacing: 0.2rem;
+    text-transform: uppercase;
+    margin-top: 1rem;
+    opacity: 0.8;
+  }
+
+  /* CONTENT PAGES */
+  .header {
+    border-bottom: 2px solid var(--gold);
+    padding-bottom: 1rem;
+    margin-bottom: 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+
+  .header h3 { margin: 0; font-family: 'Playfair Display', serif; color: var(--navy); }
+
+  .section { margin-bottom: 2rem; }
+  .section h4 {
+    color: var(--gold);
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
+    border-bottom: 1px solid #e2e8f0;
+    padding-bottom: 0.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .checklist { list-style: none; padding: 0; }
+  .checklist li {
+    padding: 0.75rem;
+    border-bottom: 1px solid #f1f5f9;
+    display: flex;
+    gap: 1rem;
+  }
+  .checklist li::before { content: "☐"; color: var(--gold); font-weight: bold; }
+
+  .warning {
+    background: #fff7ed;
+    border: 1px solid #ffedd5;
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin: 2rem 0;
+  }
+
+  .footer-note {
+    position: absolute;
+    bottom: 20mm;
+    left: 20mm;
+    right: 20mm;
+    font-size: 0.8rem;
+    color: #94a3b8;
+    text-align: center;
+    border-top: 1px solid #e2e8f0;
+    padding-top: 1rem;
+  }
+</style>
+</head>
+<body>
+
+<!-- PAGE 1: COVER -->
+<div class="page">
+  <div class="cover">
+    <img src="guia_federal_72h_cover_1777678814814.png" class="cover-img" alt="Portada Guía Federal">
+    <h1>Kit de Supervivencia</h1>
+    <h2>Las Primeras 72 Horas</h2>
+    <p style="margin-top: 3rem; font-size: 1.1rem; opacity: 0.7;">Protocolos Críticos de Emergencia para el Sistema Federal de EE.UU.</p>
+    <div style="margin-top: 2rem; width: 50mm; height: 2px; background: var(--gold);"></div>
+    <p style="margin-top: 1rem; font-weight: 700; color: #fcd34d;">GUÍA FEDERAL</p>
+  </div>
+</div>
+
+<!-- PAGE 2: CHECKLIST -->
+<div class="page">
+  <div class="header">
+    <h3>Guía Federal</h3>
+    <span style="font-size: 0.8rem; color: #64748b;">Confidencial · Solo para Familias</span>
+  </div>
+
+  <div class="section">
+    <h4>Fase 1: Inmediata (0-12 Horas)</h4>
+    <ul class="checklist">
+      <li><strong>Localización:</strong> No espere. Llame al USMS del distrito donde ocurrió el arresto. Tenga el nombre completo y fecha de nacimiento.</li>
+      <li><strong>Silencio Total:</strong> Informe a su familiar que NO hable del caso. El 90% de las pruebas contra detenidos vienen de sus propias llamadas grabadas.</li>
+      <li><strong>No contactar víctimas:</strong> Cualquier intento de "arreglar las cosas" será imputado como obstrucción a la justicia.</li>
+    </ul>
+  </div>
+
+  <div class="warning">
+    <strong>ATENCIÓN:</strong> El sistema federal NO funciona como el estatal. No existe el derecho a fianza automática. El juez decidirá basado en la recomendación del Oficial de Pre-Trial (PSO).
+  </div>
+
+  <div class="section">
+    <h4>Fase 2: La Entrevista PSO (12-48 Horas)</h4>
+    <ul class="checklist">
+      <li><strong>Verificación de Lazos:</strong> Esté atento a su teléfono. El oficial de Pre-Trial le llamará para verificar el domicilio y empleo del detenido.</li>
+      <li><strong>Documentación Lista:</strong> Tenga a mano recibos de servicios, contratos de renta y contactos de empleadores actuales.</li>
+      <li><strong>Sin hechos del caso:</strong> El oficial preguntará sobre su vida, no sobre el delito. No dé detalles del caso al oficial.</li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <h4>Fase 3: Audiencia de Detención (48-72 Horas)</h4>
+    <p>En esta audiencia se pelea la libertad. Su abogado necesitará demostrar que el detenido no es un "riesgo de fuga".</p>
+    <ul class="checklist">
+      <li>Asista a la audiencia con el mayor número de familiares directos posible para demostrar apoyo.</li>
+      <li>Tenga preparado un "Custodio de Tercera Parte" (alguien sin antecedentes penales que supervise al detenido).</li>
+    </ul>
+  </div>
+
+  <div class="footer-note">
+    Esta guía es informativa y no sustituye el consejo de un abogado federal. © 2026 Guía Federal.
+  </div>
+</div>
+
+</body>
+</html>

@@ -1,13 +1,13 @@
 # FronteraLegal
 
-**Federal Legal Guide for Latinos** — Bilingual (ES/EN) static website.
+**Guía Legal Federal para Latinos** — Sitio web estático en español.
 
-Guidance, documentation, and prison consulting services for Latino families with loved ones in the U.S. federal system.
+Orientación, documentación y servicios de consultoría penitenciaria para familias latinas con seres queridos en el sistema federal de EE.UU.
 
 ## Stack
-- Pure HTML/CSS/JS — zero dependencies
-- Liquid glass / glassmorphism design
-- Bilingual (Spanish primary, English secondary)
+- HTML/CSS/JS puro — cero dependencias
+- Diseño Liquid glass / glassmorphism
+- 100% en Español
 - Mobile-first responsive
 
 ## Deploy
