@@ -1,7 +1,7 @@
 #!/bin/bash
 # Double-click this file in Finder to push to GitHub
 cd "$(dirname "$0")"
-echo "=== NexBorder Git Push ==="
+echo "=== Guía Federal Git Push ==="
 echo "Pushing to origin/main..."
 git push origin main
 echo ""

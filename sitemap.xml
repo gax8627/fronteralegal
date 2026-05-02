@@ -4,14 +4,14 @@
 
   <!-- CORE PAGES -->
   <url>
-    <loc>https://nexborder.com/</loc>
+    <loc>https://fronteralegal.vercel.app/</loc>
     <lastmod>2026-04-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
 
   <url>
-    <loc>https://nexborder.com/facilities</loc>
+    <loc>https://fronteralegal.vercel.app/facilities</loc>
     <lastmod>2026-04-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
@@ -19,28 +19,28 @@
 
   <!-- PRE-TRIAL GUIDE PAGES -->
   <url>
-    <loc>https://nexborder.com/arrestado-federal</loc>
+    <loc>https://fronteralegal.vercel.app/arrestado-federal</loc>
     <lastmod>2026-04-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.95</priority>
   </url>
 
   <url>
-    <loc>https://nexborder.com/audiencia-detencion</loc>
+    <loc>https://fronteralegal.vercel.app/audiencia-detencion</loc>
     <lastmod>2026-04-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.95</priority>
   </url>
 
   <url>
-    <loc>https://nexborder.com/encuentra-familiar</loc>
+    <loc>https://fronteralegal.vercel.app/encuentra-familiar</loc>
     <lastmod>2026-04-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
 
   <url>
-    <loc>https://nexborder.com/segunda-opinion</loc>
+    <loc>https://fronteralegal.vercel.app/segunda-opinion</loc>
     <lastmod>2026-04-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
@@ -48,14 +48,14 @@
 
   <!-- POST-CONVICTION GUIDES -->
   <url>
-    <loc>https://nexborder.com/fsa</loc>
+    <loc>https://fronteralegal.vercel.app/fsa</loc>
     <lastmod>2026-04-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
-    <loc>https://nexborder.com/rdap</loc>
+    <loc>https://fronteralegal.vercel.app/rdap</loc>
     <lastmod>2026-04-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -63,35 +63,35 @@
 
   <!-- PRE-TRIAL MDC/FDC FACILITY PAGES -->
   <url>
-    <loc>https://nexborder.com/facilities/ny/mdc-brooklyn</loc>
+    <loc>https://fronteralegal.vercel.app/facilities/ny/mdc-brooklyn</loc>
     <lastmod>2026-04-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
 
   <url>
-    <loc>https://nexborder.com/facilities/ca/mdc-los-angeles</loc>
+    <loc>https://fronteralegal.vercel.app/facilities/ca/mdc-los-angeles</loc>
     <lastmod>2026-04-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
 
   <url>
-    <loc>https://nexborder.com/facilities/fl/fdc-miami</loc>
+    <loc>https://fronteralegal.vercel.app/facilities/fl/fdc-miami</loc>
     <lastmod>2026-04-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
 
   <url>
-    <loc>https://nexborder.com/facilities/tx/fdc-houston</loc>
+    <loc>https://fronteralegal.vercel.app/facilities/tx/fdc-houston</loc>
     <lastmod>2026-04-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
 
   <url>
-    <loc>https://nexborder.com/facilities/pa/fdc-philadelphia</loc>
+    <loc>https://fronteralegal.vercel.app/facilities/pa/fdc-philadelphia</loc>
     <lastmod>2026-04-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
@@ -99,42 +99,42 @@
 
   <!-- POST-CONVICTION FACILITY SPOKE PAGES -->
   <url>
-    <loc>https://nexborder.com/facilities/ca/victorville-usp</loc>
+    <loc>https://fronteralegal.vercel.app/facilities/ca/victorville-usp</loc>
     <lastmod>2026-04-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
 
   <url>
-    <loc>https://nexborder.com/facilities/ca/lompoc-fci</loc>
+    <loc>https://fronteralegal.vercel.app/facilities/ca/lompoc-fci</loc>
     <lastmod>2026-04-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
 
   <url>
-    <loc>https://nexborder.com/facilities/tx/seagoville-fci</loc>
+    <loc>https://fronteralegal.vercel.app/facilities/tx/seagoville-fci</loc>
     <lastmod>2026-04-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
 
   <url>
-    <loc>https://nexborder.com/facilities/fl/coleman-usp</loc>
+    <loc>https://fronteralegal.vercel.app/facilities/fl/coleman-usp</loc>
     <lastmod>2026-04-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
 
   <url>
-    <loc>https://nexborder.com/facilities/nj/fort-dix-fci</loc>
+    <loc>https://fronteralegal.vercel.app/facilities/nj/fort-dix-fci</loc>
     <lastmod>2026-05-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
 
   <url>
-    <loc>https://nexborder.com/facilities/ca/terminal-island-fci</loc>
+    <loc>https://fronteralegal.vercel.app/facilities/ca/terminal-island-fci</loc>
     <lastmod>2026-05-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
@@ -142,14 +142,14 @@
 
   <!-- BLOG -->
   <url>
-    <loc>https://nexborder.com/blog/</loc>
+    <loc>https://fronteralegal.vercel.app/blog/</loc>
     <lastmod>2026-04-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
-    <loc>https://nexborder.com/blog/first-step-act-creditos-etc</loc>
+    <loc>https://fronteralegal.vercel.app/blog/first-step-act-creditos-etc</loc>
     <lastmod>2026-04-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>

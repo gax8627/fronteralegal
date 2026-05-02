@@ -1,8 +1,8 @@
-// NEXBORDER NATIONAL CONFIG ENGINE
+// GUÍA FEDERAL NATIONAL CONFIG ENGINE
 const nexConfig = {
   whatsappNumber: "1234567890", // TODO: Replace with your actual WhatsApp number
   formspreeId: "YOUR_ID_HERE",  // TODO: Replace with your Formspree ID
-  nationalSupportEmail: "contact@nexborder.com"
+  nationalSupportEmail: "info@guia-federal.com"
 };
 
 // Auto-inject into all Lead Capture CTAs
@@ -73,7 +73,7 @@ function waFallback(data) {
   const tipoTexto = tipoLabels[tipo] || tipo;
 
   const lines = [
-    '👋 Hola NexBorder, me comunico desde su sitio web.',
+    '👋 Hola Guía Federal, me comunico desde su sitio web.',
     nombre      ? `👤 Nombre: ${nombre}`            : '',
     telefono    ? `📞 Teléfono: ${telefono}`         : '',
     instalacion ? `🏛️ Instalación: ${instalacion}`  : '',

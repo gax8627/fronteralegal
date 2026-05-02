@@ -1,8 +1,8 @@
-# NexBorder: Federal Pre-Trial Legal Guidance for Families
+# Guía Federal: Federal Pre-Trial Legal Guidance for Families
 > Specialized consultancy for Latino families and defendants navigating the US federal pre-trial system, BOP detention, and ICE.
 
 ## Primary Focus: Federal Pre-Trial
-NexBorder helps families in the critical first 72 hours after a federal arrest — locating detained loved ones, understanding detention hearings, and evaluating legal representation.
+Guía Federal helps families in the critical first 72 hours after a federal arrest — locating detained loved ones, understanding detention hearings, and evaluating legal representation.
 
 ## Key Expertise
 - **Post-Arrest Guide**: Step-by-step for the first 72 hours after federal arrest. Rights under 5th Amendment, 6th Amendment, Vienna Convention, and Court Interpreters Act (28 U.S.C. § 1827).
@@ -30,9 +30,9 @@ NexBorder helps families in the critical first 72 hours after a federal arrest �
 - FDC Philadelphia (EDPA) — 700 Arch St, Philadelphia PA
 
 ## Ethical Guidelines
-- **Not a Law Firm**: NexBorder provides legal orientation and consulting; it does not provide direct courtroom representation. All work is supervised by or for licensed attorneys.
+- **Not a Law Firm**: Guía Federal provides legal orientation and consulting; it does not provide direct courtroom representation. All work is supervised by or for licensed attorneys.
 
 ## Contact
 - **WhatsApp**: +1-XXX-XXX-XXXX (configure in config.js)
-- **Email**: contact@nexborder.com
+- **Email**: info@guia-federal.com
 - **Consultation**: [Free Evaluation](/index.html#contact)

@@ -1,4 +1,4 @@
-const CACHE_NAME = 'guia-federal-v1';
+const CACHE_NAME = 'guia-federal-v2';
 const ASSETS = [
   '/',
   '/index.html',
@@ -16,17 +16,15 @@ const ASSETS = [
   '/blog/index.html',
   '/blog/entrevista-pso.html',
   '/blog/rdap-explicado.html',
-  '/facilities/ny/mdc-brooklyn.html',
-  '/facilities/ca/mdc-los-angeles.html',
-  '/facilities/fl/fdc-miami.html',
-  '/facilities/tx/fdc-houston.html',
-  '/facilities/pa/fdc-philadelphia.html',
-  '/facilities/ca/lompoc-fci.html',
-  '/facilities/ca/victorville-usp.html',
-  '/facilities/ca/terminal-island-fci.html',
-  '/facilities/tx/seagoville-fci.html',
-  '/facilities/fl/coleman-usp.html',
-  '/facilities/nj/fort-dix-fci.html'
+  '/assets/hero-home.png',
+  '/assets/hero-arrestado.png',
+  '/assets/hero-audiencia.png',
+  '/assets/hero-facilities.png',
+  '/assets/hero-blog.png',
+  '/assets/bg-scales.png',
+  '/assets/bg-books.png',
+  '/assets/bg-court.png',
+  '/assets/brand-og.png'
 ];
 
 self.addEventListener('install', event => {

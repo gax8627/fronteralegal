@@ -1,5 +1,5 @@
 /* =============================================
-   NEXBORDER DESIGN SYSTEM — v3
+   GUÍA FEDERAL DESIGN SYSTEM — v1.0
    Font: Space Grotesk (headings) + Inter (body)
    ============================================= */
 :root {
@@ -440,8 +440,18 @@ nav.nav-open .nav-toggle span:nth-child(3) { transform: translateY(-7px) rotate(
   letter-spacing: 0.1em;
 }
 
-@media (max-width: 1024px) { .bento-grid { grid-template-columns: 1fr 1fr; } }
-@media (max-width: 640px)  { .bento-grid { grid-template-columns: 1fr; } }
+.bento-span-2 { grid-column: span 2; }
+
+@media (max-width: 1024px) {
+  .bento-grid { grid-template-columns: 1fr 1fr; }
+  .bento-span-2 { grid-column: span 2; }
+}
+
+@media (max-width: 640px) {
+  .bento-grid { grid-template-columns: 1fr; }
+  .bento-span-2 { grid-column: span 1; }
+  .wz-options { grid-template-columns: 1fr !important; }
+}
 
 /* =============================================
    SECTION DEFAULTS

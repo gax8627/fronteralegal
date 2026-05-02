@@ -1,4 +1,4 @@
-# NexBorder Website — Full Audit Report
+# Guía Federal Website — Full Audit Report
 **Date:** April 22, 2026  
 **Scope:** All 11 HTML pages, JS/CSS/config files, sitemap, manifest, and service worker  
 **Method:** Full file read + live federal law research (USSC, BOP, DOJ sources)
@@ -7,7 +7,7 @@
 
 ## 🔴 CRITICAL ISSUES — Legal / Factual Errors
 
-These must be corrected immediately. They contain legally inaccurate statements that could mislead clients or expose NexBorder to liability.
+These must be corrected immediately. They contain legally inaccurate statements that could mislead clients or expose Guía Federal to liability.
 
 ---
 
@@ -40,7 +40,7 @@ Additionally, FSA Earned Time Credits (ETC) apply toward **prerelease custody** 
 **File:** `facilities.html`  
 **Current text:** *"MCC New York — Logística crítica para familias en el Distrito Sur de NY"*
 
-**What's wrong:** The Metropolitan Correctional Center (MCC) New York **has been closed since August 2021** and has no confirmed reopening date. The BOP confirmed in 2023 that its "future is unknown." Listing it as an operational facility where NexBorder provides services is factually incorrect and will mislead families.
+**What's wrong:** The Metropolitan Correctional Center (MCC) New York **has been closed since August 2021** and has no confirmed reopening date. The BOP confirmed in 2023 that its "future is unknown." Listing it as an operational facility where Guía Federal provides services is factually incorrect and will mislead families.
 
 **Fix:** Remove MCC New York from the directory, or add a closed status note. Families in SDNY should be directed to MDC Brooklyn (Metropolitan Detention Center) instead.
 
