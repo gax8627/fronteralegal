@@ -9,13 +9,13 @@
 <meta property="og:description" content="Todo sobre el programa RDAP: Requisitos, beneficios y cómo auditar su elegibilidad.">
 <meta property="og:image" content="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=1200&auto=format&fit=crop&q=80">
 <meta property="og:type" content="article">
-<link rel="icon" type="image/png" href="../assets/brand-og.png">
-<link rel="stylesheet" href="../index.css">
-<script src="../config.js" defer></script>
+<link rel="icon" type="image/png" href="/assets/brand-og.png">
+<link rel="stylesheet" href="/index.css">
+<script src="/config.js" defer></script>
 <style>
   .article-hero {
     padding: 10rem 0 5rem;
-    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('assets/hero-rdap.png');
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('/assets/hero-rdap.png');
     background-size: cover;
     background-position: center;
     color: white;
@@ -56,11 +56,17 @@
 <body>
 
 <nav class="pill-nav">
-  <a href="../index.html" class="nav-brand">Guía<span>Federal</span></a>
+  <a href="/index.html" class="nav-brand">Guía<span>Federal</span></a>
+  <button class="nav-toggle" onclick="toggleNav()" aria-label="Abrir menú" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
   <div class="nav-links">
-    <a href="../index.html">Inicio</a>
-    <a href="index.html">Blog</a>
-    <a href="../index.html#contact" class="btn-cta wa-link">Consulta Gratis</a>
+    <a href="/index.html">Inicio</a>
+    <a href="/blog/index.html" class="active">Blog</a>
+    <svg class="theme-toggle-svg" onclick="toggleTheme()" viewBox="0 0 24 24" aria-label="Cambiar tema">
+      <path d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364-6.364l-.707.707M6.343 17.657l-.707.707m12.728 0l-.707-.707M6.343 6.343l-.707-.707M12 8a4 4 0 100 8 4 4 0 000-8z"/>
+    </svg>
+    <a href="/index.html#contact" class="btn-cta wa-link">Consulta Gratis</a>
   </div>
 </nav>
 
@@ -108,7 +114,7 @@
     <div style="margin-top: 4rem; padding-top: 2rem; border-top: 1px solid var(--border-hi);">
       <h3>¿Tiene preguntas sobre RDAP?</h3>
       <p>Nuestro equipo técnico puede revisar el PSR de su familiar y confirmar si es elegible para la reducción de 12 meses.</p>
-      <a href="../index.html#contact" class="btn-cta wa-link" style="display: inline-block; margin-top: 1rem;">Consultar por WhatsApp →</a>
+      <a href="/index.html#contact" class="btn-cta wa-link" style="display: inline-block; margin-top: 1rem;">Consultar por WhatsApp →</a>
     </div>
   </article>
 </main>
@@ -116,7 +122,7 @@
 <footer class="site-footer">
   <div class="container footer-grid">
     <div class="footer-col">
-      <a href="../index.html" class="nav-brand">Guía<span>Federal</span></a>
+      <a href="/index.html" class="nav-brand">Guía<span>Federal</span></a>
       <p>© 2026 Guía Federal. Orientación técnica, no legal.</p>
     </div>
   </div>

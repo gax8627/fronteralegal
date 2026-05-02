@@ -5,13 +5,13 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>La Entrevista PSO: El secreto para salir libre bajo fianza federal | Guía Federal</title>
 <meta name="description" content="Guía sobre la entrevista de Servicios Pre-Trial (PSO). Qué decir, qué callar y cómo la familia puede ayudar a asegurar la libertad de un detenido federal.">
-<link rel="icon" type="image/png" href="../assets/brand-og.png">
-<link rel="stylesheet" href="../index.css">
-<script src="../config.js" defer></script>
+<link rel="icon" type="image/png" href="/assets/brand-og.png">
+<link rel="stylesheet" href="/index.css">
+<script src="/config.js" defer></script>
 <style>
   .article-hero {
     padding: 10rem 0 5rem;
-    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=1600&auto=format&fit=crop&q=80');
+    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('/assets/hero-arrestado.png');
     background-size: cover;
     background-position: center;
     color: white;
@@ -47,11 +47,17 @@
 <body>
 
 <nav class="pill-nav">
-  <a href="../index.html" class="nav-brand">Guía<span>Federal</span></a>
+  <a href="/index.html" class="nav-brand">Guía<span>Federal</span></a>
+  <button class="nav-toggle" onclick="toggleNav()" aria-label="Abrir menú" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
   <div class="nav-links">
-    <a href="../index.html">Inicio</a>
-    <a href="index.html">Blog</a>
-    <a href="../index.html#contact" class="btn-cta wa-link">Consulta Gratis</a>
+    <a href="/index.html">Inicio</a>
+    <a href="/blog/index.html" class="active">Blog</a>
+    <svg class="theme-toggle-svg" onclick="toggleTheme()" viewBox="0 0 24 24" aria-label="Cambiar tema">
+      <path d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364-6.364l-.707.707M6.343 17.657l-.707.707m12.728 0l-.707-.707M6.343 6.343l-.707-.707M12 8a4 4 0 100 8 4 4 0 000-8z"/>
+    </svg>
+    <a href="/index.html#contact" class="btn-cta wa-link">Consulta Gratis</a>
   </div>
 </nav>
 
@@ -89,7 +95,7 @@
     <div style="margin-top: 4rem; padding-top: 2rem; border-top: 1px solid var(--border-hi);">
       <h3>¿Su familiar tiene la entrevista PSO pronto?</h3>
       <p>Podemos orientarle sobre cómo preparar la documentación de lazos comunitarios que el juez querrá ver en la audiencia de detención.</p>
-      <a href="../index.html#contact" class="btn-cta wa-link" style="display: inline-block; margin-top: 1rem;">Hablar con un consultor →</a>
+      <a href="/index.html#contact" class="btn-cta wa-link" style="display: inline-block; margin-top: 1rem;">Hablar con un consultor →</a>
     </div>
   </article>
 </main>
@@ -97,7 +103,7 @@
 <footer class="site-footer">
   <div class="container footer-grid">
     <div class="footer-col">
-      <a href="../index.html" class="nav-brand">Guía<span>Federal</span></a>
+      <a href="/index.html" class="nav-brand">Guía<span>Federal</span></a>
       <p>© 2026 Guía Federal. Orientación técnica pre-trial.</p>
     </div>
   </div>
