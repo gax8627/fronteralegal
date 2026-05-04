@@ -148,17 +148,59 @@ nav {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  min-height: 450px;
+  display: flex;
+  align-items: center;
 }
 
 .bg-overlay {
-  background: linear-gradient(rgba(15, 23, 42, 0.85), rgba(15, 23, 42, 0.85));
+  background: linear-gradient(135deg, rgba(15, 23, 42, 0.9) 0%, rgba(15, 23, 42, 0.6) 100%);
   width: 100%;
-  height: 100%;
-  padding: 6rem 0;
+  padding: 8rem 0 6rem;
+  display: flex;
+  align-items: center;
 }
 
 @media (max-width: 1024px) {
   .parallax-section { background-attachment: scroll; }
+}
+
+/* Article Hero Standard */
+.article-hero {
+  position: relative;
+  width: 100%;
+  min-height: 500px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+.article-hero-inner {
+  position: relative;
+  z-index: 10;
+  width: 100%;
+  padding: 10rem 0 6rem;
+  background: linear-gradient(rgba(11, 17, 32, 0.8), rgba(11, 17, 32, 0.4));
+}
+
+.article-hero h1 {
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  color: #fff;
+  line-height: 1.1;
+  margin-bottom: 1.5rem;
+  text-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+
+.article-hero-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
 }
 
 .btn-cta {
