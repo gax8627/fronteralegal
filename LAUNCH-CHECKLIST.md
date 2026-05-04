@@ -1,6 +1,6 @@
 # 🚀 Lista de Verificación para el Lanzamiento — Guía Federal
 
-Este documento detalla los pasos finales necesarios para poner el sitio en producción y comenzar a captar leads de alta intención.
+Este documento detalla los pasos finales necesarios para poner el sitio en producción y comenzar a captar leads de alta intención. **Estrategia táctica y visual endurecida (Mayo 2026).**
 
 ## 1. Dominio e Infraestructura
 - [ ] **Comprar Dominio**: Adquirir `guia-federal.com` (Recomendado: Porkbun por precio fijo de renovación).
@@ -27,4 +27,4 @@ Este documento detalla los pasos finales necesarios para poner el sitio en produ
 - [ ] **Favicon**: Verificar que el icono de la pestaña del navegador sea el correcto.
 
 ---
-**Estado del Proyecto:** La estructura técnica, el rebranding y el contenido de SEO están listos al 100%. Solo falta la conectividad externa.
+**Estado del Proyecto:** La estructura técnica, el rebranding, el contenido táctico de SEO (15 artículos) y la identidad visual premium están listos al 100%. Solo falta la conectividad externa (Dominio/Formspree/GA4).
