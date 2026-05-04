@@ -10,6 +10,7 @@
 <meta property="og:image" content="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=1200&auto=format&fit=crop&q=80">
 <meta property="og:type" content="article">
 <link rel="icon" type="image/png" href="/assets/brand-og.png">
+<link rel="manifest" href="/manifest.json">
 <link rel="stylesheet" href="/index.css">
 <script src="/config.js" defer></script>
 
@@ -21,6 +22,7 @@
   gtag("js", new Date());
   gtag("config", "G-XXXXXXXXXX");
 </script>
+<script>if("serviceWorker"in navigator){window.addEventListener("load",function(){navigator.serviceWorker.register("/sw.js").catch(function(){});});}</script>
 </head>
 <body>
 

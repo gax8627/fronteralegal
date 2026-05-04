@@ -12,6 +12,7 @@
 <meta name="twitter:card" content="summary_large_image">
 <link rel="canonical" href="https://fronteralegal.vercel.app/">
 <link rel="icon" type="image/png" href="/assets/brand-og.png">
+<link rel="manifest" href="/manifest.json">
 <!-- Global site tag (gtag.js) - Google Analytics Placeholder -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
 <script>
@@ -66,6 +67,7 @@
   gtag("js", new Date());
   gtag("config", "G-XXXXXXXXXX");
 </script>
+<script>if("serviceWorker"in navigator){window.addEventListener("load",function(){navigator.serviceWorker.register("/sw.js").catch(function(){});});}</script>
 </head>
 <body>
 

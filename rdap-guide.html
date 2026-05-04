@@ -12,6 +12,7 @@
 <meta name="twitter:card" content="summary_large_image">
 <link rel="canonical" href="https://fronteralegal.vercel.app/rdap-guide">
 <link rel="icon" type="image/png" href="/assets/brand-og.png">
+<link rel="manifest" href="/manifest.json">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -23,7 +24,7 @@
   "@type": "FAQPage",
   "mainEntity": [
     {"@type":"Question","name":"¿Cuánto reduce RDAP la sentencia federal?","acceptedAnswer":{"@type":"Answer","text":"RDAP puede reducir hasta 12 meses para sentencias de 37 meses o más, hasta 9 meses para sentencias de 31 a 36 meses, y hasta 6 meses para sentencias menores de 31 meses. La reducción es discrecional del BOP, no está garantizada por ley."}},
-    {"@type":"Question","name":"¿Quién califica para RDAP?","acceptedAnswer":{"@type":"Answer","text":"Para calificar para RDAP se requiere: historial documentado de abuso de sustancias, al menos 24 meses restantes de sentencia al momento de ingresar, delito no excluido por el BOP, sin impedimentos cognitivos que impidan participar, y ser elegible para preliberación."}},
+    {"@type":"Question","name":"¿Quién califica para RDAP?","acceptedAnswer":{"@type":"Answer","text":"Para calificar para RDAP se requiere: historial documentado de abuso de sustancias, al menos 24 meses restantes de sentencia al momento de ingresar, delito no excluido por el BOP (incluyendo cualquier delito sexual según 18 U.S.C. § 3621(e)(5)(B), no sólo contra menores), sin impedimentos cognitivos que impidan participar, y ser elegible para preliberación."}},
     {"@type":"Question","name":"¿Cuánto dura el programa RDAP?","acceptedAnswer":{"@type":"Answer","text":"El programa RDAP tiene tres fases: la fase residencial intensiva de 9 meses dentro de la instalación, seguimiento institucional, y la fase comunitaria (TCCA) en halfway house o confinamiento domiciliario."}},
     {"@type":"Question","name":"¿Se pueden combinar RDAP y créditos FSA?","acceptedAnswer":{"@type":"Answer","text":"Sí, en muchos casos. La reducción RDAP y los créditos ETC del First Step Act pueden complementarse, maximizando el tiempo de liberación anticipada. Guía Federal audita ambos programas simultáneamente."}}
   ]
@@ -37,6 +38,7 @@
   gtag("js", new Date());
   gtag("config", "G-XXXXXXXXXX");
 </script>
+<script>if("serviceWorker"in navigator){window.addEventListener("load",function(){navigator.serviceWorker.register("/sw.js").catch(function(){});});}</script>
 </head>
 <body>
 
@@ -100,7 +102,7 @@
         </div>
         <div class="bento-item">
           <h3>No aplica reducción</h3>
-          <p>Internos con ciertas <strong>condenas violentas</strong> (homicidio, violación, robo, secuestro, arson) no califican para la reducción de sentencia aunque pueden completar el programa.</p>
+          <p>Internos con ciertas <strong>condenas violentas</strong> (homicidio, violación, robo, secuestro, arson) o <strong>cualquier delito sexual</strong> según 18 U.S.C. § 3621(e)(5)(B) no califican para la reducción de sentencia aunque pueden completar el programa.</p>
         </div>
       </div>
     </div>
@@ -123,7 +125,7 @@
         </div>
         <div class="checklist-item">
           <div class="checklist-icon">✓</div>
-          <div><p><strong>Sin delito excluyente:</strong> No tener condena previa o actual por homicidio, violación forzada, robo, incendio provocado, secuestro, agresión agravada o delitos sexuales contra menores.</p></div>
+          <div><p><strong>Sin delito excluyente:</strong> No tener condena previa o actual por homicidio, violación forzada, robo, incendio provocado, secuestro, agresión agravada, <strong>ni ningún delito sexual</strong> tal como se define en 18 U.S.C. § 3621(e)(5)(B) — incluyendo ofensas contra adultos, no sólo menores.</p></div>
         </div>
         <div class="checklist-item">
           <div class="checklist-icon">✓</div>
