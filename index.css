@@ -1515,12 +1515,23 @@ footer {
 }
 
 .blog-cta-form input, .blog-cta-form textarea {
-  padding: 1rem;
+  width: 100%;
+  padding: 0.875rem 1rem;
   border: 1px solid var(--border-hi);
-  border-radius: var(--radius-md);
-  background: var(--bg);
+  border-radius: var(--radius);
+  background: var(--surface);
   color: var(--text);
-  font-size: 0.95rem;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.9rem;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  appearance: none;
+  -webkit-appearance: none;
+}
+.blog-cta-form input::placeholder, .blog-cta-form textarea::placeholder { color: var(--text-faint); }
+.blog-cta-form input:focus, .blog-cta-form textarea:focus {
+  outline: none;
+  border-color: var(--accent-hi);
+  box-shadow: 0 0 0 3px rgba(220,38,38,0.1);
 }
 
 .blog-cta-form textarea {

@@ -33,6 +33,8 @@
     transition: transform 0.2s, box-shadow 0.2s;
     display: flex;
     flex-direction: column;
+    position: relative;
+    cursor: pointer;
   }
   .blog-card:hover {
     transform: translateY(-3px);
@@ -92,6 +94,13 @@
     margin-top: auto;
   }
   .blog-read-link:hover { text-decoration: underline; }
+  /* Stretched link — the read-more anchor covers the entire card */
+  .blog-read-link::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+  }
   .blog-empty {
     text-align: center;
     color: var(--text-dim);
@@ -116,20 +125,20 @@
 
 <!-- NAV -->
 <nav class="pill-nav" role="navigation">
-  <a href="../index.html" class="nav-brand">Guía<span>Federal</span></a>
+  <a href="/" class="nav-brand">Guía<span>Federal</span></a>
   <button class="nav-toggle" onclick="toggleNav()" aria-label="Abrir menú" aria-expanded="false">
     <span></span><span></span><span></span>
   </button>
   <div class="nav-links">
-    <a href="../index.html" id="nav-inicio">Inicio</a>
-    <a href="../arrestado-federal.html" id="nav-arrestado">Arrestado Federal</a>
-    <a href="../audiencia-detencion.html" id="nav-audiencia">Audiencia</a>
-    <a href="../facilities.html" id="nav-directorio">Directorio</a>
-    <a href="../blog/index.html" id="nav-blog" class="active">Blog</a>
+    <a href="/" id="nav-inicio">Inicio</a>
+    <a href="/arrestado-federal" id="nav-arrestado">Arrestado Federal</a>
+    <a href="/audiencia-detencion" id="nav-audiencia">Audiencia</a>
+    <a href="/facilities" id="nav-directorio">Directorio</a>
+    <a href="/blog/" id="nav-blog" class="active">Blog</a>
     <svg class="theme-toggle-svg" onclick="toggleTheme()" viewBox="0 0 24 24" aria-label="Cambiar tema">
       <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/>
     </svg>
-    <a href="../contact.html" class="btn-cta wa-link">Consulta Gratis</a>
+    <a href="/#contact" class="btn-cta wa-link">Consulta Gratis</a>
   </div>
 </nav>
 
@@ -162,7 +171,7 @@
           <h2>Bajo Investigación Federal: Pasos para Sobrevivir al FBI, DEA y HSI</h2>
           <div class="blog-meta">03 de mayo de 2026 · 6 min de lectura</div>
           <p>El gobierno federal no arresta para investigar; investigan para arrestar. Aprenda qué hacer si recibe una Target Letter.</p>
-          <a href="../blog/investigacion-federal-que-hacer.html" class="blog-read-link">Ver pasos →</a>
+          <a href="/blog/investigacion-federal-que-hacer" class="blog-read-link">Ver pasos →</a>
         </div>
       </article>
 
@@ -177,7 +186,7 @@
           <h2>El Derecho al Silencio: Por qué "Aclarar las Cosas" es un Error Fatal</h2>
           <div class="blog-meta">03 de mayo de 2026 · 5 min de lectura</div>
           <p>El pez muere por la boca. Descubra por qué intentar explicarle a un agente federal es el error más costoso que puede cometer.</p>
-          <a href="../blog/derecho-a-guardar-silencio.html" class="blog-read-link">Leer advertencia →</a>
+          <a href="/blog/derecho-a-guardar-silencio" class="blog-read-link">Leer advertencia →</a>
         </div>
       </article>
 
@@ -192,7 +201,7 @@
           <h2>¿Cómo Vencer a un Fiscal Federal? Detenga sus Tácticas de Miedo</h2>
           <div class="blog-meta">03 de mayo de 2026 · 8 min de lectura</div>
           <p>Ellos usan el miedo para que usted firme. Aprenda por qué nunca debe reunirse con ellos sin auditar la evidencia primero.</p>
-          <a href="../blog/vencer-al-fiscal-federal.html" class="blog-read-link">Ver tácticas →</a>
+          <a href="/blog/vencer-al-fiscal-federal" class="blog-read-link">Ver tácticas →</a>
         </div>
       </article>
 
@@ -207,7 +216,7 @@
           <h2>¿Hay un Informante en su Caso? Cómo Obligar al Fiscal a Mostrar la Verdad</h2>
           <div class="blog-meta">03 de mayo de 2026 · 7 min de lectura</div>
           <p>No deje que un "chivato" decida su futuro. Aprenda a pedir las pruebas Brady y a obligar al informante a testificar frente a usted.</p>
-          <a href="../blog/informantes-y-brady-evidencia.html" class="blog-read-link">Ver tácticas →</a>
+          <a href="/blog/informantes-y-brady-evidencia" class="blog-read-link">Ver tácticas →</a>
         </div>
       </article>
 
@@ -222,7 +231,7 @@
           <h2>Pasos al Juicio Federal: ¿Qué es "In Limine" y Cómo Ganar Audiencias?</h2>
           <div class="blog-meta">03 de mayo de 2026 · 6 min de lectura</div>
           <p>Entienda el proceso de las audiencias, las mociones "in limine" y cuándo conviene pedir un Juicio Rápido (Speedy Trial).</p>
-          <a href="../blog/camino-al-juicio-federal.html" class="blog-read-link">Ver proceso →</a>
+          <a href="/blog/camino-al-juicio-federal" class="blog-read-link">Ver proceso →</a>
         </div>
       </article>
 
@@ -237,7 +246,7 @@
           <h2>Carga de la Prueba: Por qué Usted NO Tiene que Probar su Inocencia</h2>
           <div class="blog-meta">03 de mayo de 2026 · 7 min de lectura</div>
           <p>Usted es inocente hasta que se pruebe lo contrario. El trabajo de probarlo es del fiscal, no suyo. Entienda sus derechos básicos.</p>
-          <a href="../blog/presuncion-de-inocencia-explicada.html" class="blog-read-link">Ver explicación →</a>
+          <a href="/blog/presuncion-de-inocencia-explicada" class="blog-read-link">Ver explicación →</a>
         </div>
       </article>
 
@@ -252,7 +261,7 @@
           <h2>Mitigación de Sentencia Federal 2026: 5 Varianzas para Bajar sus Años</h2>
           <div class="blog-meta">03 de mayo de 2026 · 9 min de lectura</div>
           <p>No deje su futuro solo en manos de las guías. Aprenda cómo las Varianzas (§3553a) y la Narrativa Personal pueden reducir su tiempo.</p>
-          <a href="../blog/reducir-sentencia-federal-2026.html" class="blog-read-link">Ver tácticas →</a>
+          <a href="/blog/reducir-sentencia-federal-2026" class="blog-read-link">Ver tácticas →</a>
         </div>
       </article>
 
@@ -267,7 +276,7 @@
           <h2>Abogado Federal no Responde: Pasos para Obligar una Comunicación Efectiva</h2>
           <div class="blog-meta">03 de mayo de 2026 · 6 min de lectura</div>
           <p>La falta de comunicación es la queja #1. Aprenda cómo documentar el abandono y qué exigir bajo las reglas de ética de la Barra.</p>
-          <a href="../blog/abogado-no-responde-federal.html" class="blog-read-link">Ver tácticas →</a>
+          <a href="/blog/abogado-no-responde-federal" class="blog-read-link">Ver tácticas →</a>
         </div>
       </article>
 
@@ -282,7 +291,7 @@
           <h2>Cómo Evitar el Halfway House y Obtener Confinamiento Domiciliario 2026</h2>
           <div class="blog-meta">03 de mayo de 2026 · 8 min de lectura</div>
           <p>Bajo el memorando del 17 de junio de 2025, usted puede ir directo a casa. Descubra cómo el Plan de Liberación Documentado es su llave maestra.</p>
-          <a href="../blog/saltar-halfway-house-2026.html" class="blog-read-link">Leer secreto →</a>
+          <a href="/blog/saltar-halfway-house-2026" class="blog-read-link">Leer secreto →</a>
         </div>
       </article>
 
@@ -297,7 +306,7 @@
           <h2>Defensa de Mula Ciega: Cómo Probar que Usted NO Sabía del Cargamento</h2>
           <div class="blog-meta">03 de mayo de 2026 · 5 min de lectura</div>
           <p>Encontraron droga en su auto y no sabía. Aprenda qué pruebas técnicas buscar hoy mismo para demostrar su inocencia ante el CBP.</p>
-          <a href="../blog/mula-ciega-federal.html" class="blog-read-link">Ver defensa →</a>
+          <a href="/blog/mula-ciega-federal" class="blog-read-link">Ver defensa →</a>
         </div>
       </article>
 
@@ -312,7 +321,7 @@
           <h2>Extradiciones 2026: El Juego del Tablero entre México y EE.UU.</h2>
           <div class="blog-meta">03 de mayo de 2026 · 7 min de lectura</div>
           <p>¿Por qué tantos políticos están cayendo? Entienda cómo funciona la Regla 5K1.1 y los beneficios de la cooperación de alto nivel.</p>
-          <a href="../blog/extradicion-narcopolitica-2026.html" class="blog-read-link">Leer análisis →</a>
+          <a href="/blog/extradicion-narcopolitica-2026" class="blog-read-link">Leer análisis →</a>
         </div>
       </article>
 
@@ -327,7 +336,7 @@
           <h2>Entrevista de Pre-Trial (PSO): Cómo Ganar su Libertad sin Confesar</h2>
           <div class="blog-meta">01 de mayo de 2026 · 7 min de lectura</div>
           <p>El oficial de Pre-Trial es quien recomienda su libertad. Aprenda a navegar la entrevista sin dar munición a la fiscalía.</p>
-          <a href="../blog/entrevista-pso.html" class="blog-read-link">Ver guía →</a>
+          <a href="/blog/entrevista-pso" class="blog-read-link">Ver guía →</a>
         </div>
       </article>
 
@@ -342,7 +351,7 @@
           <h2>First Step Act: Cómo Ganar 15 Días de Crédito Mensuales (ETC)</h2>
           <div class="blog-meta">01 de mayo de 2026 · 12 min de lectura</div>
           <p>La guía definitiva sobre cómo ganar créditos de tiempo para salir meses (o años) antes de la prisión federal.</p>
-          <a href="../blog/first-step-act-creditos-etc.html" class="blog-read-link">Ver guía →</a>
+          <a href="/blog/first-step-act-creditos-etc" class="blog-read-link">Ver guía →</a>
         </div>
       </article>
 
@@ -357,7 +366,7 @@
           <h2>RDAP: El Programa que le Quita 12 Meses de su Sentencia</h2>
           <div class="blog-meta">01 de mayo de 2026 · 8 min de lectura</div>
           <p>¿Tiene problemas de adicción? El RDAP es el único programa que garantiza una reducción de hasta un año de tiempo.</p>
-          <a href="../blog/rdap-explicado.html" class="blog-read-link">Ver detalles →</a>
+          <a href="/blog/rdap-explicado" class="blog-read-link">Ver detalles →</a>
         </div>
       </article>
 
@@ -372,7 +381,7 @@
           <h2>Usted debe ser el Jefe de su Caso: El Poder de la Auto-Defensa</h2>
           <div class="blog-meta">01 de mayo de 2026 · 6 min de lectura</div>
           <p>No deje su vida solo en manos de un abogado. Aprenda a documentar su caso y a ser el líder de su propia libertad.</p>
-          <a href="../blog/ser-jefe-de-tu-libertad.html" class="blog-read-link">Ver mentalidad →</a>
+          <a href="/blog/ser-jefe-de-tu-libertad" class="blog-read-link">Ver mentalidad →</a>
         </div>
       </article>
 
@@ -384,23 +393,23 @@
 <footer class="site-footer">
   <div class="container footer-grid">
     <div class="footer-col">
-      <a href="../index.html" class="nav-brand">Guía<span>Federal</span></a>
+      <a href="/" class="nav-brand">Guía<span>Federal</span></a>
       <p>© 2026 Guía Federal. Orientación técnica para familias latinas.</p>
     </div>
     <div class="footer-col">
       <h5>Guías Rápidas</h5>
       <ul>
-        <li><a href="../arrestado-federal.html">Primeras 72 Horas</a></li>
-        <li><a href="../audiencia-detencion.html">Audiencia de Detención</a></li>
-        <li><a href="../segunda-opinion.html">El Abogado no Responde</a></li>
+        <li><a href="/arrestado-federal">Primeras 72 Horas</a></li>
+        <li><a href="/audiencia-detencion">Audiencia de Detención</a></li>
+        <li><a href="/segunda-opinion">El Abogado no Responde</a></li>
       </ul>
     </div>
     <div class="footer-col">
       <h5>Recursos</h5>
       <ul>
-        <li><a href="../facilities.html">Directorio de Prisiones</a></li>
-        <li><a href="../blog/index.html">Blog de Recursos</a></li>
-        <li><a href="../disclaimer.html">Aviso Legal</a></li>
+        <li><a href="/facilities">Directorio de Prisiones</a></li>
+        <li><a href="/blog/">Blog de Recursos</a></li>
+        <li><a href="/disclaimer">Aviso Legal</a></li>
       </ul>
     </div>
   </div>
