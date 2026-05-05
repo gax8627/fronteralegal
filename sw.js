@@ -1,4 +1,4 @@
-const CACHE_NAME = 'guia-federal-v5';
+const CACHE_NAME = 'guia-federal-v3';
 const ASSETS = [
   '/',
   '/index.css',
@@ -8,11 +8,13 @@ const ASSETS = [
   '/audiencia-detencion',
   '/encuentra-familiar',
   '/segunda-opinion',
+  '/fsa',
+  '/rdap',
   '/facilities',
   '/kit-supervivencia',
   '/blog/',
-  '/blog/plea-bargaining-federal',
   '/blog/entrevista-pso',
+  '/blog/rdap-explicado',
   '/assets/hero-home.png',
   '/assets/hero-arrestado.png',
   '/assets/hero-audiencia.png',
