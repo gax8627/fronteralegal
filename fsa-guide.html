@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Guía FSA: Auditoría Técnica de Créditos ETC | Guía Federal</title>
+<meta name="description" content="Guía técnica sobre los créditos del First Step Act (FSA). Cómo ganar días de crédito ETC y salir antes de la prisión federal.">
+<meta property="og:title" content="Guía FSA: Créditos de Tiempo Ganado | Guía Federal">
+<meta property="og:description" content="Todo lo que necesita saber sobre los créditos FSA: quién califica, cuánto gana y cómo auditamos el sistema SENTRY del BOP para asegurar cada día.">
+<meta property="og:image" content="https://fronteralegal.vercel.app/assets/brand-og.png">
+<meta property="og:type" content="article">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://fronteralegal.vercel.app/fsa-guide">
+<link rel="icon" type="image/png" href="./assets/brand-og.png">
+<link rel="manifest" href="./manifest.json">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="./index.css">
+<script src="config.js" defer></script>
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org","@type":"FAQPage",
+  "mainEntity":[
+    {"@type":"Question","name":"¿Cuántos créditos FSA se ganan?","acceptedAnswer":{"@type":"Answer","text":"10 días por cada 30 días de programación para internos de riesgo medio o alto. 15 días por cada 30 días para internos de riesgo bajo o mínimo según PATTERN."}},
+    {"@type":"Question","name":"¿Para qué sirven los créditos FSA?","acceptedAnswer":{"@type":"Answer","text":"Los créditos ETC se aplican a custodia de preliberación: transferencia anticipada a una casa de medio camino (halfway house) o confinamiento domiciliario."}},
+    {"@type":"Question","name":"¿Qué delitos no califican para FSA?","acceptedAnswer":{"@type":"Answer","text":"Existe una lista de delitos excluidos bajo 18 U.S.C. § 3632(d)(4)(D). Incluye ciertos delitos violentos, terrorismo y delitos sexuales contra menores. Auditamos el PSR para verificar."}},
+    {"@type":"Question","name":"¿Qué es el sistema SENTRY?","acceptedAnswer":{"@type":"Answer","text":"SENTRY es el sistema de registro del BOP donde se calculan los créditos ETC. Frecuentemente presenta errores de cálculo o retrasos. Lo auditamos mensualmente para cada cliente."}}
+  ]
+}
+</script>
+<!-- Global site tag (gtag.js) - Google Analytics Placeholder -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag("js", new Date());
+  gtag("config", "G-XXXXXXXXXX");
+</script>
+<script>if("serviceWorker"in navigator){window.addEventListener("load",function(){navigator.serviceWorker.register("/sw.js").catch(function(){});});}</script>
+<link rel="alternate" hreflang="es" href="https://fronteralegal.vercel.app/fsa-guide">
+</head>
+<body>
+
+<nav class="pill-nav" role="navigation">
+  <a href="/" class="nav-brand">Guía<span>Federal</span></a>
+  <button class="nav-toggle" onclick="toggleNav()" aria-label="Abrir menú" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+  <div class="nav-links">
+    <a href="/" id="nav-inicio">Inicio</a>
+    <a href="/arrestado-federal" id="nav-arrestado">Arrestado Federal</a>
+    <a href="/audiencia-detencion" id="nav-audiencia">Audiencia</a>
+    <a href="/facilities" id="nav-directorio">Directorio</a>
+    <a href="/blog/" id="nav-blog">Blog</a>
+    <svg class="theme-toggle-svg" onclick="toggleTheme()" viewBox="0 0 24 24" aria-label="Cambiar tema">
+      <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/>
+    </svg>
+    <a href="/#contact" class="btn-cta wa-link">Consulta Gratis</a>
+  </div>
+</nav>
+
+<main>
+
+  <!-- HERO -->
+  <section class="hero" style="min-height:70vh;">
+    <div class="hero-bg-container">
+      <img src="./assets/hero-fsa.png" alt="Guía FSA" class="hero-visual">
+    </div>
+    <div class="hero-content container">
+      <div style="margin-bottom:1.5rem; display:flex; justify-content:center; gap:0.75rem; align-items:center; flex-wrap:wrap;">
+        <span class="hero-eyebrow">First Step Act (FSA)</span>
+        <span style="background:rgba(220,38,38,0.1); color:var(--accent-hi); font-size:0.75rem; font-weight:700; text-transform:uppercase; letter-spacing:0.1em; padding:0.4rem 1rem; border-radius:100px; border:1px solid var(--accent-hi);">🇲🇽 Se Habla Español</span>
+      </div>
+      <h1>Auditoría Técnica<br>de Créditos ETC</h1>
+      <p>La guía definitiva para entender, calcular y recuperar sus créditos de tiempo ganado bajo el First Step Act federal.</p>
+      <div class="hero-actions">
+        <a href="#contact" class="btn-cta wa-link">Iniciar Auditoría Gratis</a>
+        <a href="#que-son" class="btn-cta-secondary">Cómo Funciona</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- QUÉ SON LOS CRÉDITOS -->
+  <section id="que-son" style="padding:6rem 0;">
+    <div class="container">
+      <span class="section-label">First Step Act — ETC</span>
+      <h2 class="section-title">¿Qué son los Créditos de Tiempo Ganado?</h2>
+      <p class="section-sub">El First Step Act (Ley 115-391, 2018) permite a los internos federales acumular días que reducen su tiempo en custodia federal participando en programas aprobados por el BOP.</p>
+      <div class="bento-grid" style="grid-template-columns:1fr 1fr;">
+        <div class="bento-item">
+          <h3>Tasa para Riesgo Medio / Alto</h3>
+          <p>Internos clasificados con riesgo de reincidencia <strong>medio o alto</strong> por el sistema PATTERN del BOP ganan <strong>10 días de crédito por cada 30 días</strong> de participación en programas aprobados.</p>
+        </div>
+        <div class="bento-item">
+          <h3>Tasa para Riesgo Bajo / Mínimo</h3>
+          <p>Internos clasificados con riesgo <strong>bajo o mínimo</strong> ganan <strong>15 días de crédito por cada 30 días</strong> de programación. Mantener dos evaluaciones consecutivas en bajo/mínimo consolida esta tasa.</p>
+        </div>
+        <div class="bento-item">
+          <h3>Hacia qué se aplican?</h3>
+          <p>Los créditos ETC se aplican a <strong>custodia de preliberación</strong>: transferencia anticipada a una Residential Reentry Center (casa de medio camino) o confinamiento domiciliario — no son una reducción directa de sentencia.</p>
+        </div>
+        <div class="bento-item">
+          <h3>Elegibilidad por Delito</h3>
+          <p>La mayoría de delitos federales califican. Se excluyen ciertos delitos violentos, terrorismo y delitos sexuales contra menores (18 U.S.C. § 3632(d)(4)(D)). Auditamos el PSR para confirmar elegibilidad en 24 horas.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROCESO DE AUDITORÍA -->
+  <section style="padding:6rem 0;background:var(--bg-alt);">
+    <div class="container">
+      <span class="section-label">Cómo Auditamos</span>
+      <h2 class="section-title">El proceso de auditoría SENTRY</h2>
+      <p class="section-sub">El BOP usa el sistema SENTRY para calcular créditos ETC. Frecuentemente presenta errores, omisiones o retrasos. Así es cómo los identificamos y corregimos.</p>
+      <div class="steps-grid">
+        <div class="step-card">
+          <div class="step-num">01</div>
+          <h4>Revisión del PSR y Sentencing</h4>
+          <p>Revisamos el Pre-Sentence Report para identificar el tipo de delito, puntos de nivel de ofensa y si existen exclusiones del catálogo FSA bajo 18 U.S.C. § 3632.</p>
+        </div>
+        <div class="step-card">
+          <div class="step-num">02</div>
+          <h4>Análisis PATTERN y Programas</h4>
+          <p>Verificamos el nivel de riesgo PATTERN asignado, los programas en los que participa el interno y si todos están aprobados por el BOP para acumulación de créditos ETC.</p>
+        </div>
+        <div class="step-card">
+          <div class="step-num">03</div>
+          <h4>Verificación en SENTRY</h4>
+          <p>Cruzamos la participación documentada contra los créditos registrados en SENTRY. Identificamos discrepancias, días faltantes o errores en la fecha de release proyectada.</p>
+        </div>
+      </div>
+
+      <!-- REMEDIOS ADMIN -->
+      <div style="margin-top:4rem;">
+        <h3 style="font-size:1.5rem;margin-bottom:1.5rem;">Si el BOP no aplica sus créditos — Remedios Administrativos</h3>
+        <div class="checklist">
+          <div class="checklist-item">
+            <div class="checklist-icon">1</div>
+            <div><p><strong>BP-8 (Informal):</strong> Primera solicitud al Counselor de la unidad. Respuesta en 10 días hábiles. Es el paso previo obligatorio antes de cualquier apelación formal.</p></div>
+          </div>
+          <div class="checklist-item">
+            <div class="checklist-icon">2</div>
+            <div><p><strong>BP-9 (Warden):</strong> Queja formal al Director de la instalación. Respuesta requerida en 20 días. Aquí documentamos la discrepancia con evidencia del cálculo SENTRY.</p></div>
+          </div>
+          <div class="checklist-item">
+            <div class="checklist-icon">3</div>
+            <div><p><strong>BP-10 (Regional Director):</strong> Apelación ante la Oficina Regional del BOP. Respuesta en 30 días. Si el BOP sigue sin corregir, se documenta el agotamiento de remedios.</p></div>
+          </div>
+          <div class="checklist-item">
+            <div class="checklist-icon">4</div>
+            <div><p><strong>BP-11 (General Counsel):</strong> Apelación final ante la Oficina Central del BOP. Abre la puerta a un habeas corpus federal (28 U.S.C. § 2241) si es necesario.</p></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="faq-section" style="padding:6rem 0;">
+    <div class="container">
+      <span class="section-label">Preguntas FSA</span>
+      <h2 class="section-title">Lo que las familias preguntan sobre FSA</h2>
+      <div class="faq-grid">
+        <div class="faq-item">
+          <h4>Mi familiar ya está ganando créditos FSA?</h4>
+          <p>No automáticamente. El interno debe estar participando activamente en programas aprobados por el BOP. Muchos internos pierden créditos por no conocer qué programas califican.</p>
+        </div>
+        <div class="faq-item">
+          <h4>Cuántos días puede ganar en total?</h4>
+          <p>Depende del tiempo restante de sentencia y del nivel de riesgo PATTERN. Un interno de bajo riesgo con 24 meses restantes podría acumular hasta 360 días de crédito hacia preliberación.</p>
+        </div>
+        <div class="faq-item">
+          <h4>Qué es PATTERN exactamente?</h4>
+          <p>Es el modelo de evaluación de riesgo y necesidades del BOP (Prisoner Assessment Tool Targeting Estimated Risk and Needs). Se recalcula periódicamente y puede mejorar con buena conducta y participación en programas.</p>
+        </div>
+        <div class="faq-item">
+          <h4>Los créditos FSA y la "good time" son lo mismo?</h4>
+          <p>No. Good Time Credit (54 días/año) es automático por buena conducta. Los créditos FSA (ETC) son adicionales y requieren participación activa en programas. Ambos se pueden combinar.</p>
+        </div>
+        <div class="faq-item">
+          <h4>Qué pasa si el BOP no registra los créditos?</h4>
+          <p>Iniciamos el proceso de remedios administrativos (BP-8 al BP-11). Si el BOP no corrige, documentamos el agotamiento de remedios para un habeas corpus federal ante el juez de distrito.</p>
+        </div>
+        <div class="faq-item">
+          <h4>Cuánto tarda ver resultados?</h4>
+          <p>La auditoría inicial toma 24-48 horas. La corrección por el BOP puede tomar 30-90 días dependiendo del nivel de remedio necesario. Los créditos correctamente aplicados actualizan la fecha de release en SENTRY.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- AUDIT CTA -->
+  <section style="padding: 4rem 0; background: var(--bg);">
+    <div class="container">
+      <div style="background: var(--surface); border: 2px solid var(--accent-hi); border-radius: var(--radius-lg); padding: 4rem; text-align: center; box-shadow: var(--shadow-lg);">
+        <span class="section-label">Servicio Premium</span>
+        <h2 style="margin-bottom: 1.5rem;">Auditoría Profesional de Créditos FSA</h2>
+        <p style="color: var(--text-dim); max-width: 700px; margin: 0 auto 2.5rem; font-size: 1.1rem;">No deje sus días de libertad al azar. Nuestro equipo realiza una auditoría técnica profunda de su expediente SENTRY y PSR para asegurar que reciba cada día de crédito ganado.</p>
+        
+        <div style="display: flex; justify-content: center; gap: 4rem; margin-bottom: 3rem; flex-wrap: wrap;">
+          <div style="text-align: left;">
+            <ul class="pricing-features">
+              <li>Revisión completa de PSR</li>
+              <li>Análisis de puntos PATTERN</li>
+              <li>Verificación de programas</li>
+            </ul>
+          </div>
+          <div style="text-align: left;">
+            <ul class="pricing-features">
+              <li>Identificación de días faltantes</li>
+              <li>Plan de acción BP-8/BP-9</li>
+              <li>Garantía de precisión técnica</li>
+            </ul>
+          </div>
+        </div>
+
+        <div style="background: var(--bg-alt); display: inline-block; padding: 1.5rem 3rem; border-radius: var(--radius); margin-bottom: 2rem;">
+          <span style="font-size: 0.9rem; color: var(--text-faint); text-transform: uppercase; font-weight: 700;">Orientación Técnica</span>
+          <div style="font-family: 'Space Grotesk', sans-serif; font-size: 3rem; font-weight: 800; color: var(--accent-hi);">Consultar</div>
+        </div>
+        
+        <div>
+          <a href="#contact" class="btn-cta" style="padding: 1.25rem 4rem; font-size: 1.1rem;">Solicitar Auditoría Ahora</a>
+        </div>
+        <p style="margin-top: 1.5rem; font-size: 0.85rem; color: var(--text-faint);">Recupere sus días. Asegure su fecha de salida.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT FORM -->
+  <section class="contact-section" id="contact" style="padding:6rem 0;">
+    <div class="container">
+      <div class="contact-inner">
+        <div class="contact-info">
+          <span class="section-label">Auditoría Gratuita</span>
+          <h2>¿Necesita una auditoría de créditos FSA?</h2>
+          <p>No deje la libertad de su familiar al azar del software del BOP. Revisamos el caso en 24 horas y le decimos exactamente cuántos créditos le corresponden.</p>
+          <div class="contact-alt">
+            <a href="#" class="wa-link">
+              
+              WhatsApp — Respuesta en minutos
+            </a>
+            <a href="mailto:info@guia-federal.com">
+              
+              info@guia-federal.com
+            </a>
+          </div>
+          <div class="legal-disclaimer">
+            
+            <p><strong>Guía Federal no es un despacho de abogados.</strong> Brindamos consultoría técnica federal. No ofrecemos representación legal en corte.</p>
+          </div>
+        </div>
+        <div class="contact-form-card">
+          <h3 style="font-size:1.25rem;margin-bottom:1.5rem;">Solicitar Auditoría FSA</h3>
+          <form class="contact-form" method="POST" id="contactForm" onsubmit="handleFormSubmit(event)">
+            <div class="form-row">
+              <input type="text" name="nombre" placeholder="Nombre completo" required class="form-input">
+              <input type="tel" name="telefono" placeholder="Teléfono / WhatsApp" required class="form-input">
+            </div>
+            <div class="form-row">
+              <input type="text" name="instalacion" placeholder="Instalación BOP (ej. USP Victorville)" class="form-input">
+              <select name="tipo" class="form-input form-select">
+                <option value="FSA">Créditos FSA (First Step Act)</option>
+                <option value="RDAP">Programa RDAP</option>
+                <option value="Administrativo">Remedio Administrativo</option>
+                <option value="Otro">Otro</option>
+              </select>
+            </div>
+            <textarea name="mensaje" placeholder="Número de registro BOP, fecha de sentencia, tiempo restante..." class="form-textarea"></textarea>
+            <button type="submit" class="btn-submit">Enviar Auditoría →</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- RECURSOS OFICIALES (EEAT) -->
+  <section style="padding:4rem 0; background:var(--surface); border-top:1px solid var(--border);">
+    <div class="container">
+      <h4 style="font-size:0.8rem; text-transform:uppercase; letter-spacing:0.15em; color:var(--text-faint); margin-bottom:1.5rem; text-align:center;">Fuentes Oficiales y Normativa</h4>
+      <div style="display:flex; justify-content:center; gap:2rem; flex-wrap:wrap; opacity:0.7;">
+        <a href="https://www.bop.gov/inmates/fsa/index.jsp" target="_blank" rel="noopener noreferrer" style="text-decoration:none; color:var(--text-dim); font-size:0.9rem; font-weight:600;">BOP: First Step Act Info</a>
+        <a href="https://www.ussc.gov/research/topic-areas/first-step-act" target="_blank" rel="noopener noreferrer" style="text-decoration:none; color:var(--text-dim); font-size:0.9rem; font-weight:600;">U.S. Sentencing Commission</a>
+        <a href="https://www.justice.gov/archives/dag/page/file/1155001/download" target="_blank" rel="noopener noreferrer" style="text-decoration:none; color:var(--text-dim); font-size:0.9rem; font-weight:600;">DOJ: FSA Final Rule</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div class="footer-col">
+      <a href="/" class="nav-brand">Guía<span>Federal</span></a>
+      <p>© 2026 Guía Federal. Orientación técnica para familias latinas.</p>
+    </div>
+    <div class="footer-col">
+      <h5>Guías Rápidas</h5>
+      <ul>
+        <li><a href="/arrestado-federal">Primeras 72 Horas</a></li>
+        <li><a href="/audiencia-detencion">Audiencia de Detención</a></li>
+        <li><a href="/segunda-opinion">El Abogado no Responde</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>Recursos</h5>
+      <ul>
+        <li><a href="/facilities">Directorio de Prisiones</a></li>
+        <li><a href="/blog/">Blog de Recursos</a></li>
+        <li><a href="/disclaimer">Aviso Legal</a></li>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+<a href="#" class="wa-float wa-link" aria-label="Consulta por WhatsApp">
+  <svg viewBox="0 0 24 24"><path d="M20.52 3.48A11.93 11.93 0 0012.04 0C5.42 0 .04 5.38.04 12c0 2.12.56 4.18 1.62 6L0 24l6.24-1.63A11.95 11.95 0 0012.04 24c6.62 0 12-5.38 12-12 0-3.2-1.25-6.21-3.52-8.52zM12.04 22c-1.79 0-3.54-.48-5.07-1.38l-.36-.21-3.76.98 1-3.67-.24-.38A9.96 9.96 0 012.04 12c0-5.51 4.49-10 10-10 2.67 0 5.18 1.04 7.07 2.93A9.93 9.93 0 0122.04 12c0 5.51-4.49 10-10 10zm5.48-7.44c-.3-.15-1.77-.87-2.04-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.61.14-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.67-1.61-.92-2.21-.24-.58-.49-.5-.67-.51h-.52c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.22 3.08c.15.2 2.1 3.2 5.09 4.49.71.31 1.26.49 1.69.63.71.23 1.36.2 1.87.12.57-.09 1.77-.72 2.02-1.42.25-.7.25-1.29.17-1.42-.07-.12-.27-.2-.57-.35z"/></svg>
+</a>
+
+</body>
+</html>
