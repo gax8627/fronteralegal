@@ -1491,7 +1491,7 @@ footer {
   padding: 3rem;
   margin: 4rem 0;
   text-align: center;
-  box-shadow: var(--shadow-xl);
+  box-shadow: var(--shadow-lg);
   border-top: 4px solid var(--accent-hi);
 }
 
@@ -1512,6 +1512,7 @@ footer {
   gap: 1rem;
   max-width: 700px;
   margin: 0 auto;
+  text-align: left;
 }
 
 .blog-cta-form input, .blog-cta-form textarea {
@@ -1519,7 +1520,7 @@ footer {
   padding: 0.875rem 1rem;
   border: 1px solid var(--border-hi);
   border-radius: var(--radius);
-  background: var(--surface);
+  background: var(--bg);
   color: var(--text);
   font-family: 'Inter', sans-serif;
   font-size: 0.9rem;
