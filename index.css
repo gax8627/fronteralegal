@@ -1507,46 +1507,44 @@ footer {
 }
 
 .blog-cta-form {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 1rem;
-  max-width: 700px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.875rem;
+  max-width: 540px;
   margin: 0 auto;
   text-align: left;
 }
 
 .blog-cta-form input, .blog-cta-form textarea {
   width: 100%;
-  padding: 0.875rem 1rem;
-  border: 1px solid var(--border-hi);
+  padding: 0.9rem 1.1rem;
+  border: 1.5px solid var(--border-hi);
   border-radius: var(--radius);
   background: var(--bg);
   color: var(--text);
   font-family: 'Inter', sans-serif;
-  font-size: 0.9rem;
+  font-size: 0.95rem;
   transition: border-color 0.2s, box-shadow 0.2s;
   appearance: none;
   -webkit-appearance: none;
+  box-sizing: border-box;
 }
 .blog-cta-form input::placeholder, .blog-cta-form textarea::placeholder { color: var(--text-faint); }
 .blog-cta-form input:focus, .blog-cta-form textarea:focus {
   outline: none;
   border-color: var(--accent-hi);
-  box-shadow: 0 0 0 3px rgba(220,38,38,0.1);
+  box-shadow: 0 0 0 3px rgba(220,38,38,0.12);
 }
 
 .blog-cta-form textarea {
-  grid-column: span 2;
-  height: 100px;
+  height: 120px;
   resize: vertical;
 }
 
 .blog-cta-form button {
-  grid-column: span 2;
+  width: 100%;
 }
 
 @media (max-width: 600px) {
-  .blog-cta-form { grid-template-columns: 1fr; }
-  .blog-cta-form textarea, .blog-cta-form button { grid-column: span 1; }
   .blog-cta-card { padding: 2rem 1.5rem; }
 }
