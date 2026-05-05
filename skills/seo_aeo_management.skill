@@ -1,0 +1,50 @@
+# Skill: SEO & AEO Management for Guía Federal
+
+This skill provides instructions for maintaining and optimizing the platform for Search Engine Optimization (SEO) and Answer Engine Optimization (AEO).
+
+## Strategy Overview
+The objective is to dominate "high-intent" federal legal queries in Spanish, particularly those related to BOP programs (FSA, RDAP) and facility-specific information.
+
+## Metadata Standards
+Every page MUST include:
+1.  `<title>`: Primary keyword + " | Guía Federal".
+2.  `<meta name="description">`: 150-160 characters summary with a Call to Action.
+3.  `<link rel="canonical">`: Points to `https://fronteralegal.vercel.app/[page-slug]`.
+4.  Open Graph Tags: `og:title`, `og:description`, `og:image`, `og:type` (article for blogs, website for main pages).
+
+## AEO & Structured Data (JSON-LD)
+To ensure Answer Engines (Gemini, ChatGPT) correctly parse our content:
+- **Main Pages**: Use `Organization` and `FAQPage`.
+- **Guide Pages**: Use `HowTo` or `Article`.
+- **Facility Pages**: Use `GovernmentBuilding` and `FAQPage`.
+- **Blog Posts**: Use `BlogPosting`.
+
+### JSON-LD Pattern:
+```json
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Example Question?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Answer text here."
+      }
+    }
+  ]
+}
+```
+
+## Content Hierarchy
+- Exactly one `<h1>` per page.
+- Nested `<h2>` and `<h3>` for logical flow.
+- Bullet points for lists (easier for AI to parse).
+
+## Key Keywords
+- First Step Act créditos ETC
+- Programa RDAP reducción sentencia
+- Arrestado federal 72 horas
+- Visitas [Facility Name]
+- Abogado federal no responde
