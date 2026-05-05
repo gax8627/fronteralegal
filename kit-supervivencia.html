@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Kit de Supervivencia: Primeras 72 Horas | Guía Federal</title>
-<meta name="description" content="Descargue gratis la lista de verificación crítica para las primeras 72 horas tras un arresto federal. Localización, abogados y audiencias.">
+<meta name="description" content="Descargue el Kit de Supervivencia para Familias Federales. Guías prácticas y herramientas técnicas de orientación.">
 <link rel="icon" type="image/png" href="./assets/brand-og.png">
 <link rel="manifest" href="./manifest.json">
 <link rel="stylesheet" href="./index.css">
@@ -64,6 +64,16 @@
   gtag("config", "G-XXXXXXXXXX");
 </script>
 <script>if("serviceWorker"in navigator){window.addEventListener("load",function(){navigator.serviceWorker.register("/sw.js").catch(function(){});});}</script>
+<script src="config.js" defer></script>
+
+<meta property="og:title" content="Guía Federal — Kit Supervivencia">
+<meta property="og:description" content="Descargue el Kit de Supervivencia para Familias Federales. Guías prácticas y herramientas técnicas de orientación.">
+<meta property="og:image" content="https://fronteralegal.vercel.app/assets/brand-og.png">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="canonical" href="https://fronteralegal.vercel.app/kit-supervivencia">
+<link rel="alternate" hreflang="es" href="https://fronteralegal.vercel.app/kit-supervivencia">
 </head>
 <body>
 
@@ -73,15 +83,15 @@
     <span></span><span></span><span></span>
   </button>
   <div class="nav-links">
-    <a href="./index.html">Inicio</a>
-    <a href="./arrestado-federal.html">Arrestado Federal</a>
-    <a href="./audiencia-detencion.html">Audiencia</a>
-    <a href="./facilities.html">Directorio</a>
-    <a href="./blog/index.html">Blog</a>
+    <a href="./index.html" id="nav-inicio">Inicio</a>
+    <a href="./arrestado-federal.html" id="nav-arrestado">Arrestado Federal</a>
+    <a href="./audiencia-detencion.html" id="nav-audiencia">Audiencia</a>
+    <a href="./facilities.html" id="nav-directorio">Directorio</a>
+    <a href="./blog/index.html" id="nav-blog">Blog</a>
     <svg class="theme-toggle-svg" onclick="toggleTheme()" viewBox="0 0 24 24" aria-label="Cambiar tema">
-      <path d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364-6.364l-.707.707M6.343 17.657l-.707.707m12.728 0l-.707-.707M6.343 6.343l-.707-.707M12 8a4 4 0 100 8 4 4 0 000-8z"/>
+      <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/>
     </svg>
-    <a href="./#contact" class="btn-cta wa-link">Consulta Gratis</a>
+    <a href="./contact.html" class="btn-cta wa-link">Consulta Gratis</a>
   </div>
 </nav>
 
@@ -95,35 +105,67 @@
 
   <div class="container">
     <div class="magnet-card">
-      <h2 style="font-size: 1.5rem; margin-bottom: 1rem;">Descarga Gratuita (PDF)</h2>
-      <p style="color: var(--text-dim); font-size: 0.95rem;">Incluye la hoja de ruta crítica y la lista de verificación de emergencia para el tribunal federal.</p>
+      <h2 style="font-size: 1.5rem; margin-bottom: 1rem;">Elija su Nivel de Acceso</h2>
+      <p style="color: var(--text-dim); font-size: 0.95rem; margin-bottom: 2rem;">El tiempo es crítico. Obtenga la información que necesita para actuar hoy.</p>
       
-      <div class="checklist-preview">
-        <div class="checklist-item"><span>01</span> Localización inmediata (SENTRY / Marshal)</div>
-        <div class="checklist-item"><span>02</span> Qué preguntar al abogado de oficio</div>
-        <div class="checklist-item"><span>03</span> Preparación para la Audiencia de Detención</div>
-        <div class="checklist-item"><span>04</span> Cómo manejar las llamadas de la cárcel</div>
-      </div>
+      <div style="display: grid; grid-template-columns: 1fr 1.2fr; gap: 2rem;">
+        <!-- Option 1: Free -->
+        <div style="padding: 1.5rem; border: 1px solid var(--border); border-radius: var(--radius); background: var(--bg-alt);">
+          <h3 style="font-size: 1.1rem; margin-bottom: 0.5rem;">Básico</h3>
+          <div style="font-size: 1.5rem; font-weight: 800; color: var(--text); margin-bottom: 1rem;">Gratis</div>
+          <ul class="pricing-features" style="font-size: 0.8rem; margin-bottom: 1.5rem;">
+            <li>Guía PDF básica</li>
+            <li>Hoja de ruta inicial</li>
+          </ul>
+          <form onsubmit="handleMagnetSubmit(event)" id="freeForm">
+            <input type="email" class="magnet-input" placeholder="Correo" required style="font-size: 0.8rem; padding: 0.5rem; margin-bottom: 0.5rem;">
+            <button type="submit" class="btn-cta-secondary" style="width: 100%; font-size: 0.8rem; padding: 0.5rem; border-color: var(--border-hi);">Bajar PDF</button>
+          </form>
+        </div>
 
-      <form onsubmit="handleMagnetSubmit(event)" id="magnetForm">
-        <div class="form-group">
-          <label class="form-label">Su Nombre</label>
-          <input type="text" class="magnet-input" placeholder="Nombre completo" required>
+        <!-- Option 2: Premium -->
+        <div style="padding: 1.5rem; border: 2px solid var(--accent-hi); border-radius: var(--radius); position: relative; background: var(--surface); box-shadow: var(--shadow);">
+          <span style="position: absolute; top: -10px; right: 10px; background: var(--accent-hi); color: #fff; font-size: 0.6rem; padding: 0.2rem 0.5rem; border-radius: 4px; font-weight: 800; text-transform: uppercase;">Más Popular</span>
+          <h3 style="font-size: 1.1rem; margin-bottom: 0.5rem;">Logistics PRO</h3>
+          <div style="font-family: 'Space Grotesk', sans-serif; font-size: 1.5rem; font-weight: 800; color: var(--accent-hi); margin-bottom: 1rem;">Consultar</div>
+          <ul class="pricing-features" style="font-size: 0.8rem; margin-bottom: 1.5rem;">
+            <li><strong>Todo lo del Básico</strong></li>
+            <li>Guía de Llamadas (Scripts)</li>
+            <li>Plantilla de registro de visitas</li>
+            <li>Directorio de Enlace USMS</li>
+            <li>Calculadora de Fianza Previa</li>
+          </ul>
+          <a href="./contact.html" class="btn-cta" style="width: 100%; text-align: center; font-size: 0.8rem; padding: 0.6rem;">Solicitar Acceso PRO</a>
         </div>
-        <div class="form-group">
-          <label class="form-label">Correo Electrónico / WhatsApp</label>
-          <input type="text" class="magnet-input" placeholder="Para enviarle el kit" required>
-        </div>
-        <button type="submit" class="btn-submit" style="width: 100%;">Descargar Kit de Supervivencia →</button>
-        <p style="font-size: 0.75rem; color: var(--text-faint); margin-top: 1rem; text-align: center;">Privacidad 100% garantizada. Sin spam.</p>
-      </form>
+      </div>
+      
+      <p style="font-size: 0.75rem; color: var(--text-faint); margin-top: 1.5rem; text-align: center;">Privacidad 100% garantizada. Toda la información es técnica y educativa.</p>
     </div>
   </div>
 </main>
 
-<footer class="site-footer" style="padding: 4rem 0;">
-  <div class="container" style="text-align: center;">
-    <p style="color: var(--text-faint);">© 2026 Guía Federal · Consultoría Técnica</p>
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div class="footer-col">
+      <a href="./index.html" class="nav-brand">Guía<span>Federal</span></a>
+      <p>© 2026 Guía Federal. Orientación técnica para familias latinas.</p>
+    </div>
+    <div class="footer-col">
+      <h5>Guías Rápidas</h5>
+      <ul>
+        <li><a href="./arrestado-federal.html">Primeras 72 Horas</a></li>
+        <li><a href="./audiencia-detencion.html">Audiencia de Detención</a></li>
+        <li><a href="./segunda-opinion.html">El Abogado no Responde</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>Recursos</h5>
+      <ul>
+        <li><a href="./facilities.html">Directorio de Prisiones</a></li>
+        <li><a href="./blog/index.html">Blog de Recursos</a></li>
+        <li><a href="./disclaimer.html">Aviso Legal</a></li>
+      </ul>
+    </div>
   </div>
 </footer>
 

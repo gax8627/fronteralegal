@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Guía Federal — Orientación para Familias en el Sistema Federal de EE.UU.</title>
-<meta name="description" content="¿Arrestaron a tu familiar por cargos federales? Guía Federal guía a familias en las primeras 72 horas críticas: localizar al detenido, audiencia de detención, y qué hacer cuando el abogado no llama. Se Habla Español.">
+<meta name="description" content="Orientación técnica para familias con seres queridos en el sistema federal de EE.UU. Expertos en First Step Act, RDAP y logística penitenciaria.">
 <meta property="og:title" content="Guía Federal — Guía Legal Federal para Latinos">
 <meta property="og:description" content="Orientación técnica para familias con seres queridos en el sistema federal de EE.UU. Expertos en First Step Act, RDAP y logística penitenciaria.">
 <meta property="og:image" content="https://fronteralegal.vercel.app/assets/brand-og.png">
@@ -25,7 +25,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="./index.css">
-<script src="./config.js" defer></script>
+<script src="config.js" defer></script>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -68,6 +68,7 @@
   gtag("config", "G-XXXXXXXXXX");
 </script>
 <script>if("serviceWorker"in navigator){window.addEventListener("load",function(){navigator.serviceWorker.register("/sw.js").catch(function(){});});}</script>
+<link rel="alternate" hreflang="es" href="https://fronteralegal.vercel.app/">
 </head>
 <body>
 
@@ -77,15 +78,15 @@
     <span></span><span></span><span></span>
   </button>
   <div class="nav-links">
-    <a href="./index.html" class="active">Inicio</a>
-    <a href="./arrestado-federal.html">Arrestado Federal</a>
-    <a href="./audiencia-detencion.html">Audiencia</a>
-    <a href="./facilities.html">Directorio</a>
-    <a href="./blog/index.html">Blog</a>
+    <a href="./index.html" id="nav-inicio" class="active">Inicio</a>
+    <a href="./arrestado-federal.html" id="nav-arrestado">Arrestado Federal</a>
+    <a href="./audiencia-detencion.html" id="nav-audiencia">Audiencia</a>
+    <a href="./facilities.html" id="nav-directorio">Directorio</a>
+    <a href="./blog/index.html" id="nav-blog">Blog</a>
     <svg class="theme-toggle-svg" onclick="toggleTheme()" viewBox="0 0 24 24" aria-label="Cambiar tema">
-      <path d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364-6.364l-.707.707M6.343 17.657l-.707.707m12.728 0l-.707-.707M6.343 6.343l-.707-.707M12 8a4 4 0 100 8 4 4 0 000-8z"/>
+      <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/>
     </svg>
-    <a href="./#contact" class="btn-cta wa-link">Consulta Gratis</a>
+    <a href="./contact.html" class="btn-cta wa-link">Consulta Gratis</a>
   </div>
 </nav>
 
@@ -356,6 +357,70 @@
     </div>
   </section>
 
+  <!-- SERVICES & PRICING -->
+  <section id="servicios" style="padding: 8rem 0; background: var(--bg);">
+    <div class="container">
+      <div style="text-align: center; max-width: 800px; margin: 0 auto 4rem;">
+        <span class="section-label">Consultoría Especializada</span>
+        <h2 class="section-title" style="margin: 0 auto 1.5rem;">Nuestros Servicios Técnicos</h2>
+        <p class="section-sub" style="margin: 0 auto;">Ofrecemos orientación técnica de alto nivel para navegar el complejo sistema federal de EE.UU. De lo gratuito a lo especializado.</p>
+      </div>
+
+      <div class="pricing-grid">
+        <!-- Tier 1 -->
+        <div class="pricing-card">
+          <h3>Descubrimiento</h3>
+          <p style="color: var(--text-faint); font-size: 0.85rem;">Para orientación inicial</p>
+          <div class="price-tag">Gratis</div>
+          <ul class="pricing-features">
+            <li>Llamada de 15 minutos</li>
+            <li>Evaluación preliminar</li>
+            <li>Localización de familiar</li>
+            <li>Hoja de ruta básica</li>
+          </ul>
+          <a href="#contact" class="btn-cta-secondary" style="border-color: var(--border-hi); color: var(--text) !important; text-align: center;">Empezar Gratis</a>
+        </div>
+
+        <!-- Tier 2 -->
+        <div class="pricing-card popular">
+          <div class="popular-badge">Recomendado</div>
+          <h3>Auditoría Técnica</h3>
+          <p style="color: var(--text-faint); font-size: 0.85rem;">Revisión profunda de expediente</p>
+          <div class="price-tag">Consultar</div>
+          <ul class="pricing-features">
+            <li>Revisión de PSR y SENTRY</li>
+            <li>Cálculo de créditos FSA/ETC</li>
+            <li>Auditoría de elegibilidad RDAP</li>
+            <li>Identificación de errores BOP</li>
+            <li>Sesión de estrategia (45 min)</li>
+          </ul>
+          <a href="#contact" class="btn-cta" style="text-align: center; padding: 1rem;">Solicitar Presupuesto</a>
+        </div>
+
+        <!-- Tier 3 -->
+        <div class="pricing-card">
+          <h3>Remedios Admin.</h3>
+          <p style="color: var(--text-faint); font-size: 0.85rem;">Resolución de conflictos</p>
+          <div class="price-tag">Consultar</div>
+          <ul class="pricing-features">
+            <li>Redacción de BP-8 a BP-11</li>
+            <li>Argumentación técnica federal</li>
+            <li>Seguimiento de plazos legales</li>
+            <li>Gestión de traslados</li>
+            <li>Soporte continuo vía WhatsApp</li>
+          </ul>
+          <a href="#contact" class="btn-cta-secondary" style="border-color: var(--border-hi); color: var(--text) !important; text-align: center;">Ver Paquetes</a>
+        </div>
+      </div>
+
+      <div class="cta-banner">
+        <h2>¿Necesita un Plan a Medida?</h2>
+        <p>Cada caso federal es único. Si su situación requiere un enfoque personalizado, hablemos hoy mismo.</p>
+        <a href="#contact" class="btn-cta" style="padding: 1rem 3rem; font-size: 1.1rem;">Agendar Sesión Estratégica</a>
+      </div>
+    </div>
+  </section>
+
   <!-- FAQ -->
   <section class="faq-section" style="padding:6rem 0;">
     <div class="container">
@@ -483,44 +548,25 @@
 <footer class="site-footer">
   <div class="container footer-grid">
     <div class="footer-col">
-      <a href="./index.html" class="nav-brand" style="margin-bottom:0.75rem;display:inline-block;">Guía<span>Federal</span></a>
-      <p style="color:var(--text-faint);font-size:0.875rem;line-height:1.6;">Guía Federal Pre-Trial · Se Habla Español · 94 Distritos Judiciales</p>
-      <a href="mailto:info@guia-federal.com" style="color:var(--text-faint);font-size:0.85rem;">info@guia-federal.com</a>
+      <a href="./index.html" class="nav-brand">Guía<span>Federal</span></a>
+      <p>© 2026 Guía Federal. Orientación técnica para familias latinas.</p>
     </div>
     <div class="footer-col">
-      <h5>Guías Pre-Trial</h5>
+      <h5>Guías Rápidas</h5>
       <ul>
         <li><a href="./arrestado-federal.html">Primeras 72 Horas</a></li>
         <li><a href="./audiencia-detencion.html">Audiencia de Detención</a></li>
-        <li><a href="./encuentra-familiar.html">Localizar al Detenido</a></li>
-        <li><a href="./segunda-opinion.html">El Abogado No Responde</a></li>
-        <li><a href="#contact">Consulta Gratuita</a></li>
+        <li><a href="./segunda-opinion.html">El Abogado no Responde</a></li>
       </ul>
     </div>
     <div class="footer-col">
-      <h5>Instalaciones Pre-Trial</h5>
+      <h5>Recursos</h5>
       <ul>
-        <li><a href="./facilities/ny/mdc-brooklyn.html">MDC Brooklyn, NY</a></li>
-        <li><a href="./facilities/ca/mdc-los-angeles.html">MDC Los Ángeles, CA</a></li>
-        <li><a href="./facilities/fl/fdc-miami.html">FDC Miami, FL</a></li>
-        <li><a href="./facilities/tx/fdc-houston.html">FDC Houston, TX</a></li>
-        <li><a href="./facilities/pa/fdc-philadelphia.html">FDC Philadelphia, PA</a></li>
+        <li><a href="./facilities.html">Directorio de Prisiones</a></li>
+        <li><a href="./blog/index.html">Blog de Recursos</a></li>
+        <li><a href="./disclaimer.html">Aviso Legal</a></li>
       </ul>
     </div>
-    <div class="footer-col">
-      <h5>Post-Condena</h5>
-      <ul>
-        <li><a href="./fsa-guide.html">Guía FSA / ETC</a></li>
-        <li><a href="./rdap-guide.html">Programa RDAP</a></li>
-        <li><a href="./facilities.html">Directorio Nacional</a></li>
-        <li><a href="./blog/index.html">Blog</a></li>
-      </ul>
-    </div>
-  </div>
-  <div class="footer-bottom container">
-    <p>© 2026 Guía Federal. Todos los derechos reservados.</p>
-    <p><a href="./disclaimer.html" style="color:var(--text-faint); text-decoration:underline;">Exención de Responsabilidad Legal</a></p>
-    <p>IMPORTANTE: No somos abogados ni damos consejos legales. Esta es una guía de orientación técnica y educativa. · Atendemos los 94 distritos judiciales de EE.UU.</p>
   </div>
 </footer>
 

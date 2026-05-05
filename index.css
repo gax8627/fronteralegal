@@ -1358,3 +1358,183 @@ footer {
   .steps-grid { grid-template-columns: 1fr; }
   #wizard { padding: 1.75rem 1.25rem; }
 }
+/* =============================================
+   PRICING & SERVICES SECTION
+   ============================================= */
+.pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-top: 3.5rem;
+}
+
+.pricing-card {
+  background: var(--surface);
+  border: 1px solid var(--border-hi);
+  border-radius: var(--radius-lg);
+  padding: 3rem;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.3s cubic-bezier(0.16,1,0.3,1);
+  position: relative;
+  overflow: hidden;
+}
+
+.pricing-card.popular {
+  border: 2px solid var(--accent-hi);
+  transform: scale(1.05);
+  z-index: 2;
+  box-shadow: var(--shadow-lg);
+}
+
+.popular-badge {
+  position: absolute;
+  top: 1.25rem;
+  right: -2rem;
+  background: var(--accent-hi);
+  color: #fff;
+  padding: 0.25rem 3rem;
+  font-size: 0.7rem;
+  font-weight: 800;
+  transform: rotate(45deg);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.pricing-card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+  color: var(--text);
+}
+
+.price-tag {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 3rem;
+  font-weight: 800;
+  color: var(--accent-hi);
+  margin: 1.5rem 0;
+  display: flex;
+  align-items: baseline;
+  gap: 0.25rem;
+}
+
+.price-tag span {
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--text-faint);
+}
+
+.pricing-features {
+  list-style: none;
+  margin-bottom: 2.5rem;
+  flex-grow: 1;
+}
+
+.pricing-features li {
+  font-size: 0.95rem;
+  color: var(--text-dim);
+  margin-bottom: 0.75rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.pricing-features li::before {
+  content: '✓';
+  color: var(--accent-hi);
+  font-weight: 900;
+}
+
+.cta-banner {
+  background: var(--primary);
+  border-radius: var(--radius-lg);
+  padding: 4rem;
+  text-align: center;
+  color: #fff;
+  margin: 4rem 0;
+}
+
+.cta-banner h2 { color: #fff; margin-bottom: 1rem; }
+.cta-banner p { color: rgba(255,255,255,0.7); margin-bottom: 2rem; max-width: 600px; margin-left: auto; margin-right: auto; }
+
+@media (max-width: 768px) {
+  .pricing-card.popular { transform: none; }
+  .pricing-grid { gap: 1.5rem; }
+}
+
+/* Added by hardening script */
+.warning-card {
+  background: rgba(220, 38, 38, 0.05);
+  border-left: 4px solid var(--accent-hi);
+  padding: 2rem;
+  border-radius: 0 var(--radius-lg) var(--radius-lg) 0;
+  margin: 2.5rem 0;
+  font-size: 1.05rem;
+  line-height: 1.7;
+}
+.warning-card strong {
+  color: var(--accent-hi);
+  display: block;
+  margin-bottom: 0.5rem;
+  font-family: 'Space Grotesk', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* =============================================
+   BLOG LEAD CAPTURE CARD
+   ============================================= */
+.blog-cta-card {
+  background: var(--surface);
+  border: 1px solid var(--border-hi);
+  border-radius: var(--radius-lg);
+  padding: 3rem;
+  margin: 4rem 0;
+  text-align: center;
+  box-shadow: var(--shadow-xl);
+  border-top: 4px solid var(--accent-hi);
+}
+
+.blog-cta-card h3 {
+  font-size: 1.75rem;
+  margin-bottom: 1rem;
+}
+
+.blog-cta-card p {
+  color: var(--text-dim);
+  max-width: 600px;
+  margin: 0 auto 2.5rem;
+}
+
+.blog-cta-form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.blog-cta-form input, .blog-cta-form textarea {
+  padding: 1rem;
+  border: 1px solid var(--border-hi);
+  border-radius: var(--radius-md);
+  background: var(--bg);
+  color: var(--text);
+  font-size: 0.95rem;
+}
+
+.blog-cta-form textarea {
+  grid-column: span 2;
+  height: 100px;
+  resize: vertical;
+}
+
+.blog-cta-form button {
+  grid-column: span 2;
+}
+
+@media (max-width: 600px) {
+  .blog-cta-form { grid-template-columns: 1fr; }
+  .blog-cta-form textarea, .blog-cta-form button { grid-column: span 1; }
+  .blog-cta-card { padding: 2rem 1.5rem; }
+}

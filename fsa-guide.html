@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Guía FSA: Auditoría Técnica de Créditos ETC | Guía Federal</title>
-<meta name="description" content="Guía técnica del First Step Act: cómo calcular, auditar y recuperar créditos ETC en el BOP. Tasas por nivel PATTERN, sistema SENTRY y remedios administrativos.">
+<meta name="description" content="Guía técnica sobre los créditos del First Step Act (FSA). Cómo ganar días de crédito ETC y salir antes de la prisión federal.">
 <meta property="og:title" content="Guía FSA: Créditos de Tiempo Ganado | Guía Federal">
 <meta property="og:description" content="Todo lo que necesita saber sobre los créditos FSA: quién califica, cuánto gana y cómo auditamos el sistema SENTRY del BOP para asegurar cada día.">
 <meta property="og:image" content="https://fronteralegal.vercel.app/assets/brand-og.png">
@@ -17,7 +17,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="./index.css">
-<script src="./config.js" defer></script>
+<script src="config.js" defer></script>
 <script type="application/ld+json">
 {
   "@context":"https://schema.org","@type":"FAQPage",
@@ -38,6 +38,7 @@
   gtag("config", "G-XXXXXXXXXX");
 </script>
 <script>if("serviceWorker"in navigator){window.addEventListener("load",function(){navigator.serviceWorker.register("/sw.js").catch(function(){});});}</script>
+<link rel="alternate" hreflang="es" href="https://fronteralegal.vercel.app/fsa-guide">
 </head>
 <body>
 
@@ -47,15 +48,15 @@
     <span></span><span></span><span></span>
   </button>
   <div class="nav-links">
-    <a href="./index.html">Inicio</a>
-    <a href="./arrestado-federal.html">Arrestado Federal</a>
-    <a href="./audiencia-detencion.html">Audiencia</a>
-    <a href="./facilities.html">Directorio</a>
-    <a href="./blog/index.html">Blog</a>
+    <a href="./index.html" id="nav-inicio">Inicio</a>
+    <a href="./arrestado-federal.html" id="nav-arrestado">Arrestado Federal</a>
+    <a href="./audiencia-detencion.html" id="nav-audiencia">Audiencia</a>
+    <a href="./facilities.html" id="nav-directorio">Directorio</a>
+    <a href="./blog/index.html" id="nav-blog">Blog</a>
     <svg class="theme-toggle-svg" onclick="toggleTheme()" viewBox="0 0 24 24" aria-label="Cambiar tema">
-      <path d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364-6.364l-.707.707M6.343 17.657l-.707.707m12.728 0l-.707-.707M6.343 6.343l-.707-.707M12 8a4 4 0 100 8 4 4 0 000-8z"/>
+      <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/>
     </svg>
-    <a href="./#contact" class="btn-cta wa-link">Consulta Gratis</a>
+    <a href="./contact.html" class="btn-cta wa-link">Consulta Gratis</a>
   </div>
 </nav>
 
@@ -190,6 +191,44 @@
     </div>
   </section>
 
+  <!-- AUDIT CTA -->
+  <section style="padding: 4rem 0; background: var(--bg);">
+    <div class="container">
+      <div style="background: var(--surface); border: 2px solid var(--accent-hi); border-radius: var(--radius-lg); padding: 4rem; text-align: center; box-shadow: var(--shadow-lg);">
+        <span class="section-label">Servicio Premium</span>
+        <h2 style="margin-bottom: 1.5rem;">Auditoría Profesional de Créditos FSA</h2>
+        <p style="color: var(--text-dim); max-width: 700px; margin: 0 auto 2.5rem; font-size: 1.1rem;">No deje sus días de libertad al azar. Nuestro equipo realiza una auditoría técnica profunda de su expediente SENTRY y PSR para asegurar que reciba cada día de crédito ganado.</p>
+        
+        <div style="display: flex; justify-content: center; gap: 4rem; margin-bottom: 3rem; flex-wrap: wrap;">
+          <div style="text-align: left;">
+            <ul class="pricing-features">
+              <li>Revisión completa de PSR</li>
+              <li>Análisis de puntos PATTERN</li>
+              <li>Verificación de programas</li>
+            </ul>
+          </div>
+          <div style="text-align: left;">
+            <ul class="pricing-features">
+              <li>Identificación de días faltantes</li>
+              <li>Plan de acción BP-8/BP-9</li>
+              <li>Garantía de precisión técnica</li>
+            </ul>
+          </div>
+        </div>
+
+        <div style="background: var(--bg-alt); display: inline-block; padding: 1.5rem 3rem; border-radius: var(--radius); margin-bottom: 2rem;">
+          <span style="font-size: 0.9rem; color: var(--text-faint); text-transform: uppercase; font-weight: 700;">Orientación Técnica</span>
+          <div style="font-family: 'Space Grotesk', sans-serif; font-size: 3rem; font-weight: 800; color: var(--accent-hi);">Consultar</div>
+        </div>
+        
+        <div>
+          <a href="#contact" class="btn-cta" style="padding: 1.25rem 4rem; font-size: 1.1rem;">Solicitar Auditoría Ahora</a>
+        </div>
+        <p style="margin-top: 1.5rem; font-size: 0.85rem; color: var(--text-faint);">Recupere sus días. Asegure su fecha de salida.</p>
+      </div>
+    </div>
+  </section>
+
   <!-- CONTACT FORM -->
   <section class="contact-section" id="contact" style="padding:6rem 0;">
     <div class="container">
@@ -251,37 +290,27 @@
 
 </main>
 
-<footer>
-  <div class="container">
-    <div class="footer-grid">
-      <div>
-        <a href="./index.html" class="footer-brand">Guía<span>Federal</span></a>
-        <p class="footer-tagline">Consultoría técnica federal · Se Habla Español · 94 distritos judiciales de EE.UU.</p>
-        <a href="mailto:info@guia-federal.com" class="footer-email">info@guia-federal.com</a>
-      </div>
-      <div class="footer-col">
-        <h5>Servicios</h5>
-        <ul>
-          <li><a href="./fsa-guide.html">Guía FSA</a></li>
-          <li><a href="./rdap-guide.html">Guía RDAP</a></li>
-          <li><a href="./facilities.html">Directorio Nacional</a></li>
-          <li><a href="#contact">Consulta Gratuita</a></li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h5>Instalaciones</h5>
-        <ul>
-          <li><a href="./facilities/ca/victorville-usp.html">USP Victorville</a></li>
-          <li><a href="./facilities/ca/lompoc-fci.html">FCI Lompoc</a></li>
-          <li><a href="./facilities/tx/seagoville-fci.html">FCI Seagoville</a></li>
-          <li><a href="./facilities/fl/coleman-usp.html">FCC Coleman</a></li>
-          <li><a href="./facilities/nj/fort-dix-fci.html">FCI Fort Dix</a></li>
-        </ul>
-      </div>
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div class="footer-col">
+      <a href="./index.html" class="nav-brand">Guía<span>Federal</span></a>
+      <p>© 2026 Guía Federal. Orientación técnica para familias latinas.</p>
     </div>
-    <div class="footer-bottom">
-      <p>© 2026 Guía Federal — National Federal Authority.</p>
-      <p class="footer-disclaimer">Guía Federal es una consultoría técnica, no un despacho de abogados. No brinda representación legal en corte.</p>
+    <div class="footer-col">
+      <h5>Guías Rápidas</h5>
+      <ul>
+        <li><a href="./arrestado-federal.html">Primeras 72 Horas</a></li>
+        <li><a href="./audiencia-detencion.html">Audiencia de Detención</a></li>
+        <li><a href="./segunda-opinion.html">El Abogado no Responde</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>Recursos</h5>
+      <ul>
+        <li><a href="./facilities.html">Directorio de Prisiones</a></li>
+        <li><a href="./blog/index.html">Blog de Recursos</a></li>
+        <li><a href="./disclaimer.html">Aviso Legal</a></li>
+      </ul>
     </div>
   </div>
 </footer>
