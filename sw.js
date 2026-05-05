@@ -1,4 +1,4 @@
-const CACHE_NAME = 'guia-federal-v3';
+const CACHE_NAME = 'guia-federal-v4';
 const ASSETS = [
   '/',
   '/index.css',
