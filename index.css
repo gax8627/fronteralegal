@@ -441,12 +441,12 @@ nav.nav-open .nav-toggle span:nth-child(3) { transform: translateY(-7px) rotate(
 
 .siren-light.red {
   background: radial-gradient(circle at 15% 45%, rgba(255, 0, 0, 0.6) 0%, transparent 75%);
-  animation: siren-pulse-red 2.4s infinite ease-in-out;
+  animation: siren-pulse-red 4s infinite ease-in-out;
 }
 
 .siren-light.blue {
   background: radial-gradient(circle at 85% 45%, rgba(0, 100, 255, 0.6) 0%, transparent 75%);
-  animation: siren-pulse-blue 2.4s infinite ease-in-out;
+  animation: siren-pulse-blue 4s infinite ease-in-out;
 }
 
 @keyframes siren-pulse-red {
