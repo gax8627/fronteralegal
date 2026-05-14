@@ -1493,12 +1493,13 @@ footer {
 }
 
 .cta-banner {
-  background: var(--primary);
+  background: #0F0F0F; /* Consistent dark background for both themes */
   border-radius: var(--radius-lg);
   padding: 4rem;
   text-align: center;
   color: #fff;
   margin: 4rem 0;
+  border: 1px solid var(--border);
 }
 
 .cta-banner h2 { color: #fff; margin-bottom: 1rem; }
