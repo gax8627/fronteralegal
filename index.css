@@ -441,24 +441,24 @@ nav.nav-open .nav-toggle span:nth-child(3) { transform: translateY(-7px) rotate(
 
 .siren-light.red {
   background: radial-gradient(circle at 15% 45%, rgba(255, 0, 0, 0.6) 0%, transparent 75%);
-  animation: siren-pulse-red 3s infinite ease-in-out;
+  animation: siren-pulse-red 1.8s infinite ease-in-out;
 }
 
 .siren-light.blue {
   background: radial-gradient(circle at 85% 45%, rgba(0, 100, 255, 0.6) 0%, transparent 75%);
-  animation: siren-pulse-blue 3s infinite ease-in-out;
+  animation: siren-pulse-blue 1.8s infinite ease-in-out;
 }
 
 @keyframes siren-pulse-red {
   0%, 100% { opacity: 0; transform: scale(1); }
-  20% { opacity: 1; transform: scale(1.15); }
-  40% { opacity: 0; transform: scale(1); }
+  15% { opacity: 1; transform: scale(1.1); }
+  30% { opacity: 0; transform: scale(1); }
 }
 
 @keyframes siren-pulse-blue {
   0%, 50%, 100% { opacity: 0; transform: scale(1); }
-  70% { opacity: 1; transform: scale(1.15); }
-  90% { opacity: 0; transform: scale(1); }
+  65% { opacity: 1; transform: scale(1.1); }
+  80% { opacity: 0; transform: scale(1); }
 }
 
 /* =============================================
