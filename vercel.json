@@ -75,5 +75,43 @@
       "destination": "/rdap-guide",
       "permanent": true
     }
+  ],
+  "rewrites": [
+    {
+      "source": "/estrategia-extradicion-san-diego-2026",
+      "destination": "/blog/estrategia-extradicion-san-diego-2026"
+    },
+    {
+      "source": "/auditoria-pattern-bop-2026",
+      "destination": "/blog/auditoria-pattern-bop-2026"
+    },
+    {
+      "source": "/arresto-federal-san-diego-72-horas",
+      "destination": "/blog/arresto-federal-san-diego-72-horas"
+    },
+    {
+      "source": "/plea-bargaining-federal",
+      "destination": "/blog/plea-bargaining-federal"
+    },
+    {
+      "source": "/investigacion-federal-que-hacer",
+      "destination": "/blog/investigacion-federal-que-hacer"
+    },
+    {
+      "source": "/derecho-a-guardar-silencio",
+      "destination": "/blog/derecho-a-guardar-silencio"
+    },
+    {
+      "source": "/vencer-al-fiscal-federal",
+      "destination": "/blog/vencer-al-fiscal-federal"
+    },
+    {
+      "source": "/informantes-y-brady-evidencia",
+      "destination": "/blog/informantes-y-brady-evidencia"
+    },
+    {
+      "source": "/first-step-act-creditos-etc",
+      "destination": "/blog/first-step-act-creditos-etc"
+    }
   ]
 }
