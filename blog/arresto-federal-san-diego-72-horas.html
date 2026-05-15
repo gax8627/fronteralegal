@@ -7,12 +7,12 @@
 <meta name="description" content="¿Acaban de arrestar a su familiar en San Diego? No pierda tiempo. Las primeras 72 horas ante el magistrado federal en el CASD deciden su libertad.">
 <meta property="og:title" content="Crisis Pre-Trial San Diego: Guía de Supervivencia | Guía Federal">
 <meta property="og:description" content="Qué hacer tras un arresto federal en San Diego. Cómo prepararse para la audiencia de detención y localizar a su familiar en el MCC.">
-<meta property="og:image" content="https://fronteralegal.vercel.a/assets/brand-og.png">
+<meta property="og:image" content="/assets/brand-og.png">
 <meta property="og:type" content="article">
 <link rel="canonical" href="https://fronteralegal.vercel.app/blog/arresto-federal-san-diego-72-horas">
 <link rel="icon" type="image/png" href="/assets/brand-og.png">
-<link rel="stylesheet" href="../index.css">
-<script src="../config.js" defer></script>
+<link rel="stylesheet" href="/index.css">
+<script src="/config.js" defer></script>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -22,7 +22,7 @@
   "author": {"@type": "Organization", "name": "Guía Federal"},
   "publisher": {"@type": "Organization", "name": "Guía Federal", "url": "https://fronteralegal.vercel.app"},
   "datePublished": "2026-05-15",
-  "url": "https://fronteralegal.vercel.app/blog/arresto-federal-san-diego-72-horas.html"
+  "url": "https://fronteralegal.vercel.app/blog/arresto-federal-san-diego-72-horas"
 }
 </script>
 <script type="application/ld+json">
@@ -30,71 +30,101 @@
   "@context": "https://schema.org",
   "@type": "FAQPage",
   "mainEntity": [
-    {"@type":"Question","name":"¿A dónde llevan a los arrestados federales en San Diego?","acceptedAnswer":{"@type":"Answer","text":"Generalmente son trasladados al Metropolitan Correctional Center (MCC) San Diego, ubicado en el centro de la ciudad, cerca de la corte federal."}},
-    {"@type":"Question","name":"¿Qué es la audiencia de detención?","acceptedAnswer":{"@type":"Answer","text":"Es la audiencia donde un magistrado federal decide si la persona puede salir bajo fianza (bond) o debe permanecer detenida hasta el juicio."}},
-    {"@type":"Question","name":"¿Cómo puedo ayudar a que mi familiar salga bajo fianza?","acceptedAnswer":{"@type":"Answer","text":"Usted debe proporcionar pruebas de arraigo: comprobantes de domicilio, empleo estable, cartas de carácter y posibles fiadores (sureties)."}},
-    {"@type":"Question","name":"¿Qué pasa si el arresto fue en la frontera (San Ysidro/Otay)?","acceptedAnswer":{"@type":"Answer","text":"El proceso es el mismo, pero el riesgo de fuga se percibe como mayor. Se requiere un plan de liberación mucho más robusto."}},
-    {"@type":"Question","name":"¿Puedo hablar con mi familiar el primer día?","acceptedAnswer":{"@type":"Answer","text":"Es difícil. El procesamiento puede tardar 24 horas. La primera oportunidad real de verlo suele ser en su comparecencia inicial en la corte."}}
+    {"@type":"Question","name":"¿A dónde llevan a los arrestados federales en San Diego?","acceptedAnswer":{"@type":"Answer","text":"Generalmente son trasladados al Metropolitan Correctional Center (MCC) San Diego, ubicado en el centro de la ciudad."}},
+    {"@type":"Question","name":"¿Qué es la audiencia de detención?","acceptedAnswer":{"@type":"Answer","text":"Es la audiencia donde un magistrado federal decide si la persona puede salir bajo fianza (bond) o debe permanecer detenida."}},
+    {"@type":"Question","name":"¿Cómo puedo ayudar a que mi familiar salga bajo fianza?","acceptedAnswer":{"@type":"Answer","text":"Usted debe proporcionar pruebas de arraigo: comprobantes de domicilio, empleo estable, y posibles fiadores."}},
+    {"@type":"Question","name":"¿Qué pasa si el arresto fue en la frontera?","acceptedAnswer":{"@type":"Answer","text":"El proceso es el mismo, pero el riesgo de fuga se percibe como mayor. Se requiere un plan de liberación mucho más robusto."}},
+    {"@type":"Question","name":"¿Puedo hablar con mi familiar el primer día?","acceptedAnswer":{"@type":"Answer","text":"Es difícil. El procesamiento puede tardar 24 horas. La primera oportunidad real de verlo es en su comparecencia inicial."}}
   ]
 }
 </script>
 </head>
 <body>
 
-<nav class="pill-nav">
+<!-- NAV -->
+<nav class="pill-nav" role="navigation">
   <a href="/" class="nav-brand">Guía<span>Federal</span></a>
+  <button class="nav-toggle" onclick="toggleNav()" aria-label="Abrir menú" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
   <div class="nav-links">
-    <a href="/">Inicio</a>
-    <a href="/blog/">Blog</a>
-    <a href="/#contact" class="btn-cta">Consulta Gratis</a>
+    <a href="/" id="nav-inicio">Inicio</a>
+    <a href="/arrestado-federal" id="nav-arrestado">Arrestado Federal</a>
+    <a href="/audiencia-detencion" id="nav-audiencia">Audiencia</a>
+    <a href="/facilities" id="nav-directorio">Directorio</a>
+    <a href="/blog/" id="nav-blog" class="active">Blog</a>
+    <svg class="theme-toggle-svg" onclick="toggleTheme()" viewBox="0 0 24 24" aria-label="Cambiar tema">
+      <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/>
+    </svg>
+    <a href="/#contact" class="btn-cta wa-link">Consulta Gratis</a>
   </div>
 </nav>
 
 <div class="article-hero">
   <div class="article-hero-inner">
+    <a href="/blog/" style="font-size:0.85rem; color:var(--accent-hi); text-decoration:none;">← Blog</a>
+    <div style="height:1.25rem;"></div>
     <span class="blog-tag">Crisis Pre-Trial: San Diego</span>
     <h1>72 Horas en San Diego: El Reloj que No se Detiene</h1>
     <div class="article-meta">
       <span>📅 15 de Mayo de 2026</span>
-      <span> 5 min de lectura</span>
+      <span> 7 min de lectura</span>
+      <span>✍ Guía Federal</span>
     </div>
-    <p>Un arresto federal en el CASD es una emergencia técnica. Si no tiene un plan antes de ver al magistrado, las probabilidades de salir bajo fianza caen drásticamente.</p>
+    <p style="font-size:1.1rem; color:var(--text-dim); line-height:1.7;">Un arresto federal en el Distrito Sur de California (CASD) es una emergencia técnica. Si no tiene un plan antes de ver al magistrado, las probabilidades de salir bajo fianza caen drásticamente.</p>
   </div>
-  <img class="article-hero-img" src="/assets/hero-arrestado.png" alt="Arresto Federal San Diego">
+  <img class="article-hero-img" src="/assets/hero-arrestado.png" alt="Arresto Federal San Diego" fetchpriority="high">
 </div>
 
 <div class="article-body">
   <div class="warning-card">
-    <p><strong>ATENCIÓN:</strong> El Distrito Sur de California tiene una de las tasas de detención más altas del país. No se confíe; la fianza federal no es un derecho automático.</p>
+    <p><strong>ATENCIÓN:</strong> El Distrito Sur de California tiene una de las tasas de detención más altas del país. No se confíe; la fianza federal no es un derecho automático, es una negociación técnica.</p>
   </div>
 
   <h2>El Magistrado Federal no es su amigo</h2>
-  <p>En su primera comparecencia en San Diego, el magistrado solo quiere saber dos cosas: **¿Se va a fugar?** y **¿Es peligroso?** Si su abogado está saturado de trabajo, es responsabilidad de la familia presentar un "Plan de Liberación" que calme los miedos del juez.</p>
+  <p>En su primera comparecencia en San Diego, el magistrado solo quiere saber dos cosas: <strong>¿Se va a fugar?</strong> y <strong>¿Es peligroso?</strong> Si su abogado está saturado de trabajo, es responsabilidad de la familia presentar un "Plan de Liberación" que calme los miedos del juez.</p>
+  
+  <p>Generalmente, el primer contacto legal será con un abogado de oficio (Public Defender) o un abogado CJA. Ellos tienen poco tiempo para investigar su arraigo. Usted debe ser proactivo.</p>
 
-  <h2>Los 3 Pilares de la Libertad Pre-Trial</h2>
-  <p>Para ganar su salida en San Diego, necesita:</p>
+  <h2>Los 3 Pilares de la Libertad en San Diego</h2>
+  <p>Para ganar su salida en el CASD, necesita construir una defensa de arraigo sólida:</p>
   <ul>
-    <li><strong>Un Fiador de Confianza:</strong> Alguien con estatus legal y propiedad/empleo en USA.</li>
-    <li><strong>Un Plan de Supervisión:</strong> ¿Dónde vivirá? ¿Cómo se reportará a Pre-Trial Services?</li>
-    <li><strong>Documentación de Arraigo:</strong> Cartas, fotos y evidencia de que no tiene intención de cruzar la frontera para siempre.</li>
+    <li><strong>Un Fiador de Confianza (Surety):</strong> Alguien con estatus legal, empleo estable y, preferiblemente, propiedad en EE.UU. que esté dispuesto a firmar por el acusado.</li>
+    <li><strong>Un Plan de Supervisión:</strong> ¿Dónde vivirá el acusado? ¿Cómo llegará a las audiencias? ¿Tiene una oferta de trabajo esperándolo?</li>
+    <li><strong>Pruebas de Arraigo Comunitario:</strong> Cartas de la iglesia, historial laboral, actas de nacimiento de hijos ciudadanos y cualquier vínculo que demuestre que no se irá a México.</li>
   </ul>
 
+  <div class="info-box">
+    <strong>Dato Crítico:</strong> El Oficial de Pre-Trial Services entrevistará al acusado antes de ver al juez. Lo que se diga en esa entrevista es la base de la recomendación de libertad. El acusado NO debe hablar del caso, solo de sus vínculos familiares y laborales.
+  </div>
+
+  <h2>Localizando a su familiar: El MCC San Diego</h2>
+  <p>Casi todos los arrestados federales en San Diego son llevados al <strong>Metropolitan Correctional Center (MCC)</strong>. El procesamiento puede tardar hasta 24 horas. No espere poder hablar con él de inmediato. Use este tiempo para recolectar los documentos que el abogado le pedirá mañana.</p>
+
   <div class="cta-banner">
-    <h3>¿Su familiar tiene audiencia de detención mañana?</h3>
-    <p>Le ayudamos a armar un plan de liberación técnico para presentar ante el magistrado de San Diego.</p>
-    <a href="#contact" class="btn-cta">Asistencia Pre-Trial Urgente</a>
+    <h3>¿Su familiar tiene audiencia mañana?</h3>
+    <p>Le ayudamos a armar un plan de liberación técnico para presentar ante el magistrado de San Diego de forma inmediata.</p>
+    <a href="/#contact" class="btn-cta">Asistencia Pre-Trial Urgente</a>
   </div>
 
   <section class="faqs" style="margin-top:4rem;">
-    <h2>Preguntas Frecuentes</h2>
+    <h2>Preguntas Frecuentes de Crisis</h2>
     <div class="faq-grid">
       <div class="faq-item">
         <h4>¿Qué es una 'Signature Bond'?</h4>
-        <p>Es una fianza donde usted firma comprometiendo una cantidad de dinero, pero no tiene que pagarla a menos que el acusado falte a la corte.</p>
+        <p>Es una fianza donde usted firma comprometiendo una cantidad de dinero, pero no tiene que pagarla a menos que el acusado falte a la corte. En San Diego es común si hay buenos fiadores.</p>
+      </div>
+      <div class="faq-item">
+        <h4>¿Puedo pagar para sacarlo hoy?</h4>
+        <p>No. En el sistema federal no existen las 'Bail Bonds' comerciales de la calle. Un juez debe aprobar los términos de la fianza primero.</p>
       </div>
       <div class="faq-item">
         <h4>¿El consultor puede hablar con mi abogado?</h4>
-        <p>Sí. Trabajamos como puente técnico para proporcionar al abogado la documentación de arraigo que él no tiene tiempo de recolectar.</p>
+        <p>Sí. Trabajamos como puente técnico para proporcionar al abogado la documentación de arraigo que él no tiene tiempo de recolectar en 24 horas.</p>
+      </div>
+      <div class="faq-item">
+        <h4>¿Qué pasa si tiene una alerta migratoria?</h4>
+        <p>Esto complica la fianza pero no la hace imposible. Se requiere una estrategia técnica para evitar que el ICE tome custodia inmediata si el juez federal ordena libertad.</p>
       </div>
     </div>
   </section>
@@ -102,19 +132,60 @@
   <section id="contact" style="margin-top:4rem;">
     <div class="contact-form-card">
       <h3>Asistencia por Arresto en San Diego</h3>
-      <p>Servicio de localización y plan de fianza inmediato.</p>
-      <form action="#" method="POST" class="contact-form">
+      <p>Servicio de localización y plan de fianza inmediato. Respuesta en menos de 1 hora.</p>
+      <form action="https://formspree.io/f/mqakpnvp" method="POST" class="contact-form">
         <div class="form-row">
-          <input type="text" placeholder="Su Nombre" class="form-input" required>
-          <input type="text" placeholder="Teléfono de Contacto" class="form-input" required>
+          <input type="text" name="nombre" placeholder="Su Nombre" class="form-input" required>
+          <input type="text" name="telefono" placeholder="Teléfono de Contacto" class="form-input" required>
         </div>
-        <input type="text" placeholder="Nombre del Detenido" class="form-input" style="margin-bottom:0.875rem;">
-        <textarea placeholder="¿Dónde fue el arresto y qué cargos enfrenta?" class="form-textarea" required></textarea>
+        <input type="text" name="detenido" placeholder="Nombre del Detenido" class="form-input" style="margin-bottom:0.875rem;">
+        <textarea name="mensaje" placeholder="¿Dónde fue el arresto y qué cargos enfrenta? (No de detalles del delito, solo del proceso)" class="form-textarea" required></textarea>
         <button type="submit" class="btn-submit">Activar Plan 72 Horas</button>
       </form>
     </div>
   </section>
 </div>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div class="footer-col">
+      <a href="/" class="nav-brand">Guía<span>Federal</span></a>
+      <p>© 2026 Guía Federal. Orientación técnica para familias latinas en el 9no Circuito.</p>
+    </div>
+    <div class="footer-col">
+      <h5>Enlaces Rápidos</h5>
+      <ul>
+        <li><a href="/arrestado-federal">Primeras 72 Horas</a></li>
+        <li><a href="/audiencia-detencion">Audiencia de Detención</a></li>
+        <li><a href="/blog/">Blog de Recursos</a></li>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+<script>
+function toggleNav() {
+  const links = document.querySelector('.nav-links');
+  const btn = document.querySelector('.nav-toggle');
+  const isExpanded = btn.getAttribute('aria-expanded') === 'true';
+  btn.setAttribute('aria-expanded', !isExpanded);
+  links.classList.toggle('active');
+}
+
+function toggleTheme() {
+  const html = document.documentElement;
+  const currentTheme = html.getAttribute('data-theme');
+  const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+  html.setAttribute('data-theme', newTheme);
+  localStorage.setItem('theme', newTheme);
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  const savedTheme = localStorage.getItem('theme') || 'light';
+  document.documentElement.setAttribute('data-theme', savedTheme);
+});
+</script>
 
 </body>
 </html>
