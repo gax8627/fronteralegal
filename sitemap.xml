@@ -275,4 +275,22 @@
     <priority>0.3</priority>
   </url>
 
+  <url>
+    <loc>https://fronteralegal.vercel.app/blog/estrategia-extradicion-san-diego-2026</loc>
+    <lastmod>2026-05-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://fronteralegal.vercel.app/blog/auditoria-pattern-bop-2026</loc>
+    <lastmod>2026-05-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://fronteralegal.vercel.app/blog/arresto-federal-san-diego-72-horas</loc>
+    <lastmod>2026-05-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
 </urlset>
