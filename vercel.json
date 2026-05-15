@@ -74,26 +74,6 @@
       "source": "/rdap",
       "destination": "/rdap-guide",
       "permanent": true
-    },
-    {
-      "source": "/blog/rdap-explicado",
-      "destination": "/blog",
-      "permanent": true
-    },
-    {
-      "source": "/blog/first-step-act-creditos-etc",
-      "destination": "/blog",
-      "permanent": true
-    },
-    {
-      "source": "/blog/reducir-sentencia-federal-2026",
-      "destination": "/blog",
-      "permanent": true
-    },
-    {
-      "source": "/blog/saltar-halfway-house-2026",
-      "destination": "/blog",
-      "permanent": true
     }
   ]
 }
