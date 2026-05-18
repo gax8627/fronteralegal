@@ -1,8 +1,9 @@
 // GUÍA FEDERAL NATIONAL CONFIG ENGINE
 const nexConfig = {
-  whatsappNumber: "1234567890", // TODO: Replace with your actual WhatsApp number
-  formspreeId: "YOUR_ID_HERE",  // TODO: Replace with your Formspree ID
-  nationalSupportEmail: "info@guia-federal.com"
+  whatsappNumber: "16196291612", // Placeholder based on San Diego area code
+  formspreeId: "mqakpnvp",
+  calendlyLink: "", // e.g. "https://calendly.com/guiafederal/15min" - Add this to maximize bookings
+  nationalSupportEmail: "info@guiafederal.com"
 };
 
 // Auto-inject into all Lead Capture CTAs
@@ -87,11 +88,18 @@ function waFallback(data) {
 
 // Show a success state on the form after Formspree submission
 function showFormSuccess(form) {
+  const hasCalendar = nexConfig.calendlyLink && nexConfig.calendlyLink !== "";
+  
+  const actionButton = hasCalendar 
+    ? `<a href="${nexConfig.calendlyLink}" target="_blank" style="display:inline-block; margin-top:1rem; padding:1rem 2rem; background:var(--text); color:var(--bg); text-decoration:none; border-radius:var(--radius-pill); font-weight:700;">Agendar Llamada en Calendario →</a>`
+    : `<a href="https://wa.me/${nexConfig.whatsappNumber}" target="_blank" style="display:inline-block; margin-top:1rem; padding:1rem 2rem; background:#25D366; color:#fff; text-decoration:none; border-radius:var(--radius-pill); font-weight:700;">Hablar por WhatsApp Ahora →</a>`;
+
   form.innerHTML = `
-    <div style="text-align:center; padding: 3rem 1rem;">
-      <div style="font-size:3rem; margin-bottom:1rem;">✅</div>
-      <h3 style="font-family:'Space Grotesk',sans-serif; margin-bottom:0.5rem;">¡Consulta Enviada!</h3>
-      <p style="color:var(--text-dim);">Le responderemos en menos de 24 horas. También puede contactarnos directamente por WhatsApp.</p>
+    <div style="text-align:center; padding: 2rem 1rem; background: var(--bg-alt); border-radius: var(--radius-lg); border: 2px solid var(--accent-hi);">
+      <div style="font-size:2.5rem; margin-bottom:0.5rem;">✅</div>
+      <h3 style="font-family:'Space Grotesk',sans-serif; margin-bottom:0.5rem;">¡Consulta Recibida!</h3>
+      <p style="color:var(--text-dim); font-size: 0.95rem;">Para no perder tiempo, elija la fecha y hora de su consulta a continuación:</p>
+      ${actionButton}
     </div>`;
 }
 
