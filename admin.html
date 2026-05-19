@@ -1,453 +1,538 @@
 <!DOCTYPE html>
-<html lang="es" data-theme="light">
+<html lang="es" data-theme="dark">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Centro de Control — Guía Federal</title>
 <link rel="icon" type="image/png" href="./assets/brand-og.png">
-<link rel="stylesheet" href="./index.css">
-<!-- Config & Firebase SDK CDN Compat -->
+
+<!-- Google Fonts & Tailwind CSS -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+
+<!-- Firebase SDK Compat Core -->
 <script src="./config.js"></script>
 <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-app-compat.js"></script>
 <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore-compat.js"></script>
 <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-auth-compat.js"></script>
+
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        fontFamily: {
+          sans: ['Inter', 'sans-serif'],
+          space: ['Space Grotesk', 'sans-serif'],
+        },
+      }
+    }
+  }
+</script>
+
 <style>
-  :root {
-    --primary-gradient: linear-gradient(135deg, #0b1120 0%, #1e1b4b 100%);
-  }
-
+  /* GLOWING ORGÁNICO / LIQUID GLASS SYSTEMS */
   body {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-    margin: 0;
-    padding: 0;
+    background-color: #050814;
+    font-family: 'Inter', sans-serif;
+    color: #f1f5f9;
+    overflow-x: hidden;
   }
 
-  /* LOGIN PAGE STYLING */
-  .login-wrapper {
-    flex: 1;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: var(--primary-gradient);
-    padding: 2rem;
-    position: relative;
-    overflow: hidden;
+  .glow-mesh {
+    position: absolute;
+    top: -200px;
+    right: -200px;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(220,38,38,0.08) 0%, rgba(99,102,241,0.05) 50%, rgba(0,0,0,0) 100%);
+    z-index: 0;
+    pointer-events: none;
+    filter: blur(80px);
   }
 
-  .login-card {
-    background: var(--glass-bg);
-    backdrop-filter: var(--glass-blur);
-    -webkit-backdrop-filter: var(--glass-blur);
-    border: 1px solid var(--border-hi);
-    border-radius: var(--radius-lg);
-    box-shadow: var(--shadow-lg);
-    padding: 3.5rem 3rem;
-    width: 100%;
-    max-width: 480px;
-    text-align: center;
-    z-index: 10;
-    transition: transform 0.3s, opacity 0.3s;
+  .glow-mesh-left {
+    position: absolute;
+    bottom: -200px;
+    left: -200px;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(16,185,129,0.04) 0%, rgba(59,130,246,0.04) 50%, rgba(0,0,0,0) 100%);
+    z-index: 0;
+    pointer-events: none;
+    filter: blur(80px);
   }
 
-  .login-logo {
-    font-family: 'Space Grotesk', sans-serif;
-    font-size: 1.8rem;
-    font-weight: 800;
-    color: var(--text);
-    margin-bottom: 0.5rem;
-    letter-spacing: -0.03em;
-  }
-  .login-logo span { color: var(--accent-hi); }
-
-  .login-subtitle {
-    font-size: 0.9rem;
-    color: var(--text-dim);
-    margin-bottom: 2.5rem;
+  /* Glassmorphism containers with Shadow UI */
+  .glass-panel {
+    background: rgba(15, 23, 42, 0.45);
+    backdrop-filter: blur(16px) saturate(180%);
+    -webkit-backdrop-filter: blur(16px) saturate(180%);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
   }
 
-  .input-group {
-    margin-bottom: 1.5rem;
-    text-align: left;
+  .glass-card {
+    background: rgba(30, 41, 59, 0.35);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.03);
+    box-shadow: 0 4px 18px 0 rgba(0, 0, 0, 0.2);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
-  .input-label {
-    display: block;
-    font-size: 0.8rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    color: var(--text-dim);
-    margin-bottom: 0.5rem;
+  .glass-card:hover {
+    border-color: rgba(220, 38, 38, 0.2);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px 0 rgba(220, 38, 38, 0.1);
   }
 
-  .password-input {
-    width: 100%;
-    padding: 1rem;
-    border: 1px solid var(--border-hi);
-    border-radius: var(--radius);
-    background: var(--bg);
-    color: var(--text);
-    font-size: 1.1rem;
-    transition: border-color 0.2s, box-shadow 0.2s;
+  .input-glass {
+    background: rgba(15, 23, 42, 0.6);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    color: #f1f5f9;
+    transition: all 0.2s ease-in-out;
   }
 
-  .password-input:focus {
-    border-color: var(--accent-hi);
-    box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.12);
+  .input-glass:focus {
     outline: none;
+    border-color: rgba(220, 38, 38, 0.5);
+    box-shadow: 0 0 12px rgba(220, 38, 38, 0.15);
   }
 
-  .btn-login {
-    width: 100%;
-    padding: 1rem;
-    background: var(--accent-hi);
-    color: #fff;
-    border: none;
-    border-radius: var(--radius-pill);
-    font-family: 'Space Grotesk', sans-serif;
+  /* Liquid Glass active badge colors */
+  .badge-liquid {
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
     font-weight: 700;
-    font-size: 1rem;
-    cursor: pointer;
-    transition: background 0.2s, transform 0.2s;
-    margin-top: 1rem;
   }
 
-  .btn-login:hover {
-    background: var(--accent);
-    transform: translateY(-1px);
+  /* Scrollbar design matching */
+  ::-webkit-scrollbar {
+    width: 6px;
   }
-
-  .error-message {
-    color: var(--accent-hi);
-    font-size: 0.85rem;
-    margin-top: 1rem;
-    font-weight: 600;
-    display: none;
+  ::-webkit-scrollbar-track {
+    background: #050814;
   }
-
-  /* BACK OFFICE PANEL STYLING */
-  .admin-panel {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    min-height: 100vh;
-    background: var(--bg);
+  ::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 99px;
   }
-
-  .admin-header {
-    background: var(--surface);
-    border-bottom: 1px solid var(--border);
-    padding: 1rem 2rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    position: sticky;
-    top: 0;
-    z-index: 100;
-  }
-
-  .admin-title {
-    font-family: 'Space Grotesk', sans-serif;
-    font-size: 1.3rem;
-    font-weight: 800;
-  }
-  .admin-title span { color: var(--accent-hi); }
-
-  .admin-nav {
-    display: flex;
-    gap: 1rem;
-  }
-
-  .admin-tab-btn {
-    padding: 0.5rem 1.25rem;
-    border-radius: var(--radius-pill);
-    border: 1px solid transparent;
-    background: transparent;
-    color: var(--text-dim);
-    font-family: 'Space Grotesk', sans-serif;
-    font-weight: 600;
-    font-size: 0.9rem;
-    cursor: pointer;
-    transition: all 0.2s;
-  }
-
-  .admin-tab-btn.active {
-    background: var(--bg-alt);
-    color: var(--text);
-    border-color: var(--border-hi);
-  }
-
-  .admin-main {
-    flex: 1;
-    padding: 2.5rem;
-    max-width: 1200px;
-    width: 100%;
-    margin: 0 auto;
-  }
-
-  .admin-section {
-    display: none;
-  }
-  .admin-section.active {
-    display: block;
-  }
-
-  /* TABLE & LEADS VIEW */
-  .leads-table-wrapper {
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: var(--radius-lg);
-    box-shadow: var(--shadow);
-    overflow: hidden;
-    margin-top: 1.5rem;
-  }
-
-  .leads-table {
-    width: 100%;
-    border-collapse: collapse;
-    text-align: left;
-  }
-
-  .leads-table th {
-    background: var(--bg-alt);
-    padding: 1rem 1.5rem;
-    font-family: 'Space Grotesk', sans-serif;
-    font-weight: 700;
-    font-size: 0.85rem;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    color: var(--text-dim);
-    border-bottom: 1px solid var(--border);
-  }
-
-  .leads-table td {
-    padding: 1.25rem 1.5rem;
-    border-bottom: 1px solid var(--border);
-    font-size: 0.9rem;
-    vertical-align: middle;
-  }
-
-  .leads-table tr:last-child td {
-    border-bottom: none;
-  }
-
-  .badge {
-    display: inline-block;
-    padding: 0.25rem 0.75rem;
-    border-radius: var(--radius-pill);
-    font-size: 0.75rem;
-    font-weight: 700;
-    text-transform: uppercase;
-  }
-
-  .badge-danger { background: rgba(220,38,38,0.1); color: var(--accent-hi); }
-  .badge-warning { background: rgba(217,119,6,0.1); color: #d97706; }
-  .badge-success { background: rgba(16,185,129,0.1); color: #10b981; }
-
-  .action-btn {
-    padding: 0.4rem 0.8rem;
-    border-radius: var(--radius-pill);
-    font-size: 0.8rem;
-    font-weight: 600;
-    cursor: pointer;
-    border: 1px solid var(--border-hi);
-    background: var(--bg);
-    color: var(--text);
-    transition: all 0.2s;
-    text-decoration: none;
-    display: inline-flex;
-    align-items: center;
-    gap: 0.25rem;
-  }
-
-  .action-btn:hover {
-    border-color: var(--accent-hi);
-    color: var(--accent-hi);
-  }
-
-  /* FSA CALCULATOR VIEW */
-  .calc-container {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 2.5rem;
-    align-items: start;
-    margin-top: 1.5rem;
-  }
-
-  .calc-form-card {
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: var(--radius-lg);
-    padding: 2.5rem;
-    box-shadow: var(--shadow);
-  }
-
-  .calc-result-card {
-    background: var(--surface);
-    border: 2px solid var(--accent-hi);
-    border-radius: var(--radius-lg);
-    padding: 2.5rem;
-    box-shadow: var(--shadow-lg);
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgba(220, 38, 38, 0.3);
   }
 </style>
 </head>
-<body>
+<body class="relative min-h-screen flex flex-col font-sans select-none antialiased">
 
-<!-- LOGIN VIEW -->
-<div id="login-view" class="login-wrapper">
-  <div class="login-card">
-    <div class="login-logo">Guía<span>Federal</span></div>
-    <div class="login-subtitle">Panel de Control de Casos y Auditoría FSA</div>
+<!-- Ambient Mesh backgrounds -->
+<div class="glow-mesh"></div>
+<div class="glow-mesh-left"></div>
+
+<!-- MAIN APP ROOT -->
+<div id="login-view" class="flex-1 flex items-center justify-center p-6 z-10">
+  <div class="glass-panel max-w-md w-full rounded-2xl p-8 border border-white/5 shadow-2xl relative overflow-hidden">
+    <!-- Accent line -->
+    <div class="absolute top-0 left-0 w-full h-[2px] bg-gradient-to-r from-red-600 to-indigo-600"></div>
     
-    <form onsubmit="handleLoginSubmit(event)">
-      <div class="input-group">
-        <label class="input-label" for="admin-pass">Clave de Acceso Administrador</label>
-        <input type="password" id="admin-pass" class="password-input" placeholder="••••••••••••" required autocomplete="current-password">
+    <div class="text-center mb-8">
+      <div class="font-space text-3xl font-bold tracking-tight text-white">Guía<span class="text-red-500">Federal</span></div>
+      <div class="text-xs text-slate-400 mt-2 uppercase tracking-widest font-semibold">Pretrial Strategy & FSA Auditing Command</div>
+    </div>
+
+    <form onsubmit="handleLoginSubmit(event)" class="space-y-6">
+      <div>
+        <label class="block text-xs font-bold text-slate-300 uppercase tracking-widest mb-2" for="admin-pass">Clave de Acceso Administrador</label>
+        <input type="password" id="admin-pass" class="input-glass w-full rounded-lg px-4 py-3 text-sm focus:outline-none" placeholder="••••••••••••" required autocomplete="current-password">
       </div>
-      <button type="submit" class="btn-login">Acceder al Sistema →</button>
-      <div id="login-error" class="error-message">⚠️ Clave de acceso incorrecta. Intente de nuevo.</div>
+      <button type="submit" class="w-full bg-gradient-to-r from-red-600 to-indigo-600 text-white font-bold py-3 rounded-lg hover:brightness-110 active:scale-[0.99] transition-all text-sm tracking-wider uppercase">Acceder al Centro de Control →</button>
+      <div id="login-error" class="hidden text-center text-xs font-semibold text-red-400 bg-red-950/20 py-2 rounded border border-red-900/30">⚠️ Clave incorrecta. Reintente.</div>
     </form>
   </div>
 </div>
 
 <!-- BACK OFFICE VIEW (HIDDEN BY DEFAULT) -->
-<div id="admin-view" class="admin-panel" style="display: none;">
-  <header class="admin-header">
-    <div class="admin-title">Guía<span>Federal</span> <span style="font-size: 0.9rem; font-weight: 500; color: var(--text-dim);">· Back Office</span></div>
-    <nav class="admin-nav" style="position: static; transform: none; box-shadow: none; border: none; background: transparent; height: auto; padding: 0;">
-      <button class="admin-tab-btn active" onclick="switchTab('tab-leads', this)">📥 Bandeja de Leads</button>
-      <button class="admin-tab-btn" onclick="switchTab('tab-fsa', this)">🧮 Calculadora FSA</button>
-      <button class="admin-tab-btn" onclick="logoutAdmin()" style="color: var(--accent-hi);">🚪 Salir</button>
+<div id="admin-view" class="hidden flex-1 flex flex-col z-10 w-full">
+  <!-- Top navigation bar -->
+  <header class="glass-panel border-b border-white/5 py-4 px-6 md:px-12 flex justify-between items-center sticky top-0 z-30">
+    <div class="font-space text-xl font-bold text-white">Guía<span class="text-red-500">Federal</span> <span class="text-xs font-normal text-slate-400 tracking-wider ml-2 border-l border-slate-700 pl-3">Sovereign CRM Portal</span></div>
+    
+    <nav class="flex items-center gap-2">
+      <button class="tab-btn px-4 py-2 text-xs font-bold uppercase tracking-wider rounded-lg border border-transparent text-slate-400 hover:text-white transition-all active-tab bg-white/5 border-white/10" onclick="switchTab('tab-leads', this)">📥 Leads</button>
+      <button class="tab-btn px-4 py-2 text-xs font-bold uppercase tracking-wider rounded-lg border border-transparent text-slate-400 hover:text-white transition-all" onclick="switchTab('tab-fsa', this)">🧮 Calculadora FSA</button>
+      <button class="px-4 py-2 text-xs font-bold uppercase tracking-wider rounded-lg border border-red-500/20 text-red-400 hover:bg-red-950/20 hover:border-red-500/40 transition-all ml-2" onclick="logoutAdmin()">🚪 Salir</button>
     </nav>
   </header>
 
-  <main class="admin-main">
-    <!-- TAB 1: LEADS -->
-    <section id="tab-leads" class="admin-section active">
-      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem;">
-        <div>
-          <h2 style="font-size: 1.75rem;">Bandeja de Consultas Recibidas</h2>
-          <p style="color: var(--text-dim); font-size: 0.9rem;">Mensajes captados desde los formularios del sitio web y PWA.</p>
+  <!-- Main Container -->
+  <main class="flex-1 max-w-7xl w-full mx-auto p-6 md:p-12">
+    
+    <!-- TAB 1: LEADS & CRM CONTROL -->
+    <section id="tab-leads" class="admin-section space-y-8">
+      
+      <!-- Metrics Dashboard Header -->
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+        <div class="glass-card p-6 rounded-xl relative overflow-hidden flex flex-col justify-between">
+          <span class="text-xs font-bold uppercase tracking-widest text-slate-400">Total Consultas</span>
+          <span class="text-4xl font-extrabold font-space mt-4 text-white" id="stat-total">0</span>
+          <div class="absolute bottom-0 left-0 w-full h-[3px] bg-indigo-500"></div>
         </div>
-        <div style="font-size: 0.85rem; font-weight: 600; background: var(--surface); padding: 0.5rem 1rem; border-radius: var(--radius-pill); border: 1px solid var(--border);">
-          🟢 Sistema En Línea
+        <div class="glass-card p-6 rounded-xl relative overflow-hidden flex flex-col justify-between">
+          <span class="text-xs font-bold uppercase tracking-widest text-red-400">🚨 Casos Urgentes</span>
+          <span class="text-4xl font-extrabold font-space mt-4 text-red-400" id="stat-urgente">0</span>
+          <div class="absolute bottom-0 left-0 w-full h-[3px] bg-red-500"></div>
+        </div>
+        <div class="glass-card p-6 rounded-xl relative overflow-hidden flex flex-col justify-between">
+          <span class="text-xs font-bold uppercase tracking-widest text-amber-400">⏳ En Espera</span>
+          <span class="text-4xl font-extrabold font-space mt-4 text-amber-400" id="stat-espera">0</span>
+          <div class="absolute bottom-0 left-0 w-full h-[3px] bg-amber-500"></div>
+        </div>
+        <div class="glass-card p-6 rounded-xl relative overflow-hidden flex flex-col justify-between">
+          <span class="text-xs font-bold uppercase tracking-widest text-emerald-400">🟢 Atendidos</span>
+          <span class="text-4xl font-extrabold font-space mt-4 text-emerald-400" id="stat-atendido">0</span>
+          <div class="absolute bottom-0 left-0 w-full h-[3px] bg-emerald-500"></div>
         </div>
       </div>
 
-      <div class="leads-table-wrapper">
-        <table class="leads-table">
-          <thead>
-            <tr>
-              <th>Cliente</th>
-              <th>Contacto</th>
-              <th>Instalación / Caso</th>
-              <th>Estado del Caso</th>
-              <th>Acciones</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td><strong>Ramiro S. Mendoza</strong></td>
-              <td>+52 664 123 4567<br><span style="font-size: 0.8rem; color: var(--text-faint);">ramiro.m@outlook.com</span></td>
-              <td>MCC San Diego (CA)<br><span style="font-size: 0.8rem; color: var(--text-faint);">Arresto Reciente</span></td>
-              <td><span class="badge badge-danger">Urgente</span></td>
-              <td>
-                <a href="https://wa.me/526641234567?text=Hola%20Ramiro%20te%20contacto%20de%20Guia%20Federal" target="_blank" class="action-btn">💬 WhatsApp</a>
-                <button class="action-btn" onclick="alert('Se abrirá la ficha técnica del caso.')">📋 Ver Caso</button>
-              </td>
-            </tr>
-            <tr>
-              <td><strong>Fabiola Ortiz</strong></td>
-              <td>+1 619 555 0192<br><span style="font-size: 0.8rem; color: var(--text-faint);">fabi.ortiz@gmail.com</span></td>
-              <td>Terminal Island FCI (CA)<br><span style="font-size: 0.8rem; color: var(--text-faint);">Créditos FSA / ETC</span></td>
-              <td><span class="badge badge-warning">En Espera</span></td>
-              <td>
-                <a href="https://wa.me/16195550192" target="_blank" class="action-btn">💬 WhatsApp</a>
-                <button class="action-btn" onclick="alert('Se abrirá la ficha técnica del caso.')">📋 Ver Caso</button>
-              </td>
-            </tr>
-            <tr>
-              <td><strong>Eduardo J. Ruiz</strong></td>
-              <td>+1 760 982 3841<br><span style="font-size: 0.8rem; color: var(--text-faint);">eduardo.ruiz@yahoo.com</span></td>
-              <td>Victorville USP (CA)<br><span style="font-size: 0.8rem; color: var(--text-faint);">Programa RDAP</span></td>
-              <td><span class="badge badge-success">Atendido</span></td>
-              <td>
-                <a href="https://wa.me/17609823841" target="_blank" class="action-btn">💬 WhatsApp</a>
-                <button class="action-btn" onclick="alert('Se abrirá la ficha técnica del caso.')">📋 Ver Caso</button>
-              </td>
-            </tr>
-          </tbody>
-        </table>
+      <!-- Action & Filter Bar -->
+      <div class="flex flex-col md:flex-row gap-4 justify-between items-center bg-white/5 border border-white/5 rounded-xl p-4 glass-panel">
+        <div class="w-full md:w-72 relative">
+          <input type="text" id="crm-search" oninput="filterLeadsTable()" class="input-glass w-full rounded-lg px-4 py-2 pl-9 text-xs focus:outline-none" placeholder="Buscar por nombre, caso o prisión...">
+          <span class="absolute left-3 top-2.5 text-slate-500 text-xs">🔍</span>
+        </div>
+        <div class="flex gap-2 w-full md:w-auto">
+          <button onclick="openCreateLeadModal()" class="w-full md:w-auto bg-gradient-to-r from-red-600 to-indigo-600 text-white font-bold px-5 py-2.5 rounded-lg hover:brightness-110 transition-all text-xs tracking-wider uppercase shadow-lg shadow-red-950/20">➕ Nuevo Caso</button>
+        </div>
+      </div>
+
+      <!-- CRM Leads dynamic Table -->
+      <div class="glass-panel rounded-2xl overflow-hidden border border-white/5">
+        <div class="overflow-x-auto">
+          <table class="w-full text-left border-collapse leads-table">
+            <thead>
+              <tr class="bg-slate-900/40 text-slate-400 text-xs font-bold uppercase tracking-wider border-b border-white/5">
+                <th class="py-4 px-6">Cliente</th>
+                <th class="py-4 px-6">Contacto Directo</th>
+                <th class="py-4 px-6">Instalación Federal</th>
+                <th class="py-4 px-6">Estado Caso</th>
+                <th class="py-4 px-6 text-right">Acciones</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-white/5 text-sm text-slate-300">
+              <!-- Dynamically populated rows -->
+            </tbody>
+          </table>
+        </div>
       </div>
     </section>
 
-    <!-- TAB 2: FSA CALCULATOR -->
-    <section id="tab-fsa" class="admin-section">
-      <div style="margin-bottom: 2rem;">
-        <h2 style="font-size: 1.75rem;">Calculadora de Beneficios First Step Act (FSA)</h2>
-        <p style="color: var(--text-dim); font-size: 0.9rem;">Proyecte la fecha de liberación anticipada y días de crédito ganados basados en la evaluación PATTERN.</p>
+    <!-- TAB 2: SENTENCING CALCULATOR -->
+    <section id="tab-fsa" class="admin-section hidden space-y-8">
+      <div class="border-b border-white/5 pb-4">
+        <h2 class="font-space text-2xl font-bold text-white">Calculadora Técnica First Step Act & Transit Timeline</h2>
+        <p class="text-xs text-slate-400 mt-1">Simulación avanzada de créditos bajo el 18 U.S.C. § 3624 y el tiempo de designación en tránsito.</p>
       </div>
 
-      <div class="calc-container">
-        <!-- Input Form -->
-        <div class="calc-form-card">
-          <h3 style="font-size: 1.2rem; margin-bottom: 1.5rem; color: var(--accent);">Parámetros del Sentenciado</h3>
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
+        
+        <!-- Parameters panel -->
+        <div class="glass-panel p-6 rounded-2xl border border-white/5 space-y-6">
+          <h3 class="font-space text-lg font-bold text-slate-200">Parámetros Reales de Condena</h3>
           
-          <div class="input-group">
-            <label class="input-label">Sentencia Total (Meses)</label>
-            <input type="number" id="fsa-sentence" class="password-input" value="60" style="font-size: 1rem; padding: 0.75rem;">
-          </div>
-          
-          <div class="input-group">
-            <label class="input-label">Nivel de Riesgo PATTERN</label>
-            <select id="fsa-risk" class="password-input" style="font-size: 1rem; padding: 0.75rem; width: 100%;">
-              <option value="15">Mínimo / Bajo (Gana 15 días por cada 30 servidos)</option>
-              <option value="10">Medio / Alto (Gana 10 días por cada 30 servidos)</option>
-            </select>
-          </div>
-          
-          <div class="input-group">
-            <label class="input-label">Elegible para RDAP</label>
-            <select id="fsa-rdap" class="password-input" style="font-size: 1rem; padding: 0.75rem; width: 100%;">
-              <option value="1">Sí (Califica para -12 meses de reducción)</option>
-              <option value="0">No (Sin reducción por RDAP)</option>
-            </select>
-          </div>
-
-          <button onclick="calculateFsa()" class="btn-login" style="margin-top: 0.5rem;">Calcular Reducción de Sentencia →</button>
-        </div>
-
-        <!-- Result Box -->
-        <div class="calc-result-card" id="fsa-result">
-          <h3 style="font-size: 1.2rem; margin-bottom: 1rem; color: var(--text);">Resumen del Plan de Liberación</h3>
-          
-          <div style="margin-bottom: 1.5rem;">
-            <span style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--text-dim);">Sentencia Real Estimada:</span>
-            <div style="font-size: 2.2rem; font-weight: 800; color: var(--accent-hi); font-family: 'Space Grotesk', sans-serif;">
-              <span id="res-final-months">38.0</span> Meses
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div>
+              <label class="block text-xs font-bold text-slate-400 uppercase tracking-widest mb-2">Sentencia Total (Meses)</label>
+              <input type="number" id="fsa-sentence" oninput="calculateFsa()" class="input-glass w-full rounded-lg px-4 py-2.5 text-sm focus:outline-none" value="60">
             </div>
-            <p style="font-size: 0.85rem; color: var(--text-dim); margin-top: 0.25rem;">De una sentencia original de <span id="res-orig">60</span> meses.</p>
+            <div>
+              <label class="block text-xs font-bold text-slate-400 uppercase tracking-widest mb-2">Espera en Tránsito (Meses)</label>
+              <input type="number" id="fsa-transit" oninput="calculateFsa()" class="input-glass w-full rounded-lg px-4 py-2.5 text-sm focus:outline-none" value="3" placeholder="Fase de pre-designación">
+              <span class="text-[10px] text-slate-500 mt-1 block leading-tight">Espera en cárcel local post-sentencia. Acumula tiempo servido pero 0 créditos FSA.</span>
+            </div>
           </div>
 
-          <div style="border-top: 1px solid var(--border); padding-top: 1.5rem;">
-            <ul style="list-style: none; padding: 0; font-size: 0.9rem; line-height: 2;">
-              <li>⏳ **Crédito de Buena Conducta (54 días/año)**: -<span id="res-goodtime">8.8</span> meses</li>
-              <li>📅 **Créditos Ganados FSA (Est. Participación)**: -<span id="res-fsa-credits">13.2</span> meses</li>
-              <li>💊 **Reducción Directa RDAP (Si califica)**: -<span id="res-rdap-credits">12.0</span> meses</li>
-            </ul>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div>
+              <label class="block text-xs font-bold text-slate-400 uppercase tracking-widest mb-2">Evaluación de Riesgo PATTERN</label>
+              <select id="fsa-risk" onchange="calculateFsa()" class="input-glass w-full rounded-lg px-4 py-2.5 text-sm focus:outline-none">
+                <option value="15">Mínimo / Bajo (Gana 15 días por cada 30 servidos)</option>
+                <option value="10">Medio / Alto (Gana 10 días por cada 30 servidos)</option>
+              </select>
+            </div>
+            <div>
+              <label class="block text-xs font-bold text-slate-400 uppercase tracking-widest mb-2">Programa de Reducción RDAP</label>
+              <select id="fsa-rdap" onchange="calculateFsa()" class="input-glass w-full rounded-lg px-4 py-2.5 text-sm focus:outline-none">
+                <option value="1">Sí (Califica para -12 meses de descuento)</option>
+                <option value="0">No elegible / Sin reducción</option>
+              </select>
+            </div>
           </div>
+
+          <div class="flex items-center gap-3 bg-indigo-950/10 p-3 rounded-lg border border-indigo-900/20 text-xs text-indigo-300">
+            <span>ℹ️</span>
+            <p class="leading-relaxed">Los créditos FSA ganados acumulados solo inician una vez el sentenciado es transferido a su prisión federal designada y realiza la entrevista inicial de intake con su Counselor asignado.</p>
+          </div>
+        </div>
+
+        <!-- Calculated results -->
+        <div class="glass-panel p-6 rounded-2xl border-2 border-red-500/20 relative overflow-hidden space-y-6">
+          <div class="absolute top-0 left-0 w-full h-[2px] bg-red-600"></div>
           
-          <!-- Save Plan Container (Only visible when active lead is loaded) -->
-          <div id="calc-save-container" style="margin-top: 1.5rem; display: none;">
-            <button onclick="saveActiveCasePlan()" class="btn-login" style="margin-top: 0; background: #10b981; font-size: 0.9rem; padding: 0.75rem;">💾 Guardar Plan en Ficha</button>
-            <div id="save-success-msg" style="color: #10b981; font-size: 0.8rem; font-weight: 600; margin-top: 0.5rem; display: none;">✅ Ficha de caso actualizada con éxito</div>
+          <h3 class="font-space text-lg font-bold text-slate-200">Proyección del Plan de Liberación</h3>
+
+          <div class="bg-slate-900/30 p-6 rounded-xl border border-white/5 text-center">
+            <span class="text-xs font-bold text-slate-400 uppercase tracking-widest block mb-2">Tiempo Real Estimado a Servir</span>
+            <div class="font-space text-5xl font-black text-red-500 tracking-tight"><span id="res-final-months">0</span> <span class="text-xl font-bold text-slate-300">Meses</span></div>
+            <p class="text-xs text-slate-500 mt-2">Equivalente a <span id="res-final-years">0</span> Años. Sentencia original decretada: <span id="res-orig">0</span> meses.</p>
+          </div>
+
+          <div class="divide-y divide-white/5 text-xs">
+            <div class="py-3 flex justify-between">
+              <span class="text-slate-400 font-medium">Buena Conducta Estándar (54 días/año):</span>
+              <span class="text-slate-200 font-bold">-<span id="res-goodtime">0</span> Meses</span>
+            </div>
+            <div class="py-3 flex justify-between items-center">
+              <span class="text-slate-400 font-medium flex items-center gap-1">Espera/Tránsito en Jail local (0 FSA):</span>
+              <span class="text-amber-400 font-bold">+<span id="res-transit-time">0</span> Meses</span>
+            </div>
+            <div class="py-3 flex justify-between">
+              <span class="text-slate-400 font-medium">Créditos Anticipados FSA (Max 12 meses):</span>
+              <span class="text-slate-200 font-bold">-<span id="res-fsa-credits">0</span> Meses</span>
+            </div>
+            <div class="py-3 flex justify-between">
+              <span class="text-slate-400 font-medium">Reducción Directa por RDAP:</span>
+              <span class="text-slate-200 font-bold">-<span id="res-rdap-credits">0</span> Meses</span>
+            </div>
+          </div>
+
+          <!-- Dynamic save trigger inside calculator -->
+          <div id="calc-save-container" class="hidden pt-4 border-t border-white/5">
+            <button onclick="saveActiveCasePlan()" class="w-full bg-emerald-600 hover:bg-emerald-500 text-white font-bold py-2.5 rounded-lg transition-all text-xs tracking-wider uppercase shadow-lg shadow-emerald-950/20">💾 Guardar Plan en Ficha</button>
+            <div id="save-success-msg" class="hidden text-center text-xs font-bold text-emerald-400 mt-2">✅ Ficha de caso actualizada con éxito</div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+</div>
+
+<!-- MODAL: CREAR NUEVO CLIENTE (INBOX ADD) -->
+<div id="modal-create" class="hidden fixed inset-0 flex items-center justify-center p-6 bg-black/60 backdrop-blur-sm z-50">
+  <div class="glass-panel max-w-xl w-full rounded-2xl p-8 border border-white/5 shadow-2xl relative">
+    <button onclick="closeCreateLeadModal()" class="absolute top-4 right-4 text-slate-400 hover:text-white text-xl">✕</button>
+    
+    <h3 class="font-space text-xl font-bold text-white mb-6 border-b border-white/5 pb-2">Registrar Nuevo Caso Federal</h3>
+    
+    <form onsubmit="handleCreateLeadSubmit(event)" class="space-y-4 text-xs">
+      <div class="grid grid-cols-2 gap-4">
+        <div>
+          <label class="block text-slate-400 font-bold mb-1 uppercase tracking-wider">Nombre del Cliente</label>
+          <input type="text" id="add-nombre" class="input-glass w-full rounded-lg px-3 py-2 text-sm focus:outline-none" required placeholder="Nombre completo">
+        </div>
+        <div>
+          <label class="block text-slate-400 font-bold mb-1 uppercase tracking-wider">Teléfono de Contacto</label>
+          <input type="text" id="add-telefono" class="input-glass w-full rounded-lg px-3 py-2 text-sm focus:outline-none" required placeholder="+1 619 ...">
+        </div>
+      </div>
+
+      <div class="grid grid-cols-2 gap-4">
+        <div>
+          <label class="block text-slate-400 font-bold mb-1 uppercase tracking-wider">Email</label>
+          <input type="email" id="add-email" class="input-glass w-full rounded-lg px-3 py-2 text-sm focus:outline-none" placeholder="cliente@correo.com">
+        </div>
+        <div>
+          <label class="block text-slate-400 font-bold mb-1 uppercase tracking-wider">Prisión / Instalación</label>
+          <input type="text" id="add-instalacion" class="input-glass w-full rounded-lg px-3 py-2 text-sm focus:outline-none" placeholder="e.g. MCC San Diego">
+        </div>
+      </div>
+
+      <div class="grid grid-cols-2 gap-4">
+        <div>
+          <label class="block text-slate-400 font-bold mb-1 uppercase tracking-wider">Tipo de Servicio</label>
+          <input type="text" id="add-tipo" class="input-glass w-full rounded-lg px-3 py-2 text-sm focus:outline-none" placeholder="e.g. Auditoría FSA">
+        </div>
+        <div>
+          <label class="block text-slate-400 font-bold mb-1 uppercase tracking-wider">Cargos Federales</label>
+          <input type="text" id="add-cargos" class="input-glass w-full rounded-lg px-3 py-2 text-sm focus:outline-none" placeholder="e.g. 18 U.S.C. § 841">
+        </div>
+      </div>
+
+      <div class="border-t border-white/5 pt-4 grid grid-cols-2 gap-4">
+        <div>
+          <label class="block text-slate-400 font-bold mb-1 uppercase tracking-wider">Nombre del Familiar</label>
+          <input type="text" id="add-familiar-nombre" class="input-glass w-full rounded-lg px-3 py-2 text-sm focus:outline-none" placeholder="Esposa, Madre, etc.">
+        </div>
+        <div>
+          <label class="block text-slate-400 font-bold mb-1 uppercase tracking-wider">Teléfono del Familiar</label>
+          <input type="text" id="add-familiar-telefono" class="input-glass w-full rounded-lg px-3 py-2 text-sm focus:outline-none" placeholder="+52 ...">
+        </div>
+      </div>
+
+      <div class="pt-2">
+        <label class="block text-slate-400 font-bold mb-1 uppercase tracking-wider">Notas Iniciales del Caso</label>
+        <textarea id="add-notas" class="input-glass w-full rounded-lg px-3 py-2 text-sm focus:outline-none h-20" placeholder="Historial del cliente, estado actual del arresto..."></textarea>
+      </div>
+
+      <button type="submit" class="w-full bg-gradient-to-r from-red-600 to-indigo-600 text-white font-bold py-3 rounded-lg hover:brightness-110 active:scale-[0.99] transition-all text-xs tracking-wider uppercase mt-4">Guardar Caso en Base de Datos</button>
+    </form>
+  </div>
+</div>
+
+<!-- SIDE DRAWER: EXPANDED CASE FILE (DYNAMICS INFO) -->
+<div id="drawer-case" class="fixed inset-y-0 right-0 max-w-md w-full glass-panel z-50 shadow-2xl border-l border-white/5 transform translate-x-full transition-transform duration-300 flex flex-col">
+  
+  <!-- Header drawer -->
+  <div class="p-6 border-b border-white/5 flex justify-between items-center bg-slate-900/30">
+    <div>
+      <h3 class="font-space text-lg font-bold text-white" id="drawer-title">Ficha del Caso</h3>
+      <p class="text-[10px] text-slate-400 uppercase tracking-widest mt-0.5">Auditoría Técnica y Bitácora CRM</p>
+    </div>
+    <button onclick="closeCaseDrawer()" class="text-slate-400 hover:text-white text-xl">✕</button>
+  </div>
+
+  <!-- Tabs inner drawer -->
+  <div class="flex border-b border-white/5 text-xs font-bold uppercase tracking-wider bg-slate-900/10">
+    <button class="drawer-tab-btn flex-1 py-3 border-b-2 border-red-500 text-white" onclick="switchDrawerTab('drawer-general', this)">📋 General</button>
+    <button class="drawer-tab-btn flex-1 py-3 border-b-2 border-transparent text-slate-400 hover:text-white" onclick="switchDrawerTab('drawer-progress', this)">🧮 Auditoría</button>
+    <button class="drawer-tab-btn flex-1 py-3 border-b-2 border-transparent text-slate-400 hover:text-white" onclick="switchDrawerTab('drawer-notes', this)">📝 Notas</button>
+  </div>
+
+  <!-- Drawer Body -->
+  <div class="flex-1 overflow-y-auto p-6 space-y-6 text-xs" id="drawer-body">
+    
+    <!-- Tab A: GENERAL INFO -->
+    <div id="drawer-general" class="drawer-section space-y-4">
+      <div class="space-y-3">
+        <div>
+          <label class="block text-slate-400 font-bold uppercase tracking-wider mb-1">Nombre Completo</label>
+          <input type="text" id="dr-nombre" class="input-glass w-full rounded-lg px-3 py-2 text-sm focus:outline-none">
+        </div>
+        
+        <div class="grid grid-cols-2 gap-4">
+          <div>
+            <label class="block text-slate-400 font-bold uppercase tracking-wider mb-1">Teléfono Cliente</label>
+            <input type="text" id="dr-telefono" class="input-glass w-full rounded-lg px-3 py-2 text-sm focus:outline-none">
+          </div>
+          <div>
+            <label class="block text-slate-400 font-bold uppercase tracking-wider mb-1">Email</label>
+            <input type="text" id="dr-email" class="input-glass w-full rounded-lg px-3 py-2 text-sm focus:outline-none">
+          </div>
+        </div>
+
+        <div class="grid grid-cols-2 gap-4">
+          <div>
+            <label class="block text-slate-400 font-bold uppercase tracking-wider mb-1">Instalación Federal</label>
+            <input type="text" id="dr-instalacion" class="input-glass w-full rounded-lg px-3 py-2 text-sm focus:outline-none">
+          </div>
+          <div>
+            <label class="block text-slate-400 font-bold uppercase tracking-wider mb-1">Cargos Federales</label>
+            <input type="text" id="dr-cargos" class="input-glass w-full rounded-lg px-3 py-2 text-sm focus:outline-none">
           </div>
         </div>
       </div>
-    </section>
-  </main>
+
+      <!-- Family Section -->
+      <div class="bg-indigo-950/10 border border-indigo-900/20 rounded-xl p-4 space-y-3">
+        <h4 class="font-bold text-indigo-300 uppercase tracking-widest">Familiar de Contacto (Vínculo)</h4>
+        
+        <div class="grid grid-cols-2 gap-4">
+          <div>
+            <label class="block text-slate-400 font-bold uppercase tracking-wider mb-1">Familiar Nombre</label>
+            <input type="text" id="dr-familiar-nombre" class="input-glass w-full rounded-lg px-3 py-2 text-xs focus:outline-none">
+          </div>
+          <div>
+            <label class="block text-slate-400 font-bold uppercase tracking-wider mb-1">Teléfono Familiar</label>
+            <input type="text" id="dr-familiar-telefono" class="input-glass w-full rounded-lg px-3 py-2 text-xs focus:outline-none">
+          </div>
+        </div>
+
+        <div id="dr-familiar-wa-container" class="pt-2">
+          <!-- Dynamically generated WA link -->
+        </div>
+      </div>
+
+      <!-- Quick delete -->
+      <div class="pt-6 border-t border-white/5 flex justify-between items-center">
+        <span class="text-slate-500">¿Remover este cliente?</span>
+        <button onclick="deleteActiveLead()" class="bg-red-950/40 hover:bg-red-900/20 border border-red-500/20 text-red-400 px-3 py-1.5 rounded-lg transition-all font-bold uppercase tracking-wider">🗑️ Eliminar Ficha</button>
+      </div>
+    </div>
+
+    <!-- Tab B: AUDIT PROGRESS -->
+    <div id="drawer-progress" class="drawer-section hidden space-y-4">
+      <h4 class="font-bold text-slate-200 uppercase tracking-widest border-b border-white/5 pb-1">Cronología e Hitos BOP</h4>
+
+      <div class="space-y-4">
+        <!-- Intake Checklists -->
+        <div class="space-y-2">
+          <label class="flex items-center gap-3 p-3 bg-white/5 rounded-lg border border-white/5 cursor-pointer">
+            <input type="checkbox" id="dr-chk-counselor" class="rounded border-slate-700 text-red-600 focus:ring-red-600 bg-slate-900 h-4 w-4">
+            <span class="font-medium text-slate-300">Reunión de Intake con Counselor completada</span>
+          </label>
+          <label class="flex items-center gap-3 p-3 bg-white/5 rounded-lg border border-white/5 cursor-pointer">
+            <input type="checkbox" id="dr-chk-assigned" class="rounded border-slate-700 text-red-600 focus:ring-red-600 bg-slate-900 h-4 w-4">
+            <span class="font-medium text-slate-300">Inscrito y Asignado en Programas FSA/RDAP</span>
+          </label>
+        </div>
+
+        <!-- Sentence projection details inside Drawer -->
+        <div class="bg-slate-900/30 p-4 rounded-xl border border-white/5 space-y-3">
+          <h5 class="font-bold text-slate-300 uppercase tracking-wider">Proyecciones de Sentencia Guardadas</h5>
+          
+          <div class="grid grid-cols-2 gap-4">
+            <div>
+              <span class="text-[10px] text-slate-500 uppercase tracking-wider">Sentencia Decretada</span>
+              <div class="text-sm font-bold text-slate-300" id="dr-disp-sentence">0 meses</div>
+            </div>
+            <div>
+              <span class="text-[10px] text-slate-500 uppercase tracking-wider">Fase de Tránsito</span>
+              <div class="text-sm font-bold text-slate-300" id="dr-disp-transit">0 meses</div>
+            </div>
+          </div>
+          <div class="grid grid-cols-2 gap-4">
+            <div>
+              <span class="text-[10px] text-slate-500 uppercase tracking-wider">PATTERN Risk</span>
+              <div class="text-sm font-bold text-slate-300" id="dr-disp-risk">Mínimo / Bajo</div>
+            </div>
+            <div>
+              <span class="text-[10px] text-slate-500 uppercase tracking-wider">Reducción Directa</span>
+              <div class="text-sm font-bold text-slate-300" id="dr-disp-reduccion">Buena Conducta + FSA + RDAP</div>
+            </div>
+          </div>
+
+          <div class="border-t border-white/5 pt-3">
+            <span class="text-[10px] text-slate-500 uppercase tracking-wider">Condena Real Estimada a Servir</span>
+            <div class="text-xl font-bold text-red-500" id="dr-disp-final">0 meses</div>
+          </div>
+        </div>
+
+        <div class="text-center">
+          <p class="text-[10px] text-slate-500">Para modificar estos valores, cargue la ficha en la pestaña principal de la <strong>Calculadora FSA</strong>.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Tab C: RICH CASE NOTES LOG -->
+    <div id="drawer-notes" class="drawer-section hidden space-y-4">
+      <h4 class="font-bold text-slate-200 uppercase tracking-widest border-b border-white/5 pb-1">Notas del Consultor</h4>
+      
+      <div class="space-y-3">
+        <p class="text-slate-400 text-[10px] leading-relaxed">Utilice esta bitácora para documentar llamadas telefónicas, estados del PSR, negociaciones del Fiscal Federal en CASD y fechas límites de apelación.</p>
+        <textarea id="dr-notas" class="input-glass w-full rounded-lg px-3 py-2 text-sm focus:outline-none h-80" placeholder="Escriba aquí los avances del caso..."></textarea>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Bottom Drawer Save triggers -->
+  <div class="p-6 border-t border-white/5 bg-slate-900/30 flex gap-3">
+    <button onclick="saveActiveCaseFromDrawer()" class="flex-1 bg-gradient-to-r from-emerald-600 to-teal-600 text-white font-bold py-2.5 rounded-lg hover:brightness-110 active:scale-[0.99] transition-all text-xs tracking-wider uppercase text-center">💾 Guardar Cambios</button>
+    <button onclick="closeCaseDrawer()" class="bg-slate-800 hover:bg-slate-700 text-slate-300 font-bold px-4 py-2.5 rounded-lg transition-all text-xs uppercase text-center">Cerrar</button>
+  </div>
+
 </div>
 
 <!-- SCRIPTS -->
@@ -460,12 +545,19 @@ const DEFAULT_MOCK_LEADS = [
   {
     id: "lead-mock-1",
     nombre: "Ramiro S. Mendoza",
-    telefono: "+52 664 123 4567",
+    telefono: "+52 663 304 0096",
     email: "ramiro.m@outlook.com",
     instalacion: "MCC San Diego (CA)",
     tipo: "Arresto Reciente",
     estado: "Urgente",
+    cargos: "21 U.S.C. § 846 - Conspiración de Drogas",
+    familiar_nombre: "María Elena Mendoza (Esposa)",
+    familiar_telefono: "+52 664 987 6543",
+    notas: "Arrestado en la frontera CASD. Esperando designación post-sentencia. Se calcula transit wait de 3 meses en jail antes de ir a Terminal Island FCI.",
+    counselor_meeting: false,
+    assigned_programs: false,
     fsa_sentence: 60,
+    fsa_transit: 3,
     fsa_risk: 15,
     fsa_rdap: 1
   },
@@ -477,7 +569,14 @@ const DEFAULT_MOCK_LEADS = [
     instalacion: "Terminal Island FCI (CA)",
     tipo: "Créditos FSA / ETC",
     estado: "En Espera",
+    cargos: "18 U.S.C. § 1343 - Fraude Electrónico",
+    familiar_nombre: "Carlos Ortiz (Padre)",
+    familiar_telefono: "+1 619 123 4567",
+    notas: "Familiar desea auditar créditos ETC bajo First Step Act. Ya ingresada a FCI, counselor meeting completa.",
+    counselor_meeting: true,
+    assigned_programs: true,
     fsa_sentence: 36,
+    fsa_transit: 1,
     fsa_risk: 15,
     fsa_rdap: 0
   },
@@ -489,7 +588,14 @@ const DEFAULT_MOCK_LEADS = [
     instalacion: "Victorville USP (CA)",
     tipo: "Programa RDAP",
     estado: "Atendido",
+    cargos: "18 U.S.C. § 922(g) - Posesión de Arma",
+    familiar_nombre: "Diana Ruiz (Hermana)",
+    familiar_telefono: "+1 760 321 0987",
+    notas: "Caso resuelto. Clasificó para RDAP y obtuvo reducción completa de 12 meses. Plan de salida verificado.",
+    counselor_meeting: true,
+    assigned_programs: true,
     fsa_sentence: 84,
+    fsa_transit: 4,
     fsa_risk: 10,
     fsa_rdap: 1
   }
@@ -534,8 +640,6 @@ async function handleLoginSubmit(event) {
   
   if (isFirebaseActive) {
     initFirebase();
-    // In Firebase Mode: Authenticate with Firebase Auth
-    // Default username is the configured support email
     const email = nexConfig.nationalSupportEmail || "info@guiafederal.com";
     auth.signInWithEmailAndPassword(email, password)
     .then(() => {
@@ -548,7 +652,6 @@ async function handleLoginSubmit(event) {
       document.getElementById('admin-pass').value = '';
     });
   } else {
-    // In Local Fallback Mode: Secure SHA-256 local comparison
     const hash = await sha256(password);
     if (hash === AUTH_HASH) {
       sessionStorage.setItem('gf_admin_auth', 'authenticated');
@@ -571,17 +674,23 @@ function unlockDashboard() {
   } else {
     subscribeToLocalLeads();
   }
-  
-  calculateFsa(); // Initialize calculator view defaults
 }
 
 // Tab Switching
 function switchTab(tabId, btn) {
-  document.querySelectorAll('.admin-section').forEach(s => s.classList.remove('active'));
-  document.querySelectorAll('.admin-tab-btn').forEach(b => b.classList.remove('active'));
+  document.querySelectorAll('.admin-section').forEach(s => s.classList.add('hidden'));
+  document.querySelectorAll('.tab-btn').forEach(b => {
+    b.classList.remove('bg-white/5', 'border-white/10', 'text-white');
+    b.classList.add('text-slate-400');
+  });
   
-  document.getElementById(tabId).classList.add('active');
-  btn.classList.add('active');
+  document.getElementById(tabId).classList.remove('hidden');
+  btn.classList.add('bg-white/5', 'border-white/10', 'text-white');
+  btn.classList.remove('text-slate-400');
+  
+  if (tabId === 'tab-fsa') {
+    calculateFsa();
+  }
 }
 
 // Logout
@@ -590,12 +699,13 @@ function logoutAdmin() {
   if (isFirebaseActive && auth) {
     auth.signOut();
   }
-  document.getElementById('admin-view').style.display = 'none';
-  document.getElementById('login-view').style.display = 'flex';
+  document.getElementById('admin-view').style.add('hidden');
+  document.getElementById('login-view').style.remove('hidden');
   document.getElementById('admin-pass').value = '';
-  document.getElementById('login-error').style.display = 'none';
+  document.getElementById('login-error').style.add('hidden');
   activeCaseId = null;
-  document.getElementById('calc-save-container').style.display = 'none';
+  document.getElementById('calc-save-container').classList.add('hidden');
+  closeCaseDrawer();
 }
 
 // Subscribe to Live Real-Time Firestore Leads
@@ -607,6 +717,7 @@ function subscribeToFirebaseLeads() {
     });
     activeLeadsList = leads;
     renderLeadsTable(leads);
+    updateMetrics(leads);
   }, error => {
     console.error("Firestore listener error, loading local fallback:", error);
     subscribeToLocalLeads();
@@ -622,6 +733,15 @@ function subscribeToLocalLeads() {
   }
   activeLeadsList = JSON.parse(leads);
   renderLeadsTable(activeLeadsList);
+  updateMetrics(activeLeadsList);
+}
+
+// Update dashboard metric cards
+function updateMetrics(leads) {
+  document.getElementById('stat-total').textContent = leads.length;
+  document.getElementById('stat-urgente').textContent = leads.filter(l => l.estado === 'Urgente').length;
+  document.getElementById('stat-espera').textContent = leads.filter(l => l.estado === 'En Espera').length;
+  document.getElementById('stat-atendido').textContent = leads.filter(l => l.estado === 'Atendido').length;
 }
 
 // Render dynamic rows to Leads Table
@@ -630,107 +750,238 @@ function renderLeadsTable(leads) {
   tbody.innerHTML = '';
 
   if (leads.length === 0) {
-    tbody.innerHTML = `<tr><td colspan="5" style="text-align:center; color:var(--text-dim); padding:3rem;">No hay leads registrados aún.</td></tr>`;
+    tbody.innerHTML = `<tr><td colspan="5" class="text-center text-slate-500 py-12">No hay leads registrados aún.</td></tr>`;
     return;
   }
 
   leads.forEach(lead => {
     const tr = document.createElement('tr');
     tr.id = `row-${lead.id}`;
+    tr.className = "hover:bg-white/[0.02] transition-colors border-b border-white/5";
     if (activeCaseId === lead.id) {
-      tr.style.background = 'rgba(220,38,38,0.03)';
-      tr.style.borderLeft = '4px solid var(--accent-hi)';
+      tr.className += " bg-red-950/10 border-l-4 border-l-red-500";
     }
 
-    const badgeClass = lead.estado === 'Urgente' ? 'badge-danger' : (lead.estado === 'En Espera' ? 'badge-warning' : 'badge-success');
+    const badgeClass = lead.estado === 'Urgente' ? 'bg-red-500/10 text-red-400 border-red-500/20' : (lead.estado === 'En Espera' ? 'bg-amber-500/10 text-amber-400 border-amber-500/20' : 'bg-emerald-500/10 text-emerald-400 border-emerald-500/20');
     
-    // Setup WhatsApp click redirect with pre-filled case templates
     const cleanNumber = lead.telefono.replace(/[^\d+]/g, '');
     const waText = encodeURIComponent(`Hola ${lead.nombre}, le contactamos de Guía Federal para dar seguimiento a su consulta sobre ${lead.tipo || 'su caso federal'} en la instalación ${lead.instalacion || 'CASD'}.`);
     const waLink = `https://wa.me/${cleanNumber}?text=${waText}`;
 
     tr.innerHTML = `
-      <td><strong>${escapeHtml(lead.nombre)}</strong></td>
-      <td>${escapeHtml(lead.telefono)}<br><span style="font-size:0.8rem; color:var(--text-faint);">${escapeHtml(lead.email || 'vía formulario')}</span></td>
-      <td>${escapeHtml(lead.instalacion || 'No especificada')}<br><span style="font-size:0.8rem; color:var(--text-faint);">${escapeHtml(lead.tipo || 'Consulta General')}</span></td>
-      <td>
-        <select onchange="changeLeadStatus('${lead.id}', this.value)" style="border:none; background:transparent; font-family:inherit; font-size: inherit; cursor:pointer;" class="badge ${badgeClass}">
+      <td class="py-4 px-6 font-semibold text-white">${escapeHtml(lead.nombre)}</td>
+      <td class="py-4 px-6 text-xs">${escapeHtml(lead.telefono)}<br><span class="text-slate-500 font-medium">${escapeHtml(lead.email || 'vía formulario')}</span></td>
+      <td class="py-4 px-6 text-xs">${escapeHtml(lead.instalacion || 'No especificada')}<br><span class="text-slate-500 font-medium">${escapeHtml(lead.tipo || 'Consulta General')}</span></td>
+      <td class="py-4 px-6">
+        <select onchange="changeLeadStatus('${lead.id}', this.value)" class="badge-liquid border text-xs px-2.5 py-1 rounded-full bg-slate-900 cursor-pointer ${badgeClass}">
           <option value="Urgente" ${lead.estado === 'Urgente' ? 'selected' : ''}>Urgente</option>
           <option value="En Espera" ${lead.estado === 'En Espera' ? 'selected' : ''}>En Espera</option>
           <option value="Atendido" ${lead.estado === 'Atendido' ? 'selected' : ''}>Atendido</option>
         </select>
       </td>
-      <td>
-        <a href="${waLink}" target="_blank" class="action-btn">💬 WhatsApp</a>
-        <button class="action-btn" onclick="openLeadInCalculator('${lead.id}')">🧮 Proyectar FSA</button>
+      <td class="py-4 px-6 text-right space-x-1.5">
+        <a href="${waLink}" target="_blank" class="inline-flex items-center gap-1 bg-emerald-950/30 border border-emerald-500/20 hover:border-emerald-500/40 text-emerald-400 px-3 py-1.5 rounded-lg text-xs font-semibold transition-all">💬 WhatsApp</a>
+        <button class="bg-indigo-950/30 border border-indigo-500/20 hover:border-indigo-500/40 text-indigo-400 px-3 py-1.5 rounded-lg text-xs font-semibold transition-all" onclick="openCaseDrawer('${lead.id}')">📋 Ver Caso</button>
       </td>
     `;
     tbody.appendChild(tr);
   });
 }
 
-// Load case details into interactive Tab 2 (FSA Calculator)
-function openLeadInCalculator(leadId) {
+// Client filter search
+function filterLeadsTable() {
+  const query = document.getElementById('crm-search').value.toLowerCase();
+  const filtered = activeLeadsList.filter(l => 
+    l.nombre.toLowerCase().includes(query) || 
+    (l.instalacion && l.instalacion.toLowerCase().includes(query)) || 
+    (l.tipo && l.tipo.toLowerCase().includes(query))
+  );
+  renderLeadsTable(filtered);
+}
+
+// Modal management: Create Lead
+function openCreateLeadModal() {
+  document.getElementById('modal-create').classList.remove('hidden');
+}
+function closeCreateLeadModal() {
+  document.getElementById('modal-create').classList.add('hidden');
+}
+
+// Form submit: Create new client record
+function handleCreateLeadSubmit(event) {
+  event.preventDefault();
+  
+  const leadData = {
+    nombre: document.getElementById('add-nombre').value,
+    telefono: document.getElementById('add-telefono').value,
+    email: document.getElementById('add-email').value || '',
+    instalacion: document.getElementById('add-instalacion').value || '',
+    tipo: document.getElementById('add-tipo').value || 'Auditoría FSA',
+    cargos: document.getElementById('add-cargos').value || '',
+    familiar_nombre: document.getElementById('add-familiar-nombre').value || '',
+    familiar_telefono: document.getElementById('add-familiar-telefono').value || '',
+    notas: document.getElementById('add-notas').value || '',
+    counselor_meeting: false,
+    assigned_programs: false,
+    fsa_sentence: 60,
+    fsa_transit: 3,
+    fsa_risk: 15,
+    fsa_rdap: 1,
+    estado: 'Urgente',
+    created_at: isFirebaseActive ? firebase.firestore.FieldValue.serverTimestamp() : new Date().toISOString()
+  };
+
+  if (isFirebaseActive) {
+    db.collection('leads').add(leadData)
+    .then(() => {
+      closeCreateLeadModal();
+      event.target.reset();
+    })
+    .catch(err => console.error("Error creating case in Firebase:", err));
+  } else {
+    // Save to local storage
+    const newId = 'lead-mock-' + Date.now();
+    activeLeadsList.unshift({ id: newId, ...leadData });
+    localStorage.setItem('gf_crm_leads', JSON.stringify(activeLeadsList));
+    subscribeToLocalLeads();
+    closeCreateLeadModal();
+    event.target.reset();
+  }
+}
+
+// Side-Drawer case management
+function openCaseDrawer(leadId) {
   const lead = activeLeadsList.find(l => l.id === leadId);
   if (!lead) return;
 
   activeCaseId = leadId;
-  
-  // Highlight row in list
+
+  // Highlight active lead
   renderLeadsTable(activeLeadsList);
 
-  // Set form fields in calculator
-  document.getElementById('fsa-sentence').value = lead.fsa_sentence !== undefined ? lead.fsa_sentence : 60;
-  document.getElementById('fsa-risk').value = lead.fsa_risk !== undefined ? lead.fsa_risk : 15;
-  document.getElementById('fsa-rdap').value = lead.fsa_rdap !== undefined ? lead.fsa_rdap : 1;
+  // Populate drawer fields
+  document.getElementById('drawer-title').textContent = lead.nombre;
+  document.getElementById('dr-nombre').value = lead.nombre;
+  document.getElementById('dr-telefono').value = lead.telefono;
+  document.getElementById('dr-email').value = lead.email || '';
+  document.getElementById('dr-instalacion').value = lead.instalacion || '';
+  document.getElementById('dr-cargos').value = lead.cargos || '';
+  document.getElementById('dr-familiar-nombre').value = lead.familiar_nombre || '';
+  document.getElementById('dr-familiar-telefono').value = lead.familiar_telefono || '';
+  document.getElementById('dr-notas').value = lead.notas || '';
 
-  // Run initial calculation
-  calculateFsa();
+  document.getElementById('dr-chk-counselor').checked = lead.counselor_meeting || false;
+  document.getElementById('dr-chk-assigned').checked = lead.assigned_programs || false;
 
-  // Show dynamic save buttons
-  document.getElementById('calc-save-container').style.display = 'block';
-  document.getElementById('save-success-msg').style.display = 'none';
+  // Set family whatsapp redirect shortcut inside drawer
+  const waContainer = document.getElementById('dr-familiar-wa-container');
+  if (lead.familiar_telefono) {
+    const cleanFamiliarNum = lead.familiar_telefono.replace(/[^\d+]/g, '');
+    const familiarWaText = encodeURIComponent(`Hola ${lead.familiar_nombre}, le contactamos de Guía Federal para brindarle actualizaciones sobre el estatus de la condena y auditoría de ${lead.nombre}.`);
+    waContainer.innerHTML = `<a href="https://wa.me/${cleanFamiliarNum}?text=${familiarWaText}" target="_blank" class="w-full text-center inline-block bg-indigo-600 hover:bg-indigo-500 text-white font-bold py-2 rounded-lg transition-all">💬 Contactar Familiar</a>`;
+  } else {
+    waContainer.innerHTML = `<p class="text-[10px] text-slate-500 text-center">Familiar sin teléfono móvil registrado</p>`;
+  }
 
-  // Navigate to calculator tab automatically
-  const tabBtn = document.querySelectorAll('.admin-tab-btn')[1];
-  switchTab('tab-fsa', tabBtn);
+  // Populate dynamic projections saved values
+  document.getElementById('dr-disp-sentence').textContent = (lead.fsa_sentence || 60) + ' Meses';
+  document.getElementById('dr-disp-transit').textContent = (lead.fsa_transit || 0) + ' Meses';
+  document.getElementById('dr-disp-risk').textContent = (lead.fsa_risk === 15) ? 'Mínimo / Bajo (15 d/m)' : 'Medio / Alto (10 d/m)';
+  
+  // Quick pre-calculation
+  const calculatedMonths = runSilentFsaProjection(lead.fsa_sentence || 60, lead.fsa_transit || 0, lead.fsa_risk || 15, lead.fsa_rdap || 0);
+  document.getElementById('dr-disp-final').textContent = calculatedMonths.toFixed(1) + ' Meses';
+
+  // Open drawer UI
+  const drawer = document.getElementById('drawer-case');
+  drawer.classList.remove('translate-x-full');
+  
+  // Pre-load parameters into Calculator Tab in background
+  document.getElementById('fsa-sentence').value = lead.fsa_sentence || 60;
+  document.getElementById('fsa-transit').value = lead.fsa_transit || 0;
+  document.getElementById('fsa-risk').value = lead.fsa_risk || 15;
+  document.getElementById('fsa-rdap').value = lead.fsa_rdap || 0;
+  document.getElementById('calc-save-container').classList.remove('hidden');
 }
 
-// Save Calculator Plan into active case file
-function saveActiveCasePlan() {
+function closeCaseDrawer() {
+  const drawer = document.getElementById('drawer-case');
+  drawer.classList.add('translate-x-full');
+  activeCaseId = null;
+  renderLeadsTable(activeLeadsList);
+}
+
+// Switch drawer nested sections tabs
+function switchDrawerTab(sectionId, btn) {
+  document.querySelectorAll('.drawer-section').forEach(s => s.classList.add('hidden'));
+  document.querySelectorAll('.drawer-tab-btn').forEach(b => {
+    b.classList.remove('border-red-500', 'text-white');
+    b.classList.add('border-transparent', 'text-slate-400');
+  });
+
+  document.getElementById(sectionId).classList.remove('hidden');
+  btn.classList.add('border-red-500', 'text-white');
+  btn.classList.remove('border-transparent', 'text-slate-400');
+}
+
+// Save Case details directly from Side Drawer
+function saveActiveCaseFromDrawer() {
   if (!activeCaseId) return;
 
-  const sentence = parseFloat(document.getElementById('fsa-sentence').value) || 0;
-  const risk = parseFloat(document.getElementById('fsa-risk').value) || 0;
-  const rdap = parseFloat(document.getElementById('fsa-rdap').value) || 0;
+  const updateData = {
+    nombre: document.getElementById('dr-nombre').value,
+    telefono: document.getElementById('dr-telefono').value,
+    email: document.getElementById('dr-email').value,
+    instalacion: document.getElementById('dr-instalacion').value,
+    cargos: document.getElementById('dr-cargos').value,
+    familiar_nombre: document.getElementById('dr-familiar-nombre').value,
+    familiar_telefono: document.getElementById('dr-familiar-telefono').value,
+    notas: document.getElementById('dr-notas').value,
+    counselor_meeting: document.getElementById('dr-chk-counselor').checked,
+    assigned_programs: document.getElementById('dr-chk-assigned').checked
+  };
 
   if (isFirebaseActive) {
-    // Save to Firestore
-    db.collection('leads').doc(activeCaseId).update({
-      fsa_sentence: sentence,
-      fsa_risk: risk,
-      fsa_rdap: rdap
-    })
+    db.collection('leads').doc(activeCaseId).update(updateData)
     .then(() => {
-      showSaveSuccess();
+      closeCaseDrawer();
     })
-    .catch((err) => {
-      console.error("Error saving to Firebase:", err);
-    });
+    .catch(err => console.error("Error updating drawer case in Firebase:", err));
   } else {
-    // Save to LocalStorage mock database
+    // Local fallback save
     const idx = activeLeadsList.findIndex(l => l.id === activeCaseId);
     if (idx !== -1) {
-      activeLeadsList[idx].fsa_sentence = sentence;
-      activeLeadsList[idx].fsa_risk = risk;
-      activeLeadsList[idx].fsa_rdap = rdap;
+      activeLeadsList[idx] = { ...activeLeadsList[idx], ...updateData };
       localStorage.setItem('gf_crm_leads', JSON.stringify(activeLeadsList));
-      showSaveSuccess();
+      subscribeToLocalLeads();
+      closeCaseDrawer();
     }
   }
 }
 
-// Change lead status dynamically
+// Delete case trigger
+function deleteActiveLead() {
+  if (!activeCaseId) return;
+  if (!confirm("⚠️ ¿Está seguro que desea eliminar permanentemente este caso de la base de datos?")) return;
+
+  if (isFirebaseActive) {
+    db.collection('leads').doc(activeCaseId).delete()
+    .then(() => {
+      closeCaseDrawer();
+    })
+    .catch(err => console.error("Error deleting lead from Firebase:", err));
+  } else {
+    const idx = activeLeadsList.findIndex(l => l.id === activeCaseId);
+    if (idx !== -1) {
+      activeLeadsList.splice(idx, 1);
+      localStorage.setItem('gf_crm_leads', JSON.stringify(activeLeadsList));
+      subscribeToLocalLeads();
+      closeCaseDrawer();
+    }
+  }
+}
+
+// Change lead status dropdown selection
 function changeLeadStatus(leadId, newStatus) {
   if (isFirebaseActive) {
     db.collection('leads').doc(leadId).update({
@@ -747,12 +998,92 @@ function changeLeadStatus(leadId, newStatus) {
   }
 }
 
+// Sync Calculations back to active case record
+function saveActiveCasePlan() {
+  if (!activeCaseId) return;
+
+  const sentence = parseFloat(document.getElementById('fsa-sentence').value) || 0;
+  const transit = parseFloat(document.getElementById('fsa-transit').value) || 0;
+  const risk = parseFloat(document.getElementById('fsa-risk').value) || 0;
+  const rdap = parseFloat(document.getElementById('fsa-rdap').value) || 0;
+
+  if (isFirebaseActive) {
+    db.collection('leads').doc(activeCaseId).update({
+      fsa_sentence: sentence,
+      fsa_transit: transit,
+      fsa_risk: risk,
+      fsa_rdap: rdap
+    })
+    .then(() => {
+      showSaveSuccess();
+    })
+    .catch(err => console.error("Error syncing calculations:", err));
+  } else {
+    const idx = activeLeadsList.findIndex(l => l.id === activeCaseId);
+    if (idx !== -1) {
+      activeLeadsList[idx].fsa_sentence = sentence;
+      activeLeadsList[idx].fsa_transit = transit;
+      activeLeadsList[idx].fsa_risk = risk;
+      activeLeadsList[idx].fsa_rdap = rdap;
+      localStorage.setItem('gf_crm_leads', JSON.stringify(activeLeadsList));
+      showSaveSuccess();
+    }
+  }
+}
+
 function showSaveSuccess() {
   const msg = document.getElementById('save-success-msg');
-  msg.style.display = 'block';
+  msg.classList.remove('hidden');
   setTimeout(() => {
-    msg.style.display = 'none';
+    msg.classList.add('hidden');
   }, 3000);
+}
+
+// FSA Calculations taking post-sentence transit wait into account
+function calculateFsa() {
+  const sentenceMonths = parseFloat(document.getElementById('fsa-sentence').value) || 0;
+  const transitMonths = parseFloat(document.getElementById('fsa-transit').value) || 0;
+  const fsaRate = parseFloat(document.getElementById('fsa-risk').value) || 0;
+  const rdapElegible = parseFloat(document.getElementById('fsa-rdap').value) || 0;
+
+  // 1. Good Conduct Time (GCT) — ~15% off sentence (roughly 54 days per year)
+  const gctMonths = sentenceMonths * (54 / 365);
+
+  // 2. Transit wait post-sentence reduces the duration they can actually spend earning FSA credits!
+  // Earning basis only accumulates once in designated FCI prison.
+  const remainingBasis = sentenceMonths - gctMonths - transitMonths;
+
+  // 3. FSA Credits calculation based on earning factor (15 or 10 days)
+  let fsaReductionMonths = (Math.max(0, remainingBasis) * (fsaRate / (30 + fsaRate)));
+  if (fsaReductionMonths > 12) {
+    fsaReductionMonths = 12.0; // BOP maximum early transfer to RRC cap
+  }
+
+  // 4. RDAP Credits
+  const rdapReductionMonths = rdapElegible === 1 ? 12.0 : 0.0;
+
+  // 5. Final Estimated Sentence
+  const finalEstimate = sentenceMonths - gctMonths - fsaReductionMonths - rdapReductionMonths;
+  const displayFinal = Math.max(0, finalEstimate);
+
+  // UI Render
+  document.getElementById('res-orig').textContent = sentenceMonths.toFixed(0);
+  document.getElementById('res-goodtime').textContent = gctMonths.toFixed(1);
+  document.getElementById('res-transit-time').textContent = transitMonths.toFixed(1);
+  document.getElementById('res-fsa-credits').textContent = fsaReductionMonths.toFixed(1);
+  document.getElementById('res-rdap-credits').textContent = rdapReductionMonths.toFixed(1);
+  document.getElementById('res-final-months').textContent = displayFinal.toFixed(1);
+  document.getElementById('res-final-years').textContent = (displayFinal / 12).toFixed(1);
+}
+
+// Silent calculation tool for drawer update previews
+function runSilentFsaProjection(sentence, transit, risk, rdap) {
+  const gct = sentence * (54 / 365);
+  const remaining = sentence - gct - transit;
+  let fsa = (Math.max(0, remaining) * (risk / (30 + risk)));
+  if (fsa > 12) fsa = 12.0;
+  const rdapDiscount = rdap === 1 ? 12.0 : 0.0;
+  return Math.max(0, sentence - gct - fsa - rdapDiscount);
 }
 
 // Safe string escaping
@@ -764,43 +1095,6 @@ function escapeHtml(str) {
     .replace(/>/g, "&gt;")
     .replace(/"/g, "&quot;")
     .replace(/'/g, "&#039;");
-}
-
-// FSA Sentencing Calculations
-function calculateFsa() {
-  const sentenceMonths = parseFloat(document.getElementById('fsa-sentence').value) || 0;
-  const fsaRate = parseFloat(document.getElementById('fsa-risk').value) || 0;
-  const rdapElegible = parseFloat(document.getElementById('fsa-rdap').value) || 0;
-
-  // 1. Good Conduct Time (GCT) — ~15% off sentence (roughly 54 days per year)
-  // For federal sentencing, GCT is calculated as 0.1479 coefficient of total sentence
-  const gctMonths = sentenceMonths * (54 / 365);
-
-  // Remaining sentence to serve before FSA credits are applied
-  const remainingBasis = sentenceMonths - gctMonths;
-
-  // 2. FSA Credits
-  // Gaining 15 or 10 days for every 30 days served.
-  // Effective factor calculation: If gaining 15 days for 30 served, they serve 30 days and earn 15 credits.
-  // Serves 2/3 of remaining sentence. Max FSA reduction allowed under BOP is 12 months.
-  let fsaReductionMonths = (remainingBasis * (fsaRate / (30 + fsaRate)));
-  if (fsaReductionMonths > 12) {
-    fsaReductionMonths = 12.0; // Capting early transfer to RRC/Home Confinement at 12 months maximum
-  }
-
-  // 3. RDAP Credits
-  const rdapReductionMonths = rdapElegible === 1 ? 12.0 : 0.0;
-
-  // 4. Final Estimated Sentence
-  const finalEstimate = sentenceMonths - gctMonths - fsaReductionMonths - rdapReductionMonths;
-  const displayFinal = Math.max(0, finalEstimate);
-
-  // Render to UI
-  document.getElementById('res-orig').textContent = sentenceMonths.toFixed(0);
-  document.getElementById('res-goodtime').textContent = gctMonths.toFixed(1);
-  document.getElementById('res-fsa-credits').textContent = fsaReductionMonths.toFixed(1);
-  document.getElementById('res-rdap-credits').textContent = rdapReductionMonths.toFixed(1);
-  document.getElementById('res-final-months').textContent = displayFinal.toFixed(1);
 }
 
 // Check session on load
