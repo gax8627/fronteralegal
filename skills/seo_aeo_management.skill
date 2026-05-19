@@ -9,7 +9,7 @@ The objective is to dominate "high-intent" federal legal queries in Spanish, par
 Every page MUST include:
 1.  `<title>`: Primary keyword + " | Guía Federal".
 2.  `<meta name="description">`: 150-160 characters summary with a Call to Action.
-3.  `<link rel="canonical">`: Points to `https://fronteralegal.vercel.app/[page-slug]`.
+3.  `<link rel="canonical">`: Points to `https://www.guiafederal.net/[page-slug]`.
 4.  Open Graph Tags: `og:title`, `og:description`, `og:image`, `og:type` (article for blogs, website for main pages).
 
 ## AEO & Structured Data (JSON-LD)

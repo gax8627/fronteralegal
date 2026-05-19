@@ -19,8 +19,29 @@ Guía Federal helps families in the critical first 72 hours after a federal arre
 - **Locate Your Family Member**: [/encuentra-familiar](/encuentra-familiar.html) — BOP, USMS, IGA jails
 - **Second Opinion**: [/segunda-opinion](/segunda-opinion.html) — Public defender evaluation guide
 - **Facility Directory**: [/facilities](/facilities.html) — MDC/FDC pre-trial centers + post-conviction
-- **FSA Guide**: [/fsa](/fsa-guide.html)
-- **RDAP Guide**: [/rdap](/rdap-guide.html)
+- **FSA Guide**: [/fsa-guide](/fsa-guide.html)
+- **RDAP Guide**: [/rdap-guide](/rdap-guide.html)
+
+## Specialized Technical Guides (Blog / Expert Knowledge)
+- **Extradition Strategy SD**: [/blog/estrategia-extradicion-san-diego-2026](/blog/estrategia-extradicion-san-diego-2026.html)
+- **PATTERN Audit BOP**: [/blog/auditoria-pattern-bop-2026](/blog/auditoria-pattern-bop-2026.html)
+- **Federal Arrest 72h SD**: [/blog/arresto-federal-san-diego-72-horas](/blog/arresto-federal-san-diego-72-horas.html)
+- **FSA ETC Credits**: [/blog/first-step-act-creditos-etc](/blog/first-step-act-creditos-etc.html)
+- **Federal Investigation (Target Letter)**: [/blog/investigacion-federal-que-hacer](/blog/investigacion-federal-que-hacer.html)
+- **Right to Remain Silent**: [/blog/derecho-a-guardar-silencio](/blog/derecho-a-guardar-silencio.html)
+- **Beating the Federal Prosecutor**: [/blog/vencer-al-fiscal-federal](/blog/vencer-al-fiscal-federal.html)
+- **Informants & Brady Evidence**: [/blog/informantes-y-brady-evidencia](/blog/informantes-y-brady-evidencia.html)
+- **Road to Trial**: [/blog/camino-al-juicio-federal](/blog/camino-al-juicio-federal.html)
+- **Presumption of Innocence**: [/blog/presuncion-de-inocencia-explicada](/blog/presuncion-de-inocencia-explicada.html)
+- **Reduce Federal Sentence**: [/blog/reducir-sentencia-federal-2026](/blog/reducir-sentencia-federal-2026.html)
+- **Unresponsive Public Defender**: [/blog/abogado-no-responde-federal](/blog/abogado-no-responde-federal.html)
+- **Skipping Halfway House**: [/blog/saltar-halfway-house-2026](/blog/saltar-halfway-house-2026.html)
+- **Blind Mule Defense**: [/blog/mula-ciega-federal](/blog/mula-ciega-federal.html)
+- **Narco-political Extradition**: [/blog/extradicion-narcopolitica-2026](/blog/extradicion-narcopolitica-2026.html)
+- **RDAP Explained**: [/blog/rdap-explicado](/blog/rdap-explicado.html)
+- **Boss of Your Freedom (Re-entry)**: [/blog/ser-jefe-de-tu-libertad](/blog/ser-jefe-de-tu-libertad.html)
+- **Plea Bargaining**: [/blog/plea-bargaining-federal](/blog/plea-bargaining-federal.html)
+- **PSO Interview**: [/blog/entrevista-pso](/blog/entrevista-pso.html)
 
 ## Pre-Trial MDC/FDC Facilities
 - MDC Brooklyn (EDNY) — 80 29th St, Brooklyn NY
@@ -33,6 +54,6 @@ Guía Federal helps families in the critical first 72 hours after a federal arre
 - **Not a Law Firm**: Guía Federal provides legal orientation and consulting; it does not provide direct courtroom representation. All work is supervised by or for licensed attorneys.
 
 ## Contact
-- **WhatsApp**: +1-XXX-XXX-XXXX (configure in config.js)
+- **WhatsApp**: +1-619-629-1612 (San Diego area code)
 - **Email**: info@guia-federal.com
 - **Consultation**: [Free Evaluation](/index.html#contact)

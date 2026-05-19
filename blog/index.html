@@ -7,17 +7,13 @@
 <meta name="description" content="Recursos técnicos y noticias de 2026 para el 9no Circuito. Guías de supervivencia legal en San Diego (CASD), Arizona y Nevada para familias latinas.">
 <meta property="og:title" content="Blog Federal 9no Circuito | Guía Federal">
 <meta property="og:description" content="Aprenda sobre el sistema federal en San Diego. Guías sobre la First Step Act, RDAP, procesos de extradición y defensa técnica en el Distrito Sur.">
-<meta property="og:image" content="https://fronteralegal.vercel/assets/brand-og.png">
+<meta property="og:image" content="https://www.guiafederal.net/assets/brand-og.png">
 <meta property="og:type" content="website">
 <meta name="twitter:card" content="summary_large_image">
-<link rel="canonical" href="https://fronteralegal.vercel.app/blog/">
-<link rel="icon" type="image/png" href/assets/brand-og.png">
-<link rel="manifest" href="../manifest.json">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../index.css">
-<script src="../config.js" defer></script>
+<link rel="canonical" href="https://www.guiafederal.net/blog/">
+<link rel="icon" type="image/png" href="/assets/brand-og.png">
+<link rel="stylesheet" href="/index.css">
+<script src="/config.js" defer></script>
 <style>
   .blog-grid {
     display: grid;
@@ -88,45 +84,16 @@
     gap: 0.35rem;
     margin-top: auto;
   }
-  .blog-read-link:hover { text-decoration: underline; }
-  /* Stretched link — the read-more anchor covers the entire card */
   .blog-read-link::after {
     content: '';
     position: absolute;
     inset: 0;
     z-index: 1;
   }
-  .blog-empty {
-    text-align: center;
-    color: var(--text-dim);
-    padding: 4rem 0;
-  }
   @media (max-width: 768px) {
     .blog-grid { grid-template-columns: 1fr; }
   }
 </style>
-<!-- Global site tag (gtag.js) - Google Analytics Placeholder -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag("js", new Date());
-  gtag("config", "G-XXXXXXXXXX");
-</script>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Blog",
-  "name": "Blog de Guía Federal",
-  "description": "Recursos técnicos y guías de supervivencia legal para familias enfrentando el sistema de justicia federal de EE.UU.",
-  "publisher": {
-    "@type": "Organization",
-    "name": "Guía Federal"
-  }
-}
-</script>
-<script>if("serviceWorker"in navigator){window.addEventListener("load",function(){navigator.serviceWorker.register("/sw.js").catch(function(){});});}</script>
-<link rel="alternate" hreflang="es" href="https://fronteralegal.vercel.app/blog/">
 </head>
 <body>
 
@@ -149,215 +116,159 @@
   </div>
 </nav>
 
-  <section class="parallax-section" style="background-image: url('/assets/hero-blog.png');">
-    <div class="bg-overlay">
-      <div class="container" style="text-align: center;">
-        <div style="margin-bottom:1.5rem; display:flex; justify-content:center; gap:0.75rem; align-items:center; flex-wrap:wrap;">
-          <span class="hero-eyebrow" style="color:#bfdbfe;">Recursos · Guías · Noticias</span>
-          <span style="background:rgba(220,38,38,0.1); color:var(--accent-hi); font-size:0.75rem; font-weight:700; text-transform:uppercase; letter-spacing:0.1em; padding:0.4rem 1rem; border-radius:100px; border:1px solid var(--accent-hi);">🇲🇽 Se Habla Español</span>
-        </div>
-        <h1 style="color:#fff; font-size:clamp(2.5rem,5vw,3.75rem); margin-bottom:1rem;">Blog Guía Federal</h1>
-        <p style="color:#fff; opacity: 0.9; max-width:600px; margin:0 auto; font-size:1.125rem; line-height:1.6;">Información práctica sobre investigación federal, arresto, audiencia de detención, plea bargaining y derechos pretrial de las familias latinas.</p>
+<section class="parallax-section" style="background-image: url('/assets/hero-blog.png');">
+  <div class="bg-overlay">
+    <div class="container" style="text-align: center;">
+      <div style="margin-bottom:1.5rem; display:flex; justify-content:center; gap:0.75rem; align-items:center; flex-wrap:wrap;">
+        <span class="hero-eyebrow" style="color:#bfdbfe;">Recursos · Guías · Noticias</span>
+        <span style="background:rgba(220,38,38,0.1); color:var(--accent-hi); font-size:0.75rem; font-weight:700; text-transform:uppercase; letter-spacing:0.1em; padding:0.4rem 1rem; border-radius:100px; border:1px solid var(--accent-hi);">🇲🇽 Se Habla Español</span>
       </div>
+      <h1 style="color:#fff; font-size:clamp(2.5rem,5vw,3.75rem); margin-bottom:1rem;">Blog Guía Federal</h1>
+      <p style="color:#fff; opacity: 0.9; max-width:600px; margin:0 auto; font-size:1.125rem; line-height:1.6;">La enciclopedia técnica para familias enfrentando el sistema federal en San Diego y el 9no Circuito.</p>
     </div>
-  </section>
+  </div>
+</section>
 
-<!-- ARTICLES -->
 <section>
   <div class="container">
-    <div class="blog-grid" id="blog-container">
-      <!-- 15 MAY 2026 -->
-      <!-- 15 MAY 2026 -->
+    <div class="blog-grid">
+      
+      <!-- CRISIS / ARRESTO -->
       <article class="blog-card">
-        <img class="blog-card-img" src="/assets/hero-extradition.png" alt="Cruce fronterizo San Diego">
+        <img class="blog-card-img" src="/assets/hero-arrestado.png" alt="Arresto San Diego">
         <div class="blog-card-body">
-          <span class="blog-tag">Estrategia 2026</span>
-          <h2>Extradición a San Diego: Por qué esperar al arresto le costará años de libertad</h2>
-          <div class="blog-meta">📅 15 de Mayo de 2026 • 7 min</div>
-          <p>La entrega voluntaria negociada en el CASD puede otorgar reducciones inmediatas de sentencia. No espere a ser capturado.</p>
-          <a href="estrategia-extradicion-san-diego-2026" class="blog-read-link">Leer Guía de Urgencia <span>→</span></a>
+          <span class="blog-tag">Emergencia 72h</span>
+          <h2>Arresto Federal en San Diego: Las 72 horas Críticas</h2>
+          <div class="blog-meta">📅 15 de Mayo de 2026 • 23 min</div>
+          <p>Manual de supervivencia inmediata. Qué decir, qué no decir y cómo salir libre ante el magistrado federal.</p>
+          <a href="/arresto-federal-san-diego-72-horas" class="blog-read-link">Activar Plan →</a>
         </div>
       </article>
 
       <article class="blog-card">
-        <img class="blog-card-img" src="/assets/hero-fsa.png" alt="Cálculos y leyes federales">
-        <div class="blog-card-body">
-          <span class="blog-tag">Auditoría Técnica</span>
-          <h2>El Error del BOP que congela su libertad: Auditoría PATTERN en San Diego</h2>
-          <div class="blog-meta">📅 15 de Mayo de 2026 • 6 min</div>
-          <p>¿Su familiar no recibe créditos FSA? El problema suele ser un error en su puntaje de riesgo. Aprenda a corregirlo.</p>
-          <a href="auditoria-pattern-bop-2026" class="blog-read-link">Verificar Créditos <span>→</span></a>
-        </div>
-      </article>
-
-      <article class="blog-card">
-        <img class="blog-card-img" src="/assets/hero-arrestado.png" alt="Corte Federal San Diego">
-        <div class="blog-card-body">
-          <span class="blog-tag">Crisis Pre-Trial</span>
-          <h2>Arresto Federal en San Diego: Las 72 horas que definen si sale libre o no</h2>
-          <div class="blog-meta">📅 15 de Mayo de 2026 • 5 min</div>
-          <p>El plan de liberación ante el magistrado federal debe ser impecable. Guía de supervivencia inmediata en el CASD.</p>
-          <a href="arresto-federal-san-diego-72-horas" class="blog-read-link">Activar Plan 72h <span>→</span></a>
-        </div>
-      </article>
-
-      <!-- 04 MAY 2026 -->
-      <article class="blog-card">
-        <img class="blog-card-img" src="/assets/hero-court.png" alt="Plea bargaining federal" loading="lazy">
-        <div class="blog-card-body">
-          <span class="blog-tag">Estrategia Pretrial</span>
-          <h2>Plea Bargaining Federal: Cómo Evaluar si el Acuerdo del Fiscal le Conviene</h2>
-          <div class="blog-meta">📅 04 de Mayo de 2026 • 8 min</div>
-          <p>El 97% de los casos federales terminan en acuerdo. Aprenda qué es el plea bargaining, el Alford plea y la cooperación 5K1.1.</p>
-          <a href="plea-bargaining-federal" class="blog-read-link">Evaluar oferta →</a>
-        </div>
-      </article>
-
-      <!-- 03 MAY 2026 -->
-      <article class="blog-card">
-        <img class="blog-card-img" src="/assets/hero-target-letter.png" alt="Investigación federal" loading="lazy">
-        <div class="blog-card-body">
-          <span class="blog-tag">Prevención</span>
-          <h2>Bajo Investigación Federal: Pasos para Sobrevivir al FBI, DEA y HSI</h2>
-          <div class="blog-meta">📅 03 de Mayo de 2026 • 6 min</div>
-          <p>El gobierno federal no arresta para investigar; investigan para arrestar. Aprenda qué hacer si recibe una Target Letter.</p>
-          <a href="investigacion-federal-que-hacer" class="blog-read-link">Ver pasos →</a>
-        </div>
-      </article>
-
-      <article class="blog-card">
-        <img class="blog-card-img" src="/assets/hero-silence.png" alt="Derecho al silencio" loading="lazy">
+        <img class="blog-card-img" src="/assets/hero-silence.png" alt="Derecho al silencio">
         <div class="blog-card-body">
           <span class="blog-tag">Derechos</span>
-          <h2>El Derecho al Silencio: Por qué "Aclarar las Cosas" es un Error Fatal</h2>
-          <div class="blog-meta">📅 03 de Mayo de 2026 • 5 min</div>
-          <p>El pez muere por la boca. Descubra por qué intentar explicarle a un agente federal es el error más costoso que puede cometer.</p>
-          <a href="derecho-a-guardar-silencio" class="blog-read-link">Leer advertencia →</a>
+          <h2>El Derecho al Silencio: Su Única Arma Real</h2>
+          <div class="blog-meta">📅 15 de Mayo de 2026 • 23 min</div>
+          <p>El pez muere por la boca. Por qué nunca debe hablar con agentes federales sin su abogado presente.</p>
+          <a href="/derecho-a-guardar-silencio" class="blog-read-link">Leer Advertencia →</a>
+        </div>
+      </article>
+
+      <!-- ESTRATEGIA Y JUICIO -->
+      <article class="blog-card">
+        <img class="blog-card-img" src="/assets/hero-extradition.png" alt="Extradición San Diego">
+        <div class="blog-card-body">
+          <span class="blog-tag">Estrategia 2026</span>
+          <h2>Estrategia de Extradición: Por qué Entregarse es Ganar</h2>
+          <div class="blog-meta">📅 15 de Mayo de 2026 • 25 min</div>
+          <p>Cómo la entrega voluntaria en San Diego puede ahorrarle años de prisión y asegurar mejores condiciones.</p>
+          <a href="/estrategia-extradicion-san-diego-2026" class="blog-read-link">Ver Estrategia →</a>
         </div>
       </article>
 
       <article class="blog-card">
-        <img class="blog-card-img" src="/assets/hero-prosecutor.png" alt="Vencer al fiscal federal" loading="lazy">
+        <img class="blog-card-img" src="/assets/hero-court.png" alt="Plea Bargaining">
+        <div class="blog-card-body">
+          <span class="blog-tag">Negociación</span>
+          <h2>Plea Bargaining: Cómo Negociar contra el Gobierno</h2>
+          <div class="blog-meta">📅 15 de Mayo de 2026 • 22 min</div>
+          <p>Entienda las reglas del juego: acuerdos de culpabilidad, cooperación 5K1.1 y cómo evitar sentencias máximas.</p>
+          <a href="/plea-bargaining-federal" class="blog-read-link">Evaluar Oferta →</a>
+        </div>
+      </article>
+
+      <article class="blog-card">
+        <img class="blog-card-img" src="/assets/hero-prosecutor.png" alt="Vencer al fiscal">
         <div class="blog-card-body">
           <span class="blog-tag">Guerra Técnica</span>
-          <h2>¿Cómo Vencer a un Fiscal Federal? Detenga sus Tácticas de Miedo</h2>
-          <div class="blog-meta">📅 03 de Mayo de 2026 • 8 min</div>
-          <p>Ellos usan el miedo para que usted firme. Aprenda por qué nunca debe reunirse con ellos sin auditar la evidencia primero.</p>
-          <a href="vencer-al-fiscal-federal" class="blog-read-link">Ver tácticas →</a>
+          <h2>Cómo Vencer al Fiscal Federal: Tácticas de Defensa</h2>
+          <div class="blog-meta">📅 15 de Mayo de 2026 • 22 min</div>
+          <p>Uso de evidencia Brady y Giglio para desmantelar la acusación y forzar una negociación favorable.</p>
+          <a href="/vencer-al-fiscal-federal" class="blog-read-link">Ver Tácticas →</a>
         </div>
       </article>
 
+      <!-- LEYES Y BENEFICIOS -->
       <article class="blog-card">
-        <img class="blog-card-img" src="/assets/hero-informant.png" alt="Informantes federales" loading="lazy">
-        <div class="blog-card-body">
-          <span class="blog-tag">Estrategia</span>
-          <h2>¿Hay un Informante en su Caso? Cómo Obligar al Fiscal a Mostrar la Verdad</h2>
-          <div class="blog-meta">📅 03 de Mayo de 2026 • 7 min</div>
-          <p>No deje que un "informante" decida su futuro. Aprenda a pedir las pruebas Brady y a obligar al informante a testificar.</p>
-          <a href="informantes-y-brady-evidencia" class="blog-read-link">Ver tácticas →</a>
-        </div>
-      </article>
-
-      <article class="blog-card">
-        <img class="blog-card-img" src="/assets/hero-court.png" alt="Juicio federal" loading="lazy">
-        <div class="blog-card-body">
-          <span class="blog-tag">Proceso</span>
-          <h2>Pasos al Juicio Federal: ¿Qué es "In Limine" y Cómo Ganar Audiencias?</h2>
-          <div class="blog-meta">📅 03 de Mayo de 2026 • 6 min</div>
-          <p>Entienda el proceso de las audiencias, las mociones "in limine" y cuándo conviene pedir un Juicio Rápido.</p>
-          <a href="camino-al-juicio-federal" class="blog-read-link">Ver proceso →</a>
-        </div>
-      </article>
-
-      <article class="blog-card">
-        <img class="blog-card-img" src="/assets/hero-scales.png" alt="Carga de la prueba" loading="lazy">
-        <div class="blog-card-body">
-          <span class="blog-tag">La Ley</span>
-          <h2>Carga de la Prueba: Por qué Usted NO Tiene que Probar su Inocencia</h2>
-          <div class="blog-meta">📅 03 de Mayo de 2026 • 7 min</div>
-          <p>Usted es inocente hasta que se pruebe lo contrario. El trabajo de probarlo es del fiscal, no suyo.</p>
-          <a href="presuncion-de-inocencia-explicada" class="blog-read-link">Ver explicación →</a>
-        </div>
-      </article>
-
-      <article class="blog-card">
-        <img class="blog-card-img" src="/assets/hero-lawyer.png" alt="Abogado no responde" loading="lazy">
-        <div class="blog-card-body">
-          <span class="blog-tag">Defensa Legal</span>
-          <h2>Abogado Federal no Responde: Pasos para Obligar una Comunicación Efectiva</h2>
-          <div class="blog-meta">📅 03 de Mayo de 2026 • 6 min</div>
-          <p>La falta de comunicación es la queja #1. Aprenda cómo documentar el abandono y qué exigir bajo las reglas de ética.</p>
-          <a href="abogado-no-responde-federal" class="blog-read-link">Ver tácticas →</a>
-        </div>
-      </article>
-
-      <article class="blog-card">
-        <img class="blog-card-img" src="/assets/hero-blind-mule.png" alt="Mula Ciega" loading="lazy">
-        <div class="blog-card-body">
-          <span class="blog-tag">Frontera</span>
-          <h2>Defensa de Mula Ciega: Cómo Probar que Usted NO Sabía del Cargamento</h2>
-          <div class="blog-meta">📅 03 de Mayo de 2026 • 5 min</div>
-          <p>Encontraron droga en su auto y no sabía. Aprenda qué pruebas técnicas buscar hoy mismo para demostrar su inocencia.</p>
-          <a href="mula-ciega-federal" class="blog-read-link">Ver defensa →</a>
-        </div>
-      </article>
-
-      <article class="blog-card">
-        <img class="blog-card-img" src="/assets/hero-extradition.png" alt="Extradición 2026" loading="lazy">
-        <div class="blog-card-body">
-          <span class="blog-tag">Análisis</span>
-          <h2>Extradiciones 2026: El Juego del Tablero entre México y EE.UU.</h2>
-          <div class="blog-meta">📅 03 de Mayo de 2026 • 7 min</div>
-          <p>¿Por qué tantos políticos están cayendo? Entienda cómo funciona la Regla 5K1.1 y los beneficios de la cooperación.</p>
-          <a href="extradicion-narcopolitica-2026" class="blog-read-link">Leer análisis →</a>
-        </div>
-      </article>
-
-      <!-- 01 MAY 2026 -->
-      <article class="blog-card">
-        <img class="blog-card-img" src="/assets/hero-interview.png" alt="Entrevista PSO" loading="lazy">
-        <div class="blog-card-body">
-          <span class="blog-tag">Pre-Trial</span>
-          <h2>Entrevista de Pre-Trial (PSO): Cómo Ganar su Libertad sin Confesar</h2>
-          <div class="blog-meta">📅 01 de Mayo de 2026 • 7 min</div>
-          <p>El oficial de Pre-Trial es quien recomienda su libertad. Aprenda a navegar la entrevista sin dar munición a la fiscalía.</p>
-          <a href="entrevista-pso" class="blog-read-link">Ver guía →</a>
-        </div>
-      </article>
-
-      <article class="blog-card">
-        <img class="blog-card-img" src="/assets/hero-leadership.png" alt="Self Advocacy" loading="lazy">
-        <div class="blog-card-body">
-          <span class="blog-tag">Mentalidad</span>
-          <h2>Usted debe ser el Jefe de su Caso: El Poder de la Auto-Defensa</h2>
-          <div class="blog-meta">📅 01 de Mayo de 2026 • 6 min</div>
-          <p>No deje su vida solo en manos de un abogado. Aprenda a documentar su caso y a ser el líder de su propia libertad.</p>
-          <a href="ser-jefe-de-tu-libertad" class="blog-read-link">Ver mentalidad →</a>
-        </div>
-      </article>
-
-      <!-- 23 APR 2026 -->
-      <article class="blog-card">
-        <img class="blog-card-img" src="/assets/hero-fsa.png" alt="First Step Act" loading="lazy">
+        <img class="blog-card-img" src="/assets/hero-fsa.png" alt="First Step Act">
         <div class="blog-card-body">
           <span class="blog-tag">FSA / Créditos</span>
-          <h2>Cómo funcionan los créditos ETC del First Step Act — guía paso a paso</h2>
-          <div class="blog-meta">📅 23 de Abril de 2026 • 8 min</div>
-          <p>Aprenda a acumular créditos de tiempo ganado y cómo auditar si el BOP los aplicó correctamente en su expediente.</p>
-          <a href="first-step-act-creditos-etc" class="blog-read-link">Ver detalles <span>→</span></a>
+          <h2>First Step Act: El Manual para Acumular Créditos ETC</h2>
+          <div class="blog-meta">📅 15 de Mayo de 2026 • 20 min</div>
+          <p>Cómo reducir su sentencia federal trabajando y estudiando. Guía paso a paso para el canje de créditos.</p>
+          <a href="/first-step-act-creditos-etc" class="blog-read-link">Ver Créditos →</a>
         </div>
       </article>
 
       <article class="blog-card">
-        <img class="blog-card-img" src="/assets/hero-rdap.png" alt="RDAP Program" loading="lazy">
+        <img class="blog-card-img" src="/assets/hero-rdap.png" alt="Programa RDAP">
         <div class="blog-card-body">
           <span class="blog-tag">RDAP / Salida</span>
-          <h2>RDAP Explicado: El Programa que Reduce 12 Meses su Sentencia</h2>
-          <div class="blog-meta">📅 23 de Abril de 2026 • 6 min</div>
-          <p>Todo lo que necesita saber sobre el programa de abuso de sustancias del BOP y cómo calificar para la reducción de 1 año.</p>
-          <a href="rdap-explicado" class="blog-read-link">Ver guía RDAP →</a>
+          <h2>RDAP Explicado: Gane 12 Meses de Libertad</h2>
+          <div class="blog-meta">📅 15 de Mayo de 2026 • 22 min</div>
+          <p>El programa de abuso de sustancias del BOP. Cómo calificar y asegurar la reducción de un año de cárcel.</p>
+          <a href="/rdap-explicado" class="blog-read-link">Calificar a RDAP →</a>
         </div>
       </article>
+
+      <article class="blog-card">
+        <img class="blog-card-img" src="/assets/hero-fsa.png" alt="PATTERN Audit">
+        <div class="blog-card-body">
+          <span class="blog-tag">Auditoría BOP</span>
+          <h2>PATTERN Audit: Corrija el Error que Retrasa su Salida</h2>
+          <div class="blog-meta">📅 15 de Mayo de 2026 • 24 min</div>
+          <p>Análisis del algoritmo de riesgo del BOP. Cómo bajar su nivel de riesgo para aplicar sus créditos de tiempo.</p>
+          <a href="/auditoria-pattern-bop-2026" class="blog-read-link">Auditar Riesgo →</a>
+        </div>
+      </article>
+
+      <!-- TEMAS ESPECIALES -->
+      <article class="blog-card">
+        <img class="blog-card-img" src="/assets/hero-blind-mule.png" alt="Mula Ciega">
+        <div class="blog-card-body">
+          <span class="blog-tag">Frontera</span>
+          <h2>Defensa de Mula Ciega: Inocencia en la Frontera</h2>
+          <div class="blog-meta">📅 15 de Mayo de 2026 • 23 min</div>
+          <p>Encontraron droga en su auto y no sabía. Cómo usar GPS y forense digital para probar su inocencia.</p>
+          <a href="/mula-ciega-federal" class="blog-read-link">Ver Defensa →</a>
+        </div>
+      </article>
+
+      <article class="blog-card">
+        <img class="blog-card-img" src="/assets/hero-extradition.png" alt="Narcopolítica">
+        <div class="blog-card-body">
+          <span class="blog-tag">Geopolítica</span>
+          <h2>Extradición y Narcopolítica: El Destino Final</h2>
+          <div class="blog-meta">📅 15 de Mayo de 2026 • 25 min</div>
+          <p>Análisis de los tratados entre México y EE.UU. Casos de alto impacto y protección de derechos internacionales.</p>
+          <a href="/extradicion-narcopolitica-2026" class="blog-read-link">Leer Análisis →</a>
+        </div>
+      </article>
+
+      <article class="blog-card">
+        <img class="blog-card-img" src="/assets/hero-court.png" alt="Reducir Sentencia">
+        <div class="blog-card-body">
+          <span class="blog-tag">Ingeniería Legal</span>
+          <h2>Cómo Reducir una Sentencia Federal 2026</h2>
+          <div class="blog-meta">📅 15 de Mayo de 2026 • 24 min</div>
+          <p>Las 10 vías legales para pasar menos tiempo en prisión. Safety Valve, Enmienda 821 y Varianzas.</p>
+          <a href="/reducir-sentencia-federal-2026" class="blog-read-link">Ver Vías →</a>
+        </div>
+      </article>
+
+      <article class="blog-card">
+        <img class="blog-card-img" src="/assets/hero-home.png" alt="Halfway House">
+        <div class="blog-card-body">
+          <span class="blog-tag">Fase Final</span>
+          <h2>Saltar la Halfway House: Plan de Regreso Directo</h2>
+          <div class="blog-meta">📅 15 de Mayo de 2026 • 23 min</div>
+          <p>Cómo maximizar su tiempo en casa de transición o ir directo a confinamiento domiciliario con su familia.</p>
+          <a href="/saltar-halfway-house-2026" class="blog-read-link">Planificar Salida →</a>
+        </div>
+      </article>
+
     </div>
   </div>
 </section>
@@ -367,32 +278,40 @@
   <div class="container footer-grid">
     <div class="footer-col">
       <a href="/" class="nav-brand">Guía<span>Federal</span></a>
-      <p>© 2026 Guía Federal. Orientación técnica para familias latinas.</p>
+      <p>© 2026 Guía Federal. La autoridad técnica en el 9no Circuito.</p>
     </div>
     <div class="footer-col">
-      <h5>Guías Rápidas</h5>
+      <h5>Enlaces Directos</h5>
       <ul>
-        <li><a href="/arrestado-federal">Primeras 72 Horas</a></li>
-        <li><a href="/audiencia-detencion">Audiencia de Detención</a></li>
-        <li><a href="/segunda-opinion">El Abogado no Responde</a></li>
-      </ul>
-    </div>
-    <div class="footer-col">
-      <h5>Recursos</h5>
-      <ul>
+        <li><a href="/arresto-federal-san-diego-72-horas">Emergencia 72h</a></li>
         <li><a href="/facilities">Directorio de Prisiones</a></li>
-        <li><a href="/blog/">Blog de Recursos</a></li>
-        <li><a href="/disclaimer">Aviso Legal</a></li>
+        <li><a href="/#contact">Consulta Gratuita</a></li>
       </ul>
     </div>
   </div>
 </footer>
 
-<!-- FLOATING WHATSAPP -->
-<a href="../#contact" class="wa-float wa-link" aria-label="Contactar por WhatsApp">
-  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-</a>
+<script>
+function toggleNav() {
+  const links = document.querySelector('.nav-links');
+  const btn = document.querySelector('.nav-toggle');
+  links.classList.toggle('active');
+  btn.setAttribute('aria-expanded', links.classList.contains('active'));
+}
 
+function toggleTheme() {
+  const html = document.documentElement;
+  const currentTheme = html.getAttribute('data-theme');
+  const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+  html.setAttribute('data-theme', newTheme);
+  localStorage.setItem('theme', newTheme);
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  const savedTheme = localStorage.getItem('theme') || 'light';
+  document.documentElement.setAttribute('data-theme', savedTheme);
+});
+</script>
 
 </body>
 </html>

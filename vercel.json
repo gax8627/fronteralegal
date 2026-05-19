@@ -112,6 +112,82 @@
     {
       "source": "/first-step-act-creditos-etc",
       "destination": "/blog/first-step-act-creditos-etc"
+    },
+    {
+      "source": "/camino-al-juicio-federal",
+      "destination": "/blog/camino-al-juicio-federal"
+    },
+    {
+      "source": "/abogado-no-responde-federal",
+      "destination": "/blog/abogado-no-responde-federal"
+    },
+    {
+      "source": "/presuncion-de-inocencia-explicada",
+      "destination": "/blog/presuncion-de-inocencia-explicada"
+    },
+    {
+      "source": "/mula-ciega-federal",
+      "destination": "/blog/mula-ciega-federal"
+    },
+    {
+      "source": "/extradicion-narcopolitica-2026",
+      "destination": "/blog/extradicion-narcopolitica-2026"
+    },
+    {
+      "source": "/entrevista-pso",
+      "destination": "/blog/entrevista-pso"
+    },
+    {
+      "source": "/ser-jefe-de-tu-libertad",
+      "destination": "/blog/ser-jefe-de-tu-libertad"
+    },
+    {
+      "source": "/rdap-explicado",
+      "destination": "/blog/rdap-explicado"
+    },
+    {
+      "source": "/saltar-halfway-house-2026",
+      "destination": "/blog/saltar-halfway-house-2026"
+    },
+    {
+      "source": "/reducir-sentencia-federal-2026",
+      "destination": "/blog/reducir-sentencia-federal-2026"
+    },
+    {
+      "source": "/encuentra-familiar",
+      "destination": "/encuentra-familiar"
+    },
+    {
+      "source": "/segunda-opinion",
+      "destination": "/segunda-opinion"
+    },
+    {
+      "source": "/fsa-guide",
+      "destination": "/fsa-guide"
+    },
+    {
+      "source": "/rdap-guide",
+      "destination": "/rdap-guide"
+    },
+    {
+      "source": "/kit-supervivencia",
+      "destination": "/kit-supervivencia"
+    },
+    {
+      "source": "/facilities",
+      "destination": "/facilities"
+    },
+    {
+      "source": "/arrestado-federal",
+      "destination": "/arrestado-federal"
+    },
+    {
+      "source": "/audiencia-detencion",
+      "destination": "/audiencia-detencion"
+    },
+    {
+      "source": "/reporte-keywords-pdf",
+      "destination": "/reporte-keywords-pdf"
     }
   ]
 }
