@@ -13,9 +13,9 @@ Este documento detalla los pasos finales necesarios para poner el sitio en produ
 - [ ] **Prueba de Leads**: Enviar un formulario de prueba y verificar que llegue al correo y al WhatsApp.
 
 ## 3. Lead Magnet (Kit de Supervivencia)
-- [ ] **Generar PDF**: Crear el documento PDF de 1-2 páginas basado en el contenido del "Kit de Supervivencia 72 Horas" (puede generarse imprimiendo `guia-72-horas-pdf.html` en el navegador).
-- [ ] **Subir Archivo**: Colocar el archivo `guia-72-horas.pdf` en la carpeta raíz.
-- [ ] **Enlace de Descarga**: Asegurarse de que el botón en `kit-supervivencia.html` apunte al archivo correcto.
+- [x] **Generar PDF**: Generado de forma nativa usando el motor de renderizado de Chrome Headless con los estilos del sitio web (¡Completado!).
+- [x] **Subir Archivo**: Colocado el archivo `guia-72-horas.pdf` en la carpeta raíz (¡Completado!).
+- [x] **Enlace de Descarga**: El botón de descarga en `kit-supervivencia.html` inicia automáticamente la descarga del archivo (¡Completado!).
 
 ## 4. Google Analytics y Search Console
 - [x] **Crear Propiedad GA4**: Configurada propiedad para `www.guiafederal.net` (¡Completado!).

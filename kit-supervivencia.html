@@ -173,11 +173,20 @@
 function handleMagnetSubmit(event) {
   event.preventDefault();
   const form = event.target;
+  
+  // Trigger automatic download of the PDF
+  const link = document.createElement('a');
+  link.href = '/guia-72-horas.pdf';
+  link.download = 'guia-72-horas-Guia-Federal.pdf';
+  document.body.appendChild(link);
+  link.click();
+  document.body.removeChild(link);
+  
   form.innerHTML = `
     <div style="text-align:center; padding: 2rem 0;">
-      <div style="font-size:3rem; margin-bottom:1rem;">📩</div>
-      <h3>¡Enviando su Kit!</h3>
-      <p style="color:var(--text-dim);">Revise su bandeja de entrada o WhatsApp en los próximos 2 minutos.</p>
+      <div style="font-size:3rem; margin-bottom:1rem;">📥</div>
+      <h3>¡Descarga Iniciada!</h3>
+      <p style="color:var(--text-dim);">Su Kit de Supervivencia se está descargando. Revise su carpeta de descargas o revise su WhatsApp.</p>
       <a href="/" class="btn-cta-secondary" style="margin-top:1.5rem; display:inline-block;">Volver al Inicio</a>
     </div>
   `;
