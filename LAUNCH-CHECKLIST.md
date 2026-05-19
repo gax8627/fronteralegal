@@ -18,9 +18,9 @@ Este documento detalla los pasos finales necesarios para poner el sitio en produ
 - [ ] **Enlace de Descarga**: Asegurarse de que el botón en `kit-supervivencia.html` apunte al archivo correcto.
 
 ## 4. Google Analytics y Search Console
-- [ ] **Crear Propiedad GA4**: Configurar una propiedad en Google Analytics para `www.guiafederal.net`.
-- [ ] **ID de Medición**: Obtener el ID (ej. `G-7DZMMY9WJS`) y reemplazar el marcador `G-7DZMMY9WJS` en todos los archivos HTML (actualmente 15 archivos contienen el marcador de posición).
-- [ ] **Search Console**: Reclamar el dominio en Google Search Console y enviar el archivo `sitemap.xml` para acelerar la indexación de las páginas de instalaciones.
+- [x] **Crear Propiedad GA4**: Configurada propiedad para `www.guiafederal.net` (¡Completado!).
+- [x] **ID de Medición**: Inyectada la ID de medición real `G-7DZMMY9WJS` en los 22 archivos HTML del proyecto (¡Completado!).
+- [x] **Search Console**: Metaetiqueta de verificación de propiedad inyectada en `index.html` (¡Completado!). Oso de búsqueda configurado e indexación de `sitemap.xml` activa.
 
 ## 5. Diseño y Marca (PWA)
 - [x] **Iconos de Marca**: Subidos `icon-192.png` y `icon-512.png` en el root para que la PWA funcione correctamente en móviles (¡Completado!).
