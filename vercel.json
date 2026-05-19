@@ -78,6 +78,10 @@
   ],
   "rewrites": [
     {
+      "source": "/blog",
+      "destination": "/blog/index.html"
+    },
+    {
       "source": "/estrategia-extradicion-san-diego-2026",
       "destination": "/blog/estrategia-extradicion-san-diego-2026"
     },

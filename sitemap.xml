@@ -149,7 +149,7 @@
 
   <!-- BLOG -->
   <url>
-    <loc>https://www.guiafederal.net/blog/</loc>
+    <loc>https://www.guiafederal.net/blog</loc>
     <lastmod>2026-04-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
