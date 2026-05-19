@@ -512,6 +512,17 @@
         <div class="text-center">
           <p class="text-[10px] text-slate-500">Para modificar estos valores, cargue la ficha en la pestaña principal de la <strong>Calculadora FSA</strong>.</p>
         </div>
+
+        <!-- WhatsApp Report Share Block -->
+        <div class="pt-4 border-t border-white/5 space-y-2">
+          <button onclick="shareCaseReport('whatsapp')" class="w-full bg-emerald-600/20 hover:bg-emerald-600/30 border border-emerald-500/30 text-emerald-400 font-bold py-2 rounded-lg transition-all flex items-center justify-center gap-1.5 uppercase tracking-wider text-[10px]">
+            💬 Compartir por WhatsApp
+          </button>
+          <button onclick="shareCaseReport('copy')" class="w-full bg-slate-800 hover:bg-slate-700 border border-white/5 text-slate-300 font-bold py-2 rounded-lg transition-all flex items-center justify-center gap-1.5 uppercase tracking-wider text-[10px]">
+            📋 Copiar Reporte al Portapapeles
+          </button>
+          <div id="report-share-alert" class="hidden text-center text-emerald-400 font-bold text-[10px] mt-1">✅ Reporte copiado al portapapeles con éxito</div>
+        </div>
       </div>
     </div>
 
@@ -768,8 +779,17 @@ function renderLeadsTable(leads) {
     const waText = encodeURIComponent(`Hola ${lead.nombre}, le contactamos de Guía Federal para dar seguimiento a su consulta sobre ${lead.tipo || 'su caso federal'} en la instalación ${lead.instalacion || 'CASD'}.`);
     const waLink = `https://wa.me/${cleanNumber}?text=${waText}`;
 
+    const calculatedMonths = runSilentFsaProjection(lead.fsa_sentence || 60, lead.fsa_transit || 0, lead.fsa_risk || 15, lead.fsa_rdap || 0);
+    const meetingBadge = lead.counselor_meeting ? '<span class="text-xs" title="Intake con Counselor: Completada">🟢</span>' : '<span class="text-xs" title="Intake con Counselor: Pendiente">⏳</span>';
+
     tr.innerHTML = `
-      <td class="py-4 px-6 font-semibold text-white">${escapeHtml(lead.nombre)}</td>
+      <td class="py-4 px-6 font-semibold text-white">
+        <div class="flex items-center gap-2">
+          <span>${escapeHtml(lead.nombre)}</span>
+          ${meetingBadge}
+        </div>
+        <span class="text-[10px] text-red-400 font-bold block mt-0.5">Est. Condena: ${calculatedMonths.toFixed(1)} Meses</span>
+      </td>
       <td class="py-4 px-6 text-xs">${escapeHtml(lead.telefono)}<br><span class="text-slate-500 font-medium">${escapeHtml(lead.email || 'vía formulario')}</span></td>
       <td class="py-4 px-6 text-xs">${escapeHtml(lead.instalacion || 'No especificada')}<br><span class="text-slate-500 font-medium">${escapeHtml(lead.tipo || 'Consulta General')}</span></td>
       <td class="py-4 px-6">
@@ -1037,6 +1057,61 @@ function showSaveSuccess() {
   setTimeout(() => {
     msg.classList.add('hidden');
   }, 3000);
+}
+
+function shareCaseReport(type) {
+  if (!activeCaseId) return;
+  const lead = activeLeadsList.find(l => l.id === activeCaseId);
+  if (!lead) return;
+
+  const sentence = lead.fsa_sentence || 60;
+  const transit = lead.fsa_transit || 0;
+  const risk = lead.fsa_risk || 15;
+  const rdap = lead.fsa_rdap || 0;
+
+  const gct = sentence * (54 / 365);
+  const remaining = sentence - gct - transit;
+  let fsa = (Math.max(0, remaining) * (risk / (30 + risk)));
+  if (fsa > 12) fsa = 12.0;
+  const rdapDiscount = rdap == 1 ? 12.0 : 0.0;
+  const finalMonths = Math.max(0, sentence - gct - fsa - rdapDiscount);
+
+  const reportText = `*GUÍA FEDERAL — REPORTE DE AUDITORÍA DE SENTENCIA*
+--------------------------------------------------
+👤 *Cliente:* ${lead.nombre}
+🏢 *Prisión / Instalación:* ${lead.instalacion || 'No especificada'}
+⚖️ *Cargos Federales:* ${lead.cargos || 'No especificados'}
+
+*PROYECCIÓN DE LIBERACIÓN (FSA & RDAP)*
+* *Sentencia original decretada:* ${sentence.toFixed(0)} meses
+* *Espera en Tránsito post-sentencia:* ${transit.toFixed(1)} meses (0 créditos FSA)
+* *Descuento por Buena Conducta:* -${gct.toFixed(1)} meses
+* *Créditos Anticipados FSA Ganados:* -${fsa.toFixed(1)} meses
+* *Reducción Directa Programa RDAP:* -${rdapDiscount.toFixed(1)} meses
+--------------------------------------------------
+🔥 *TIEMPO REAL ESTIMADO A SERVIR:* *${finalMonths.toFixed(1)} Meses* (~${(finalMonths/12).toFixed(1)} Años)
+📅 *Reducción de condena total:* -${(sentence - finalMonths).toFixed(1)} meses
+
+📋 *Hitos de Admisión:*
+* Reunión de Intake con Counselor: ${lead.counselor_meeting ? '✅ Completada' : '⏳ Pendiente'}
+* Inscrito en programas FSA/RDAP: ${lead.assigned_programs ? '✅ Completado' : '⏳ Pendiente'}
+
+_Nota: Este reporte técnico es una proyección basada en las directrices del Bureau of Prisons (BOP) y la First Step Act. No constituye asesoría legal ni garantiza decisiones judiciales._`;
+
+  if (type === 'copy') {
+    navigator.clipboard.writeText(reportText).then(() => {
+      const alertDiv = document.getElementById('report-share-alert');
+      alertDiv.classList.remove('hidden');
+      setTimeout(() => {
+        alertDiv.classList.add('hidden');
+      }, 3000);
+    });
+  } else if (type === 'whatsapp') {
+    const contactNum = lead.familiar_telefono || lead.telefono || '';
+    const cleanNum = contactNum.replace(/[^\d+]/g, '');
+    const waUrl = `https://wa.me/${cleanNum}?text=${encodeURIComponent(reportText)}`;
+    window.open(waUrl, '_blank');
+  }
 }
 
 // FSA Calculations taking post-sentence transit wait into account
