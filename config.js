@@ -5,7 +5,7 @@ const nexConfig = {
   calendlyLink: "", // e.g. "https://calendly.com/guiafederal/15min" - Add this to maximize bookings
   nationalSupportEmail: "info@guiafederal.com",
   firebaseConfig: {
-    apiKey: "AIzaSyCfiJL3Ywr-d3Wral6NInnikn6SPweCIA4",
+    apiKey: "AIzaSyCfiJl3Ywr-d3Wral6NInnikn6SPweCIA4",
     authDomain: "guia-federal.firebaseapp.com",
     projectId: "guia-federal",
     storageBucket: "guia-federal.firebasestorage.app",
