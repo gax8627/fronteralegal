@@ -3,7 +3,15 @@ const nexConfig = {
   whatsappNumber: "526633040096", // Primary support number (+52 663 304 0096)
   formspreeId: "mqakpnvp",
   calendlyLink: "", // e.g. "https://calendly.com/guiafederal/15min" - Add this to maximize bookings
-  nationalSupportEmail: "info@guiafederal.com"
+  nationalSupportEmail: "info@guiafederal.com",
+  firebaseConfig: {
+    apiKey: "YOUR_FIREBASE_API_KEY",
+    authDomain: "YOUR_FIREBASE_AUTH_DOMAIN",
+    projectId: "YOUR_FIREBASE_PROJECT_ID",
+    storageBucket: "YOUR_FIREBASE_STORAGE_BUCKET",
+    messagingSenderId: "YOUR_FIREBASE_MESSAGING_SENDER_ID",
+    appId: "YOUR_FIREBASE_APP_ID"
+  }
 };
 
 // Auto-inject into all Lead Capture CTAs
@@ -15,8 +23,9 @@ document.addEventListener('DOMContentLoaded', () => {
     link.rel = "noopener noreferrer";
   });
 
-  // Target Formspree forms (only if configured)
-  if (nexConfig.formspreeId !== "YOUR_ID_HERE") {
+  // Target Formspree forms (only if configured and Firebase is not active)
+  const isFirebaseActive = nexConfig.firebaseConfig && nexConfig.firebaseConfig.apiKey && nexConfig.firebaseConfig.apiKey !== "YOUR_FIREBASE_API_KEY";
+  if (!isFirebaseActive && nexConfig.formspreeId !== "YOUR_ID_HERE") {
     document.querySelectorAll('.contact-form').forEach(form => {
       form.action = `https://formspree.io/f/${nexConfig.formspreeId}`;
       form.method = "POST";
@@ -24,14 +33,82 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 });
 
-// Form submission handler — falls back to WhatsApp if Formspree not configured
+// Programmatic, sequential dynamic script loader for Firebase CDNs (to maintain 100/100 page speed)
+function loadFirebaseSDKs(callback) {
+  if (typeof firebase !== 'undefined') {
+    callback();
+    return;
+  }
+  const appScript = document.createElement('script');
+  appScript.src = "https://www.gstatic.com/firebasejs/10.8.0/firebase-app-compat.js";
+  appScript.onload = () => {
+    const dbScript = document.createElement('script');
+    dbScript.src = "https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore-compat.js";
+    dbScript.onload = () => {
+      const authScript = document.createElement('script');
+      authScript.src = "https://www.gstatic.com/firebasejs/10.8.0/firebase-auth-compat.js";
+      authScript.onload = callback;
+      document.head.appendChild(authScript);
+    };
+    document.head.appendChild(dbScript);
+  };
+  document.head.appendChild(appScript);
+}
+
+let firebaseAppInstance = null;
+let firestoreDbInstance = null;
+
+function initFirebase() {
+  if (firebaseAppInstance) return;
+  firebaseAppInstance = firebase.initializeApp(nexConfig.firebaseConfig);
+  firestoreDbInstance = firebase.firestore();
+}
+
+// Form submission handler — handles Firebase Cloud Firestore saving with automatic Formspree & WhatsApp fallbacks
 function handleFormSubmit(event) {
   event.preventDefault();
   const form = event.target;
   const data = new FormData(form);
 
-  // If Formspree is configured, submit normally
-  if (nexConfig.formspreeId !== "YOUR_ID_HERE") {
+  // 1. Try Firebase first if configured
+  const isFirebaseActive = nexConfig.firebaseConfig && nexConfig.firebaseConfig.apiKey && nexConfig.firebaseConfig.apiKey !== "YOUR_FIREBASE_API_KEY";
+  if (isFirebaseActive) {
+    loadFirebaseSDKs(() => {
+      initFirebase();
+      const leadData = {
+        nombre: data.get('nombre') || '',
+        telefono: data.get('telefono') || '',
+        instalacion: data.get('instalacion') || '',
+        tipo: data.get('tipo') || '',
+        mensaje: data.get('mensaje') || '',
+        created_at: firebase.firestore.FieldValue.serverTimestamp(),
+        estado: 'Urgente',
+        
+        // FSA Calculator initial defaults
+        fsa_sentence: 60,
+        fsa_risk: 15,
+        fsa_rdap: 1
+      };
+
+      firestoreDbInstance.collection('leads').add(leadData)
+      .then(() => {
+        showFormSuccess(form);
+      })
+      .catch((error) => {
+        console.error("Firebase save failed, falling back:", error);
+        fallbackSubmission(form, data);
+      });
+    });
+    return;
+  }
+
+  // 2. If Firebase is not configured, go straight to default fallback
+  fallbackSubmission(form, data);
+}
+
+// Fallback chain: Formspree (Email) -> WhatsApp (Chat)
+function fallbackSubmission(form, data) {
+  if (nexConfig.formspreeId && nexConfig.formspreeId !== "YOUR_ID_HERE") {
     fetch(`https://formspree.io/f/${nexConfig.formspreeId}`, {
       method: 'POST',
       body: data,
@@ -45,11 +122,9 @@ function handleFormSubmit(event) {
       }
     })
     .catch(() => waFallback(data));
-    return;
+  } else {
+    waFallback(data);
   }
-
-  // WhatsApp fallback: pre-fill message with form data
-  waFallback(data);
 }
 
 // Open WhatsApp with form data pre-filled as a message

@@ -6,6 +6,11 @@
 <title>Centro de Control — Guía Federal</title>
 <link rel="icon" type="image/png" href="./assets/brand-og.png">
 <link rel="stylesheet" href="./index.css">
+<!-- Config & Firebase SDK CDN Compat -->
+<script src="./config.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-auth-compat.js"></script>
 <style>
   :root {
     --primary-gradient: linear-gradient(135deg, #0b1120 0%, #1e1b4b 100%);
@@ -433,6 +438,12 @@
               <li>💊 **Reducción Directa RDAP (Si califica)**: -<span id="res-rdap-credits">12.0</span> meses</li>
             </ul>
           </div>
+          
+          <!-- Save Plan Container (Only visible when active lead is loaded) -->
+          <div id="calc-save-container" style="margin-top: 1.5rem; display: none;">
+            <button onclick="saveActiveCasePlan()" class="btn-login" style="margin-top: 0; background: #10b981; font-size: 0.9rem; padding: 0.75rem;">💾 Guardar Plan en Ficha</button>
+            <div id="save-success-msg" style="color: #10b981; font-size: 0.8rem; font-weight: 600; margin-top: 0.5rem; display: none;">✅ Ficha de caso actualizada con éxito</div>
+          </div>
         </div>
       </div>
     </section>
@@ -444,6 +455,55 @@
 // Cryptographic validation hash for "guiafederal2026"
 const AUTH_HASH = "ded571f7d1b033c430b1035b3873f70bc6dbe7cc6fbe311e69479c29380b81d0";
 
+// Standard Mock Leads for zero-config LocalStorage fallback
+const DEFAULT_MOCK_LEADS = [
+  {
+    id: "lead-mock-1",
+    nombre: "Ramiro S. Mendoza",
+    telefono: "+52 664 123 4567",
+    email: "ramiro.m@outlook.com",
+    instalacion: "MCC San Diego (CA)",
+    tipo: "Arresto Reciente",
+    estado: "Urgente",
+    fsa_sentence: 60,
+    fsa_risk: 15,
+    fsa_rdap: 1
+  },
+  {
+    id: "lead-mock-2",
+    nombre: "Fabiola Ortiz",
+    telefono: "+1 619 555 0192",
+    email: "fabi.ortiz@gmail.com",
+    instalacion: "Terminal Island FCI (CA)",
+    tipo: "Créditos FSA / ETC",
+    estado: "En Espera",
+    fsa_sentence: 36,
+    fsa_risk: 15,
+    fsa_rdap: 0
+  },
+  {
+    id: "lead-mock-3",
+    nombre: "Eduardo J. Ruiz",
+    telefono: "+1 760 982 3841",
+    email: "eduardo.ruiz@yahoo.com",
+    instalacion: "Victorville USP (CA)",
+    tipo: "Programa RDAP",
+    estado: "Atendido",
+    fsa_sentence: 84,
+    fsa_risk: 10,
+    fsa_rdap: 1
+  }
+];
+
+let firebaseApp = null;
+let db = null;
+let auth = null;
+let activeLeadsList = [];
+let activeCaseId = null;
+
+// Determine if Firebase is configured
+const isFirebaseActive = nexConfig.firebaseConfig && nexConfig.firebaseConfig.apiKey && nexConfig.firebaseConfig.apiKey !== "YOUR_FIREBASE_API_KEY";
+
 // Helper to hash string using SHA-256
 async function sha256(string) {
   const utf8 = new TextEncoder().encode(string);
@@ -453,20 +513,50 @@ async function sha256(string) {
   return hashHex;
 }
 
+// Initialize Firebase Core
+function initFirebase() {
+  if (firebaseApp) return;
+  try {
+    firebaseApp = firebase.initializeApp(nexConfig.firebaseConfig);
+    db = firebase.firestore();
+    auth = firebase.auth();
+    console.log("Firebase initialized successfully.");
+  } catch (error) {
+    console.error("Firebase initialization failed:", error);
+  }
+}
+
 // Handle Login Submission
 async function handleLoginSubmit(event) {
   event.preventDefault();
-  const inputPass = document.getElementById('admin-pass').value;
+  const password = document.getElementById('admin-pass').value;
   const errorDiv = document.getElementById('login-error');
   
-  const hash = await sha256(inputPass);
-  
-  if (hash === AUTH_HASH) {
-    sessionStorage.setItem('gf_admin_auth', 'authenticated');
-    unlockDashboard();
+  if (isFirebaseActive) {
+    initFirebase();
+    // In Firebase Mode: Authenticate with Firebase Auth
+    // Default username is the configured support email
+    const email = nexConfig.nationalSupportEmail || "info@guiafederal.com";
+    auth.signInWithEmailAndPassword(email, password)
+    .then(() => {
+      sessionStorage.setItem('gf_admin_auth', 'authenticated');
+      unlockDashboard();
+    })
+    .catch((error) => {
+      console.error("Firebase auth failed:", error);
+      errorDiv.style.display = 'block';
+      document.getElementById('admin-pass').value = '';
+    });
   } else {
-    errorDiv.style.display = 'block';
-    document.getElementById('admin-pass').value = '';
+    // In Local Fallback Mode: Secure SHA-256 local comparison
+    const hash = await sha256(password);
+    if (hash === AUTH_HASH) {
+      sessionStorage.setItem('gf_admin_auth', 'authenticated');
+      unlockDashboard();
+    } else {
+      errorDiv.style.display = 'block';
+      document.getElementById('admin-pass').value = '';
+    }
   }
 }
 
@@ -474,10 +564,18 @@ async function handleLoginSubmit(event) {
 function unlockDashboard() {
   document.getElementById('login-view').style.display = 'none';
   document.getElementById('admin-view').style.display = 'flex';
-  calculateFsa(); // Initialize calculator view
+  
+  if (isFirebaseActive) {
+    initFirebase();
+    subscribeToFirebaseLeads();
+  } else {
+    subscribeToLocalLeads();
+  }
+  
+  calculateFsa(); // Initialize calculator view defaults
 }
 
-// Switch Tabs in back office
+// Tab Switching
 function switchTab(tabId, btn) {
   document.querySelectorAll('.admin-section').forEach(s => s.classList.remove('active'));
   document.querySelectorAll('.admin-tab-btn').forEach(b => b.classList.remove('active'));
@@ -486,22 +584,187 @@ function switchTab(tabId, btn) {
   btn.classList.add('active');
 }
 
-// Logout Admin
+// Logout
 function logoutAdmin() {
   sessionStorage.removeItem('gf_admin_auth');
+  if (isFirebaseActive && auth) {
+    auth.signOut();
+  }
   document.getElementById('admin-view').style.display = 'none';
   document.getElementById('login-view').style.display = 'flex';
   document.getElementById('admin-pass').value = '';
   document.getElementById('login-error').style.display = 'none';
+  activeCaseId = null;
+  document.getElementById('calc-save-container').style.display = 'none';
 }
 
-// Check session on load
-(function() {
-  const auth = sessionStorage.getItem('gf_admin_auth');
-  if (auth === 'authenticated') {
-    unlockDashboard();
+// Subscribe to Live Real-Time Firestore Leads
+function subscribeToFirebaseLeads() {
+  db.collection('leads').orderBy('created_at', 'desc').onSnapshot(snapshot => {
+    let leads = [];
+    snapshot.forEach(doc => {
+      leads.push({ id: doc.id, ...doc.data() });
+    });
+    activeLeadsList = leads;
+    renderLeadsTable(leads);
+  }, error => {
+    console.error("Firestore listener error, loading local fallback:", error);
+    subscribeToLocalLeads();
+  });
+}
+
+// Subscribe to Local Storage Leads (Mock Fallback)
+function subscribeToLocalLeads() {
+  let leads = localStorage.getItem('gf_crm_leads');
+  if (!leads) {
+    localStorage.setItem('gf_crm_leads', JSON.stringify(DEFAULT_MOCK_LEADS));
+    leads = JSON.stringify(DEFAULT_MOCK_LEADS);
   }
-})();
+  activeLeadsList = JSON.parse(leads);
+  renderLeadsTable(activeLeadsList);
+}
+
+// Render dynamic rows to Leads Table
+function renderLeadsTable(leads) {
+  const tbody = document.querySelector('.leads-table tbody');
+  tbody.innerHTML = '';
+
+  if (leads.length === 0) {
+    tbody.innerHTML = `<tr><td colspan="5" style="text-align:center; color:var(--text-dim); padding:3rem;">No hay leads registrados aún.</td></tr>`;
+    return;
+  }
+
+  leads.forEach(lead => {
+    const tr = document.createElement('tr');
+    tr.id = `row-${lead.id}`;
+    if (activeCaseId === lead.id) {
+      tr.style.background = 'rgba(220,38,38,0.03)';
+      tr.style.borderLeft = '4px solid var(--accent-hi)';
+    }
+
+    const badgeClass = lead.estado === 'Urgente' ? 'badge-danger' : (lead.estado === 'En Espera' ? 'badge-warning' : 'badge-success');
+    
+    // Setup WhatsApp click redirect with pre-filled case templates
+    const cleanNumber = lead.telefono.replace(/[^\d+]/g, '');
+    const waText = encodeURIComponent(`Hola ${lead.nombre}, le contactamos de Guía Federal para dar seguimiento a su consulta sobre ${lead.tipo || 'su caso federal'} en la instalación ${lead.instalacion || 'CASD'}.`);
+    const waLink = `https://wa.me/${cleanNumber}?text=${waText}`;
+
+    tr.innerHTML = `
+      <td><strong>${escapeHtml(lead.nombre)}</strong></td>
+      <td>${escapeHtml(lead.telefono)}<br><span style="font-size:0.8rem; color:var(--text-faint);">${escapeHtml(lead.email || 'vía formulario')}</span></td>
+      <td>${escapeHtml(lead.instalacion || 'No especificada')}<br><span style="font-size:0.8rem; color:var(--text-faint);">${escapeHtml(lead.tipo || 'Consulta General')}</span></td>
+      <td>
+        <select onchange="changeLeadStatus('${lead.id}', this.value)" style="border:none; background:transparent; font-family:inherit; font-size: inherit; cursor:pointer;" class="badge ${badgeClass}">
+          <option value="Urgente" ${lead.estado === 'Urgente' ? 'selected' : ''}>Urgente</option>
+          <option value="En Espera" ${lead.estado === 'En Espera' ? 'selected' : ''}>En Espera</option>
+          <option value="Atendido" ${lead.estado === 'Atendido' ? 'selected' : ''}>Atendido</option>
+        </select>
+      </td>
+      <td>
+        <a href="${waLink}" target="_blank" class="action-btn">💬 WhatsApp</a>
+        <button class="action-btn" onclick="openLeadInCalculator('${lead.id}')">🧮 Proyectar FSA</button>
+      </td>
+    `;
+    tbody.appendChild(tr);
+  });
+}
+
+// Load case details into interactive Tab 2 (FSA Calculator)
+function openLeadInCalculator(leadId) {
+  const lead = activeLeadsList.find(l => l.id === leadId);
+  if (!lead) return;
+
+  activeCaseId = leadId;
+  
+  // Highlight row in list
+  renderLeadsTable(activeLeadsList);
+
+  // Set form fields in calculator
+  document.getElementById('fsa-sentence').value = lead.fsa_sentence !== undefined ? lead.fsa_sentence : 60;
+  document.getElementById('fsa-risk').value = lead.fsa_risk !== undefined ? lead.fsa_risk : 15;
+  document.getElementById('fsa-rdap').value = lead.fsa_rdap !== undefined ? lead.fsa_rdap : 1;
+
+  // Run initial calculation
+  calculateFsa();
+
+  // Show dynamic save buttons
+  document.getElementById('calc-save-container').style.display = 'block';
+  document.getElementById('save-success-msg').style.display = 'none';
+
+  // Navigate to calculator tab automatically
+  const tabBtn = document.querySelectorAll('.admin-tab-btn')[1];
+  switchTab('tab-fsa', tabBtn);
+}
+
+// Save Calculator Plan into active case file
+function saveActiveCasePlan() {
+  if (!activeCaseId) return;
+
+  const sentence = parseFloat(document.getElementById('fsa-sentence').value) || 0;
+  const risk = parseFloat(document.getElementById('fsa-risk').value) || 0;
+  const rdap = parseFloat(document.getElementById('fsa-rdap').value) || 0;
+
+  if (isFirebaseActive) {
+    // Save to Firestore
+    db.collection('leads').doc(activeCaseId).update({
+      fsa_sentence: sentence,
+      fsa_risk: risk,
+      fsa_rdap: rdap
+    })
+    .then(() => {
+      showSaveSuccess();
+    })
+    .catch((err) => {
+      console.error("Error saving to Firebase:", err);
+    });
+  } else {
+    // Save to LocalStorage mock database
+    const idx = activeLeadsList.findIndex(l => l.id === activeCaseId);
+    if (idx !== -1) {
+      activeLeadsList[idx].fsa_sentence = sentence;
+      activeLeadsList[idx].fsa_risk = risk;
+      activeLeadsList[idx].fsa_rdap = rdap;
+      localStorage.setItem('gf_crm_leads', JSON.stringify(activeLeadsList));
+      showSaveSuccess();
+    }
+  }
+}
+
+// Change lead status dynamically
+function changeLeadStatus(leadId, newStatus) {
+  if (isFirebaseActive) {
+    db.collection('leads').doc(leadId).update({
+      estado: newStatus
+    })
+    .catch(err => console.error("Error updating status:", err));
+  } else {
+    const idx = activeLeadsList.findIndex(l => l.id === leadId);
+    if (idx !== -1) {
+      activeLeadsList[idx].estado = newStatus;
+      localStorage.setItem('gf_crm_leads', JSON.stringify(activeLeadsList));
+      subscribeToLocalLeads();
+    }
+  }
+}
+
+function showSaveSuccess() {
+  const msg = document.getElementById('save-success-msg');
+  msg.style.display = 'block';
+  setTimeout(() => {
+    msg.style.display = 'none';
+  }, 3000);
+}
+
+// Safe string escaping
+function escapeHtml(str) {
+  if (!str) return '';
+  return str.toString()
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#039;");
+}
 
 // FSA Sentencing Calculations
 function calculateFsa() {
@@ -539,6 +802,14 @@ function calculateFsa() {
   document.getElementById('res-rdap-credits').textContent = rdapReductionMonths.toFixed(1);
   document.getElementById('res-final-months').textContent = displayFinal.toFixed(1);
 }
+
+// Check session on load
+(function() {
+  const authSession = sessionStorage.getItem('gf_admin_auth');
+  if (authSession === 'authenticated') {
+    unlockDashboard();
+  }
+})();
 </script>
 
 </body>
