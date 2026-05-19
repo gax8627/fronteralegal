@@ -1,6 +1,6 @@
 // GUÍA FEDERAL NATIONAL CONFIG ENGINE
 const nexConfig = {
-  whatsappNumber: "16196291612", // Placeholder based on San Diego area code
+  whatsappNumber: "526633040096", // Primary support number (+52 663 304 0096)
   formspreeId: "mqakpnvp",
   calendlyLink: "", // e.g. "https://calendly.com/guiafederal/15min" - Add this to maximize bookings
   nationalSupportEmail: "info@guiafederal.com"
