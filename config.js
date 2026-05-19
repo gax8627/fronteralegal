@@ -5,12 +5,12 @@ const nexConfig = {
   calendlyLink: "", // e.g. "https://calendly.com/guiafederal/15min" - Add this to maximize bookings
   nationalSupportEmail: "info@guiafederal.com",
   firebaseConfig: {
-    apiKey: "YOUR_FIREBASE_API_KEY",
-    authDomain: "YOUR_FIREBASE_AUTH_DOMAIN",
-    projectId: "YOUR_FIREBASE_PROJECT_ID",
-    storageBucket: "YOUR_FIREBASE_STORAGE_BUCKET",
-    messagingSenderId: "YOUR_FIREBASE_MESSAGING_SENDER_ID",
-    appId: "YOUR_FIREBASE_APP_ID"
+    apiKey: "AIzaSyCfiJL3Ywr-d3Wral6NInnikn6SPweCIA4",
+    authDomain: "guia-federal.firebaseapp.com",
+    projectId: "guia-federal",
+    storageBucket: "guia-federal.firebasestorage.app",
+    messagingSenderId: "382448733359",
+    appId: "1:382448733359:web:e89f8d9dc5bfbcf344585a"
   }
 };
 
