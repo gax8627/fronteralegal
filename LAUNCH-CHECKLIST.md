@@ -19,7 +19,7 @@ Este documento detalla los pasos finales necesarios para poner el sitio en produ
 
 ## 4. Google Analytics y Search Console
 - [ ] **Crear Propiedad GA4**: Configurar una propiedad en Google Analytics para `www.guiafederal.net`.
-- [ ] **ID de Medición**: Obtener el ID (ej. `G-XXXXXXXXXX`) y reemplazar el marcador `G-XXXXXXXXXX` en todos los archivos HTML (actualmente 15 archivos contienen el marcador de posición).
+- [ ] **ID de Medición**: Obtener el ID (ej. `G-7DZMMY9WJS`) y reemplazar el marcador `G-7DZMMY9WJS` en todos los archivos HTML (actualmente 15 archivos contienen el marcador de posición).
 - [ ] **Search Console**: Reclamar el dominio en Google Search Console y enviar el archivo `sitemap.xml` para acelerar la indexación de las páginas de instalaciones.
 
 ## 5. Diseño y Marca (PWA)
