@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Centro de Control — Guía Federal</title>
+<link rel="icon" type="image/png" href="./assets/brand-og.png">
+<link rel="stylesheet" href="./index.css">
+<style>
+  :root {
+    --primary-gradient: linear-gradient(135deg, #0b1120 0%, #1e1b4b 100%);
+  }
+
+  body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+  }
+
+  /* LOGIN PAGE STYLING */
+  .login-wrapper {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--primary-gradient);
+    padding: 2rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .login-card {
+    background: var(--glass-bg);
+    backdrop-filter: var(--glass-blur);
+    -webkit-backdrop-filter: var(--glass-blur);
+    border: 1px solid var(--border-hi);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-lg);
+    padding: 3.5rem 3rem;
+    width: 100%;
+    max-width: 480px;
+    text-align: center;
+    z-index: 10;
+    transition: transform 0.3s, opacity 0.3s;
+  }
+
+  .login-logo {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: var(--text);
+    margin-bottom: 0.5rem;
+    letter-spacing: -0.03em;
+  }
+  .login-logo span { color: var(--accent-hi); }
+
+  .login-subtitle {
+    font-size: 0.9rem;
+    color: var(--text-dim);
+    margin-bottom: 2.5rem;
+  }
+
+  .input-group {
+    margin-bottom: 1.5rem;
+    text-align: left;
+  }
+
+  .input-label {
+    display: block;
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--text-dim);
+    margin-bottom: 0.5rem;
+  }
+
+  .password-input {
+    width: 100%;
+    padding: 1rem;
+    border: 1px solid var(--border-hi);
+    border-radius: var(--radius);
+    background: var(--bg);
+    color: var(--text);
+    font-size: 1.1rem;
+    transition: border-color 0.2s, box-shadow 0.2s;
+  }
+
+  .password-input:focus {
+    border-color: var(--accent-hi);
+    box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.12);
+    outline: none;
+  }
+
+  .btn-login {
+    width: 100%;
+    padding: 1rem;
+    background: var(--accent-hi);
+    color: #fff;
+    border: none;
+    border-radius: var(--radius-pill);
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.2s;
+    margin-top: 1rem;
+  }
+
+  .btn-login:hover {
+    background: var(--accent);
+    transform: translateY(-1px);
+  }
+
+  .error-message {
+    color: var(--accent-hi);
+    font-size: 0.85rem;
+    margin-top: 1rem;
+    font-weight: 600;
+    display: none;
+  }
+
+  /* BACK OFFICE PANEL STYLING */
+  .admin-panel {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    min-height: 100vh;
+    background: var(--bg);
+  }
+
+  .admin-header {
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+
+  .admin-title {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 1.3rem;
+    font-weight: 800;
+  }
+  .admin-title span { color: var(--accent-hi); }
+
+  .admin-nav {
+    display: flex;
+    gap: 1rem;
+  }
+
+  .admin-tab-btn {
+    padding: 0.5rem 1.25rem;
+    border-radius: var(--radius-pill);
+    border: 1px solid transparent;
+    background: transparent;
+    color: var(--text-dim);
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 600;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+
+  .admin-tab-btn.active {
+    background: var(--bg-alt);
+    color: var(--text);
+    border-color: var(--border-hi);
+  }
+
+  .admin-main {
+    flex: 1;
+    padding: 2.5rem;
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  .admin-section {
+    display: none;
+  }
+  .admin-section.active {
+    display: block;
+  }
+
+  /* TABLE & LEADS VIEW */
+  .leads-table-wrapper {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow);
+    overflow: hidden;
+    margin-top: 1.5rem;
+  }
+
+  .leads-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+  }
+
+  .leads-table th {
+    background: var(--bg-alt);
+    padding: 1rem 1.5rem;
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--text-dim);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .leads-table td {
+    padding: 1.25rem 1.5rem;
+    border-bottom: 1px solid var(--border);
+    font-size: 0.9rem;
+    vertical-align: middle;
+  }
+
+  .leads-table tr:last-child td {
+    border-bottom: none;
+  }
+
+  .badge {
+    display: inline-block;
+    padding: 0.25rem 0.75rem;
+    border-radius: var(--radius-pill);
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+
+  .badge-danger { background: rgba(220,38,38,0.1); color: var(--accent-hi); }
+  .badge-warning { background: rgba(217,119,6,0.1); color: #d97706; }
+  .badge-success { background: rgba(16,185,129,0.1); color: #10b981; }
+
+  .action-btn {
+    padding: 0.4rem 0.8rem;
+    border-radius: var(--radius-pill);
+    font-size: 0.8rem;
+    font-weight: 600;
+    cursor: pointer;
+    border: 1px solid var(--border-hi);
+    background: var(--bg);
+    color: var(--text);
+    transition: all 0.2s;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+  }
+
+  .action-btn:hover {
+    border-color: var(--accent-hi);
+    color: var(--accent-hi);
+  }
+
+  /* FSA CALCULATOR VIEW */
+  .calc-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2.5rem;
+    align-items: start;
+    margin-top: 1.5rem;
+  }
+
+  .calc-form-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 2.5rem;
+    box-shadow: var(--shadow);
+  }
+
+  .calc-result-card {
+    background: var(--surface);
+    border: 2px solid var(--accent-hi);
+    border-radius: var(--radius-lg);
+    padding: 2.5rem;
+    box-shadow: var(--shadow-lg);
+  }
+</style>
+</head>
+<body>
+
+<!-- LOGIN VIEW -->
+<div id="login-view" class="login-wrapper">
+  <div class="login-card">
+    <div class="login-logo">Guía<span>Federal</span></div>
+    <div class="login-subtitle">Panel de Control de Casos y Auditoría FSA</div>
+    
+    <form onsubmit="handleLoginSubmit(event)">
+      <div class="input-group">
+        <label class="input-label" for="admin-pass">Clave de Acceso Administrador</label>
+        <input type="password" id="admin-pass" class="password-input" placeholder="••••••••••••" required autocomplete="current-password">
+      </div>
+      <button type="submit" class="btn-login">Acceder al Sistema →</button>
+      <div id="login-error" class="error-message">⚠️ Clave de acceso incorrecta. Intente de nuevo.</div>
+    </form>
+  </div>
+</div>
+
+<!-- BACK OFFICE VIEW (HIDDEN BY DEFAULT) -->
+<div id="admin-view" class="admin-panel" style="display: none;">
+  <header class="admin-header">
+    <div class="admin-title">Guía<span>Federal</span> <span style="font-size: 0.9rem; font-weight: 500; color: var(--text-dim);">· Back Office</span></div>
+    <nav class="admin-nav" style="position: static; transform: none; box-shadow: none; border: none; background: transparent; height: auto; padding: 0;">
+      <button class="admin-tab-btn active" onclick="switchTab('tab-leads', this)">📥 Bandeja de Leads</button>
+      <button class="admin-tab-btn" onclick="switchTab('tab-fsa', this)">🧮 Calculadora FSA</button>
+      <button class="admin-tab-btn" onclick="logoutAdmin()" style="color: var(--accent-hi);">🚪 Salir</button>
+    </nav>
+  </header>
+
+  <main class="admin-main">
+    <!-- TAB 1: LEADS -->
+    <section id="tab-leads" class="admin-section active">
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem;">
+        <div>
+          <h2 style="font-size: 1.75rem;">Bandeja de Consultas Recibidas</h2>
+          <p style="color: var(--text-dim); font-size: 0.9rem;">Mensajes captados desde los formularios del sitio web y PWA.</p>
+        </div>
+        <div style="font-size: 0.85rem; font-weight: 600; background: var(--surface); padding: 0.5rem 1rem; border-radius: var(--radius-pill); border: 1px solid var(--border);">
+          🟢 Sistema En Línea
+        </div>
+      </div>
+
+      <div class="leads-table-wrapper">
+        <table class="leads-table">
+          <thead>
+            <tr>
+              <th>Cliente</th>
+              <th>Contacto</th>
+              <th>Instalación / Caso</th>
+              <th>Estado del Caso</th>
+              <th>Acciones</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Ramiro S. Mendoza</strong></td>
+              <td>+52 664 123 4567<br><span style="font-size: 0.8rem; color: var(--text-faint);">ramiro.m@outlook.com</span></td>
+              <td>MCC San Diego (CA)<br><span style="font-size: 0.8rem; color: var(--text-faint);">Arresto Reciente</span></td>
+              <td><span class="badge badge-danger">Urgente</span></td>
+              <td>
+                <a href="https://wa.me/526641234567?text=Hola%20Ramiro%20te%20contacto%20de%20Guia%20Federal" target="_blank" class="action-btn">💬 WhatsApp</a>
+                <button class="action-btn" onclick="alert('Se abrirá la ficha técnica del caso.')">📋 Ver Caso</button>
+              </td>
+            </tr>
+            <tr>
+              <td><strong>Fabiola Ortiz</strong></td>
+              <td>+1 619 555 0192<br><span style="font-size: 0.8rem; color: var(--text-faint);">fabi.ortiz@gmail.com</span></td>
+              <td>Terminal Island FCI (CA)<br><span style="font-size: 0.8rem; color: var(--text-faint);">Créditos FSA / ETC</span></td>
+              <td><span class="badge badge-warning">En Espera</span></td>
+              <td>
+                <a href="https://wa.me/16195550192" target="_blank" class="action-btn">💬 WhatsApp</a>
+                <button class="action-btn" onclick="alert('Se abrirá la ficha técnica del caso.')">📋 Ver Caso</button>
+              </td>
+            </tr>
+            <tr>
+              <td><strong>Eduardo J. Ruiz</strong></td>
+              <td>+1 760 982 3841<br><span style="font-size: 0.8rem; color: var(--text-faint);">eduardo.ruiz@yahoo.com</span></td>
+              <td>Victorville USP (CA)<br><span style="font-size: 0.8rem; color: var(--text-faint);">Programa RDAP</span></td>
+              <td><span class="badge badge-success">Atendido</span></td>
+              <td>
+                <a href="https://wa.me/17609823841" target="_blank" class="action-btn">💬 WhatsApp</a>
+                <button class="action-btn" onclick="alert('Se abrirá la ficha técnica del caso.')">📋 Ver Caso</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- TAB 2: FSA CALCULATOR -->
+    <section id="tab-fsa" class="admin-section">
+      <div style="margin-bottom: 2rem;">
+        <h2 style="font-size: 1.75rem;">Calculadora de Beneficios First Step Act (FSA)</h2>
+        <p style="color: var(--text-dim); font-size: 0.9rem;">Proyecte la fecha de liberación anticipada y días de crédito ganados basados en la evaluación PATTERN.</p>
+      </div>
+
+      <div class="calc-container">
+        <!-- Input Form -->
+        <div class="calc-form-card">
+          <h3 style="font-size: 1.2rem; margin-bottom: 1.5rem; color: var(--accent);">Parámetros del Sentenciado</h3>
+          
+          <div class="input-group">
+            <label class="input-label">Sentencia Total (Meses)</label>
+            <input type="number" id="fsa-sentence" class="password-input" value="60" style="font-size: 1rem; padding: 0.75rem;">
+          </div>
+          
+          <div class="input-group">
+            <label class="input-label">Nivel de Riesgo PATTERN</label>
+            <select id="fsa-risk" class="password-input" style="font-size: 1rem; padding: 0.75rem; width: 100%;">
+              <option value="15">Mínimo / Bajo (Gana 15 días por cada 30 servidos)</option>
+              <option value="10">Medio / Alto (Gana 10 días por cada 30 servidos)</option>
+            </select>
+          </div>
+          
+          <div class="input-group">
+            <label class="input-label">Elegible para RDAP</label>
+            <select id="fsa-rdap" class="password-input" style="font-size: 1rem; padding: 0.75rem; width: 100%;">
+              <option value="1">Sí (Califica para -12 meses de reducción)</option>
+              <option value="0">No (Sin reducción por RDAP)</option>
+            </select>
+          </div>
+
+          <button onclick="calculateFsa()" class="btn-login" style="margin-top: 0.5rem;">Calcular Reducción de Sentencia →</button>
+        </div>
+
+        <!-- Result Box -->
+        <div class="calc-result-card" id="fsa-result">
+          <h3 style="font-size: 1.2rem; margin-bottom: 1rem; color: var(--text);">Resumen del Plan de Liberación</h3>
+          
+          <div style="margin-bottom: 1.5rem;">
+            <span style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--text-dim);">Sentencia Real Estimada:</span>
+            <div style="font-size: 2.2rem; font-weight: 800; color: var(--accent-hi); font-family: 'Space Grotesk', sans-serif;">
+              <span id="res-final-months">38.0</span> Meses
+            </div>
+            <p style="font-size: 0.85rem; color: var(--text-dim); margin-top: 0.25rem;">De una sentencia original de <span id="res-orig">60</span> meses.</p>
+          </div>
+
+          <div style="border-top: 1px solid var(--border); padding-top: 1.5rem;">
+            <ul style="list-style: none; padding: 0; font-size: 0.9rem; line-height: 2;">
+              <li>⏳ **Crédito de Buena Conducta (54 días/año)**: -<span id="res-goodtime">8.8</span> meses</li>
+              <li>📅 **Créditos Ganados FSA (Est. Participación)**: -<span id="res-fsa-credits">13.2</span> meses</li>
+              <li>💊 **Reducción Directa RDAP (Si califica)**: -<span id="res-rdap-credits">12.0</span> meses</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+</div>
+
+<!-- SCRIPTS -->
+<script>
+// Cryptographic validation hash for "guiafederal2026"
+const AUTH_HASH = "ded571f7d1b033c430b1035b3873f70bc6dbe7cc6fbe311e69479c29380b81d0";
+
+// Helper to hash string using SHA-256
+async function sha256(string) {
+  const utf8 = new TextEncoder().encode(string);
+  const hashBuffer = await crypto.subtle.digest('SHA-256', utf8);
+  const hashArray = Array.from(new Uint8Array(hashBuffer));
+  const hashHex = hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
+  return hashHex;
+}
+
+// Handle Login Submission
+async function handleLoginSubmit(event) {
+  event.preventDefault();
+  const inputPass = document.getElementById('admin-pass').value;
+  const errorDiv = document.getElementById('login-error');
+  
+  const hash = await sha256(inputPass);
+  
+  if (hash === AUTH_HASH) {
+    sessionStorage.setItem('gf_admin_auth', 'authenticated');
+    unlockDashboard();
+  } else {
+    errorDiv.style.display = 'block';
+    document.getElementById('admin-pass').value = '';
+  }
+}
+
+// Unlock Dashboard Panel
+function unlockDashboard() {
+  document.getElementById('login-view').style.display = 'none';
+  document.getElementById('admin-view').style.display = 'flex';
+  calculateFsa(); // Initialize calculator view
+}
+
+// Switch Tabs in back office
+function switchTab(tabId, btn) {
+  document.querySelectorAll('.admin-section').forEach(s => s.classList.remove('active'));
+  document.querySelectorAll('.admin-tab-btn').forEach(b => b.classList.remove('active'));
+  
+  document.getElementById(tabId).classList.add('active');
+  btn.classList.add('active');
+}
+
+// Logout Admin
+function logoutAdmin() {
+  sessionStorage.removeItem('gf_admin_auth');
+  document.getElementById('admin-view').style.display = 'none';
+  document.getElementById('login-view').style.display = 'flex';
+  document.getElementById('admin-pass').value = '';
+  document.getElementById('login-error').style.display = 'none';
+}
+
+// Check session on load
+(function() {
+  const auth = sessionStorage.getItem('gf_admin_auth');
+  if (auth === 'authenticated') {
+    unlockDashboard();
+  }
+})();
+
+// FSA Sentencing Calculations
+function calculateFsa() {
+  const sentenceMonths = parseFloat(document.getElementById('fsa-sentence').value) || 0;
+  const fsaRate = parseFloat(document.getElementById('fsa-risk').value) || 0;
+  const rdapElegible = parseFloat(document.getElementById('fsa-rdap').value) || 0;
+
+  // 1. Good Conduct Time (GCT) — ~15% off sentence (roughly 54 days per year)
+  // For federal sentencing, GCT is calculated as 0.1479 coefficient of total sentence
+  const gctMonths = sentenceMonths * (54 / 365);
+
+  // Remaining sentence to serve before FSA credits are applied
+  const remainingBasis = sentenceMonths - gctMonths;
+
+  // 2. FSA Credits
+  // Gaining 15 or 10 days for every 30 days served.
+  // Effective factor calculation: If gaining 15 days for 30 served, they serve 30 days and earn 15 credits.
+  // Serves 2/3 of remaining sentence. Max FSA reduction allowed under BOP is 12 months.
+  let fsaReductionMonths = (remainingBasis * (fsaRate / (30 + fsaRate)));
+  if (fsaReductionMonths > 12) {
+    fsaReductionMonths = 12.0; // Capting early transfer to RRC/Home Confinement at 12 months maximum
+  }
+
+  // 3. RDAP Credits
+  const rdapReductionMonths = rdapElegible === 1 ? 12.0 : 0.0;
+
+  // 4. Final Estimated Sentence
+  const finalEstimate = sentenceMonths - gctMonths - fsaReductionMonths - rdapReductionMonths;
+  const displayFinal = Math.max(0, finalEstimate);
+
+  // Render to UI
+  document.getElementById('res-orig').textContent = sentenceMonths.toFixed(0);
+  document.getElementById('res-goodtime').textContent = gctMonths.toFixed(1);
+  document.getElementById('res-fsa-credits').textContent = fsaReductionMonths.toFixed(1);
+  document.getElementById('res-rdap-credits').textContent = rdapReductionMonths.toFixed(1);
+  document.getElementById('res-final-months').textContent = displayFinal.toFixed(1);
+}
+</script>
+
+</body>
+</html>
