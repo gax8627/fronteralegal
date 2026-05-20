@@ -712,7 +712,7 @@ async function handleLoginSubmit(event) {
   
   if (isFirebaseActive) {
     initFirebase();
-    const email = nexConfig.nationalSupportEmail || "info@guiafederal.com";
+    const email = nexConfig.nationalSupportEmail || "info@guiafederal.net";
     auth.signInWithEmailAndPassword(email, password)
     .then(() => {
       sessionStorage.setItem('gf_admin_auth', 'authenticated');

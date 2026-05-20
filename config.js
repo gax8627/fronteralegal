@@ -1,9 +1,9 @@
 // GUÍA FEDERAL NATIONAL CONFIG ENGINE
 const nexConfig = {
   whatsappNumber: "526633040096", // Primary support number (+52 663 304 0096)
-  formspreeId: "mqakpnvp",
-  calendlyLink: "", // e.g. "https://calendly.com/guiafederal/15min" - Add this to maximize bookings
-  nationalSupportEmail: "info@guiafederal.com",
+  web3formsKey: "67eff60b-8ac3-4cde-ab5a-5b13ffff5520",
+  calendlyLink: "", // e.g. "https://calendly.com/guiafederal/15min"
+  nationalSupportEmail: "info@guiafederal.net",
   firebaseConfig: {
     apiKey: "AIzaSyCfiJl3Ywr" + "-" + "d3Wral6NInnikn6SPweCIA4",
     authDomain: "guia-federal.firebaseapp.com",
@@ -14,7 +14,7 @@ const nexConfig = {
   }
 };
 
-// Auto-inject into all Lead Capture CTAs
+// Auto-inject into all Lead Capture CTAs & attach form handlers
 document.addEventListener('DOMContentLoaded', () => {
   // Target WhatsApp links
   document.querySelectorAll('.wa-link').forEach(link => {
@@ -23,14 +23,13 @@ document.addEventListener('DOMContentLoaded', () => {
     link.rel = "noopener noreferrer";
   });
 
-  // Target Formspree forms (only if configured and Firebase is not active)
-  const isFirebaseActive = nexConfig.firebaseConfig && nexConfig.firebaseConfig.apiKey && nexConfig.firebaseConfig.apiKey !== "YOUR_FIREBASE_API_KEY";
-  if (!isFirebaseActive && nexConfig.formspreeId !== "YOUR_ID_HERE") {
-    document.querySelectorAll('.contact-form').forEach(form => {
-      form.action = `https://formspree.io/f/${nexConfig.formspreeId}`;
-      form.method = "POST";
-    });
-  }
+  // Attach form handler to ALL .contact-form forms that don't already have onsubmit
+  // This covers blog forms that previously used direct Formspree POST
+  document.querySelectorAll('.contact-form').forEach(form => {
+    if (!form.hasAttribute('onsubmit')) {
+      form.addEventListener('submit', handleFormSubmit);
+    }
+  });
 });
 
 // Programmatic, sequential dynamic script loader for Firebase CDNs (to maintain 100/100 page speed)
@@ -64,76 +63,113 @@ function initFirebase() {
   firestoreDbInstance = firebase.firestore();
 }
 
-// Form submission handler — handles Firebase Cloud Firestore saving with automatic Formspree & WhatsApp fallbacks
+// ═══════════════════════════════════════════════════════════
+// FORM SUBMISSION — Web3Forms email + Firebase CRM (parallel)
+// ═══════════════════════════════════════════════════════════
+
 function handleFormSubmit(event) {
   event.preventDefault();
   const form = event.target;
   const data = new FormData(form);
 
-  // 1. Try Firebase first if configured
+  const leadData = {
+    nombre:      data.get('nombre')      || '',
+    telefono:    data.get('telefono')     || '',
+    instalacion: data.get('instalacion')  || '',
+    tipo:        data.get('tipo')         || '',
+    mensaje:     data.get('mensaje')      || '',
+    cargos:      data.get('cargos')       || '',
+    pagina:      window.location.pathname
+  };
+
+  // 1. Send email to info@guiafederal.net via Web3Forms
+  sendEmailNotification(leadData);
+
+  // 2. Save to Firebase CRM (parallel, non-blocking)
+  saveToFirebaseCRM(leadData);
+
+  // 3. Show success state immediately
+  showFormSuccess(form);
+}
+
+// Email delivery via Web3Forms → info@guiafederal.net
+function sendEmailNotification(leadData) {
+  const payload = {
+    access_key: nexConfig.web3formsKey,
+    subject: `🚨 Nueva Consulta — ${leadData.tipo || 'General'} | Guía Federal`,
+    from_name: leadData.nombre || 'Visitante Web',
+    // Fields with readable labels for the email body
+    'Nombre': leadData.nombre,
+    'Teléfono / WhatsApp': leadData.telefono,
+    'Instalación': leadData.instalacion,
+    'Tipo de Caso': leadData.tipo,
+    'Mensaje': leadData.mensaje,
+    'Cargos': leadData.cargos,
+    'Página de Origen': window.location.href
+  };
+
+  // Remove empty optional fields for cleaner email
+  ['Instalación', 'Cargos'].forEach(key => {
+    if (!payload[key]) delete payload[key];
+  });
+
+  fetch('https://api.web3forms.com/submit', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+    body: JSON.stringify(payload)
+  })
+  .then(res => res.json())
+  .then(result => {
+    if (!result.success) {
+      console.warn('Web3Forms delivery warning:', result.message);
+      // If email fails, open WhatsApp as backup
+      waFallback(leadData);
+    }
+  })
+  .catch(err => {
+    console.error('Email delivery error:', err);
+    waFallback(leadData);
+  });
+}
+
+// Firebase CRM persistence (parallel to email)
+function saveToFirebaseCRM(leadData) {
   const isFirebaseActive = nexConfig.firebaseConfig && nexConfig.firebaseConfig.apiKey && nexConfig.firebaseConfig.apiKey !== "YOUR_FIREBASE_API_KEY";
-  if (isFirebaseActive) {
-    loadFirebaseSDKs(() => {
-      initFirebase();
-      const leadData = {
-        nombre: data.get('nombre') || '',
-        telefono: data.get('telefono') || '',
-        instalacion: data.get('instalacion') || '',
-        tipo: data.get('tipo') || '',
-        mensaje: data.get('mensaje') || '',
-        created_at: firebase.firestore.FieldValue.serverTimestamp(),
-        estado: 'Urgente',
-        
-        // FSA Calculator initial defaults
-        fsa_sentence: 60,
-        fsa_risk: 15,
-        fsa_rdap: 1
-      };
+  if (!isFirebaseActive) return;
 
-      firestoreDbInstance.collection('leads').add(leadData)
-      .then(() => {
-        showFormSuccess(form);
-      })
-      .catch((error) => {
-        console.error("Firebase save failed, falling back:", error);
-        fallbackSubmission(form, data);
-      });
-    });
-    return;
-  }
-
-  // 2. If Firebase is not configured, go straight to default fallback
-  fallbackSubmission(form, data);
+  loadFirebaseSDKs(() => {
+    initFirebase();
+    firestoreDbInstance.collection('leads').add({
+      nombre:      leadData.nombre,
+      telefono:    leadData.telefono,
+      instalacion: leadData.instalacion,
+      tipo:        leadData.tipo,
+      mensaje:     leadData.mensaje,
+      cargos:      leadData.cargos,
+      pagina:      leadData.pagina,
+      created_at:  firebase.firestore.FieldValue.serverTimestamp(),
+      estado:      'Urgente',
+      // FSA Calculator defaults
+      fsa_sentence: 60,
+      fsa_risk: 15,
+      fsa_rdap: 1
+    }).catch(err => console.error('Firebase CRM save error:', err));
+  });
 }
 
-// Fallback chain: Formspree (Email) -> WhatsApp (Chat)
-function fallbackSubmission(form, data) {
-  if (nexConfig.formspreeId && nexConfig.formspreeId !== "YOUR_ID_HERE") {
-    fetch(`https://formspree.io/f/${nexConfig.formspreeId}`, {
-      method: 'POST',
-      body: data,
-      headers: { 'Accept': 'application/json' }
-    })
-    .then(res => {
-      if (res.ok) {
-        showFormSuccess(form);
-      } else {
-        waFallback(data);
-      }
-    })
-    .catch(() => waFallback(data));
-  } else {
-    waFallback(data);
-  }
-}
+// WhatsApp fallback — opens chat with pre-filled message
+function waFallback(leadData) {
+  // Accept both FormData and plain objects
+  const get = (key) => {
+    if (leadData instanceof FormData) return leadData.get(key) || '';
+    return leadData[key] || '';
+  };
 
-// Open WhatsApp with form data pre-filled as a message
-function waFallback(data) {
-  const nombre      = data.get('nombre')     || '';
-  const telefono    = data.get('telefono')   || '';
-  const instalacion = data.get('instalacion')|| '';
-  const tipo        = data.get('tipo')       || '';
-  const mensaje     = data.get('mensaje')    || '';
+  const nombre      = get('nombre');
+  const telefono    = get('telefono');
+  const instalacion = get('instalacion');
+  const tipo        = get('tipo');
+  const mensaje     = get('mensaje');
 
   const tipoLabels = {
     fsa:      'Créditos FSA / ETC',
@@ -161,7 +197,7 @@ function waFallback(data) {
   window.open(url, '_blank', 'noopener,noreferrer');
 }
 
-// Show a success state on the form after Formspree submission
+// Show a success state on the form
 function showFormSuccess(form) {
   const hasCalendar = nexConfig.calendlyLink && nexConfig.calendlyLink !== "";
   
@@ -173,7 +209,7 @@ function showFormSuccess(form) {
     <div style="text-align:center; padding: 2rem 1rem; background: var(--bg-alt); border-radius: var(--radius-lg); border: 2px solid var(--accent-hi);">
       <div style="font-size:2.5rem; margin-bottom:0.5rem;">✅</div>
       <h3 style="font-family:'Space Grotesk',sans-serif; margin-bottom:0.5rem;">¡Consulta Recibida!</h3>
-      <p style="color:var(--text-dim); font-size: 0.95rem;">Para no perder tiempo, elija la fecha y hora de su consulta a continuación:</p>
+      <p style="color:var(--text-dim); font-size: 0.95rem;">Le responderemos a la brevedad. Para no perder tiempo:</p>
       ${actionButton}
     </div>`;
 }
