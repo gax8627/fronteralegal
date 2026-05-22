@@ -4,7 +4,7 @@
 
   <!-- CORE PAGES -->
   <url>
-    <loc>https://www.guiafederal.net/</loc>
+    <loc>https://www.guiafederal.net</loc>
     <lastmod>2026-04-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
@@ -278,6 +278,13 @@
   <url>
     <loc>https://www.guiafederal.net/guia-72-horas-pdf</loc>
     <lastmod>2026-05-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.65</priority>
+  </url>
+
+  <url>
+    <loc>https://www.guiafederal.net/reporte-keywords-pdf</loc>
+    <lastmod>2026-05-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.65</priority>
   </url>
