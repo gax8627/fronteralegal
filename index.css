@@ -196,7 +196,7 @@ nav {
 }
 
 .article-hero h1 {
-  font-size: clamp(2.5rem, 6vw, 4.2rem);
+  font-size: clamp(1.8rem, 6vw, 4.2rem);
   color: #fff;
   line-height: 1.05;
   margin-bottom: 1.5rem;
@@ -317,7 +317,13 @@ nav.nav-open .nav-toggle span:nth-child(3) { transform: translateY(-7px) rotate(
     margin-top: 0.25rem;
     padding: 0.75rem 1.25rem;
   }
-  .theme-toggle-svg { display: none; }
+  .theme-toggle-svg {
+    display: block;
+    margin: 0.5rem auto;
+    width: 36px;
+    height: 36px;
+    stroke: var(--text);
+  }
 }
 
 /* =============================================
@@ -388,7 +394,7 @@ nav.nav-open .nav-toggle span:nth-child(3) { transform: translateY(-7px) rotate(
 }
 
 .hero h1 {
-  font-size: clamp(2.25rem, 6vw, 4rem);
+  font-size: clamp(1.8rem, 6vw, 4rem);
   line-height: 1.08;
   margin-bottom: 1.5rem;
   color: #FFFFFF;
@@ -919,7 +925,7 @@ section { padding: 6rem 0; }
   margin: 8rem auto 0;
   padding: 3rem 2rem 0;
 }
-.spoke-title { font-size: clamp(2rem,5vw,3.5rem); margin-bottom: 1.5rem; }
+.spoke-title { font-size: clamp(1.75rem, 5vw, 3.5rem); margin-bottom: 1.5rem; }
 
 .spoke-card {
   background: var(--surface);
@@ -1662,4 +1668,74 @@ footer {
 @media (max-width: 620px) {
   .blog-cta-card { padding: 2rem 1.5rem; }
   .blog-cta-form { grid-template-columns: 1fr; }
+}
+
+/* =============================================
+   RESPONSIVE UTILITIES & BUG FIXES
+   ============================================= */
+
+/* Responsive split grid */
+.grid-2-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+/* Responsive bento grid variation */
+.bento-grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.25rem;
+}
+
+/* Base styles for premium responsive spacing */
+@media (max-width: 768px) {
+  .grid-2-col {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+  .bento-grid-2 {
+    grid-template-columns: 1fr;
+  }
+  .spoke-main {
+    padding: 2rem 1.25rem 0;
+    margin: 6rem auto 0;
+  }
+  .spoke-card {
+    padding: 1.5rem;
+    margin: 1.5rem 0;
+  }
+}
+
+@media (max-width: 640px) {
+  /* Fluid container margins to prevent horizontal overflow */
+  .container {
+    padding: 0 1.25rem;
+  }
+  
+  /* Prevent bento and step card padding squishing */
+  .bento-item, .bento-card {
+    padding: 1.5rem;
+    min-height: 260px;
+  }
+  .step-card {
+    padding: 1.5rem;
+  }
+  .pricing-card {
+    padding: 2rem 1.5rem;
+  }
+  .pricing-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  .faq-item {
+    padding: 1.25rem;
+  }
+  .contact-form-card {
+    padding: 1.5rem;
+  }
+  .facility-card {
+    padding: 1.25rem;
+  }
 }
