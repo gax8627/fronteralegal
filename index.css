@@ -193,6 +193,16 @@ nav {
   flex-direction: column;
   align-items: center;
   text-align: center;
+  color: #ffffff; /* Enforce white color for base text */
+}
+
+.article-hero-inner p {
+  color: rgba(255, 255, 255, 0.85) !important; /* Force legible description color on dark gradient overlay */
+}
+
+.article-hero-inner .article-meta,
+.article-hero-inner .article-meta span {
+  color: rgba(255, 255, 255, 0.75) !important; /* Force legible metadata color */
 }
 
 .article-hero h1 {
