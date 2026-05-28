@@ -134,6 +134,10 @@
       "destination": "/blog/mula-ciega-federal"
     },
     {
+      "source": "/programa-deteccion-mula-ciega-tijuana",
+      "destination": "/blog/programa-deteccion-mula-ciega-tijuana"
+    },
+    {
       "source": "/extradicion-narcopolitica-2026",
       "destination": "/blog/extradicion-narcopolitica-2026"
     },

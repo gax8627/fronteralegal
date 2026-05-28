@@ -1,4 +1,4 @@
-const CACHE_NAME = 'guia-federal-v6';
+const CACHE_NAME = 'guia-federal-v7';
 const ASSETS = [
   '/',
   '/index.css',
@@ -38,6 +38,7 @@ const ASSETS = [
   '/blog/informantes-y-brady-evidencia',
   '/blog/investigacion-federal-que-hacer',
   '/blog/mula-ciega-federal',
+  '/blog/programa-deteccion-mula-ciega-tijuana',
   '/blog/plea-bargaining-federal',
   '/blog/presuncion-de-inocencia-explicada',
   '/blog/rdap-explicado',
