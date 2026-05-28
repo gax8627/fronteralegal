@@ -1509,17 +1509,31 @@ footer {
 }
 
 .cta-banner {
-  background: #0F0F0F; /* Consistent dark background for both themes */
+  background: var(--surface);
   border-radius: var(--radius-lg);
-  padding: 4rem;
+  padding: 3.5rem 2rem;
   text-align: center;
-  color: #fff;
+  color: var(--text);
   margin: 4rem 0;
-  border: 1px solid var(--border);
+  border: 1px solid var(--border-hi);
+  box-shadow: var(--shadow-lg);
+  position: relative;
+  overflow: hidden;
 }
 
-.cta-banner h2 { color: #fff; margin-bottom: 1rem; }
-.cta-banner p { color: rgba(255,255,255,0.7); margin-bottom: 2rem; max-width: 600px; margin-left: auto; margin-right: auto; }
+.cta-banner::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--accent) 0%, var(--accent-hi) 100%);
+}
+
+.cta-banner h2, .cta-banner h3 { color: var(--text); margin-bottom: 1rem; font-size: 1.75rem; }
+.cta-banner p { color: var(--text-dim); margin-bottom: 2rem; max-width: 600px; margin-left: auto; margin-right: auto; font-size: 1.05rem; }
+
 
 @media (max-width: 768px) {
   .pricing-card.popular { transform: none; }
