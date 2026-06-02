@@ -1509,14 +1509,14 @@ footer {
 }
 
 .cta-banner {
-  background: var(--surface);
+  background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 100%) !important;
   border-radius: var(--radius-lg);
   padding: 3.5rem 2rem;
   text-align: center;
-  color: var(--text);
+  color: #ffffff !important;
   margin: 4rem 0;
-  border: 1px solid var(--border-hi);
-  box-shadow: var(--shadow-lg);
+  border: 1px solid rgba(251, 191, 36, 0.25);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15), 0 0 20px rgba(180, 83, 9, 0.05);
   position: relative;
   overflow: hidden;
 }
@@ -1528,11 +1528,12 @@ footer {
   left: 0;
   right: 0;
   height: 4px;
-  background: linear-gradient(90deg, var(--accent) 0%, var(--accent-hi) 100%);
+  background: linear-gradient(90deg, #b45309 0%, var(--accent-hi) 100%);
 }
 
-.cta-banner h2, .cta-banner h3 { color: var(--text); margin-bottom: 1rem; font-size: 1.75rem; }
-.cta-banner p { color: var(--text-dim); margin-bottom: 2rem; max-width: 600px; margin-left: auto; margin-right: auto; font-size: 1.05rem; }
+.cta-banner h2, .cta-banner h3 { color: #fcd34d !important; margin-bottom: 1rem; font-size: 1.75rem; font-family: 'Space Grotesk', sans-serif; font-weight: 700; }
+.cta-banner p { color: #cbd5e1 !important; margin-bottom: 2rem; max-width: 600px; margin-left: auto; margin-right: auto; font-size: 1.05rem; line-height: 1.6; }
+
 
 
 @media (max-width: 768px) {
