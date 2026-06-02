@@ -138,6 +138,14 @@
       "destination": "/blog/programa-deteccion-mula-ciega-tijuana"
     },
     {
+      "source": "/casos-mula-ciega-ejemplos",
+      "destination": "/blog/casos-mula-ciega-ejemplos"
+    },
+    {
+      "source": "/casos-mula-ciega-ejemplos-pdf",
+      "destination": "/casos-mula-ciega-ejemplos-pdf"
+    },
+    {
       "source": "/extradicion-narcopolitica-2026",
       "destination": "/blog/extradicion-narcopolitica-2026"
     },

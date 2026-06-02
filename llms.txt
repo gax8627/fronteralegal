@@ -37,6 +37,8 @@ Guía Federal helps families in the critical first 72 hours after a federal arre
 - **Unresponsive Public Defender**: [/blog/abogado-no-responde-federal](/blog/abogado-no-responde-federal.html)
 - **Skipping Halfway House**: [/blog/saltar-halfway-house-2026](/blog/saltar-halfway-house-2026.html)
 - **Blind Mule Defense**: [/blog/mula-ciega-federal](/blog/mula-ciega-federal.html)
+- **Blind Mule Case Examples**: [/blog/casos-mula-ciega-ejemplos](/blog/casos-mula-ciega-ejemplos.html)
+- **Tijuana Blind Mule Detection**: [/blog/programa-deteccion-mula-ciega-tijuana](/blog/programa-deteccion-mula-ciega-tijuana.html)
 - **Narco-political Extradition**: [/blog/extradicion-narcopolitica-2026](/blog/extradicion-narcopolitica-2026.html)
 - **RDAP Explained**: [/blog/rdap-explicado](/blog/rdap-explicado.html)
 - **Boss of Your Freedom (Re-entry)**: [/blog/ser-jefe-de-tu-libertad](/blog/ser-jefe-de-tu-libertad.html)

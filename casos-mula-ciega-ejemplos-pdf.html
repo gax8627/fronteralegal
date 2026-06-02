@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Casos de Mula Ciega: Ejemplos y Defensa | Guía Federal</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Playfair+Display:wght@700&display=swap');
+  
+  :root {
+    --navy: #0f172a;
+    --gold: #b45309;
+    --text: #1e293b;
+    --border: #e2e8f0;
+  }
+
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter', sans-serif;
+    color: var(--text);
+    background: #f1f5f9;
+    line-height: 1.6;
+  }
+
+  .page {
+    width: 210mm;
+    min-height: 297mm;
+    padding: 20mm;
+    margin: 10mm auto;
+    background: white;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    box-sizing: border-box;
+    position: relative;
+    overflow: hidden;
+  }
+
+  @media print {
+    body { background: none; }
+    .page { margin: 0; box-shadow: none; page-break-after: always; }
+  }
+
+  /* COVER PAGE */
+  .cover {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 100%;
+    background: var(--navy);
+    color: white;
+    margin: -20mm;
+    padding: 20mm;
+  }
+
+  .cover-img {
+    width: 140mm;
+    height: 140mm;
+    object-fit: cover;
+    margin-bottom: 2rem;
+    border: 2px solid var(--gold);
+    border-radius: 8px;
+  }
+
+  .cover h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.8rem;
+    margin: 0;
+    color: #fcd34d;
+    line-height: 1.2;
+  }
+
+  .cover h2 {
+    font-size: 1.2rem;
+    font-weight: 400;
+    letter-spacing: 0.15rem;
+    text-transform: uppercase;
+    margin-top: 1rem;
+    opacity: 0.8;
+  }
+
+  /* CONTENT PAGES */
+  .header {
+    border-bottom: 2px solid var(--gold);
+    padding-bottom: 0.5rem;
+    margin-bottom: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+
+  .header h3 { margin: 0; font-family: 'Playfair Display', serif; color: var(--navy); font-size: 1.2rem; }
+
+  .section { margin-bottom: 1.5rem; }
+  .section h4 {
+    color: var(--gold);
+    text-transform: uppercase;
+    letter-spacing: 0.08rem;
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 0.3rem;
+    margin-top: 0;
+    margin-bottom: 0.8rem;
+    font-size: 1rem;
+  }
+
+  h5 {
+    font-size: 1.05rem;
+    color: var(--navy);
+    margin-top: 1rem;
+    margin-bottom: 0.4rem;
+  }
+
+  p {
+    margin-top: 0;
+    margin-bottom: 0.8rem;
+    font-size: 0.95rem;
+    color: #334155;
+  }
+
+  ul, ol {
+    margin-top: 0;
+    margin-bottom: 0.8rem;
+    padding-left: 1.2rem;
+  }
+
+  li {
+    font-size: 0.92rem;
+    margin-bottom: 0.4rem;
+    color: #334155;
+  }
+
+  .warning {
+    background: #fff7ed;
+    border: 1px solid #ffedd5;
+    padding: 1rem;
+    border-radius: 6px;
+    margin: 1.2rem 0;
+  }
+  .warning strong {
+    color: #c2410c;
+  }
+  .warning p {
+    margin: 0;
+    font-size: 0.92rem;
+  }
+
+  .footer-note {
+    position: absolute;
+    bottom: 15mm;
+    left: 20mm;
+    right: 20mm;
+    font-size: 0.75rem;
+    color: #94a3b8;
+    text-align: center;
+    border-top: 1px solid #e2e8f0;
+    padding-top: 0.8rem;
+  }
+  
+  .faq-item {
+    margin-bottom: 1rem;
+  }
+  .faq-item strong {
+    color: var(--navy);
+    font-size: 0.95rem;
+    display: block;
+    margin-bottom: 0.2rem;
+  }
+  .faq-item p {
+    font-size: 0.9rem;
+    margin: 0;
+  }
+</style>
+</head>
+<body>
+
+<!-- PAGE 1: COVER -->
+<div class="page">
+  <div class="cover">
+    <img src="./assets/hero-mula-ciega-ejemplos.png" class="cover-img" alt="Portada Mula Ciega">
+    <h1>Casos de Mula Ciega</h1>
+    <h2>Ejemplos Reales y Guía de Defensa</h2>
+    <p style="margin-top: 2rem; font-size: 1.05rem; opacity: 0.8; max-width: 140mm; line-height: 1.4;">Cómo operan los fiscales en EE.UU., trucos en interrogatorios y los requisitos clave para demostrar tu inocencia.</p>
+    <div style="margin-top: 2rem; width: 40mm; height: 2px; background: var(--gold);"></div>
+    <p style="margin-top: 1rem; font-weight: 700; color: #fcd34d; letter-spacing: 0.1rem;">GUÍA FEDERAL</p>
+  </div>
+</div>
+
+<!-- PAGE 2: INTRO & EXAMPLES -->
+<div class="page">
+  <div class="header">
+    <h3>Guía Federal · Mula Ciega</h3>
+    <span style="font-size: 0.75rem; color: #64748b;">Información Técnica</span>
+  </div>
+
+  <div class="section">
+    <h4>1. ¿Qué es una Mula Ciega? Explicación Sencilla</h4>
+    <p>Una "mula ciega" es una persona que transporta algo ilegal a través de la frontera (o dentro del país) sin saberlo. En palabras sencillas: alguien ocultó drogas, personas o dinero en tus pertenencias, tu vehículo o usó tu nombre para actividades ilícitas sin tu consentimiento ni conocimiento. Para profundizar en la realidad jurídica de estos casos en la frontera, puedes revisar nuestra guía detallada sobre la <a href="/blog/mula-ciega-federal">Defensa de Mula Ciega</a>.</p>
+    <p>Esto le pasa a gente honesta y trabajadora que cruza la frontera con frecuencia. Los criminales buscan personas con rutinas fijas y récords limpios para usarlos como herramientas, especialmente en puertos de entrada federales del Distrito Sur de California (CASD) en la región fronteriza del Noveno Circuito.</p>
+  </div>
+
+  <div class="section">
+    <h4>2. Tres Ejemplos Comunes de Casos de Mula Ciega</h4>
+    
+    <h5>A. Mula Ciega de Drogas (Estudio con GPS y Reclutamiento Falso)</h5>
+    <ul>
+      <li><strong>El estudio con GPS:</strong> Los criminales no eligen al azar. Primero colocan discretamente un rastreador GPS magnético debajo de tu vehículo (cerca del chasis o la defensa) para estudiar tus movimientos durante días o semanas. Así aprenden tus horarios de cruce, rutas habituales y dónde dejas el carro estacionado. Una vez que conocen tu rutina, aprovechan un momento en el que el carro está solo para esconder la droga (en salpicaderas, defensas o usando llaves clonadas).</li>
+      <li><strong>El engaño del mandado (Reclutamiento falso):</strong> Muchas veces te "contratan" para trabajos aparentemente sencillos, como pedirte que cruces al lado americano a comprar ciertos productos en supermercados (como Walmart u otras tiendas) a cambio de un pago normal. Hacen esto para que cruces varias veces de forma exitosa y los agentes fronterizos se acostumbren a verte. Una vez que generas confianza en los cruces, meten la droga en tu carro sin que te des cuenta para que la pases en el siguiente viaje. Si vives del lado mexicano y quieres evitar que esto ocurra, te aconsejamos leer sobre las revisiones K-9 en el <a href="/blog/programa-deteccion-mula-ciega-tijuana">Programa Preventivo de Detección de Mulas Ciegas en Tijuana</a>.</li>
+    </ul>
+
+    <h5>B. Mula Ciega de Tráfico de Personas</h5>
+    <p>Ocurre cuando personas se meten por su cuenta a la cajuela, la caja de tu camioneta o compartimentos del vehículo mientras el carro está estacionado en zonas poco vigiladas antes de cruzar. El conductor arranca y maneja hacia el puerto de entrada sin tener la menor idea de que lleva a alguien escondido, descubriéndose todo hasta la revisión en la garita.</p>
+  </div>
+
+  <div class="footer-note">
+    Esta guía es informativa y no sustituye el consejo de un abogado federal. © 2026 Guía Federal.
+  </div>
+</div>
+
+<!-- PAGE 3: LAUNDERING & OLSON RULE -->
+<div class="page">
+  <div class="header">
+    <h3>Guía Federal · Mula Ciega</h3>
+    <span style="font-size: 0.75rem; color: #64748b;">Información Técnica</span>
+  </div>
+
+  <div class="section">
+    <h5>C. Mula Ciega de Lavado de Dinero y Conspiración (El engaño de las divisas)</h5>
+    <p>El lavado de dinero ocurre cuando te involucran en transferencias bancarias de dinero sucio haciéndote creer que es algo legal. Los delincuentes usan esquemas atractivos para convencerte:</p>
+    <ul>
+      <li><strong>El juego de divisas:</strong> Te dicen que tienen un "negocio seguro" de compra y venta de divisas (monedas extranjeras) y que para generar ganancias necesitan hacer depósitos en tu cuenta bancaria y que luego tú transfieras ese dinero a otras cuentas.</li>
+      <li><strong>Prestanombres:</strong> Te piden abrir cuentas de banco a tu nombre o prestar tu identidad para registrar un negocio a cambio de una pequeña comisión, prometiendo que todo es legal.</li>
+      <li>Si el dinero proviene de actividades ilícitas, la fiscalía te acusará de <strong>Conspiración para Lavar Dinero</strong> (ponerte de acuerdo con otros para mover dinero sucio), aunque tú no supieras la verdad.</li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <h4>3. El Requisito de la Regla "Olson" (El Conocimiento es Todo)</h4>
+    <p>En los juicios federales de los Estados Unidos, y de manera muy particular en el Noveno Circuito (que tiene jurisdicción sobre estados fronterizos clave como California y Arizona), existe un precedente legal muy importante derivado del caso judicial conocido como <strong>Olson</strong> (<em>Instrucción Olson</em>, basada en el precedente judicial del Noveno Circuito).</p>
+    <ul>
+      <li>Esta regla exige que para que seas declarado culpable, <strong>el fiscal tiene que demostrar obligatoriamente que tú tenías conocimiento real (<em>knowledge</em>) de que estabas transportando el contrabando.</strong></li>
+      <li>Si el fiscal no puede presentar pruebas claras de que tú sabías de la droga, las personas o el dinero ilícito, <strong>no puede ganar el caso y la ley exige que seas declarado no culpable.</strong></li>
+      <li><strong>Tú no tienes que demostrar tu inocencia.</strong> El peso de traer las pruebas de que sabías recae completamente en el fiscal. Si no tienen textos, llamadas, pagos sospechosos o mensajes de WhatsApp que demuestren que sabías, no tienen caso. En este sentido, puedes ver nuestro análisis sobre la importancia constitucional de la <a href="/blog/presuncion-de-inocencia-explicada">Presunción de Inocencia Explicada</a> en los tribunales de EE.UU.</li>
+    </ul>
+
+    <div class="warning">
+      <strong>⚠️ ADVERTENCIA: ESPECULACIÓN Y SOSPECHA NO SON EVIDENCIA</strong>
+      <p>En la corte federal, existe una frontera gigante entre lo que el fiscal "piensa" y lo que puede "probar":</p>
+      <p><strong>Sospecha y Especulación (No sirve para condenar):</strong> El fiscal intentará decir cosas como: <em>"Es sospechoso que cruzara tarde"</em> o <em>"Debería haber imaginado que algo andaba mal"</em>. Todo esto son opiniones y suposiciones. La ley de EE.UU. prohíbe estrictamente al jurado declarar culpable a alguien basándose en sospechas.</p>
+      <p><strong>Evidencia Real (Lo único que vale):</strong> El fiscal debe destruir la duda razonable con pruebas objetivas, tales como: registros del GPS del vehículo (que demuestren que estuvo estacionado en zonas de carga de droga donde el dueño no estaba físicamente), historiales de mensajes normales y familiares sin códigos o eliminaciones, auditorías de tus cuentas que demuestren que no recibiste depósitos ni efectivo inusual, o videos de seguridad que prueben que el carro se dejó sin supervisión en la calle.</p>
+      <p><strong>Ceguera Voluntaria (Willful Blindness / Deliberate Ignorance):</strong> El fiscal intentará argumentar que si viste señales de alerta obvias y preferiste no revisar para poder alegar ignorancia en la garita, eres culpable. Sin embargo, <strong>el fiscal tiene que comprobar con evidencia concreta que ignoraste estas señales a sabiendas</strong>.
+        <br><em>· Ejemplo de lo que NO es:</em> Manejar el carro prestado de un compañero de trabajo de confianza para comprar comida. El carro huele normal, corre bien y no tiene modificaciones. No tienes ninguna obligación de desarmar las defensas.
+        <br><em>· Ejemplo de lo que SÍ es:</em> Un desconocido te ofrece $1,500 dólares en efectivo por conducir un carro viejo solo para comprar una botella de agua, y te dice: <em>"No abras la cajuela ni preguntes por qué está tan pesado"</em>. Aceptar eso es ignorar alertas obvias deliberadamente.
+        <br>Asimismo, ser dueño del carro no te hace culpable automático, pero el jurado lo verá como un indicio inicial que debe ser desvirtuado con pruebas técnicas de tu rutina digital y física limpia.
+      </p>
+    </div>
+  </div>
+
+  <div class="footer-note">
+    Esta guía es informativa y no sustituye el consejo de un abogado federal. © 2026 Guía Federal.
+  </div>
+</div>
+
+<!-- PAGE 4: SILENCE & REVERSE PROFFER -->
+<div class="page">
+  <div class="header">
+    <h3>Guía Federal · Mula Ciega</h3>
+    <span style="font-size: 0.75rem; color: #64748b;">Información Técnica</span>
+  </div>
+
+  <div class="section">
+    <h4>4. ¡SIEMPRE, SIEMPRE GUARDA SILENCIO!</h4>
+    <p><strong>El consejo más importante y que puede salvar tu libertad es: GUARDA SILENCIO ABSOLUTO. SIEMPRE. NO hables con los agentes federales, no des explicaciones y no intentes convencerlos de que eres inocente.</strong> Puedes ver más detalles sobre por qué esta es tu defensa número uno en <a href="/blog/derecho-a-guardar-silencio">El Derecho al Silencio: Su Única Arma Real</a>. Si la detención de su familiar acaba de ocurrir hace pocas horas, les invitamos a consultar inmediatamente nuestra guía de urgencia sobre <a href="/blog/arresto-federal-san-diego-72-horas">El Arresto Federal en San Diego: Las Primeras 72 Horas Críticas</a>.</p>
+    <p>Todo lo que digas en el momento de la detención —incluso si es con buena intención— será anotado, sacado de contexto y utilizado por el fiscal para construir el caso en tu contra. Los agentes están entrenados para hacerte entrar en pánico y usar tus propias palabras para decir que estabas "nervioso" o "mintiendo". Tu única frase debe ser: <strong>"No voy a responder preguntas sin mi abogado"</strong>.</p>
+  </div>
+
+  <div class="section">
+    <h4>5. El Truco Sucio del "Reverse Proffer"</h4>
+    <p>El <strong>Reverse Proffer</strong> es una reunión que organiza la fiscalía y los agentes de investigación donde te sientan para mostrarte "las pruebas" que supuestamente tienen en tu contra.</p>
+    <ul>
+      <li>Es una táctica de miedo diseñada para asustarte y presionarte.</li>
+      <li>Típicamente te dirán cosas como: <em>"Estamos viendo una sentencia de 10 años de cárcel en tu contra, pero si firmas este papel y hablas ahora mismo, te ofrecemos solo 1 año"</em>.</li>
+      <li><strong>El peligro de estas juntas:</strong> Si eres una mula ciega y eres inocente, ir a estas reuniones y hablar es extremadamente peligroso. Cualquier explicación de buena fe que intentes dar para defenderte puede ser interpretada como una mentira o usada por el fiscal para llenar los huecos de su investigación. <strong>Nunca se debe asistir a estas juntas ni hablar en ellas si eres inocente.</strong> Si tu abogado defensor los presiona para asistir a esta junta o firmar un acuerdo inmediato por pánico, lean antes nuestra explicación sobre <a href="/blog/plea-bargaining-federal">La Verdad Sobre el Plea Bargaining Federal: ¿Firmar o Ir a Juicio?</a>.</li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <h4>6. Las Mentiras en los Interrogatorios y Cómo Responder</h4>
+    <p>Los agentes usarán mentiras y trucos para hacerte hablar. Estas son las más comunes y cómo responder de forma segura:</p>
+    <ul>
+      <li><strong>Mentira 1: <em>"Es su carro y usted tiene la obligación de saber todo lo que trae adentro, así que ya es culpable".</em></strong>
+        <br>La verdad: Esto es una mentira legal. Ser el dueño del carro no te hace culpable. La regla <em>Olson</em> exige que prueben que tú sabías del contrabando.
+        <br>Responder: <em>"Quiero guardar silencio y hablar con un abogado"</em>.
+      </li>
+      <li><strong>Mentira 2: <em>"¿Para qué ocupas un abogado si dices que eres inocente? El que nada debe, nada teme".</em></strong>
+        <br>La verdad: Esta es una trampa psicológica para hacerte sentir que pedir un abogado te hace ver culpable. Solicitar representación es un derecho básico para protegerte.
+        <br>Responder: <em>"Pido un abogado porque es mi derecho constitucional"</em>.
+      </li>
+    </ul>
+    <p><strong>Importante:</strong> Tus derechos constitucionales (derecho a guardar silencio y a tener un abogado) <strong>se aplican a todas las personas en suelo estadounidense</strong>, sin importar si no naciste en EE.UU., si no eres ciudadano o si no tienes documentos.</p>
+  </div>
+
+  <div class="footer-note">
+    Esta guía es informativa y no sustituye el consejo de un abogado federal. © 2026 Guía Federal.
+  </div>
+</div>
+
+<!-- PAGE 5: ADVOCATE ROLE & FAQS 1-5 -->
+<div class="page">
+  <div class="header">
+    <h3>Guía Federal · Mula Ciega</h3>
+    <span style="font-size: 0.75rem; color: #64748b;">Información Técnica</span>
+  </div>
+
+  <div class="section">
+    <h4>7. ¿Qué pasa si tu abogado no te ayuda? (El papel de Guía Federal)</h4>
+    <p>Es una realidad muy común que los abogados contratados o asignados a veces no dediquen el tiempo necesario, sean difíciles de contactar o presionen al defendido para que acepte un acuerdo de culpabilidad rápido porque es más fácil para ellos. Incluso, en ocasiones, el abogado defensor y el fiscal cooperan de manera informal para presionar a la persona para que firme un acuerdo y cerrar el archivo rápidamente.</p>
+    <p>Si te encuentras en esta situación desesperante donde no puedes comunicarte con él, te sugerimos leer nuestro artículo sobre <a href="/blog/abogado-no-responde-federal">¿Mi Abogado Defensor Federal No Contesta? Guía de Presión y Acción Familiar</a> para aprender a exigir atención técnica.</p>
+    <p><strong>¿Cómo te ayuda Guía Federal?</strong>
+    <br>Nosotros <strong>no hacemos auditorías generales del caso ni revisamos el Discovery oficial</strong> (ya que no somos los abogados y no nos entregan esos archivos).</p>
+    <p>Lo que hacemos es servir como una <strong>guía técnica para la familia y el defendido</strong>. Te ayudamos a entender las tácticas sucias que el fiscal y los agentes están usando para asustarte, explicarte paso a paso el proceso penal para que no tomes decisiones por miedo, y evaluar el trabajo de tu abogado defensor, enseñándote qué estrategias debería estar aplicando en tu defensa (como exigir la instrucción <em>Olson</em> al jurado) y ayudándote a presionarlo para que haga su trabajo correctamente. Si quieres profundizar en el combate legal ante los cargos del gobierno, lee nuestra guía sobre <a href="/blog/vencer-al-fiscal-federal">Cómo Vencer al Fiscal Federal</a> y el papel de la <a href="/blog/informantes-y-brady-evidencia">Evidencia Brady y el Control de Informantes</a> para desmantelar cargos débiles.</p>
+  </div>
+
+  <div class="section">
+    <h4>8. Preguntas Frecuentes (FAQs) - Parte 1</h4>
+    <div class="faq-item">
+      <strong>1. ¿Qué es una mula ciega de drogas?</strong>
+      <p>Es cuando criminales ocultan drogas en tu vehículo sin tu conocimiento, usando rastreadores GPS para vigilar tus rutinas antes de esconder el contrabando.</p>
+    </div>
+    <div class="faq-item">
+      <strong>2. ¿Qué es el engaño del reclutamiento para hacer mandados?</strong>
+      <p>Es cuando te ofrecen pagar por hacer cruces sencillos a tiendas en EE.UU. Después de varios cruces exitosos donde generas confianza, esconden droga en tu carro para el siguiente viaje.</p>
+    </div>
+    <div class="faq-item">
+      <strong>3. ¿Cómo te usan de mula ciega en lavado de dinero?</strong>
+      <p>Te engañan pidiéndote prestar tu nombre para abrir cuentas (prestanombres) o diciendo que van a "jugar con el tipo de cambio de divisas" para ganar dinero, depositando dinero sucio en tus cuentas para que luego lo transfieras.</p>
+    </div>
+    <div class="faq-item">
+      <strong>4. ¿Por qué la regla Olson es tan importante?</strong>
+      <p>Porque establece que el fiscal tiene la obligación de probar que tú sabías del contrabando. Si no hay pruebas de tu conocimiento, el fiscal no puede ganar.</p>
+    </div>
+    <div class="faq-item">
+      <strong>5. ¿Qué diferencia hay entre una sospecha del fiscal y una evidencia real?</strong>
+      <p>Las sospechas son opiniones o especulaciones ("es sospechoso que prestara su cuenta"). La ley federal prohíbe condenar a alguien por sospechas. La evidencia real son datos objetivos (como textos, llamadas o registros financieros) que demuestran que sabías de la actividad ilegal.</p>
+    </div>
+  </div>
+
+  <div class="footer-note">
+    Esta guía es informativa y no sustituye el consejo de un abogado federal. © 2026 Guía Federal.
+  </div>
+</div>
+
+<!-- PAGE 6: FAQS 6-10 & CLOSING -->
+<div class="page">
+  <div class="header">
+    <h3>Guía Federal · Mula Ciega</h3>
+    <span style="font-size: 0.75rem; color: #64748b;">Información Técnica</span>
+  </div>
+
+  <div class="section">
+    <h4>Preguntas Frecuentes (FAQs) - Parte 2</h4>
+    <div class="faq-item">
+      <strong>6. ¿Qué es un Reverse Proffer y por qué es peligroso si soy inocente?</strong>
+      <p>Es una reunión donde el fiscal y los agentes te muestran supuestas evidencias para asustarte con muchos años de cárcel (como "estás viendo 10 años, pero firma 1 año ahora") y presionarte a cooperar o declararte culpable. Si eres una mula ciega inocente, asistir y hablar en estas juntas es extremadamente peligroso, pues cualquier explicación de buena fe que intentes dar será manipulada por el fiscal para perfeccionar su acusación. Nunca debes hablar en ellas.</p>
+    </div>
+    <div class="faq-item">
+      <strong>7. ¿Es verdad que soy culpable solo porque el carro está a mi nombre?</strong>
+      <p>No. Eso es una mentira que usan los agentes para que confieses. La ley exige que demuestren que tú sabías lo que había dentro del auto antes de poder declararte culpable.</p>
+    </div>
+    <div class="faq-item">
+      <strong>8. ¿Por qué debo guardar silencio absoluto?</strong>
+      <p>Porque los agentes usarán cualquier declaración para enredarte. El silencio absoluto evita que el fiscal tenga declaraciones que pueda manipular en el juicio.</p>
+    </div>
+    <div class="faq-item">
+      <strong>9. ¿Mis derechos constitucionales valen si no soy ciudadano de EE.UU.?</strong>
+      <p>Sí. En el territorio de los Estados Unidos, los derechos a guardar silencio y a solicitar un abogado protegen a cualquier persona, sin importar su país de origen o su estatus migratorio.</p>
+    </div>
+    <div class="faq-item">
+      <strong>10. ¿Guía Federal hace auditorías de mi caso con el Discovery?</strong>
+      <p>No. Nosotros no recibimos el Discovery oficial. Servimos como una guía para la familia, ayudando a entender el proceso, descifrar las tácticas del fiscal y presionar al abogado defensor para que use las estrategias correctas en tu favor.</p>
+    </div>
+  </div>
+
+  <div class="section" style="margin-top: 2rem; border-top: 1px solid var(--border); padding-top: 1rem;">
+    <h5 style="margin-top: 0;">Contacto de Orientación de Emergencia</h5>
+    <p>Si un familiar está detenido bajo cargos federales en la frontera, no firme ningún acuerdo sin entender sus derechos. Contáctenos para asistencia y acompañamiento inmediato.</p>
+    <p><strong>WhatsApp:</strong> +52-663-304-0096 | <strong>Email:</strong> info@guia-federal.com</p>
+  </div>
+
+  <div class="footer-note">
+    Esta guía es informativa y no sustituye el consejo de un abogado federal. © 2026 Guía Federal.
+  </div>
+</div>
+
+<!-- PAGE 7: RECURSOS Y GUÍAS DE DEFENSA CONECTADAS -->
+<div class="page">
+  <div class="header">
+    <h3>Guía Federal · Mula Ciega</h3>
+    <span style="font-size: 0.75rem; color: #64748b;">Biblioteca de Defensa</span>
+  </div>
+
+  <div class="section">
+    <h4>Recursos y Guías de Defensa Conectadas</h4>
+    <p>Para construir una defensa sólida, es vital no limitarse a una sola perspectiva. Le invitamos a profundizar en estos temas conectados en nuestra biblioteca digital:</p>
+    
+    <div style="margin-top: 1rem;">
+      <div style="border-left: 3px solid var(--gold); padding-left: 0.8rem; margin-bottom: 1.1rem;">
+        <strong style="font-size: 0.95rem; color: var(--navy);">Defensa de Mula Ciega: Inocencia en la Frontera</strong>
+        <p style="font-size: 0.82rem; margin: 0.15rem 0 0; color: #475569;">Un análisis técnico exhaustivo sobre cómo el peritaje de GPS y la informática forense desmienten el conocimiento de la carga ilícita ante un jurado federal.
+          <br><em style="font-size: 0.78rem; color: var(--gold);">Disponible en: /blog/mula-ciega-federal</em></p>
+      </div>
+
+      <div style="border-left: 3px solid var(--gold); padding-left: 0.8rem; margin-bottom: 1.1rem;">
+        <strong style="font-size: 0.95rem; color: var(--navy);">Programa Mula Ciega: Inspección K-9 Preventiva</strong>
+        <p style="font-size: 0.82rem; margin: 0.15rem 0 0; color: #475569;">Conoce los detalles de las iniciativas y puntos de control voluntario que permiten escanear tu vehículo con binomios caninos antes de cruzar los puertos fronterizos.
+          <br><em style="font-size: 0.78rem; color: var(--gold);">Disponible en: /blog/programa-deteccion-mula-ciega-tijuana</em></p>
+      </div>
+
+      <div style="border-left: 3px solid var(--gold); padding-left: 0.8rem; margin-bottom: 1.1rem;">
+        <strong style="font-size: 0.95rem; color: var(--navy);">El Derecho al Silencio: Tu Única Arma Real</strong>
+        <p style="font-size: 0.82rem; margin: 0.15rem 0 0; color: #475569;">Explicación detallada de por qué las declaraciones voluntarias a los agentes federales son la principal causa de condena, y cómo guardar silencio absoluto.
+          <br><em style="font-size: 0.78rem; color: var(--gold);">Disponible en: /blog/derecho-a-guardar-silencio</em></p>
+      </div>
+
+      <div style="border-left: 3px solid var(--gold); padding-left: 0.8rem; margin-bottom: 1.1rem;">
+        <strong style="font-size: 0.95rem; color: var(--navy);">Cómo Vencer al Fiscal Federal: Tácticas de Defensa</strong>
+        <p style="font-size: 0.82rem; margin: 0.15rem 0 0; color: #475569;">Aprenda a identificar fallas procesales en la acusación, exigir la entrega de la evidencia Brady y cómo negociar desde una posición de fuerza técnica.
+          <br><em style="font-size: 0.78rem; color: var(--gold);">Disponible en: /blog/vencer-al-fiscal-federal</em></p>
+      </div>
+
+      <div style="border-left: 3px solid var(--gold); padding-left: 0.8rem; margin-bottom: 1.1rem;">
+        <strong style="font-size: 0.95rem; color: var(--navy);">El Arresto Federal en San Diego: Las 72 Horas</strong>
+        <p style="font-size: 0.82rem; margin: 0.15rem 0 0; color: #475569;">Si la detención acaba de ocurrir, este manual de crisis guiará a la familia en las primeras horas críticas para entender el traslado, la fianza y el primer contacto legal.
+          <br><em style="font-size: 0.78rem; color: var(--gold);">Disponible en: /blog/arresto-federal-san-diego-72-horas</em></p>
+      </div>
+
+      <div style="border-left: 3px solid var(--gold); padding-left: 0.8rem; margin-bottom: 1.1rem;">
+        <strong style="font-size: 0.95rem; color: var(--navy);">¿Abogado Defensor Federal No Contesta?</strong>
+        <p style="font-size: 0.82rem; margin: 0.15rem 0 0; color: #475569;">Un plan de acción familiar para presionar a abogados defensores (públicos o privados) negligentes, exigiendo comunicación constante sobre la estrategia del caso.
+          <br><em style="font-size: 0.78rem; color: var(--gold);">Disponible en: /blog/abogado-no-responde-federal</em></p>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-note">
+    Esta guía es informativa y no sustituye el consejo de un abogado federal. © 2026 Guía Federal.
+  </div>
+</div>
+
+</body>
+</html>
