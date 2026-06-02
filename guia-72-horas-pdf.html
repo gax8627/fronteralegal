@@ -12,6 +12,7 @@
     --navy: #0f172a;
     --gold: #b45309;
     --text: #1e293b;
+    --border: #e2e8f0;
   }
 
   body {
@@ -24,7 +25,7 @@
 
   .page {
     width: 210mm;
-    min-height: 297mm;
+    height: 297mm;
     padding: 20mm;
     margin: 10mm auto;
     background: white;
@@ -34,9 +35,14 @@
     overflow: hidden;
   }
 
+  @page {
+    size: A4;
+    margin: 0;
+  }
+
   @media print {
     body { background: none; }
-    .page { margin: 0; box-shadow: none; page-break-after: always; }
+    .page { margin: 0; box-shadow: none; page-break-after: always; height: 297mm; }
   }
 
   /* COVER PAGE */
@@ -54,77 +60,159 @@
   }
 
   .cover-img {
-    width: 150mm;
-    height: auto;
-    margin-bottom: 2rem;
+    width: 120mm;
+    height: 120mm;
+    object-fit: cover;
+    margin-bottom: 1.5rem;
     border: 2px solid var(--gold);
+    border-radius: 8px;
   }
 
   .cover h1 {
     font-family: 'Playfair Display', serif;
-    font-size: 3.5rem;
+    font-size: 3rem;
     margin: 0;
     color: #fcd34d;
+    line-height: 1.2;
   }
 
   .cover h2 {
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     font-weight: 400;
-    letter-spacing: 0.2rem;
+    letter-spacing: 0.15rem;
     text-transform: uppercase;
-    margin-top: 1rem;
+    margin-top: 0.5rem;
     opacity: 0.8;
   }
 
   /* CONTENT PAGES */
   .header {
     border-bottom: 2px solid var(--gold);
-    padding-bottom: 1rem;
-    margin-bottom: 2rem;
+    padding-bottom: 0.5rem;
+    margin-bottom: 1.5rem;
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
   }
 
-  .header h3 { margin: 0; font-family: 'Playfair Display', serif; color: var(--navy); }
+  .header h3 { margin: 0; font-family: 'Playfair Display', serif; color: var(--navy); font-size: 1.2rem; }
 
-  .section { margin-bottom: 2rem; }
+  .section { margin-bottom: 1.5rem; }
   .section h4 {
     color: var(--gold);
     text-transform: uppercase;
-    letter-spacing: 0.1rem;
-    border-bottom: 1px solid #e2e8f0;
-    padding-bottom: 0.5rem;
-    margin-bottom: 1rem;
+    letter-spacing: 0.08rem;
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 0.3rem;
+    margin-top: 0;
+    margin-bottom: 0.8rem;
+    font-size: 1rem;
   }
 
-  .checklist { list-style: none; padding: 0; }
+  .checklist { list-style: none; padding: 0; margin: 0; }
   .checklist li {
-    padding: 0.75rem;
+    padding: 0.5rem 0;
     border-bottom: 1px solid #f1f5f9;
     display: flex;
-    gap: 1rem;
+    gap: 0.75rem;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    color: #334155;
   }
-  .checklist li::before { content: "☐"; color: var(--gold); font-weight: bold; }
+  .checklist li strong {
+    color: var(--navy);
+  }
+  .checklist li::before {
+    content: "☐";
+    color: var(--gold);
+    font-weight: bold;
+    font-size: 1rem;
+    flex-shrink: 0;
+  }
 
   .warning {
     background: #fff7ed;
     border: 1px solid #ffedd5;
+    padding: 1rem 1.25rem;
+    border-radius: 6px;
+    margin: 1.2rem 0;
+    font-size: 0.88rem;
+    line-height: 1.5;
+    color: #475569;
+  }
+  .warning strong {
+    color: #c2410c;
+  }
+
+  .callout {
+    background: #f8fafc;
+    border-left: 4px solid var(--gold);
+    padding: 1rem 1.25rem;
+    border-radius: 4px;
+    margin: 1.2rem 0;
+  }
+  .callout-title {
+    font-weight: 700;
+    color: var(--navy);
+    font-size: 0.95rem;
+    margin-bottom: 0.25rem;
+  }
+  .callout-text {
+    font-size: 0.88rem;
+    color: #475569;
+    margin: 0;
+    line-height: 1.5;
+  }
+
+  .contact-cta {
+    background: var(--navy);
+    color: white;
     padding: 1.5rem;
     border-radius: 8px;
-    margin: 2rem 0;
+    margin-top: 1.5rem;
+    border-top: 3px solid var(--gold);
+    text-align: center;
+  }
+  .contact-cta h4 {
+    color: #fcd34d;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.3rem;
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+    text-transform: none;
+    letter-spacing: normal;
+  }
+  .contact-cta p {
+    color: #94a3b8;
+    font-size: 0.85rem;
+    margin-top: 0;
+    margin-bottom: 1rem;
+    line-height: 1.4;
+  }
+  .contact-cta-info {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    font-size: 0.9rem;
+    font-weight: 600;
+  }
+  .contact-cta-info span {
+    color: white;
+  }
+  .contact-cta-info strong {
+    color: #fcd34d;
   }
 
   .footer-note {
     position: absolute;
-    bottom: 20mm;
+    bottom: 15mm;
     left: 20mm;
     right: 20mm;
-    font-size: 0.8rem;
+    font-size: 0.75rem;
     color: #94a3b8;
     text-align: center;
     border-top: 1px solid #e2e8f0;
-    padding-top: 1rem;
+    padding-top: 0.8rem;
   }
 </style>
 <script>if("serviceWorker"in navigator){window.addEventListener("load",function(){navigator.serviceWorker.register("/sw.js").catch(function(){});});}</script>
@@ -183,48 +271,83 @@
     <img src="./assets/pdf-cover.png" class="cover-img" alt="Portada Guía Federal">
     <h1>Kit de Supervivencia</h1>
     <h2>Las Primeras 72 Horas</h2>
-    <p style="margin-top: 3rem; font-size: 1.1rem; opacity: 0.7;">Protocolos Críticos de Emergencia para el Sistema Federal de EE.UU.</p>
-    <div style="margin-top: 2rem; width: 50mm; height: 2px; background: var(--gold);"></div>
-    <p style="margin-top: 1rem; font-weight: 700; color: #fcd34d;">GUÍA FEDERAL</p>
+    <p style="margin-top: 1.5rem; font-size: 1.05rem; opacity: 0.7; max-width: 140mm; line-height: 1.4;">Protocolos Críticos de Emergencia para el Sistema Federal de EE.UU.</p>
+    <div style="margin-top: 1.5rem; width: 40mm; height: 2px; background: var(--gold);"></div>
+    <p style="margin-top: 1rem; font-weight: 700; color: #fcd34d; letter-spacing: 0.1rem;">GUÍA FEDERAL</p>
   </div>
 </div>
 
-<!-- PAGE 2: CHECKLIST -->
+<!-- PAGE 2: CHECKLIST PART 1 -->
 <div class="page">
   <div class="header">
-    <h3>Guía Federal</h3>
-    <span style="font-size: 0.8rem; color: #64748b;">Confidencial · Solo para Familias</span>
+    <h3>Guía Federal · Kit de Supervivencia</h3>
+    <span style="font-size: 0.75rem; color: #64748b;">Confidencial · Solo para Familias</span>
   </div>
 
   <div class="section">
     <h4>Fase 1: Inmediata (0-12 Horas)</h4>
     <ul class="checklist">
-      <li><strong>Localización:</strong> No espere. Llame al USMS del distrito donde ocurrió el arresto. Tenga el nombre completo y fecha de nacimiento.</li>
-      <li><strong>Silencio Total:</strong> Informe a su familiar que NO hable del caso. El 90% de las pruebas contra detenidos vienen de sus propias llamadas grabadas.</li>
-      <li><strong>No contactar víctimas:</strong> Cualquier intento de "arreglar las cosas" será imputado como obstrucción a la justicia.</li>
+      <li><strong>Localización:</strong> No espere. Llame al USMS (Alguaciles Federales) del distrito del arresto. Tenga a la mano el nombre completo y fecha de nacimiento del detenido.</li>
+      <li><strong>Silencio Total:</strong> Indique a su familiar que NO hable del caso. El 90% de las pruebas acusatorias provienen de llamadas telefónicas grabadas desde prisión.</li>
+      <li><strong>No contactar víctimas:</strong> Cualquier acercamiento o intento de "arreglar las cosas" con víctimas o testigos será imputado como obstrucción a la justicia.</li>
     </ul>
   </div>
 
   <div class="warning">
-    <strong>ATENCIÓN:</strong> El sistema federal NO funciona como el estatal. No existe el derecho a fianza automática. El juez decidirá basado en la recomendación del Oficial de Pre-Trial (PSO).
+    <strong>⚠️ ATENCIÓN:</strong> El sistema federal NO funciona como el estatal. No existe el derecho a fianza automática. El juez decidirá si otorga la libertad condicional basado en el reporte y la recomendación de la oficina de Pretrial Services (PSO).
   </div>
 
   <div class="section">
     <h4>Fase 2: La Entrevista PSO (12-48 Horas)</h4>
     <ul class="checklist">
-      <li><strong>Verificación de Lazos:</strong> Esté atento a su teléfono. El oficial de Pre-Trial le llamará para verificar el domicilio y empleo del detenido.</li>
-      <li><strong>Documentación Lista:</strong> Tenga a mano recibos de servicios, contratos de renta y contactos de empleadores actuales.</li>
-      <li><strong>Sin hechos del caso:</strong> El oficial preguntará sobre su vida, no sobre el delito. No dé detalles del caso al oficial.</li>
+      <li><strong>Verificación de Lazos:</strong> Esté muy atento a su teléfono. El oficial de Pretrial le llamará para verificar la información de arraigo (domicilio, empleo y familia).</li>
+      <li><strong>Documentación Lista:</strong> Tenga listos comprobantes de domicilio, contratos de renta, cartas de recomendación y contactos de empleadores actuales.</li>
+      <li><strong>Sin hechos del caso:</strong> El oficial preguntará sobre la historia personal y lazos comunitarios del detenido, no sobre el delito. No revele detalles de los hechos.</li>
+    </ul>
+  </div>
+
+  <div class="callout">
+    <div class="callout-title">¿Cómo ayuda Guía Federal en las primeras 48 horas?</div>
+    <p class="callout-text">Apoyamos a las familias en la localización urgente del detenido en centros de detención del Distrito Sur de California (CASD) como MCC San Diego. Les capacitamos sobre qué esperar en la entrevista del PSO y cómo estructurar la documentación de arraigo para maximizar la posibilidad de una fianza.</p>
+  </div>
+
+  <div class="footer-note">
+    Esta guía es informativa y no sustituye el consejo de un abogado federal. © 2026 Guía Federal.
+  </div>
+</div>
+
+<!-- PAGE 3: CHECKLIST PART 2 & CTA -->
+<div class="page">
+  <div class="header">
+    <h3>Guía Federal · Kit de Supervivencia</h3>
+    <span style="font-size: 0.75rem; color: #64748b;">Confidencial · Solo para Familias</span>
+  </div>
+
+  <div class="section">
+    <h4>Fase 3: Audiencia de Detención (48-72 Horas)</h4>
+    <ul class="checklist">
+      <li><strong>Comparecencia Inicial:</strong> Presentación formal del detenido ante el Juez de Control (Magistrate Judge). Se realiza la lectura formal de cargos y derechos.</li>
+      <li><strong>Petición de Detención:</strong> La fiscalía federal suele solicitar detención preventiva sin fianza. Su abogado defensor debe oponerse formalmente.</li>
+      <li><strong>Presentación del Caso de Fianza:</strong> Se presentan ante el juez las pruebas de arraigo familiar y laboral preparadas durante la Fase 2 para demostrar que no hay riesgo de fuga ni peligro.</li>
     </ul>
   </div>
 
   <div class="section">
     <h4>Fase 4: Post-Sentencia (Hacia la Libertad)</h4>
-    <p>La Directiva de la BOP del 17 de junio de 2025 permite el **confinamiento domiciliario directo**.</p>
+    <p style="font-size: 0.9rem; color: #334155; margin-bottom: 0.6rem;">La Directiva de la BOP de junio de 2025 permite el <strong>confinamiento domiciliario directo</strong> para reducir el tiempo en prisión.</p>
     <ul class="checklist">
-      <li><strong>Plan de Liberación:</strong> Empiece hoy su "Prison Professors Profile". Un historial documentado de cursos es vital para el Case Manager.</li>
-      <li><strong>Evite el RRC:</strong> El cupo en "Halfway Houses" es limitado (tope 60 días). Un Plan de Liberación sólido le permite ir directo a casa.</li>
+      <li><strong>Plan de Liberación:</strong> Comience a estructurar el perfil del detenido hoy. Un historial documentado de programas y cursos es clave para la evaluación del Case Manager.</li>
+      <li><strong>Evite el RRC (Halfway House):</strong> El cupo en hogares de transición es limitado (máximo 60 días). Un Plan de Liberación robusto facilita el traslado directo a casa.</li>
     </ul>
+  </div>
+
+  <div class="contact-cta">
+    <h4>¿Necesita Orientación Técnica Inmediata?</h4>
+    <p>Si su familiar acaba de ser arrestado por autoridades federales o está en espera de la audiencia de detención, contáctenos hoy mismo para recibir acompañamiento personalizado.</p>
+    <div class="contact-cta-info">
+      <span><strong>WhatsApp:</strong> +52-663-304-0096</span>
+      <span><strong>Email:</strong> info@guia-federal.com</span>
+    </div>
   </div>
 
   <div class="footer-note">

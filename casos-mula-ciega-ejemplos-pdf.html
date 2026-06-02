@@ -35,9 +35,14 @@
     overflow: hidden;
   }
 
+  @page {
+    size: A4;
+    margin: 0;
+  }
+
   @media print {
     body { background: none; }
-    .page { margin: 0; box-shadow: none; page-break-after: always; }
+    .page { margin: 0; box-shadow: none; page-break-after: always; height: 297mm; }
   }
 
   /* COVER PAGE */
