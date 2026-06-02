@@ -188,30 +188,47 @@ nav {
   z-index: 10;
   width: 100%;
   padding: 12rem 0 8rem;
-  background: linear-gradient(rgba(11, 17, 32, 0.88) 0%, rgba(11, 17, 32, 0.4) 100%);
+  background: linear-gradient(rgba(11, 17, 32, 0.95) 0%, rgba(11, 17, 32, 0.75) 100%) !important;
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
-  color: #ffffff; /* Enforce white color for base text */
+  color: #ffffff !important; /* Enforce white color for base text */
 }
 
 .article-hero-inner p {
-  color: rgba(255, 255, 255, 0.85) !important; /* Force legible description color on dark gradient overlay */
+  color: #f1f5f9 !important; /* Extremely high contrast light slate/white */
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
 }
 
 .article-hero-inner .article-meta,
 .article-hero-inner .article-meta span {
-  color: rgba(255, 255, 255, 0.75) !important; /* Force legible metadata color */
+  color: rgba(255, 255, 255, 0.85) !important; /* Force legible metadata color */
 }
 
 .article-hero h1 {
   font-size: clamp(1.8rem, 6vw, 4.2rem);
-  color: #fff;
+  color: #ffffff !important;
   line-height: 1.05;
   margin-bottom: 1.5rem;
-  text-shadow: 0 4px 16px rgba(0,0,0,0.4);
+  text-shadow: 0 4px 20px rgba(0,0,0,0.7);
   max-width: 900px;
+}
+
+.article-hero-inner a {
+  color: #fcd34d !important; /* Gold color for high-contrast links on dark hero */
+  font-weight: 600;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
+}
+
+.article-hero-inner a:hover {
+  color: #ffffff !important;
+}
+
+.article-hero-inner .blog-tag {
+  background: rgba(251, 191, 36, 0.15) !important;
+  color: #fcd34d !important;
+  border: 1px solid rgba(251, 191, 36, 0.3) !important;
 }
 
 .article-hero-img {
@@ -1559,11 +1576,15 @@ footer {
 }
 .warning-card strong {
   color: var(--accent-hi);
+  font-weight: 700;
+}
+.warning-card p > strong:first-child {
   display: block;
   margin-bottom: 0.5rem;
   font-family: 'Space Grotesk', sans-serif;
   text-transform: uppercase;
   letter-spacing: 0.05em;
+  color: var(--accent-hi);
 }
 
 /* Global Blog Tag Aesthetic */
