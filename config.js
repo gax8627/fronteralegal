@@ -265,3 +265,87 @@ function updateThemeIcon(theme) {
     }
   } catch(e) {}
 })();
+
+// Premium Glassmorphic Cookie Consent Banner Injection
+document.addEventListener('DOMContentLoaded', () => {
+  if (localStorage.getItem('cookie-consent') === 'true' || localStorage.getItem('cookie-consent') === 'false') {
+    return;
+  }
+
+  const banner = document.createElement('div');
+  banner.id = 'cookie-consent-banner';
+  banner.style.cssText = `
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    left: 24px;
+    max-width: 480px;
+    background: rgba(15, 23, 42, 0.95);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    padding: 1.25rem;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.5), 0 8px 10px -6px rgba(0, 0, 0, 0.5);
+    z-index: 10000;
+    font-family: 'Inter', sans-serif;
+    color: #f8fafc;
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    opacity: 0;
+    transform: translateY(20px);
+  `;
+  
+  const style = document.createElement('style');
+  style.innerHTML = `
+    @media (min-width: 640px) {
+      #cookie-consent-banner {
+        left: auto;
+      }
+    }
+    #cookie-accept-btn:hover { background: #fbbf24 !important; }
+    #cookie-decline-btn:hover { background: rgba(255,255,255,0.05) !important; border-color: rgba(255,255,255,0.3) !important; }
+  `;
+  document.head.appendChild(style);
+
+  banner.innerHTML = `
+    <div style="display:flex; flex-direction:column; gap:0.75rem;">
+      <div style="display:flex; align-items:flex-start; gap:0.5rem;">
+        <span style="font-size:1.25rem; line-height:1.25rem;">🍪</span>
+        <div>
+          <h4 style="margin:0 0 0.25rem 0; font-family:'Space Grotesk',sans-serif; font-size:0.95rem; font-weight:600; color:#fff; letter-spacing: 0.02em;">Consentimiento de Cookies</h4>
+          <p style="margin:0; font-size:0.8rem; line-height:1.4; color:#94a3b8;">
+            Utilizamos cookies propias y de terceros para analizar la navegación y mejorar tu experiencia. Para más información, consulta nuestro <a href="/disclaimer" style="color:#fcd34d; text-decoration:none; font-weight:500;">Aviso Legal</a>.
+          </p>
+        </div>
+      </div>
+      <div style="display:flex; justify-content:flex-end; gap:0.5rem; margin-top:0.25rem;">
+        <button id="cookie-decline-btn" style="background:transparent; border:1px solid rgba(255,255,255,0.2); color:#cbd5e1; padding:0.4rem 0.75rem; border-radius:6px; font-size:0.8rem; font-weight:500; cursor:pointer; transition:all 0.2s;">Rechazar</button>
+        <button id="cookie-accept-btn" style="background:#fcd34d; border:none; color:#0f172a; padding:0.4rem 1rem; border-radius:6px; font-size:0.8rem; font-weight:600; cursor:pointer; transition:all 0.2s;">Aceptar</button>
+      </div>
+    </div>
+  `;
+  
+  document.body.appendChild(banner);
+
+  requestAnimationFrame(() => {
+    banner.style.opacity = '1';
+    banner.style.transform = 'translateY(0)';
+  });
+
+  const hideBanner = () => {
+    banner.style.opacity = '0';
+    banner.style.transform = 'translateY(20px)';
+    setTimeout(() => banner.remove(), 400);
+  };
+
+  document.getElementById('cookie-accept-btn').addEventListener('click', () => {
+    localStorage.setItem('cookie-consent', 'true');
+    hideBanner();
+  });
+
+  document.getElementById('cookie-decline-btn').addEventListener('click', () => {
+    localStorage.setItem('cookie-consent', 'false');
+    hideBanner();
+  });
+});
+
