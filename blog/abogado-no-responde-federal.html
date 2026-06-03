@@ -32,7 +32,7 @@
   "@type": "FAQPage",
   "mainEntity": [
     {"@type":"Question","name":"¿Qué es la 'Asistencia Ineficaz' (Ineffective Assistance of Counsel)?","acceptedAnswer":{"@type":"Answer","text":"Es una violación constitucional (6ta Enmienda) que ocurre cuando el desempeño del abogado es tan pobre que perjudica el resultado del caso."}},
-    {"@type":"Question","name":"¿Puedo despedir a mi abogado de oficio (Public Defender)?","acceptedAnswer":{"@type":"Answer","text":"No directamente. Debe pedirle al juez una audiencia (Marsden Hearing) para explicar por qué la relación está rota y solicitar uno nuevo."}},
+    {"@type":"Question","name":"¿Puedo despedir a mi abogado de oficio (Public Defender)?","acceptedAnswer":{"@type":"Answer","text":"No directamente. Debe pedirle al juez una audiencia de sustitución de abogado (Substitution of Counsel Hearing) para explicar por qué la relación está rota y solicitar uno nuevo. Nota: La 'Audiencia Marsden' es un procedimiento de los tribunales estatales de California y no aplica en cortes federales."}},
     {"@type":"Question","name":"¿Mi abogado tiene obligación de visitarme en la cárcel?","acceptedAnswer":{"@type":"Answer","text":"Sí. Un abogado debe mantener una comunicación razonable con su cliente para preparar la defensa. La falta de visitas es un signo de negligencia."}},
     {"@type":"Question","name":"¿Qué es una 'Demand Letter' al abogado?","acceptedAnswer":{"@type":"Answer","text":"Es una carta formal donde se listan las quejas de comunicación y se exige una respuesta en un plazo determinado para documentar el fallo."}},
     {"@type":"Question","name":"¿Puedo contratar a un consultor si ya tengo abogado?","acceptedAnswer":{"@type":"Answer","text":"Sí. El consultor trabaja con la familia para auditar el trabajo del abogado y asegurarse de que se estén presentando las mociones correctas."}},
@@ -55,6 +55,9 @@
   gtag("config", "G-LR75TRZGPV");
 </script>
 <script>if("serviceWorker"in navigator){window.addEventListener("load",function(){navigator.serviceWorker.register("/sw.js").catch(function(){});});}</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Inicio","item":"https://guiafederal.net/"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://guiafederal.net/blog/"},{"@type":"ListItem","position":3,"name":"Mi Abogado no responde: ¿Qué hacer en un caso federal?","item":"https://guiafederal.net/blog/abogado-no-responde-federal"}]}
+</script>
 </head>
 <body>
 
@@ -116,7 +119,7 @@
   <ol>
     <li><strong>La Carta de Demanda (Demand Letter):</strong> Envíe una carta certificada (no solo correos o WhatsApp) listando las 5 preguntas que no han sido respondidas. Dé un plazo de 48 horas para una respuesta. Esta carta será su prueba ante el juez si decide cambiar de abogado.</li>
     <li><strong>Solicitud de Reunión en la Cárcel:</strong> El interno debe presentar un 'request' oficial en la prisión pidiendo una visita legal. Si el abogado no aparece tras 3 solicitudes, hay una falla de comunicación documentada por el BOP.</li>
-    <li><strong>La Audiencia ante el Juez (Marsden/Status):</strong> Si nada funciona, el interno puede pedirle al juez hablar en privado sobre su abogado. El juez odia cambiar abogados porque retrasa el calendario, pero si usted prueba que "la comunicación se ha roto irremediablemente", el juez debe actuar.</li>
+    <li><strong>La Audiencia de Sustitución de Abogado (<em>Substitution of Counsel Hearing</em>):</strong> Si nada funciona, el interno puede pedirle al juez hablar sobre su abogado en una audiencia formal. <em>Nota: La "Audiencia Marsden" es un procedimiento de los tribunales <em>estatales de California</em> y no aplica en cortes federales. En el sistema federal, para solicitar el cambio de abogado defensor, debe dirigirse directamente al juez durante una audiencia y solicitar formalmente la sustitución de su representante legal.</em> El juez odia cambiar abogados porque retrasa el calendario, pero si usted prueba que "la comunicación se ha roto irremediablemente", el juez debe actuar. El primer paso de escalación dentro del sistema de Defensoría Federal Pública es comunicarse directamente con el <em>Chief Federal Public Defender</em> (Defensor Federal Público Principal) del distrito — es el supervisor directo de todos los defensores públicos federales de esa jurisdicción.</li>
   </ol>
 
   <div class="info-box">
@@ -185,7 +188,7 @@
       </div>
       <div class="faq-item">
         <h4>9. ¿Qué es un 'Writ of Mandamus'?</h4>
-        <p>Es una orden judicial extrema para obligar a un oficial a hacer su trabajo. Rara vez se usa contra abogados, pero es una herramienta de presión legal.</p>
+        <p>El <em>Writ of Mandamus</em> (28 U.S.C. § 1651) en cortes federales se dirige a tribunales inferiores u oficiales gubernamentales — no puede usarse para obligar a un abogado privado o de oficio a actuar. Para presionar a su abogado, los mecanismos correctos son: comunicación escrita formal, queja ante el Colegio de Abogados estatal, o solicitud de sustitución ante el juez.</p>
       </div>
       <div class="faq-item">
         <h4>10. ¿Por qué los abogados federales son tan caros?</h4>
@@ -222,6 +225,10 @@
 
 <!-- FOOTER -->
 <footer class="site-footer">
+<div class="legal-disclaimer" style="background:var(--bg-alt,#f8f8f8);border-top:2px solid var(--accent-hi,#d4a017);padding:1.5rem 2rem;font-size:0.85rem;color:var(--text-dim,#666);margin-top:2rem;">
+  <strong>⚖️ Aviso Legal:</strong> El contenido de este sitio es exclusivamente informativo y educativo. Guía Federal no es un despacho de abogados y no ofrece representación legal ni asesoría jurídica. Ningún contenido de este sitio crea una relación abogado-cliente. Para su situación específica, consulte con un abogado con licencia en la jurisdicción correspondiente. <em>La información legal puede cambiar; verifique siempre con un profesional.</em>
+</div>
+
   <div class="container footer-grid">
     <div class="footer-col">
       <a href="/" class="nav-brand">Guía<span>Federal</span></a>
