@@ -78,6 +78,10 @@
   ],
   "rewrites": [
     {
+      "source": "/zoho-domain-verification.html",
+      "destination": "/zoho-domain-verification.html"
+    },
+    {
       "source": "/blog",
       "destination": "/blog/index.html"
     },
