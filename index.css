@@ -187,7 +187,7 @@ nav {
   position: relative;
   z-index: 10;
   width: 100%;
-  padding: 12rem 0 8rem;
+  padding: 12rem 1.5rem 8rem !important; /* Added horizontal padding to prevent text from touching screen edges on mobile */
   background: linear-gradient(rgba(11, 17, 32, 0.95) 0%, rgba(11, 17, 32, 0.75) 100%) !important;
   display: flex;
   flex-direction: column;
@@ -200,7 +200,7 @@ nav {
   color: #f1f5f9 !important; /* Extremely high contrast light slate/white */
   text-shadow: 0 1px 4px rgba(0, 0, 0, 0.5) !important;
   max-width: 750px !important;
-  margin: 1.5rem auto 0 auto !important;
+  margin: 0 auto !important; /* Center horizontally with no top margin, relying on meta bottom margin */
   font-size: 1.15rem !important;
   line-height: 1.8 !important;
 }
@@ -212,7 +212,7 @@ nav {
   flex-wrap: wrap !important;
   gap: 0.75rem !important;
   font-size: 0.85rem !important;
-  margin: 1.5rem 0 2rem 0 !important;
+  margin: 0 0 1.5rem 0 !important; /* Combined margin: no top margin, 1.5rem bottom margin */
   color: rgba(255, 255, 255, 0.85) !important;
 }
 
@@ -243,7 +243,7 @@ nav {
   font-size: clamp(1.8rem, 6vw, 4.2rem);
   color: #ffffff !important;
   line-height: 1.05;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1.25rem !important; /* Slightly reduced bottom margin */
   text-shadow: 0 4px 20px rgba(0,0,0,0.7);
   max-width: 900px;
 }
