@@ -6,3 +6,17 @@ node_modules/
 gstack/
 seo-audit-skill/
 google-skills/
+
+# Secrets — never commit
+gcloud_credentials.json
+*credentials*.json
+*.key
+
+# Internal / non-site files — keep out of repo & deploy
+*.docx
+AUDIT-*.md
+*-AUDIT-*.md
+AGENTS.md
+LAUNCH-CHECKLIST.md
+git-push.command
+query_google_data.py

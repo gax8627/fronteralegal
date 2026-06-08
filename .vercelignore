@@ -1,0 +1,15 @@
+# Keep non-site files out of production deploys
+*.md
+!llms.txt
+*.docx
+*.py
+*.command
+gcloud_credentials.json
+*credentials*.json
+*.key
+AGENTS.md
+google-skills/
+gstack/
+seo-audit-skill/
+skills/
+.git/
