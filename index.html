@@ -189,8 +189,9 @@
       <h1>Las Primeras 72 Horas<br>Son Críticas en San Diego.</h1>
       <p>Cuando arrestan a tu familiar en el 9no Circuito (San Diego, CA), cada hora cuenta. Guía Federal acompaña a familias desde la primera llamada: cómo localizar al detenido en MCC San Diego, qué pasa en la audiencia de detención ante el magistrado federal, y cómo presionar cuando el abogado no responde.</p>
       <div class="hero-actions">
-        <a href="#consulta" class="btn-cta wa-link">Obtener Orientación Ahora</a>
-        <a href="/kit-supervivencia" class="btn-cta-secondary" style="background:rgba(255,255,255,0.1); border:1px solid rgba(255,255,255,0.2);">Descargar Kit 72 Horas</a>
+        <button onclick="openBookingModal()" class="btn-cta" style="background:var(--accent-hi); color:#fff; border:none; cursor:pointer;">📅 Agendar Cita de 15 Min</button>
+        <a href="#consulta" class="btn-cta-secondary wa-link" style="background:rgba(37,211,102,0.15); border:1px solid #25D366; color:#25D366;">WhatsApp Urgencias</a>
+        <a href="/kit-supervivencia" class="btn-cta-secondary" style="background:rgba(255,255,255,0.1); border:1px solid rgba(255,255,255,0.2);">Kit 72 Horas PDF</a>
       </div>
     </div>
   </section>
@@ -226,6 +227,45 @@
       <div style="display:flex; gap:1rem; justify-content:center; flex-wrap:wrap;">
         <a href="/arrestado-federal" style="background:#fff; color:#991b1b; padding:0.9rem 2rem; border-radius:100px; font-weight:700; text-decoration:none; font-family:'Space Grotesk',sans-serif;">Guía: Primeras 72 Horas →</a>
         <a href="/audiencia-detencion" style="background:transparent; border:2px solid #fff; color:#fff; padding:0.9rem 2rem; border-radius:100px; font-weight:700; text-decoration:none; font-family:'Space Grotesk',sans-serif;">Audiencia de Detención →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 72-HOUR TIMELINE VISUAL COMPONENT -->
+  <section style="padding:5rem 0; background:var(--surface); border-bottom:1px solid var(--border);">
+    <div class="container" style="max-width:1000px;">
+      <span class="section-label">Hoja de Ruta Pre-Trial</span>
+      <h2 class="section-title">El Proceso de las 72 Horas en San Diego (CASD)</h2>
+      <p class="section-sub" style="margin-bottom:3rem;">Conozca paso a paso lo que sucede desde la garita o arresto CBP hasta la audiencia de detención ante el magistrado federal.</p>
+
+      <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(220px, 1fr)); gap:1.5rem; position:relative;">
+        <!-- Step 1 -->
+        <div style="background:var(--bg); border:1px solid var(--border-hi); border-radius:var(--radius-lg); padding:1.75rem; border-top:4px solid var(--accent-hi); position:relative;">
+          <div style="font-family:'Space Grotesk',sans-serif; font-size:0.8rem; font-weight:800; color:var(--accent-hi); letter-spacing:0.1em; text-transform:uppercase; margin-bottom:0.5rem;">Etapa 1 · Horas 0–6</div>
+          <h3 style="font-size:1.1rem; margin-bottom:0.6rem; color:var(--text);">Arresto & CBP Secondary</h3>
+          <p style="font-size:0.88rem; color:var(--text-dim); line-height:1.5; margin:0;">Inspección secundaria en garita (Otay Mesa / San Ysidro) o arresto por agentes federales. Registro de pertenencias y transporte inicial.</p>
+        </div>
+
+        <!-- Step 2 -->
+        <div style="background:var(--bg); border:1px solid var(--border-hi); border-radius:var(--radius-lg); padding:1.75rem; border-top:4px solid var(--accent-hi); position:relative;">
+          <div style="font-family:'Space Grotesk',sans-serif; font-size:0.8rem; font-weight:800; color:var(--accent-hi); letter-spacing:0.1em; text-transform:uppercase; margin-bottom:0.5rem;">Etapa 2 · Horas 6–24</div>
+          <h3 style="font-size:1.1rem; margin-bottom:0.6rem; color:var(--text);">Ficha MCC & Entrevista PSO</h3>
+          <p style="font-size:0.88rem; color:var(--text-dim); line-height:1.5; margin:0;">Ingreso a MCC San Diego. Entrevista con el Pretrial Services Officer (PSO). Es fundamental orientar al detenido para la entrevista de fianza.</p>
+        </div>
+
+        <!-- Step 3 -->
+        <div style="background:var(--bg); border:1px solid var(--border-hi); border-radius:var(--radius-lg); padding:1.75rem; border-top:4px solid var(--accent-hi); position:relative;">
+          <div style="font-family:'Space Grotesk',sans-serif; font-size:0.8rem; font-weight:800; color:var(--accent-hi); letter-spacing:0.1em; text-transform:uppercase; margin-bottom:0.5rem;">Etapa 3 · Horas 24–72</div>
+          <h3 style="font-size:1.1rem; margin-bottom:0.6rem; color:var(--text);">Audiencia 18 U.S.C. § 3142</h3>
+          <p style="font-size:0.88rem; color:var(--text-dim); line-height:1.5; margin:0;">Audiencia de detención ante el Magistrado Federal. Se presenta la propuesta de fianza y fiadores. Única oportunidad de preliberación.</p>
+        </div>
+
+        <!-- Step 4 -->
+        <div style="background:var(--bg); border:1px solid var(--border-hi); border-radius:var(--radius-lg); padding:1.75rem; border-top:4px solid #10b981; position:relative;">
+          <div style="font-family:'Space Grotesk',sans-serif; font-size:0.8rem; font-weight:800; color:#10b981; letter-spacing:0.1em; text-transform:uppercase; margin-bottom:0.5rem;">Etapa 4 · Meses 1–3</div>
+          <h3 style="font-size:1.1rem; margin-bottom:0.6rem; color:var(--text);">Discovery & Plan FSA</h3>
+          <p style="font-size:0.88rem; color:var(--text-dim); line-height:1.5; margin:0;">Revisión técnica de pruebas (videos CBP, GPS) y diseño de la estrategia de créditos FSA/RDAP para minimizar tiempo en custodia.</p>
+        </div>
       </div>
     </div>
   </section>
@@ -501,7 +541,50 @@
       <div class="cta-banner">
         <h2>¿Necesita un Plan a Medida?</h2>
         <p>Cada caso federal es único. Si su situación requiere un enfoque personalizado, hablemos hoy mismo.</p>
-        <a href="#contact" class="btn-cta" style="padding: 1rem 3rem; font-size: 1.1rem;">Agendar Sesión Estratégica</a>
+        <button onclick="openBookingModal()" class="btn-cta" style="padding: 1rem 3rem; font-size: 1.1rem; border:none; cursor:pointer;">Agendar Sesión Estratégica</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ROLE TRANSPARENCY & E-E-A-T SECTION -->
+  <section style="padding:5rem 0; background:var(--bg-alt); border-top:1px solid var(--border); border-bottom:1px solid var(--border);">
+    <div class="container" style="max-width:960px;">
+      <span class="section-label">El Aliado Estratégico de su Caso</span>
+      <h2 class="section-title">El Trabajo en Equipo: Abogado Defensor + Guía Federal</h2>
+      <p class="section-sub" style="margin-bottom:2.5rem;">No reemplazamos a su abogado defensor; trabajamos de la mano para que su familia y su caso no tengan vacíos de información.</p>
+
+      <div style="overflow-x:auto; background:var(--surface); border:1px solid var(--border-hi); border-radius:var(--radius-lg); box-shadow:var(--shadow-lg);">
+        <table style="width:100%; border-collapse:collapse; text-align:left; font-size:0.92rem;">
+          <thead>
+            <tr style="background:var(--bg); border-bottom:2px solid var(--border-hi);">
+              <th style="padding:1.2rem; color:var(--text); font-weight:700; width:30%;">Área de Enfoque</th>
+              <th style="padding:1.2rem; color:var(--text-dim); font-weight:700; width:35%;">⚖️ Abogado Defensor Federal</th>
+              <th style="padding:1.2rem; color:var(--accent-hi); font-weight:700; width:35%;">🛡️ Guía Federal (Consultoría Técnica)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr style="border-bottom:1px solid var(--border);">
+              <td style="padding:1rem 1.2rem; font-weight:600; color:var(--text);">Representación en Corte</td>
+              <td style="padding:1rem 1.2rem; color:var(--text-dim);">Litigio legal exclusivo ante el Juez y Fiscal</td>
+              <td style="padding:1rem 1.2rem; color:var(--text-dim);">Orientación técnica sobre lo que sucede en la audiencia</td>
+            </tr>
+            <tr style="border-bottom:1px solid var(--border); background:var(--bg-alt);">
+              <td style="padding:1rem 1.2rem; font-weight:600; color:var(--text);">Logística de Prisión (BOP)</td>
+              <td style="padding:1rem 1.2rem; color:var(--text-dim);">Generalmente fuera del alcance de la representación legal</td>
+              <td style="padding:1rem 1.2rem; color:var(--text); font-weight:600;">Especialistas en reglas BOP, comisaría, visitas y llamadas</td>
+            </tr>
+            <tr style="border-bottom:1px solid var(--border);">
+              <td style="padding:1rem 1.2rem; font-weight:600; color:var(--text);">Créditos FSA & RDAP</td>
+              <td style="padding:1rem 1.2rem; color:var(--text-dim);">Enfocado en la sentencia fijada por la guía legal</td>
+              <td style="padding:1rem 1.2rem; color:var(--accent-hi); font-weight:700;">Auditoría SENTRY de créditos ETC y plan clínico RDAP (hasta 12m menos)</td>
+            </tr>
+            <tr style="border-bottom:1px solid var(--border); background:var(--bg-alt);">
+              <td style="padding:1rem 1.2rem; font-weight:600; color:var(--text);">Comunicación con la Familia</td>
+              <td style="padding:1rem 1.2rem; color:var(--text-dim);">Limitada por tiempos de audiencia y carga procesal</td>
+              <td style="padding:1rem 1.2rem; color:var(--text); font-weight:600;">Respuesta continua a dudas de la familia 24/7 en español</td>
+            </tr>
+          </tbody>
+        </table>
       </div>
     </div>
   </section>
@@ -695,5 +778,18 @@
 })();
 </script>
 
+<!-- PINNED MOBILE EMERGENCY BOTTOM BAR (CRO) -->
+<div class="mobile-emergency-bar" aria-label="Contacto de urgencia">
+  <a href="tel:+526633040096" class="btn-emerg-call">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+    Llamar 24/7
+  </a>
+  <a href="https://wa.me/526633040096?text=URGENTE:%20Arresto%20federal%20reciente%20en%20San%20Diego" class="btn-emerg-wa wa-link" target="_blank" rel="noopener">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+    WhatsApp Urgencias
+  </a>
+</div>
+
 </body>
 </html>
+

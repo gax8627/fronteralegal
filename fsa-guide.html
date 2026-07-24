@@ -136,6 +136,75 @@
     </div>
   </section>
 
+  <!-- CALCULATOR WIDGET (PUBLIC INTERACTIVE TOOL) -->
+  <section style="padding:4rem 0; background:var(--surface); border-top:1px solid var(--border); border-bottom:1px solid var(--border);">
+    <div class="container" style="max-width:900px;">
+      <span class="section-label">Herramienta Interactiva</span>
+      <h2 class="section-title">Calculadora Técnica de Créditos FSA / ETC</h2>
+      <p class="section-sub" style="margin-bottom:2rem;">Estime en tiempo real cuántos meses puede adelantar su custodia de preliberación combinando Créditos ETC, RDAP y Días por Buena Conducta (GCT).</p>
+      
+      <div style="background:var(--bg); border:1px solid var(--border-hi); border-radius:var(--radius-lg); padding:2rem; box-shadow:var(--shadow-lg);">
+        <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(240px,1fr)); gap:1.25rem;">
+          <div>
+            <label style="display:block; font-size:0.85rem; font-weight:600; margin-bottom:0.4rem; color:var(--text);">Sentencia Impuesta (Meses):</label>
+            <input type="number" id="pub-fsa-sentence" value="60" min="6" max="360" oninput="runPublicFsaCalc()" style="width:100%; padding:0.75rem; border-radius:8px; border:1px solid var(--border-hi); background:var(--surface); color:var(--text); font-weight:600;">
+          </div>
+          <div>
+            <label style="display:block; font-size:0.85rem; font-weight:600; margin-bottom:0.4rem; color:var(--text);">Nivel Riesgo PATTERN:</label>
+            <select id="pub-fsa-risk" onchange="runPublicFsaCalc()" style="width:100%; padding:0.75rem; border-radius:8px; border:1px solid var(--border-hi); background:var(--surface); color:var(--text); font-weight:600;">
+              <option value="15">Mínimo / Bajo (15 días / 30 días)</option>
+              <option value="10">Medio / Alto (10 días / 30 días)</option>
+            </select>
+          </div>
+          <div>
+            <label style="display:block; font-size:0.85rem; font-weight:600; margin-bottom:0.4rem; color:var(--text);">Elegibilidad RDAP:</label>
+            <select id="pub-fsa-rdap" onchange="runPublicFsaCalc()" style="width:100%; padding:0.75rem; border-radius:8px; border:1px solid var(--border-hi); background:var(--surface); color:var(--text); font-weight:600;">
+              <option value="0">No aplica / Sin RDAP</option>
+              <option value="12">Sí (Hasta 12 meses — Sentencia 37+m)</option>
+              <option value="9">Sí (Hasta 9 meses — Sentencia 31-36m)</option>
+            </select>
+          </div>
+        </div>
+
+        <div style="margin-top:1.75rem; background:var(--bg-alt); padding:1.5rem; border-radius:12px; text-align:center; border-left:4px solid var(--accent-hi);">
+          <span style="font-size:0.9rem; color:var(--text-dim); font-weight:500;">Custodia Efectiva Estimada en Prisión:</span>
+          <div id="pub-fsa-months" style="font-family:'Space Grotesk',sans-serif; font-size:2.5rem; font-weight:800; color:var(--accent-hi); margin:0.3rem 0;">34.5 Meses</div>
+          <p id="pub-fsa-breakdown" style="font-size:0.85rem; color:var(--text-dim); margin-top:0.5rem; line-height:1.5;"></p>
+        </div>
+
+        <div style="margin-top:1.5rem; text-align:center;">
+          <a href="#contact" class="btn-cta wa-link" style="display:inline-block; padding:0.8rem 2rem;">Solicitar Auditoría FSA Personalizada →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script>
+  function runPublicFsaCalc() {
+    var sentence = parseFloat(document.getElementById('pub-fsa-sentence').value) || 0;
+    var rate = parseFloat(document.getElementById('pub-fsa-risk').value) || 15;
+    var rdapMonths = parseFloat(document.getElementById('pub-fsa-rdap').value) || 0;
+    
+    // GCT 15% (approx 54 days per year = 14.79%)
+    var gctMonths = sentence * 0.1479;
+    var netSentence = sentence - gctMonths;
+    
+    // FSA Days calculation formula
+    var monthsInCustody = netSentence / (1 + (rate / 30));
+    var fsaSaved = netSentence - monthsInCustody;
+    var finalMonths = monthsInCustody - rdapMonths;
+    if (finalMonths < 0) finalMonths = 0;
+    
+    document.getElementById('pub-fsa-months').textContent = finalMonths.toFixed(1) + ' Meses';
+    document.getElementById('pub-fsa-breakdown').innerHTML = 
+      '<strong>Desglose del ahorro:</strong> ' + gctMonths.toFixed(1) + 'm de Buena Conducta (GCT) + ' + 
+      fsaSaved.toFixed(1) + 'm de Créditos ETC' + 
+      (rdapMonths > 0 ? ' + ' + rdapMonths + 'm de RDAP' : '') + 
+      ' = <strong>' + (sentence - finalMonths).toFixed(1) + ' meses menos en custodia física</strong>.';
+  }
+  document.addEventListener('DOMContentLoaded', runPublicFsaCalc);
+  </script>
+
   <!-- PROCESO DE AUDITORÍA -->
   <section style="padding:6rem 0;background:var(--bg-alt);">
     <div class="container">

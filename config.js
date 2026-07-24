@@ -199,18 +199,15 @@ function waFallback(leadData) {
 
 // Show a success state on the form
 function showFormSuccess(form) {
-  const hasCalendar = nexConfig.calendlyLink && nexConfig.calendlyLink !== "";
-  
-  const actionButton = hasCalendar 
-    ? `<a href="${nexConfig.calendlyLink}" target="_blank" style="display:inline-block; margin-top:1rem; padding:1rem 2rem; background:var(--text); color:var(--bg); text-decoration:none; border-radius:var(--radius-pill); font-weight:700;">Agendar Llamada en Calendario →</a>`
-    : `<a href="https://wa.me/${nexConfig.whatsappNumber}" target="_blank" style="display:inline-block; margin-top:1rem; padding:1rem 2rem; background:#25D366; color:#fff; text-decoration:none; border-radius:var(--radius-pill); font-weight:700;">Hablar por WhatsApp Ahora →</a>`;
-
   form.innerHTML = `
     <div style="text-align:center; padding: 2rem 1rem; background: var(--bg-alt); border-radius: var(--radius-lg); border: 2px solid var(--accent-hi);">
       <div style="font-size:2.5rem; margin-bottom:0.5rem;">✅</div>
       <h3 style="font-family:'Space Grotesk',sans-serif; margin-bottom:0.5rem;">¡Consulta Recibida!</h3>
-      <p style="color:var(--text-dim); font-size: 0.95rem;">Le responderemos a la brevedad. Para no perder tiempo:</p>
-      ${actionButton}
+      <p style="color:var(--text-dim); font-size: 0.95rem; margin-bottom: 1.25rem;">Hemos registrado sus datos. Para asegurar su atención inmediata:</p>
+      <div style="display:flex; flex-direction:column; gap:0.75rem; max-width:320px; margin:0 auto;">
+        <button onclick="openBookingModal()" style="padding:0.85rem 1.25rem; background:var(--accent-hi); color:#fff; border:none; border-radius:8px; font-weight:700; cursor:pointer; font-size:0.9rem;">📅 Seleccionar Día y Hora (Calendario) →</button>
+        <a href="https://wa.me/${nexConfig.whatsappNumber}" target="_blank" rel="noopener" style="padding:0.85rem 1.25rem; background:#25D366; color:#fff; text-decoration:none; border-radius:8px; font-weight:700; font-size:0.9rem; display:inline-block;">💬 Hablar por WhatsApp Ahora →</a>
+      </div>
     </div>`;
 }
 
@@ -348,4 +345,175 @@ document.addEventListener('DOMContentLoaded', () => {
     hideBanner();
   });
 });
+
+// ═══════════════════════════════════════════════════════════
+// NATIVE APPOINTMENT SCHEDULER ENGINE (CUSTOM CALENDLY)
+// ═══════════════════════════════════════════════════════════
+
+let selectedBookingDate = '';
+let selectedBookingSlot = '';
+
+function injectBookingModalHTML() {
+  if (document.getElementById('booking-overlay')) return;
+
+  const overlay = document.createElement('div');
+  overlay.id = 'booking-overlay';
+  overlay.className = 'booking-overlay';
+  
+  // Calculate next 3 days
+  const dates = [];
+  const today = new Date();
+  for (let i = 0; i < 4; i++) {
+    const d = new Date(today);
+    d.setDate(today.getDate() + i);
+    const dayName = i === 0 ? 'Hoy' : i === 1 ? 'Mañana' : d.toLocaleDateString('es-ES', { weekday: 'short' });
+    const formatted = d.toLocaleDateString('es-ES', { month: 'short', day: 'numeric' });
+    dates.push({ full: d.toISOString().split('T')[0], label: `${dayName} ${formatted}` });
+  }
+
+  selectedBookingDate = dates[0].full;
+
+  overlay.innerHTML = `
+    <div class="booking-modal">
+      <button class="booking-close" onclick="closeBookingModal()" aria-label="Cerrar">✕</button>
+      <div class="booking-header">
+        <h3>📅 Agendar Consulta Diagnóstica (15 Min)</h3>
+        <p>Seleccione el día y la hora que mejor se adapte a su familia. Confirmación inmediata.</p>
+      </div>
+
+      <form id="native-booking-form" onsubmit="handleNativeBookingSubmit(event)">
+        <!-- Step 1: Date & Time -->
+        <div style="margin-bottom:1.25rem;">
+          <label style="display:block; font-size:0.85rem; font-weight:600; margin-bottom:0.5rem; color:var(--text);">1. Seleccione el Día:</label>
+          <div style="display:flex; gap:0.5rem; flex-wrap:wrap;" id="booking-date-selector">
+            ${dates.map((d, index) => `
+              <button type="button" class="booking-slot-btn ${index === 0 ? 'selected' : ''}" onclick="selectBookingDate('${d.full}', this)">
+                ${d.label}
+              </button>
+            `).join('')}
+          </div>
+        </div>
+
+        <div style="margin-bottom:1.25rem;">
+          <label style="display:block; font-size:0.85rem; font-weight:600; margin-bottom:0.5rem; color:var(--text);">2. Seleccione el Horario (Hora Pacífico / San Diego):</label>
+          <div class="booking-slots-grid" id="booking-time-selector">
+            <button type="button" class="booking-slot-btn" onclick="selectBookingSlot('09:00 AM', this)">09:00 AM</button>
+            <button type="button" class="booking-slot-btn" onclick="selectBookingSlot('11:00 AM', this)">11:00 AM</button>
+            <button type="button" class="booking-slot-btn" onclick="selectBookingSlot('01:30 PM', this)">01:30 PM</button>
+            <button type="button" class="booking-slot-btn" onclick="selectBookingSlot('04:00 PM', this)">04:00 PM</button>
+            <button type="button" class="booking-slot-btn" onclick="selectBookingSlot('06:00 PM', this)">06:00 PM</button>
+            <button type="button" class="booking-slot-btn" onclick="selectBookingSlot('07:30 PM', this)">07:30 PM</button>
+          </div>
+        </div>
+
+        <!-- Step 2: Contact Info -->
+        <div style="display:flex; flex-direction:column; gap:0.85rem;">
+          <div>
+            <label style="display:block; font-size:0.82rem; font-weight:600; margin-bottom:0.3rem;">Nombre Completo:</label>
+            <input type="text" name="nombre" required placeholder="Ej. Maria Gonzalez" style="width:100%; padding:0.65rem; border-radius:8px; border:1px solid var(--border); background:var(--bg); color:var(--text); font-size:0.9rem;">
+          </div>
+          <div>
+            <label style="display:block; font-size:0.82rem; font-weight:600; margin-bottom:0.3rem;">Teléfono / WhatsApp:</label>
+            <input type="tel" name="telefono" required placeholder="Ej. +1 (619) 555-0199 o +52 664..." style="width:100%; padding:0.65rem; border-radius:8px; border:1px solid var(--border); background:var(--bg); color:var(--text); font-size:0.9rem;">
+          </div>
+          <div>
+            <label style="display:block; font-size:0.82rem; font-weight:600; margin-bottom:0.3rem;">Canal Preferido:</label>
+            <select name="canal" style="width:100%; padding:0.65rem; border-radius:8px; border:1px solid var(--border); background:var(--bg); color:var(--text); font-size:0.9rem;">
+              <option value="WhatsApp Call/Chat">WhatsApp (Llamada o Mensaje)</option>
+              <option value="Llamada Telefónica Normal">Llamada Telefónica Directa</option>
+            </select>
+          </div>
+        </div>
+
+        <button type="submit" class="btn-cta" style="width:100%; margin-top:1.5rem; padding:0.85rem; font-size:0.95rem; font-weight:700;">Confirmar Cita Gratuita →</button>
+      </form>
+      <div id="booking-success-view" style="display:none; text-align:center; padding:1.5rem 0;">
+        <div style="font-size:3rem; margin-bottom:0.5rem;">🎉</div>
+        <h3 style="font-family:'Space Grotesk',sans-serif; margin-bottom:0.5rem;">¡Cita Agendada con Éxito!</h3>
+        <p style="color:var(--text-dim); font-size:0.9rem;" id="booking-confirmation-msg"></p>
+        <a id="booking-wa-confirm-btn" href="#" target="_blank" rel="noopener" style="display:inline-block; margin-top:1.25rem; padding:0.85rem 1.75rem; background:#25D366; color:#fff; text-decoration:none; border-radius:8px; font-weight:700;">Confirmar por WhatsApp Ahora →</a>
+      </div>
+    </div>
+  `;
+
+  document.body.appendChild(overlay);
+}
+
+function openBookingModal(serviceTitle) {
+  injectBookingModalHTML();
+  const overlay = document.getElementById('booking-overlay');
+  if (overlay) {
+    overlay.classList.add('active');
+  }
+}
+
+function closeBookingModal() {
+  const overlay = document.getElementById('booking-overlay');
+  if (overlay) {
+    overlay.classList.remove('active');
+  }
+}
+
+function selectBookingDate(dateStr, btn) {
+  selectedBookingDate = dateStr;
+  document.querySelectorAll('#booking-date-selector .booking-slot-btn').forEach(b => b.classList.remove('selected'));
+  btn.classList.add('selected');
+}
+
+function selectBookingSlot(slotStr, btn) {
+  selectedBookingSlot = slotStr;
+  document.querySelectorAll('#booking-time-selector .booking-slot-btn').forEach(b => b.classList.remove('selected'));
+  btn.classList.add('selected');
+}
+
+function handleNativeBookingSubmit(event) {
+  event.preventDefault();
+  const form = event.target;
+  const data = new FormData(form);
+
+  if (!selectedBookingSlot) {
+    selectedBookingSlot = '01:30 PM';
+  }
+
+  const bookingData = {
+    nombre: data.get('nombre') || '',
+    telefono: data.get('telefono') || '',
+    canal: data.get('canal') || 'WhatsApp Call/Chat',
+    fecha: selectedBookingDate,
+    hora: selectedBookingSlot,
+    tipo: 'Cita Agendada Native Scheduler',
+    pagina: window.location.pathname
+  };
+
+  // Submit to Web3Forms & Firebase
+  if (typeof sendEmailNotification === 'function') {
+    sendEmailNotification(bookingData);
+  }
+  if (typeof saveToFirebaseCRM === 'function') {
+    saveToFirebaseCRM(bookingData);
+  }
+
+  form.style.display = 'none';
+  const successView = document.getElementById('booking-success-view');
+  const msg = document.getElementById('booking-confirmation-msg');
+  const waBtn = document.getElementById('booking-wa-confirm-btn');
+
+  msg.textContent = `Su consulta para el ${bookingData.fecha} a las ${bookingData.hora} vía ${bookingData.canal} ha sido registrada.`;
+  
+  const waMsg = `Hola Guía Federal, acabo de agendar una consulta de 15 min para el ${bookingData.fecha} a las ${bookingData.hora}.\nNombre: ${bookingData.nombre}\nTeléfono: ${bookingData.telefono}`;
+  waBtn.href = `https://wa.me/${nexConfig.whatsappNumber}?text=${encodeURIComponent(waMsg)}`;
+  
+  successView.style.display = 'block';
+}
+
+// Auto-wire buttons with class .btn-open-booking
+document.addEventListener('DOMContentLoaded', () => {
+  document.querySelectorAll('.btn-open-booking').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      openBookingModal();
+    });
+  });
+});
+
 

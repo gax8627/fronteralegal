@@ -137,6 +137,89 @@
     </div>
   </section>
 
+  <!-- INTERACTIVE RDAP DIAGNOSTIC WIDGET -->
+  <section style="padding:4rem 0; background:var(--surface); border-top:1px solid var(--border); border-bottom:1px solid var(--border);">
+    <div class="container" style="max-width:900px;">
+      <span class="section-label">Diagnóstico de 60 Segundos</span>
+      <h2 class="section-title">Evaluador de Elegibilidad RDAP (18 U.S.C. § 3621)</h2>
+      <p class="section-sub" style="margin-bottom:2rem;">Compruebe si su familiar califica para hasta 12 meses de reducción de sentencia en prisión federal.</p>
+
+      <div style="background:var(--bg); border:1px solid var(--border-hi); border-radius:var(--radius-lg); padding:2rem; box-shadow:var(--shadow-lg);">
+        <div style="display:flex; flex-direction:column; gap:1.25rem;">
+          <div>
+            <label style="display:block; font-size:0.88rem; font-weight:600; margin-bottom:0.4rem; color:var(--text);">1. Sentencia Total Impuesta por el Juez:</label>
+            <select id="rdap-q-sentence" onchange="runRdapQuiz()" style="width:100%; padding:0.75rem; border-radius:8px; border:1px solid var(--border-hi); background:var(--surface); color:var(--text); font-weight:600;">
+              <option value="12">37 meses o más (Hasta 12 meses menos)</option>
+              <option value="9">31 a 36 meses (Hasta 9 meses menos)</option>
+              <option value="6">Menos de 31 meses (Hasta 6 meses menos)</option>
+            </select>
+          </div>
+
+          <div>
+            <label style="display:block; font-size:0.88rem; font-weight:600; margin-bottom:0.4rem; color:var(--text);">2. ¿Existe condena por delito violento o sexual (18 U.S.C. § 3621(e)(5)(B))?:</label>
+            <select id="rdap-q-violent" onchange="runRdapQuiz()" style="width:100%; padding:0.75rem; border-radius:8px; border:1px solid var(--border-hi); background:var(--surface); color:var(--text); font-weight:600;">
+              <option value="no">No — Delito no violento / Delito de drogas / Cuello blanco / Mula ciega</option>
+              <option value="yes">Sí — Homicidio, robo a mano armada, delito sexual o arma de fuego calificada</option>
+            </select>
+          </div>
+
+          <div>
+            <label style="display:block; font-size:0.88rem; font-weight:600; margin-bottom:0.4rem; color:var(--text);">3. ¿Hay registro de consumo/abuso de alcohol o sustancias en los 12m previas al arresto?:</label>
+            <select id="rdap-q-history" onchange="runRdapQuiz()" style="width:100%; padding:0.75rem; border-radius:8px; border:1px solid var(--border-hi); background:var(--surface); color:var(--text); font-weight:600;">
+              <option value="yes">Sí — Mencionados en el PSR (Pre-Sentence Report) o informe médico</option>
+              <option value="maybe">No estoy seguro — Necesito auditar el PSR</option>
+              <option value="no">No — No se registró en el expediente inicial</option>
+            </select>
+          </div>
+        </div>
+
+        <div id="rdap-quiz-result" style="margin-top:1.75rem; background:var(--bg-alt); padding:1.5rem; border-radius:12px; text-align:center; border-left:4px solid var(--accent-hi);">
+          <span style="font-size:0.9rem; color:var(--text-dim); font-weight:500;">Resultado del Diagnóstico Inicial:</span>
+          <div id="rdap-quiz-title" style="font-family:'Space Grotesk',sans-serif; font-size:1.6rem; font-weight:800; color:var(--accent-hi); margin:0.4rem 0;">Elegibilidad Alta — Potencial de 12 Meses Menos</div>
+          <p id="rdap-quiz-desc" style="font-size:0.85rem; color:var(--text-dim); margin-top:0.5rem; line-height:1.5;"></p>
+        </div>
+
+        <div style="margin-top:1.5rem; display:flex; justify-content:center; gap:1rem; flex-wrap:wrap;">
+          <button onclick="openBookingModal()" class="btn-cta" style="padding:0.8rem 1.75rem; font-size:0.9rem;">📅 Agendar Cita para Auditoría de PSR →</button>
+          <a href="#contact" class="btn-cta-secondary wa-link" style="padding:0.8rem 1.75rem; font-size:0.9rem;">Consulta Directa por WhatsApp</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script>
+  function runRdapQuiz() {
+    var months = parseInt(document.getElementById('rdap-q-sentence').value);
+    var isViolent = document.getElementById('rdap-q-violent').value === 'yes';
+    var history = document.getElementById('rdap-q-history').value;
+
+    var titleEl = document.getElementById('rdap-quiz-title');
+    var descEl = document.getElementById('rdap-quiz-desc');
+
+    if (isViolent) {
+      titleEl.textContent = '❌ Sin Calificación para Reducción de Tiempo';
+      titleEl.style.color = '#dc2626';
+      descEl.innerHTML = 'Debido a las restricciones de 18 U.S.C. § 3621(e)(5)(B), el BOP no autoriza la reducción de sentencia para delitos catalogados como violentos o sexuales. Sin embargo, aún es posible participar en el programa para terapia o acumular créditos FSA ETC.';
+      return;
+    }
+
+    if (history === 'yes') {
+      titleEl.textContent = '✅ Elegibilidad ALTA — Potencial de ' + months + ' Meses Menos';
+      titleEl.style.color = 'var(--accent-hi)';
+      descEl.innerHTML = 'Su caso reúne los requisitos principales: delito calificado e historial documentado de sustancias. Para asegurar la aprobación del BOP, es indispensable auditar el PSR (Pre-Sentence Report) antes de la entrevista clínica.';
+    } else if (history === 'maybe') {
+      titleEl.textContent = '⚠️ Requiere Auditoría del PSR / Expediente';
+      titleEl.style.color = '#f59e0b';
+      descEl.innerHTML = 'Si el historial de uso de sustancias no fue documentado adecuadamente en el informe del Pretrial Services Officer o en el PSR, el BOP rechazará la solicitud. Auditamos su expediente para solicitar enmiendas a tiempo.';
+    } else {
+      titleEl.textContent = '🛑 Documentación de Sustancia Faltante';
+      titleEl.style.color = '#ea580c';
+      descEl.innerHTML = 'Sin un registro explícito de abuso de sustancias dentro de los 12 meses previos al arresto en el expediente federal, el BOP no concede el beneficio de reducción. Podemos orientarle sobre los pasos técnicos para fundamentar el historial.';
+    }
+  }
+  document.addEventListener('DOMContentLoaded', runRdapQuiz);
+  </script>
+
   <!-- ELEGIBILIDAD -->
   <section style="padding:6rem 0;background:var(--bg-alt);">
     <div class="container">

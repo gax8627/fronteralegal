@@ -216,6 +216,24 @@
 function handleMagnetSubmit(event) {
   event.preventDefault();
   const form = event.target;
+  const emailInput = form.querySelector('input[type="email"]');
+  const email = emailInput ? emailInput.value : '';
+
+  const leadData = {
+    nombre: 'Descarga Kit 72h',
+    telefono: '',
+    mensaje: `Email registrado para descarga del Kit de Supervivencia: ${email}`,
+    tipo: 'Descarga Kit 72h PDF',
+    pagina: window.location.pathname
+  };
+
+  // Submit lead to Web3Forms & Firebase CRM if config loaded
+  if (typeof sendEmailNotification === 'function') {
+    sendEmailNotification(leadData);
+  }
+  if (typeof saveToFirebaseCRM === 'function') {
+    saveToFirebaseCRM(leadData);
+  }
   
   // Trigger automatic download of the PDF
   const link = document.createElement('a');

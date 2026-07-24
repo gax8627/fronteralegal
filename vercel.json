@@ -82,6 +82,10 @@
       "destination": "/zoho-domain-verification.html"
     },
     {
+      "source": "/servicio-integral",
+      "destination": "/servicio-integral.html"
+    },
+    {
       "source": "/blog",
       "destination": "/blog/index.html"
     },
