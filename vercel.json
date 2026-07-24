@@ -86,6 +86,14 @@
       "destination": "/servicio-integral.html"
     },
     {
+      "source": "/federal-pretrial-guide",
+      "destination": "/federal-pretrial-guide.html"
+    },
+    {
+      "source": "/abogados-defensores",
+      "destination": "/abogados-defensores.html"
+    },
+    {
       "source": "/blog",
       "destination": "/blog/index.html"
     },

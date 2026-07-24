@@ -1,4 +1,4 @@
-const CACHE_NAME = 'guia-federal-v8';
+const CACHE_NAME = 'guia-federal-v9';
 const ASSETS = [
   '/',
   '/index.css',
@@ -9,6 +9,8 @@ const ASSETS = [
   '/encuentra-familiar',
   '/segunda-opinion',
   '/servicio-integral',
+  '/federal-pretrial-guide',
+  '/abogados-defensores',
   '/facilities',
   '/facilities/ca/lompoc-fci',
   '/facilities/ca/mcc-san-diego',
