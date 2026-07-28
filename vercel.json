@@ -1,7 +1,6 @@
 {
   "version": 2,
   "cleanUrls": true,
-  "trailingSlash": false,
   "headers": [
     {
       "source": "/assets/(.*)",
@@ -96,15 +95,5 @@
     { "source": "/coordinar-defensor-publico-federal-san-diego", "destination": "/blog/coordinar-defensor-publico-federal-san-diego", "permanent": true },
     { "source": "/visitas-otay-mesa-detention-center", "destination": "/blog/visitas-otay-mesa-detention-center", "permanent": true },
     { "source": "/mcc-san-diego-visitas-fondos", "destination": "/blog/mcc-san-diego-visitas-fondos", "permanent": true }
-  ],
-  "rewrites": [
-    {
-      "source": "/zoho-domain-verification.html",
-      "destination": "/zoho-domain-verification.html"
-    },
-    {
-      "source": "/blog",
-      "destination": "/blog/index.html"
-    }
   ]
 }
