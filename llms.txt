@@ -14,36 +14,36 @@ Guía Federal helps families in the critical first 72 hours after a federal arre
 - **RDAP Sentence Reduction**: Up to 12 months for 37+ month sentences. Post-conviction BOP program navigation.
 
 ## Core Pages
-- **Arrested Federal**: [/arrestado-federal](/arrestado-federal.html) — First 72 hours guide
-- **Detention Hearing**: [/audiencia-detencion](/audiencia-detencion.html) — 18 U.S.C. § 3142 explained
-- **Locate Your Family Member**: [/encuentra-familiar](/encuentra-familiar.html) — BOP, USMS, IGA jails
-- **Second Opinion**: [/segunda-opinion](/segunda-opinion.html) — Public defender evaluation guide
-- **Facility Directory**: [/facilities](/facilities.html) — MDC/FDC pre-trial centers + post-conviction
-- **FSA Guide**: [/fsa-guide](/fsa-guide.html)
-- **RDAP Guide**: [/rdap-guide](/rdap-guide.html)
+- **Arrested Federal**: [/arrestado-federal](/arrestado-federal) — First 72 hours guide
+- **Detention Hearing**: [/audiencia-detencion](/audiencia-detencion) — 18 U.S.C. § 3142 explained
+- **Locate Your Family Member**: [/encuentra-familiar](/encuentra-familiar) — BOP, USMS, IGA jails
+- **Second Opinion**: [/segunda-opinion](/segunda-opinion) — Public defender evaluation guide
+- **Facility Directory**: [/facilities](/facilities) — MDC/FDC pre-trial centers + post-conviction
+- **FSA Guide**: [/fsa-guide](/fsa-guide)
+- **RDAP Guide**: [/rdap-guide](/rdap-guide)
 
 ## Specialized Technical Guides (Blog / Expert Knowledge)
-- **Extradition Strategy SD**: [/blog/estrategia-extradicion-san-diego-2026](/blog/estrategia-extradicion-san-diego-2026.html)
-- **PATTERN Audit BOP**: [/blog/auditoria-pattern-bop-2026](/blog/auditoria-pattern-bop-2026.html)
-- **Federal Arrest 72h SD**: [/blog/arresto-federal-san-diego-72-horas](/blog/arresto-federal-san-diego-72-horas.html)
-- **FSA ETC Credits**: [/blog/first-step-act-creditos-etc](/blog/first-step-act-creditos-etc.html)
-- **Federal Investigation (Target Letter)**: [/blog/investigacion-federal-que-hacer](/blog/investigacion-federal-que-hacer.html)
-- **Right to Remain Silent**: [/blog/derecho-a-guardar-silencio](/blog/derecho-a-guardar-silencio.html)
-- **Beating the Federal Prosecutor**: [/blog/vencer-al-fiscal-federal](/blog/vencer-al-fiscal-federal.html)
-- **Informants & Brady Evidence**: [/blog/informantes-y-brady-evidencia](/blog/informantes-y-brady-evidencia.html)
-- **Road to Trial**: [/blog/camino-al-juicio-federal](/blog/camino-al-juicio-federal.html)
-- **Presumption of Innocence**: [/blog/presuncion-de-inocencia-explicada](/blog/presuncion-de-inocencia-explicada.html)
-- **Reduce Federal Sentence**: [/blog/reducir-sentencia-federal-2026](/blog/reducir-sentencia-federal-2026.html)
-- **Unresponsive Public Defender**: [/blog/abogado-no-responde-federal](/blog/abogado-no-responde-federal.html)
-- **Skipping Halfway House**: [/blog/saltar-halfway-house-2026](/blog/saltar-halfway-house-2026.html)
-- **Blind Mule Defense**: [/blog/mula-ciega-federal](/blog/mula-ciega-federal.html)
-- **Blind Mule Case Examples**: [/blog/casos-mula-ciega-ejemplos](/blog/casos-mula-ciega-ejemplos.html)
-- **Tijuana Blind Mule Detection**: [/blog/programa-deteccion-mula-ciega-tijuana](/blog/programa-deteccion-mula-ciega-tijuana.html)
-- **Narco-political Extradition**: [/blog/extradicion-narcopolitica-2026](/blog/extradicion-narcopolitica-2026.html)
-- **RDAP Explained**: [/blog/rdap-explicado](/blog/rdap-explicado.html)
-- **Boss of Your Freedom (Re-entry)**: [/blog/ser-jefe-de-tu-libertad](/blog/ser-jefe-de-tu-libertad.html)
-- **Plea Bargaining**: [/blog/plea-bargaining-federal](/blog/plea-bargaining-federal.html)
-- **PSO Interview**: [/blog/entrevista-pso](/blog/entrevista-pso.html)
+- **Extradition Strategy SD**: [/blog/estrategia-extradicion-san-diego-2026](/blog/estrategia-extradicion-san-diego-2026)
+- **PATTERN Audit BOP**: [/blog/auditoria-pattern-bop-2026](/blog/auditoria-pattern-bop-2026)
+- **Federal Arrest 72h SD**: [/blog/arresto-federal-san-diego-72-horas](/blog/arresto-federal-san-diego-72-horas)
+- **FSA ETC Credits**: [/blog/first-step-act-creditos-etc](/blog/first-step-act-creditos-etc)
+- **Federal Investigation (Target Letter)**: [/blog/investigacion-federal-que-hacer](/blog/investigacion-federal-que-hacer)
+- **Right to Remain Silent**: [/blog/derecho-a-guardar-silencio](/blog/derecho-a-guardar-silencio)
+- **Beating the Federal Prosecutor**: [/blog/vencer-al-fiscal-federal](/blog/vencer-al-fiscal-federal)
+- **Informants & Brady Evidence**: [/blog/informantes-y-brady-evidencia](/blog/informantes-y-brady-evidencia)
+- **Road to Trial**: [/blog/camino-al-juicio-federal](/blog/camino-al-juicio-federal)
+- **Presumption of Innocence**: [/blog/presuncion-de-inocencia-explicada](/blog/presuncion-de-inocencia-explicada)
+- **Reduce Federal Sentence**: [/blog/reducir-sentencia-federal-2026](/blog/reducir-sentencia-federal-2026)
+- **Unresponsive Public Defender**: [/blog/abogado-no-responde-federal](/blog/abogado-no-responde-federal)
+- **Skipping Halfway House**: [/blog/saltar-halfway-house-2026](/blog/saltar-halfway-house-2026)
+- **Blind Mule Defense**: [/blog/mula-ciega-federal](/blog/mula-ciega-federal)
+- **Blind Mule Case Examples**: [/blog/casos-mula-ciega-ejemplos](/blog/casos-mula-ciega-ejemplos)
+- **Tijuana Blind Mule Detection**: [/blog/programa-deteccion-mula-ciega-tijuana](/blog/programa-deteccion-mula-ciega-tijuana)
+- **Narco-political Extradition**: [/blog/extradicion-narcopolitica-2026](/blog/extradicion-narcopolitica-2026)
+- **RDAP Explained**: [/blog/rdap-explicado](/blog/rdap-explicado)
+- **Boss of Your Freedom (Re-entry)**: [/blog/ser-jefe-de-tu-libertad](/blog/ser-jefe-de-tu-libertad)
+- **Plea Bargaining**: [/blog/plea-bargaining-federal](/blog/plea-bargaining-federal)
+- **PSO Interview**: [/blog/entrevista-pso](/blog/entrevista-pso)
 
 ## Pre-Trial MDC/FDC Facilities
 - MDC Brooklyn (EDNY) — 80 29th St, Brooklyn NY
@@ -58,4 +58,4 @@ Guía Federal helps families in the critical first 72 hours after a federal arre
 ## Contact
 - **WhatsApp**: +52-663-304-0096
 - **Email**: info@guiafederal.net
-- **Consultation**: [Free Evaluation](/index.html#contact)
+- **Consultation**: [Free Evaluation](/#contact)
