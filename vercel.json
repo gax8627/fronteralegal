@@ -58,7 +58,7 @@
         },
         {
           "key": "Content-Security-Policy",
-          "value": "default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com https://cdn.tailwindcss.com https://www.gstatic.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' https://images.unsplash.com https://grainy-gradients.vercel.app https://www.google-analytics.com data:; connect-src 'self' https://formspree.io https://www.google-analytics.com https://analytics.google.com https://stats.g.doubleclick.net https://*.googleapis.com https://*.firebaseapp.com; frame-ancestors 'self'"
+          "value": "default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com https://cdn.tailwindcss.com https://www.gstatic.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' https://images.unsplash.com https://grainy-gradients.vercel.app https://www.google-analytics.com data:; connect-src 'self' https://api.web3forms.com https://formspree.io https://www.google-analytics.com https://analytics.google.com https://stats.g.doubleclick.net https://*.googleapis.com https://*.firebaseapp.com; frame-ancestors 'self'"
         }
       ]
     }
@@ -66,6 +66,7 @@
   "redirects": [
     { "source": "/fsa", "destination": "/fsa-guide", "permanent": true },
     { "source": "/rdap", "destination": "/rdap-guide", "permanent": true },
+    { "source": "/facilities.html", "destination": "/facilities", "permanent": true },
     { "source": "/estrategia-extradicion-san-diego-2026", "destination": "/blog/estrategia-extradicion-san-diego-2026", "permanent": true },
     { "source": "/auditoria-pattern-bop-2026", "destination": "/blog/auditoria-pattern-bop-2026", "permanent": true },
     { "source": "/arresto-federal-san-diego-72-horas", "destination": "/blog/arresto-federal-san-diego-72-horas", "permanent": true },
