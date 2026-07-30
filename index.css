@@ -3,44 +3,44 @@
    Font: Space Grotesk (headings) + Inter (body)
    ============================================= */
 :root {
-  --bg:         #F8F9FA;
-  --bg-alt:     #EEEEF0;
+  --bg:         #FBFBFD;
+  --bg-alt:     #F2F2F7;
   --surface:    #FFFFFF;
-  --primary:    #0F0F0F;
-  --accent:     #7F1D1D;
-  --accent-hi:  #DC2626;
-  --accent-rgb: 220, 38, 38;
+  --primary:    #1D1D1F;
+  --accent:     #801B1B;
+  --accent-hi:  #9B2C2C;
+  --accent-rgb: 155, 44, 44;
 
-  --text:       #0F0F0F;
-  --text-dim:   #4B5563;
-  --text-faint: #9CA3AF;
+  --text:       #1D1D1F;
+  --text-dim:   #515154;
+  --text-faint: #6E6E73;
 
-  --border:     rgba(0,0,0,0.07);
-  --border-hi:  rgba(0,0,0,0.13);
+  --border:     rgba(0,0,0,0.06);
+  --border-hi:  rgba(0,0,0,0.10);
 
-  --glass-bg:   rgba(248,249,250,0.88);
-  --glass-blur: blur(16px);
-  --shadow:     0 8px 32px rgba(0,0,0,0.06);
-  --shadow-lg:  0 20px 60px rgba(0,0,0,0.10);
+  --glass-bg:   rgba(255,255,255,0.82);
+  --glass-blur: blur(20px) saturate(180%);
+  --shadow:     0 4px 20px rgba(0,0,0,0.04), 0 1px 3px rgba(0,0,0,0.02);
+  --shadow-lg:  0 16px 40px rgba(0,0,0,0.08), 0 4px 12px rgba(0,0,0,0.03);
 
-  --radius:     16px;
-  --radius-lg:  28px;
+  --radius:     14px;
+  --radius-lg:  22px;
   --radius-pill:100px;
 }
 
 [data-theme="dark"] {
-  --bg:         #0A0A0A;
-  --bg-alt:     #111111;
-  --surface:    #1A1A1A;
-  --primary:    #F5F5F5;
-  --accent:     #EF4444;
-  --accent-hi:  #F87171;
-  --text:       #F0F0F0;
-  --text-dim:   #A3A3A3;
-  --text-faint: #404040;
-  --border:     rgba(255,255,255,0.07);
-  --border-hi:  rgba(255,255,255,0.13);
-  --glass-bg:   rgba(10,10,10,0.92);
+  --bg:         #0E1015;
+  --bg-alt:     #161820;
+  --surface:    #1C1E26;
+  --primary:    #F5F5F7;
+  --accent:     #C94A4A;
+  --accent-hi:  #E55B5B;
+  --text:       #F5F5F7;
+  --text-dim:   #A1A1A6;
+  --text-faint: #86868B;
+  --border:     rgba(255,255,255,0.08);
+  --border-hi:  rgba(255,255,255,0.14);
+  --glass-bg:   rgba(22,24,32,0.82);
   --shadow:     0 8px 32px rgba(0,0,0,0.4);
   --shadow-lg:  0 20px 60px rgba(0,0,0,0.6);
 }
@@ -61,9 +61,9 @@ body {
 }
 
 h1, h2, h3, h4 {
-  font-family: 'Space Grotesk', sans-serif;
-  font-weight: 700;
-  letter-spacing: -0.02em;
+  font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Inter', sans-serif;
+  font-weight: 600;
+  letter-spacing: -0.025em;
   line-height: 1.15;
 }
 
@@ -484,15 +484,7 @@ nav.nav-open .nav-toggle span:nth-child(3) { transform: translateY(-7px) rotate(
    POLICE SIREN ANIMATION
    ============================================= */
 .siren-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-  overflow: hidden;
-  z-index: 2;
-  mix-blend-mode: screen;
+  display: none;
 }
 
 .siren-light {
@@ -996,6 +988,9 @@ section { padding: 6rem 0; }
 }
 .wa-float:hover { transform: scale(1.08); box-shadow: 0 8px 32px rgba(37,211,102,0.55); }
 .wa-float svg { width: 30px; height: 30px; fill: white; }
+@media (max-width: 768px) {
+  .wa-float { display: none !important; }
+}
 
 /* =============================================
    SPOKE / FACILITY PAGES

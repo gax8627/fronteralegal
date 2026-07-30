@@ -3,3 +3,6 @@ Allow: /
 Disallow: /admin.html
 
 Sitemap: https://www.guiafederal.net/sitemap.xml
+
+# AI Crawler Manifest
+# https://www.guiafederal.net/llms.txt

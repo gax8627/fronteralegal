@@ -59,6 +59,7 @@
   @media print {
     body { background: none; }
     .page { margin: 0; box-shadow: none; page-break-after: always; height: 297mm; }
+    .no-print { display: none !important; }
   }
 
   /* COVER PAGE */
@@ -280,6 +281,14 @@
 
 </head>
 <body>
+
+<div class="no-print" style="position:sticky; top:0; z-index:100; background:#0f172a; padding:0.8rem 1.5rem; display:flex; justify-content:space-between; align-items:center; box-shadow:0 4px 20px rgba(0,0,0,0.3);">
+  <a href="/" style="color:#fff; text-decoration:none; font-weight:700; font-size:0.9rem;">← Volver a Guía Federal</a>
+  <div style="display:flex; gap:0.75rem; align-items:center;">
+    <button onclick="window.print()" style="background:#b45309; color:#fff; border:none; padding:0.5rem 1.2rem; border-radius:6px; font-weight:700; cursor:pointer; font-size:0.85rem;">🖨️ Imprimir / Guardar PDF</button>
+    <a href="https://wa.me/526633040096?text=URGENTE:%20Consulta%20sobre%20el%20Kit%20de%2072%20Horas" target="_blank" rel="noopener" style="background:#25D366; color:#fff; padding:0.5rem 1.2rem; border-radius:6px; text-decoration:none; font-weight:700; font-size:0.85rem;">💬 WhatsApp Urgencias 24/7</a>
+  </div>
+</div>
 
 <!-- PAGE 1: COVER -->
 <div class="page">

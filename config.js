@@ -16,11 +16,14 @@ const nexConfig = {
 
 // Auto-inject into all Lead Capture CTAs & attach form handlers
 document.addEventListener('DOMContentLoaded', () => {
-  // Target WhatsApp links
+  // Target WhatsApp links without overwriting internal anchors or pre-filled query params
   document.querySelectorAll('.wa-link').forEach(link => {
-    link.href = `https://wa.me/${nexConfig.whatsappNumber}`;
-    link.target = "_blank";
-    link.rel = "noopener noreferrer";
+    const href = link.getAttribute('href') || '';
+    if (!href.includes('wa.me') && !href.startsWith('#') && !href.includes('#contact') && !href.includes('#consulta')) {
+      link.href = `https://wa.me/${nexConfig.whatsappNumber}`;
+      link.target = "_blank";
+      link.rel = "noopener noreferrer";
+    }
   });
 
   // Attach form handler to ALL .contact-form forms that don't already have onsubmit

@@ -3,6 +3,15 @@
   "cleanUrls": true,
   "headers": [
     {
+      "source": "/sw.js",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=0, must-revalidate"
+        }
+      ]
+    },
+    {
       "source": "/assets/(.*)",
       "headers": [
         {
@@ -58,24 +67,39 @@
         },
         {
           "key": "Content-Security-Policy",
-          "value": "default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com https://cdn.tailwindcss.com https://www.gstatic.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' https://images.unsplash.com https://grainy-gradients.vercel.app https://www.google-analytics.com data:; connect-src 'self' https://api.web3forms.com https://formspree.io https://www.google-analytics.com https://analytics.google.com https://stats.g.doubleclick.net https://*.googleapis.com https://*.firebaseapp.com; frame-ancestors 'self'"
+          "value": "default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com https://cdn.tailwindcss.com https://www.gstatic.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' https://images.unsplash.com https://grainy-gradients.vercel.app https://www.google-analytics.com data:; media-src 'self' data:; worker-src 'self'; connect-src 'self' https://api.web3forms.com https://formspree.io https://www.google-analytics.com https://analytics.google.com https://stats.g.doubleclick.net https://*.googleapis.com https://*.firebaseapp.com; frame-ancestors 'self'"
         }
       ]
     }
   ],
   "redirects": [
-    { "source": "/fsa", "destination": "/fsa-guide", "permanent": true },
-    { "source": "/rdap", "destination": "/rdap-guide", "permanent": true },
+    { "source": "/fsa", "destination": "/federal-pretrial-guide", "permanent": true },
+    { "source": "/fsa-guide", "destination": "/federal-pretrial-guide", "permanent": true },
+    { "source": "/rdap", "destination": "/federal-pretrial-guide", "permanent": true },
+    { "source": "/rdap-guide", "destination": "/federal-pretrial-guide", "permanent": true },
     { "source": "/facilities.html", "destination": "/facilities", "permanent": true },
     { "source": "/estrategia-extradicion-san-diego-2026", "destination": "/blog/estrategia-extradicion-san-diego-2026", "permanent": true },
-    { "source": "/auditoria-pattern-bop-2026", "destination": "/blog/auditoria-pattern-bop-2026", "permanent": true },
+    { "source": "/auditoria-pattern-bop-2026", "destination": "/blog/entrevista-pso", "permanent": true },
+    { "source": "/blog/auditoria-pattern-bop-2026", "destination": "/blog/entrevista-pso", "permanent": true },
+    { "source": "/first-step-act-creditos-etc", "destination": "/blog/evaluar-oferta-fiscalia-vs-juicio-federal", "permanent": true },
+    { "source": "/blog/first-step-act-creditos-etc", "destination": "/blog/evaluar-oferta-fiscalia-vs-juicio-federal", "permanent": true },
+    { "source": "/rdap-explicado", "destination": "/blog/entrevista-pso", "permanent": true },
+    { "source": "/blog/rdap-explicado", "destination": "/blog/entrevista-pso", "permanent": true },
+    { "source": "/reducir-sentencia-federal-2026", "destination": "/blog/evaluar-oferta-fiscalia-vs-juicio-federal", "permanent": true },
+    { "source": "/blog/reducir-sentencia-federal-2026", "destination": "/blog/evaluar-oferta-fiscalia-vs-juicio-federal", "permanent": true },
+    { "source": "/saltar-halfway-house-2026", "destination": "/blog/audiencia-detencion-fianza-federal-san-diego", "permanent": true },
+    { "source": "/blog/saltar-halfway-house-2026", "destination": "/blog/audiencia-detencion-fianza-federal-san-diego", "permanent": true },
+    { "source": "/ser-jefe-de-tu-libertad", "destination": "/blog/camino-al-juicio-federal", "permanent": true },
+    { "source": "/blog/ser-jefe-de-tu-libertad", "destination": "/blog/camino-al-juicio-federal", "permanent": true },
+    { "source": "/facilities/ca/victorville-usp", "destination": "/facilities/ca/mcc-san-diego", "permanent": true },
+    { "source": "/facilities/ca/lompoc-fci", "destination": "/facilities/ca/mcc-san-diego", "permanent": true },
+    { "source": "/facilities/ca/terminal-island-fci", "destination": "/facilities/ca/mdc-los-angeles", "permanent": true },
     { "source": "/arresto-federal-san-diego-72-horas", "destination": "/blog/arresto-federal-san-diego-72-horas", "permanent": true },
     { "source": "/plea-bargaining-federal", "destination": "/blog/plea-bargaining-federal", "permanent": true },
     { "source": "/investigacion-federal-que-hacer", "destination": "/blog/investigacion-federal-que-hacer", "permanent": true },
     { "source": "/derecho-a-guardar-silencio", "destination": "/blog/derecho-a-guardar-silencio", "permanent": true },
     { "source": "/vencer-al-fiscal-federal", "destination": "/blog/vencer-al-fiscal-federal", "permanent": true },
     { "source": "/informantes-y-brady-evidencia", "destination": "/blog/informantes-y-brady-evidencia", "permanent": true },
-    { "source": "/first-step-act-creditos-etc", "destination": "/blog/first-step-act-creditos-etc", "permanent": true },
     { "source": "/camino-al-juicio-federal", "destination": "/blog/camino-al-juicio-federal", "permanent": true },
     { "source": "/abogado-no-responde-federal", "destination": "/blog/abogado-no-responde-federal", "permanent": true },
     { "source": "/presuncion-de-inocencia-explicada", "destination": "/blog/presuncion-de-inocencia-explicada", "permanent": true },
@@ -84,10 +108,6 @@
     { "source": "/casos-mula-ciega-ejemplos", "destination": "/blog/casos-mula-ciega-ejemplos", "permanent": true },
     { "source": "/extradicion-narcopolitica-2026", "destination": "/blog/extradicion-narcopolitica-2026", "permanent": true },
     { "source": "/entrevista-pso", "destination": "/blog/entrevista-pso", "permanent": true },
-    { "source": "/ser-jefe-de-tu-libertad", "destination": "/blog/ser-jefe-de-tu-libertad", "permanent": true },
-    { "source": "/rdap-explicado", "destination": "/blog/rdap-explicado", "permanent": true },
-    { "source": "/saltar-halfway-house-2026", "destination": "/blog/saltar-halfway-house-2026", "permanent": true },
-    { "source": "/reducir-sentencia-federal-2026", "destination": "/blog/reducir-sentencia-federal-2026", "permanent": true },
     { "source": "/arrestado-garita-otay-san-ysidro", "destination": "/blog/arrestado-garita-otay-san-ysidro", "permanent": true },
     { "source": "/localizar-detenido-frontera-cbp", "destination": "/blog/localizar-detenido-frontera-cbp", "permanent": true },
     { "source": "/defensa-mula-ciega-corte-federal", "destination": "/blog/defensa-mula-ciega-corte-federal", "permanent": true },
