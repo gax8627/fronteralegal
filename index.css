@@ -1894,7 +1894,7 @@ footer {
   display: none;
   position: fixed;
   inset: 0;
-  z-index: 10000;
+  z-index: 20000 !important;
   background: rgba(15, 23, 42, 0.85);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
@@ -2025,7 +2025,10 @@ footer {
 
 /* Fix Z-Index Hierarchy & Mobile Nav Dropdown */
 nav {
-  z-index: 10001 !important;
+  z-index: 10000 !important;
+}
+nav.nav-open {
+  z-index: 15000 !important;
 }
 
 @media (max-width: 768px) {
