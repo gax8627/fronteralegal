@@ -2095,4 +2095,16 @@ nav.nav-open {
   direction: rtl;
 }
 
+/* Micro-Trust Badges for Conversion Optimization */
+.cta-trust-badge {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--text-dim);
+  margin-top: 0.65rem;
+}
+
 
