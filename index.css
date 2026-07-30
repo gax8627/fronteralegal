@@ -1978,4 +1978,112 @@ footer {
   box-shadow: 0 0 12px rgba(220, 38, 38, 0.4);
 }
 
+/* ==========================================================================
+   APPLE MOBILE TOUCH & RESPONSIVE HARDENING (375px - 768px)
+   ========================================================================== */
+
+/* Touch Target Minimums (44x44px Apple Standard) */
+.nav-toggle {
+  width: 44px !important;
+  height: 44px !important;
+}
+
+.theme-toggle-svg {
+  width: 44px !important;
+  height: 44px !important;
+  padding: 0.5rem !important;
+}
+
+.btn-mini {
+  display: inline-flex !important;
+  align-items: center !important;
+  min-height: 44px !important;
+  padding: 0.5rem 0 !important;
+}
+
+.wz-reset {
+  min-height: 44px !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  padding: 0.5rem 0.75rem !important;
+}
+
+.booking-close {
+  width: 44px !important;
+  height: 44px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+.footer-col ul li a {
+  display: inline-block !important;
+  padding: 0.4rem 0 !important;
+  min-height: 44px !important;
+  line-height: 2 !important;
+}
+
+/* Fix Z-Index Hierarchy & Mobile Nav Dropdown */
+nav {
+  z-index: 10001 !important;
+}
+
+@media (max-width: 768px) {
+  nav.nav-open .nav-links {
+    max-height: calc(100vh - 80px) !important;
+    overflow-y: auto !important;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .hero {
+    padding: 6.5rem 1.25rem 3.5rem !important;
+    min-height: auto !important;
+  }
+
+  /* Fix button white-space overflow bug on 375px screens */
+  .btn-cta, .btn-cta-secondary, .hero-actions .btn-cta {
+    white-space: normal !important;
+    text-align: center !important;
+    max-width: 100% !important;
+    padding: 0.85rem 1.25rem !important;
+    word-break: break-word !important;
+  }
+
+  .hero-eyebrow {
+    width: auto !important;
+    max-width: 100% !important;
+    white-space: normal !important;
+    text-align: center !important;
+  }
+
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 1.25rem 1rem !important;
+  }
+  .stat-num {
+    font-size: 2.25rem !important;
+  }
+
+  .booking-modal {
+    padding: 1.25rem !important;
+    max-width: 95% !important;
+  }
+  .booking-slots-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+
+  .wa-float {
+    bottom: 4.5rem !important;
+    right: 1.25rem !important;
+  }
+}
+
+@media (max-width: 480px) {
+  div[style*="border-left:3px solid"] {
+    margin-left: 0.25rem !important;
+    padding-left: 1.25rem !important;
+    gap: 1rem !important;
+  }
+}
+
 
