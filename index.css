@@ -2089,4 +2089,10 @@ nav.nav-open {
   }
 }
 
+/* Email anti-scraping obfuscation */
+.obfuscated-email {
+  unicode-bidi: bidi-override;
+  direction: rtl;
+}
+
 

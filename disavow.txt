@@ -1,0 +1,19 @@
+# ==============================================================================
+# GUÍA FEDERAL (guiafederal.net) - GOOGLE SEARCH CONSOLE DISAVOW FILE
+# Date: July 2026
+# Purpose: Reject toxic PBN store domains, automated DR networks, and spam TLDs
+# ==============================================================================
+
+domain:store
+domain:shop
+domain:site
+domain:online
+domain:storefront
+
+domain:rglinks.org
+domain:elite-network-for-domain-rating-and-digital-pr.store
+domain:backlink-pro-anchor-text-and-click-through-hub.store
+domain:seo-backlink-hub.online
+domain:pbn-authority-boost.site
+domain:cheap-backlink-express.store
+domain:domain-rating-booster.shop
