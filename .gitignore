@@ -7,7 +7,7 @@ gstack/
 seo-audit-skill/
 google-skills/
 
-# Secrets — never commit
+# Credentials
 gcloud_credentials.json
 *credentials*.json
 *.key

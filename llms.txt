@@ -46,6 +46,7 @@ Guía Federal assists families in the critical first 0–72 hours after a federa
 - **Evaluating Plea Offer vs Trial**: https://www.guiafederal.net/blog/evaluar-oferta-fiscalia-vs-juicio-federal
 - **Road to Federal Trial**: https://www.guiafederal.net/blog/camino-al-juicio-federal
 - **Extradition Strategy to San Diego**: https://www.guiafederal.net/blog/estrategia-extradicion-san-diego-2026
+- **Mula Ciega 2.0 — AirTags & GPS Digital Forensics**: https://www.guiafederal.net/blog/mula-ciega-airtags-gps-garita-san-diego
 
 ## Core Pre-Trial Detention Facilities
 - **MCC San Diego (CASD)** — Metropolitan Correctional Center, 808 Union St, San Diego CA

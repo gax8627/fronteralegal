@@ -370,4 +370,10 @@
     <changefreq>monthly</changefreq>
     <priority>0.90</priority>
   </url>
+  <url>
+    <loc>https://www.guiafederal.net/blog/mula-ciega-airtags-gps-garita-san-diego</loc>
+    <lastmod>2026-08-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
 </urlset>

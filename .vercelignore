@@ -1,6 +1,14 @@
 # Keep non-site files out of production deploys
+
+# Internal audit docs
 *.md
+!README.md
+AUDIT-*.md
+BLOG-AUDIT-*.md
+LAUNCH-CHECKLIST.md
 !llms.txt
+
+# Internal files
 *.docx
 *.py
 *.command

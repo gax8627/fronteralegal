@@ -1,6 +1,10 @@
 User-agent: *
 Allow: /
 Disallow: /admin.html
+Disallow: /gcloud_credentials.json
+Disallow: /collect_traffic_data.py
+Disallow: /query_google_data.py
+Disallow: /git-push.command
 
 Sitemap: https://www.guiafederal.net/sitemap.xml
 
