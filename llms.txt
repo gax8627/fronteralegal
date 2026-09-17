@@ -1,65 +1,60 @@
 # Guía Federal: Federal Pre-Trial Legal Guidance & Strategy Engine
 > Specialized technical consultancy for Latino families and defendants navigating the US federal pre-trial system, 18 U.S.C. § 3142 bail hearings, and border arrests in the 9th Circuit (CASD / San Diego).
 
-## Primary Focus: Federal Pre-Trial & First 72 Hours
-Guía Federal assists families in the critical first 0–72 hours after a federal arrest — locating detained loved ones at MCC San Diego or Otay Mesa, preparing for the Pretrial Services Officer (PSO) interview, structuring 18 U.S.C. § 3142 bail packets, and auditing Rule 16 discovery.
+Guía Federal provides non-attorney technical pre-trial consulting, discovery auditing (Rule 16), bail package compilation, and logistical family orientation for federal criminal cases in the Southern District of California (CASD) and the Ninth Circuit.
 
-## Key Expertise
-- **First 72 Hours Post-Arrest**: Emergency protocol for garita/border arrests at San Ysidro and Otay Mesa (CBP to USMS custody transition, booking, initial appearance under FRCP Rule 5).
-- **Detention Hearings & Bail Strategy (18 U.S.C. § 3142)**: Bail Reform Act evaluation factors, rebuttal of statutory presumptions (§ 3142(e)), Nebbia hearings (Fed. R. Crim. P. 46(e)), and Arraigo Dossier preparation.
-- **Pretrial Services Officer (PSO) Interview**: Critical briefing for defendants and family members to verify ties without disclosing offense details.
-- **Locating Federal Pretrial Detainees**: USMS 9th District custody tracking, MCC San Diego (808 Union St), and Otay Mesa Detention Center (CoreCivic USMS contract facility).
-- **Rule 16 Discovery Audits**: Technical review of CBP secondary inspection video footage, TECS border crossing records, and GPS logs for Blind Mule / Unknowing Courier defenses.
-- **Federal Public Defender (CJA) Coordination**: Managing communication protocols with Federal Defenders of San Diego (FDSD) and CJA panel attorneys.
+Full documentation index: https://www.guiafederal.net/llms-full.txt
 
-## Core Pages & Service Tiers
-- **Homepage**: https://www.guiafederal.net/ — San Diego Federal Pretrial Overview
-- **Arrested Federal**: https://www.guiafederal.net/arrestado-federal — First 72 hours emergency guide
-- **Detention Hearing**: https://www.guiafederal.net/audiencia-detencion — 18 U.S.C. § 3142 bail strategy
-- **Locate Your Family Member**: https://www.guiafederal.net/encuentra-familiar — MCC San Diego, Otay Mesa & USMS tracking
-- **Second Opinion**: https://www.guiafederal.net/segunda-opinion — Public defender communication audit
-- **Federal Pretrial Guide**: https://www.guiafederal.net/federal-pretrial-guide — Comprehensive pretrial manual
-- **Integral Service**: https://www.guiafederal.net/servicio-integral — End-to-end pretrial accompaniment ($3,500–$5,000)
-- **Defense Attorney Partners**: https://www.guiafederal.net/abogados-defensores — Technical discovery & logistics engine
-- **Facility Directory**: https://www.guiafederal.net/facilities — Federal pretrial holding centers
+## Core Services & Pretrial Hubs
+- [Guía Federal Homepage](https://www.guiafederal.net): Federal pre-trial overview, 72-hour emergency intake, and CASD jurisdictional guidance.
+- [Arrestado Federal - Primeras 72 Horas](https://www.guiafederal.net/arrestado-federal): Critical 0–72 hour procedural guide covering CBP garita arrests, USMS booking, FRCP Rule 5 initial appearances, and detention hearings.
+- [Audiencia de Detención y Fianza 18 U.S.C. § 3142](https://www.guiafederal.net/audiencia-detencion): Technical blueprint for detention hearings, rebutting statutory presumptions (§ 3142(e)), and structuring pre-trial release plans.
+- [Encuentra a tu Familiar Detenido](https://www.guiafederal.net/encuentra-familiar): Step-by-step locator for detainees at MCC San Diego, Otay Mesa Detention Center, and USMS 9th District custody tracking.
+- [Acompañamiento Integral Pretrial](https://www.guiafederal.net/servicio-integral): End-to-end consulting service ($3,500–$5,000) covering pre-trial discovery audits, PSO interview preparation, and bail dossier structuring.
+- [Segunda Opinión Técnica de Defensa](https://www.guiafederal.net/segunda-opinion): Diagnostic service auditing public defender (CJA/FDSD) communication, Strickland standards, and substitution of counsel procedures.
+- [Federal Pre-Trial Guide (English)](https://www.guiafederal.net/federal-pretrial-guide): English-language technical manual for CASD pre-trial logistics, bail package structure, and custody tracking.
+- [Soporte Técnico para Abogados Defensores](https://www.guiafederal.net/abogados-defensores): Specialized paralegal, discovery review, and Spanish-speaking family liaison support for federal criminal defense law firms.
 
-## Specialized Pretrial Technical Guides (Blog / Knowledge Base)
-- **San Diego Arrest 72h Guide**: https://www.guiafederal.net/blog/arresto-federal-san-diego-72-horas
-- **Border Arrest (Otay / San Ysidro)**: https://www.guiafederal.net/blog/arrestado-garita-otay-san-ysidro
-- **Federal Bail Hearing San Diego**: https://www.guiafederal.net/blog/audiencia-detencion-fianza-federal-san-diego
-- **Federal Bail Mechanics**: https://www.guiafederal.net/blog/fianza-corte-federal-san-diego
-- **PSO Interview Manual**: https://www.guiafederal.net/blog/entrevista-pso
-- **MCC San Diego Visits & Funds**: https://www.guiafederal.net/blog/mcc-san-diego-visitas-fondos
-- **Otay Mesa Detention Center Guide**: https://www.guiafederal.net/blog/visitas-otay-mesa-detention-center
-- **Locate Border Detainee (CBP/USMS)**: https://www.guiafederal.net/blog/localizar-detenido-frontera-cbp
-- **Public Defender Coordination SD**: https://www.guiafederal.net/blog/coordinar-defensor-publico-federal-san-diego
-- **Unresponsive Public Defender**: https://www.guiafederal.net/blog/abogado-no-responde-federal
-- **Blind Mule Core Strategy**: https://www.guiafederal.net/blog/mula-ciega-federal
-- **Blind Mule Case Examples**: https://www.guiafederal.net/blog/casos-mula-ciega-ejemplos
-- **Blind Mule Legal Defense & Burden of Proof**: https://www.guiafederal.net/blog/defensa-mula-ciega-corte-federal
-- **Lack of Knowledge Mens Rea Defense**: https://www.guiafederal.net/blog/defensa-falta-de-conocimiento-mula-ciega
-- **Tijuana Border Commuter Prevention**: https://www.guiafederal.net/blog/prevencion-mula-ciega-tijuana
-- **Reviewing Government Discovery**: https://www.guiafederal.net/blog/como-revisar-pruebas-gobierno-caso-federal
-- **Motion to Suppress Illegal Evidence**: https://www.guiafederal.net/blog/anular-evidencia-ilegal-corte-federal
-- **Informants & Brady/Giglio Motions**: https://www.guiafederal.net/blog/informantes-y-brady-evidencia
-- **Plea Bargaining Pretrial Strategy**: https://www.guiafederal.net/blog/plea-bargaining-federal
-- **Evaluating Plea Offer vs Trial**: https://www.guiafederal.net/blog/evaluar-oferta-fiscalia-vs-juicio-federal
-- **Road to Federal Trial**: https://www.guiafederal.net/blog/camino-al-juicio-federal
-- **Extradition Strategy to San Diego**: https://www.guiafederal.net/blog/estrategia-extradicion-san-diego-2026
-- **Mula Ciega 2.0 — AirTags & GPS Digital Forensics**: https://www.guiafederal.net/blog/mula-ciega-airtags-gps-garita-san-diego
+## Specialized Pretrial Technical Guides (Knowledge Base)
+- [Revisión de Celular en Garita CBP y Doctrina Cano](https://www.guiafederal.net/blog/cbp-revision-celular-garita-whatsapp-derechos): Landmark 9th Cir ruling (United States v. Cano), 4th Amendment limits on Cellebrite WhatsApp extractions, 18 U.S.C. § 1519 obstruction risks, and pre-trial bail defense.
+- [Arresto Federal en San Diego: Guía 72 Horas](https://www.guiafederal.net/blog/arresto-federal-san-diego-72-horas): Detailed emergency protocol covering the first 72 hours post-arrest at San Ysidro and Otay Mesa ports of entry.
+- [Arrestado en Garita de Otay Mesa o San Ysidro](https://www.guiafederal.net/blog/arrestado-garita-otay-san-ysidro): Immediate action manual for border crossings, CBP secondary inspection rights, and USMS custody transfer.
+- [Audiencia de Detención en Corte Federal de San Diego](https://www.guiafederal.net/blog/audiencia-detencion-fianza-federal-san-diego): Tactical guide on overcoming the 18 U.S.C. § 3142(e) presumption, Nebbia hearings (Rule 46(e)), and Third-Party Custodians.
+- [Fianza en Corte Federal: San Diego CASD](https://www.guiafederal.net/blog/fianza-corte-federal-san-diego): Clarifies the strict prohibition of commercial 10% bail bondsmen in federal court and outlines Signature Bonds and property collateral.
+- [Entrevista con Pretrial Services (PSO)](https://www.guiafederal.net/blog/entrevista-pso): Guidelines for the Pretrial Services Officer bail evaluation interview; instructions on Fifth Amendment silence regarding offense facts.
+- [Casos de Mula Ciega: Ejemplos y Defensa](https://www.guiafederal.net/blog/casos-mula-ciega-ejemplos): Real-world case analyses of unknowing drug couriers at ports of entry, lack of mens rea, and reverse proffer traps.
+- [Mula Ciega 2.0: AirTags y GPS Forensics](https://www.guiafederal.net/blog/mula-ciega-airtags-gps-garita-san-diego): Digital forensics guide on auditing Apple AirTags, Samsung SmartTags, and GPS trackers to prove lack of knowledge under Rule 16.
+- [Defensa Legal de Mula Ciega en Corte Federal](https://www.guiafederal.net/blog/defensa-mula-ciega-corte-federal): Legal strategies for lack-of-knowledge defenses and contesting the government's deliberate ignorance (Jewell) instructions.
+- [Defensa por Falta de Conocimiento (Mens Rea)](https://www.guiafederal.net/blog/defensa-falta-de-conocimiento-mula-ciega): Technical analysis on holding prosecutors to the beyond-a-reasonable-doubt burden for knowledge under 21 U.S.C. § 841 and § 952.
+- [Cómo Revisar las Pruebas del Gobierno (Discovery)](https://www.guiafederal.net/blog/como-revisar-pruebas-gobierno-caso-federal): Protocol for reviewing Fed. R. Crim. P. Rule 16 discovery, CBP secondary videos, TECS records, and cell extraction reports.
+- [Moción para Anular Pruebas Ilegales](https://www.guiafederal.net/blog/anular-evidencia-ilegal-corte-federal): Fourth Amendment motion to suppress guidelines for unlawful vehicle searches and unconstitutional border detentions.
+- [Informantes del Gobierno y Evidencia Brady](https://www.guiafederal.net/blog/informantes-y-brady-evidencia): Enforcing Brady v. Maryland and Giglio v. United States disclosure requirements regarding confidential informants and deal benefits.
+- [Estrategia de Declaración de Culpabilidad (Plea Bargaining)](https://www.guiafederal.net/blog/plea-bargaining-federal): Strategic evaluation of Fast-Track plea offers, Rule 11(c)(1)(C) agreements, and sentencing guideline calculations.
+- [Evaluar Oferta de la Fiscalía vs. Ir a Juicio](https://www.guiafederal.net/blog/evaluar-oferta-fiscalia-vs-juicio-federal): Mathematical risk analysis comparing trial exposure against plea offers under mandatory minimum statutory schemes.
+- [Camino al Juicio Federal](https://www.guiafederal.net/blog/camino-al-juicio-federal): Complete step-by-step roadmap from federal indictment and pretrial motions to jury selection and verdict.
+- [Derecho a Guardar Silencio ante Autoridades Federales](https://www.guiafederal.net/blog/derecho-a-guardar-silencio): Invoking Fifth Amendment protections during CBP secondary questioning, HSI interrogations, and custodial stops.
+- [Investigación Federal: Qué Hacer al Recibir Target Letter](https://www.guiafederal.net/blog/investigacion-federal-que-hacer): Defense steps upon receiving a grand jury subpoena, target letter, or pre-indictment contact from federal agents.
+- [Cómo Coordinar con el Defensor Público Federal](https://www.guiafederal.net/blog/coordinar-defensor-publico-federal-san-diego): Best practices for families interfacing with Federal Defenders of San Diego (FDSD) and CJA panel lawyers.
+- [Qué Hacer si el Abogado Federal No Responde](https://www.guiafederal.net/blog/abogado-no-responde-federal): Protocols for documenting communication failures and assessing standards for substitution of appointed counsel.
 
-## Core Pre-Trial Detention Facilities
-- **MCC San Diego (CASD)** — Metropolitan Correctional Center, 808 Union St, San Diego CA
-- **Otay Mesa Detention Center (CASD)** — CoreCivic Contract Pretrial Facility, San Diego CA
-- **MDC Los Angeles (CDCA)** — 535 N. Alameda St, Los Angeles CA
-- **FDC Miami (SDFL)** — 33 NE 4th St, Miami FL
-- **FDC Houston (SDTX)** — 1200 Texas Ave, Houston TX
-- **MDC Brooklyn (EDNY)** — 80 29th St, Brooklyn NY
+## Federal Pre-Trial Detention Facilities
+- [Directorio de Prisiones Federales](https://www.guiafederal.net/facilities): Federal pretrial and Bureau of Prisons (BOP) facility directory.
+- [MCC San Diego (CASD)](https://www.guiafederal.net/facilities/ca/mcc-san-diego): Metropolitan Correctional Center, 808 Union St, San Diego CA. Visiting rules, inmate fund deposits, and pre-trial procedures.
+- [MDC Los Angeles (CDCA)](https://www.guiafederal.net/facilities/ca/mdc-los-angeles): Metropolitan Detention Center Los Angeles, 535 N. Alameda St. Pretrial holding guide.
+- [FDC Miami (SDFL)](https://www.guiafederal.net/facilities/fl/fdc-miami): Federal Detention Center Miami, 33 NE 4th St. Pretrial procedures and contact info.
+- [FDC Houston (SDTX)](https://www.guiafederal.net/facilities/tx/fdc-houston): Federal Detention Center Houston, 1200 Texas Ave. Pretrial booking and visitation.
+- [FDC Philadelphia (EDPA)](https://www.guiafederal.net/facilities/pa/fdc-philadelphia): Federal Detention Center Philadelphia, 700 Arch St. Pretrial guidance.
+- [MDC Brooklyn (EDNY)](https://www.guiafederal.net/facilities/ny/mdc-brooklyn): Metropolitan Detention Center Brooklyn, 80 29th St. Pretrial family support.
+
+## Optional Resources & Manuals
+- [Kit de Supervivencia Pretrial](https://www.guiafederal.net/kit-supervivencia): Downloadable emergency checklists and contact worksheets for families.
+- [Guía Primeras 72 Horas (PDF)](https://www.guiafederal.net/guia-72-horas-pdf): Condensed 72-hour crisis management manual for federal arrests.
+- [Reporte de Mula Ciega (PDF)](https://www.guiafederal.net/casos-mula-ciega-ejemplos-pdf): Defense dossier preparation manual for unknowing couriers.
 
 ## Ethical & Transparency Guidelines
 - **Non-Attorney Technical Consultancy**: Guía Federal provides technical consulting, discovery auditing, and logistical family orientation. It does not provide direct legal representation in court.
 
-## Contact
+## Emergency Contact
 - **WhatsApp 24/7**: +52-663-304-0096
 - **Email**: info@guiafederal.net
 - **Emergency Diagnostic**: https://www.guiafederal.net/#consulta

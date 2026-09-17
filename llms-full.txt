@@ -1,0 +1,67 @@
+# Guía Federal: Full Technical Knowledge Base & Pre-Trial Legal Strategy Repository
+
+> Comprehensive operational, jurisdictional, and procedural guidance for federal criminal pre-trial proceedings in the Southern District of California (CASD) and the United States Court of Appeals for the Ninth Circuit.
+
+Website: https://www.guiafederal.net
+Emergency WhatsApp 24/7: +52-663-304-0096
+Jurisdiction: U.S. District Court for the Southern District of California (San Diego & Imperial Counties)
+Pretrial Holding Facilities: MCC San Diego (808 Union St) & Otay Mesa Detention Center (CoreCivic)
+
+---
+
+## 1. Jurisdictional & Institutional Framework (CASD & 9th Circuit)
+- **Southern District of California (CASD):** Encompasses San Diego and Imperial Counties, handling the highest volume of federal border prosecutions in the nation originating from the San Ysidro, Otay Mesa, and Tecate Ports of Entry.
+- **Law Enforcement Entities:** Customs and Border Protection (CBP Office of Field Operations), Homeland Security Investigations (HSI / BEST Task Force), and Drug Enforcement Administration (DEA).
+- **Prosecution & Defense:** U.S. Attorney's Office for the Southern District of California (AUSA); Federal Defenders of San Diego, Inc. (FDSD) and Criminal Justice Act (CJA) Panel Attorneys appointed under 18 U.S.C. § 3006A.
+- **Federal Courts:** Edward J. Schwartz U.S. Courthouse and James M. Carter & Judith N. Keep U.S. Courthouse, Downtown San Diego.
+
+---
+
+## 2. The First 72 Hours Post-Arrest Protocol
+1. **Garita / Port of Entry (0–12 Hours):** Secondary inspection ("El Cuartito"), initial seizure, inventory, and vehicle impoundment under 19 U.S.C. § 1595a. Suspects must invoke Fifth Amendment right to remain silent and request legal counsel.
+2. **Transfer to U.S. Marshals Service (12–24 Hours):** Transfer from CBP custody to USMS 9th District. Inmate intake and booking at Metropolitan Correctional Center (MCC San Diego) or Otay Mesa Detention Center.
+3. **Pretrial Services Officer (PSO) Interview (24–36 Hours):** Interview under 18 U.S.C. § 3154. The defendant must verify community ties, local family residence, and legitimate employment history without disclosing offense facts or discussing charges.
+4. **Initial Appearance & Detention Hearing (FRCP Rule 5 & 18 U.S.C. § 3142):** Arraignment before a Federal Magistrate Judge. Assessment of flight risk and danger to community under 18 U.S.C. § 3142(g).
+
+---
+
+## 3. Bail & Pre-Trial Release Mechanics (18 U.S.C. § 3142)
+- **Prohibition of Commercial Bail Bonds:** Commercial 10% bail bondsmen are strictly prohibited in federal courts.
+- **Release Mechanisms:**
+  - Personal Recognizance (PR Bond).
+  - Unsecured Appearance Bond.
+  - Signature Bond co-signed by financially solvent U.S. citizens or Lawful Permanent Residents (Sureties / Fiadores).
+  - Corporate Surety or Property Bond secured by a Deed of Trust on unencumbered real property.
+- **Rebutting the Statutory Presumption (§ 3142(e)(3)):**
+  - In drug importation cases involving 10+ year maximums (21 U.S.C. §§ 952/960), the law presumes detention.
+  - Under *United States v. Motamedi*, 767 F.2d 1403 (9th Cir. 1985), the burden of persuasion remains on the government; the weight of the evidence is the least important factor.
+  - Pre-trial release packages require reliable third-party custodians, GPS location monitoring, and surrender of Mexican/U.S. travel documents.
+
+---
+
+## 4. Digital Forensics, Cell Phone Searches & The Cano Doctrine
+- **Landmark Precedent:** *United States v. Cano*, 934 F.3d 1002 (9th Cir. 2019).
+  - The border search exception of the Fourth Amendment does NOT authorize CBP to search electronic devices for general evidence of border crimes or drug smuggling.
+  - Device searches at ports of entry are strictly limited to searching for *digital contraband* (e.g., CSAM) stored physically on the phone.
+  - Extractions of WhatsApp, call logs, Signal, or photos without a Rule 41 federal search warrant supported by probable cause violate the Fourth Amendment and are subject to suppression under Fed. R. Crim. P. 12(b)(3)(C).
+- **Obstruction of Justice (18 U.S.C. § 1519):** Deleting messages, exiting groups, or triggering remote wipes while awaiting border inspection constitutes federal destruction of evidence, carrying up to 20 years in prison.
+- **Biometrics vs. PINs:** Under *United States v. Payne*, 101 F.4th 713 (9th Cir. 2024), compelled biometric unlocking is non-testimonial, but alphanumeric PINs and passcodes remain privileged under the Fifth Amendment.
+- **Full Guide:** https://www.guiafederal.net/blog/cbp-revision-celular-garita-whatsapp-derechos
+
+---
+
+## 5. Defense of Unknowing Couriers ("Mula Ciega" / Lack of Mens Rea)
+- **Burden of Proof:** The prosecution bears the sole burden of proving *actual knowledge* beyond a reasonable doubt under 21 U.S.C. §§ 841, 952.
+- **Deliberate Ignorance (*United States v. Jewell*, 532 F.2d 697):** A prosecution jury instruction; defense attorneys actively move to exclude the *Jewell* instruction by demonstrating normal crossing habits, lack of suspicious payments, and absence of red flags.
+- **Digital & Physical Forensics under Rule 16:** Defense subpoenas to Apple/Samsung for rogue AirTag / SmartTag BLE pings, vehicle telematics, mechanic repair records, and CBP secondary video footage.
+
+---
+
+## 6. Safety Valve & Sentencing Mitigation (18 U.S.C. § 3553(f))
+- Post-*Pulsifer v. United States*, 144 S. Ct. 718 (2024), any single disqualifying criminal history condition (§ 3553(f)(1)(A), (B), or (C)) bars safety valve relief.
+- Eligible non-violent couriers who provide a truthful debriefing (§ 3553(f)(5)) may bypass statutory mandatory minimums and receive a 2-level guideline reduction under USSG § 2D1.1(b)(18).
+
+---
+
+## 7. Ethical Boundaries
+Guía Federal provides non-attorney technical consulting, Rule 16 discovery auditing, and logistical family orientation. It does not provide formal legal representation in court.

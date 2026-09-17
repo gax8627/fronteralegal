@@ -105,13 +105,6 @@
   </url>
 
   <url>
-    <loc>https://www.guiafederal.net/blog/first-step-act-creditos-etc</loc>
-    <lastmod>2026-04-23</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <url>
     <loc>https://www.guiafederal.net/blog/investigacion-federal-que-hacer</loc>
     <lastmod>2026-05-03</lastmod>
     <changefreq>monthly</changefreq>
@@ -154,21 +147,7 @@
   </url>
 
   <url>
-    <loc>https://www.guiafederal.net/blog/reducir-sentencia-federal-2026</loc>
-    <lastmod>2026-05-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <url>
     <loc>https://www.guiafederal.net/blog/abogado-no-responde-federal</loc>
-    <lastmod>2026-05-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <url>
-    <loc>https://www.guiafederal.net/blog/saltar-halfway-house-2026</loc>
     <lastmod>2026-05-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -190,20 +169,6 @@
 
   <url>
     <loc>https://www.guiafederal.net/blog/entrevista-pso</loc>
-    <lastmod>2026-05-01</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <url>
-    <loc>https://www.guiafederal.net/blog/rdap-explicado</loc>
-    <lastmod>2026-06-07</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <url>
-    <loc>https://www.guiafederal.net/blog/ser-jefe-de-tu-libertad</loc>
     <lastmod>2026-05-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -246,12 +211,6 @@
   </url>
   <url>
     <loc>https://www.guiafederal.net/blog/estrategia-extradicion-san-diego-2026</loc>
-    <lastmod>2026-05-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.85</priority>
-  </url>
-  <url>
-    <loc>https://www.guiafederal.net/blog/auditoria-pattern-bop-2026</loc>
     <lastmod>2026-05-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
@@ -375,5 +334,11 @@
     <lastmod>2026-08-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.guiafederal.net/blog/cbp-revision-celular-garita-whatsapp-derechos</loc>
+    <lastmod>2026-09-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
   </url>
 </urlset>

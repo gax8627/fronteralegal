@@ -8,5 +8,27 @@ Disallow: /git-push.command
 
 Sitemap: https://www.guiafederal.net/sitemap.xml
 
+# Reglas Explícitas para Motores de Respuesta y Búsqueda por IA (AEO)
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
 # AI Crawler Manifest
 # https://www.guiafederal.net/llms.txt
