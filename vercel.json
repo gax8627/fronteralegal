@@ -131,7 +131,9 @@
     { "source": "/prevencion-mula-ciega-tijuana", "destination": "/blog/prevencion-mula-ciega-tijuana", "permanent": true },
     { "source": "/fianza-corte-federal-san-diego", "destination": "/blog/fianza-corte-federal-san-diego", "permanent": true },
     { "source": "/coordinar-defensor-publico-federal-san-diego", "destination": "/blog/coordinar-defensor-publico-federal-san-diego", "permanent": true },
-    { "source": "/visitas-otay-mesa-detention-center", "destination": "/blog/visitas-otay-mesa-detention-center", "permanent": true },
-    { "source": "/mcc-san-diego-visitas-fondos", "destination": "/blog/mcc-san-diego-visitas-fondos", "permanent": true }
+    { "source": "/mcc-san-diego-visitas-fondos", "destination": "/blog/mcc-san-diego-visitas-fondos", "permanent": true },
+    { "source": "/contrabando-personas-8-usc-1324-defensa-fianza-san-diego", "destination": "/blog/contrabando-personas-8-usc-1324-defensa-fianza-san-diego", "permanent": true },
+    { "source": "/retenes-patrulla-fronteriza-i8-pine-valley-derechos", "destination": "/blog/retenes-patrulla-fronteriza-i8-pine-valley-derechos", "permanent": true },
+    { "source": "/contrabando-dinero-efectivo-salida-garita-5332", "destination": "/blog/contrabando-dinero-efectivo-salida-garita-5332", "permanent": true }
   ]
 }
