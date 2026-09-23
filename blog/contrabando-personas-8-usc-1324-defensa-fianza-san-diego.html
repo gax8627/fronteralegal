@@ -20,9 +20,20 @@
   <meta name="twitter:image" content="https://www.guiafederal.net/assets/hero-alien-smuggling.webp">
 
   <link rel="canonical" href="https://www.guiafederal.net/blog/contrabando-personas-8-usc-1324-defensa-fianza-san-diego">
+  <link rel="alternate" hreflang="es" href="https://www.guiafederal.net/blog/contrabando-personas-8-usc-1324-defensa-fianza-san-diego">
+  <link rel="alternate" hreflang="es-US" href="https://www.guiafederal.net/blog/contrabando-personas-8-usc-1324-defensa-fianza-san-diego">
   <link rel="icon" type="image/png" href="/assets/brand-og.png">
   <link rel="stylesheet" href="/index.css">
   <script src="/config.js" defer></script>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-7DZMMY9WJS"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag("js", new Date());
+    gtag("config", "G-7DZMMY9WJS");
+  </script>
+  <script>if("serviceWorker"in navigator){window.addEventListener("load",function(){navigator.serviceWorker.register("/sw.js").catch(function(){});});}</script>
 
   <!-- STRUCTURED DATA: SCHEMA.ORG UNIFIED @GRAPH JSON-LD -->
   <script type="application/ld+json">
@@ -164,41 +175,37 @@
 </head>
 
 <body>
-  <!-- HEADER & NAVIGATION -->
-  <header>
-    <nav class="nav">
-      <div class="container nav-container">
-        <a href="/" class="nav-brand">Guía<span>Federal</span></a>
-        <div class="nav-links">
-          <a href="/arrestado-federal">Arrestado Federal</a>
-          <a href="/audiencia-detencion">Audiencia de Detención</a>
-          <a href="/servicio-integral">Acompañamiento Integral</a>
-          <a href="/facilities">Directorio Prisiones</a>
-          <a href="/blog" class="active">Blog</a>
-        </div>
-        <div class="nav-actions">
-          <a href="tel:+526633040096" class="btn-emergency">Llamada 24/7</a>
-        </div>
-      </div>
-    </nav>
-  </header>
+  <!-- NAV -->
+  <nav class="pill-nav" role="navigation">
+    <a href="/" class="nav-brand">Guía<span>Federal</span></a>
+    <button class="nav-toggle" onclick="toggleNav()" aria-label="Abrir menú" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <div class="nav-links">
+      <a href="/" id="nav-inicio">Inicio</a>
+      <a href="/arrestado-federal" id="nav-arrestado">Arrestado Federal</a>
+      <a href="/audiencia-detencion" id="nav-audiencia">Audiencia</a>
+      <a href="/facilities" id="nav-directorio">Directorio</a>
+      <a href="/blog" id="nav-blog" class="active">Blog</a>
+      <svg class="theme-toggle-svg" onclick="toggleTheme()" viewBox="0 0 24 24" aria-label="Cambiar tema">
+        <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/>
+      </svg>
+      <a href="/#contact" class="btn-cta wa-link">Consulta Gratis</a>
+    </div>
+  </nav>
 
   <!-- MAIN ARTICLE -->
-  <main style="padding-top: 5.5rem;">
+  <main id="main-content">
     <article>
       <!-- HERO -->
       <div class="article-hero">
         <div class="article-hero-inner">
           <a href="/blog" style="font-size:0.85rem; color:var(--accent-hi); text-decoration:none; font-weight:600;">← Volver al Blog Técnico de Defensa Federal</a>
           <div style="height:1rem;"></div>
-          <span class="blog-tag" style="display:inline-block; background:rgba(2,132,199,0.12); color:var(--accent-hi); font-size:0.82rem; font-weight:700; padding:0.35rem 0.85rem; border-radius:999px; text-transform:uppercase; letter-spacing:0.05em; border:1px solid rgba(2,132,199,0.25);">
-            CASD / 9no Circuito: Defensa en Tráfico de Indocumentados
-          </span>
-          <h1 style="font-size:2.25rem; line-height:1.25; margin-top:1rem; margin-bottom:1rem; color:var(--text);">
-            Cargos por Contrabando de Personas (8 U.S.C. § 1324): Fianza, Penas y Defensa en San Diego (CASD)
-          </h1>
+          <span class="blog-tag">CASD / 9no Circuito: Defensa en Tráfico de Indocumentados</span>
+          <h1>Cargos por Contrabando de Personas (8 U.S.C. § 1324): Fianza, Penas y Defensa en San Diego (CASD)</h1>
           
-          <div class="article-meta" style="font-size:0.9rem; color:var(--text-dim); display:flex; flex-wrap:wrap; gap:1.25rem; margin-bottom:1.5rem;">
+          <div class="article-meta">
             <span>📅 Actualizado: 23 de Septiembre, 2026</span>
             <span>⏱️ 18 min de lectura técnica</span>
             <span>⚖️ Distrito Sur de California (CASD)</span>
@@ -215,16 +222,16 @@
       <div class="container article-body" style="max-width: 860px; margin: 0 auto; padding: 2rem 1.5rem 4rem;">
 
         <!-- AVISO DE EDUCACIÓN LEGAL YMYL -->
-        <div style="border-left: 4px solid var(--accent-hi); padding: 1.25rem; background: var(--bg-alt); border-radius: var(--radius-sm); margin-bottom: 2.5rem;">
+        <div class="warning-card" style="border-left: 4px solid var(--accent-hi); padding: 1.25rem; background: var(--bg-alt); border-radius: var(--radius-sm); margin-bottom: 2.5rem;">
           <p style="margin: 0; font-size: 0.88rem; line-height: 1.6;">
             <strong>⚖️ AVISO DE EDUCACIÓN LEGAL:</strong> Guía Federal es una consultoría de apoyo técnico, análisis documental y logística pre-trial. <strong>No somos una firma de abogados ni ofrecemos representación legal en juicio.</strong> Este análisis expone el marco procesal del Distrito Sur de California (CASD) y la jurisprudencia del Noveno Circuito. Consulte de inmediato a un abogado acreditado (Defensor Público Federal - FDSD o Panel CJA).
           </p>
         </div>
 
         <!-- AEO ATOMIC DEFINITION BOX (BLUF MAGNET - EXACTLY 51 WORDS) -->
-        <div class="direct-answer-box" style="background:#f8fafc; border:1px solid #cbd5e1; border-left:5px solid #0284c7; padding:1.5rem; margin:2rem 0; border-radius:4px;">
-          <h3 style="color:#0f172a; margin-top:0; font-size:1.15rem;">📌 En Síntesis (BLUF): Penas y Fianza por 8 U.S.C. § 1324 en San Diego</h3>
-          <p style="margin:0; line-height:1.75; font-size:1.02rem; color:#1e293b;">
+        <div class="direct-answer-box">
+          <h3>📌 En Síntesis (BLUF): Penas y Fianza por 8 U.S.C. § 1324 en San Diego</h3>
+          <p>
             Bajo 8 U.S.C. § 1324, las penas oscilan entre 5 y 10 años de prisión federal por indocumentado, elevándose a 20 años si hubo peligro para la vida. En San Diego, la fianza bajo 18 U.S.C. § 3142 requiere superar el riesgo de fuga con fiadores ciudadanos solventes y grillete GPS.
           </p>
         </div>
@@ -416,72 +423,72 @@
           La siguiente matriz resume los rangos de penalización y la viabilidad procesal de obtener fianza previa al juicio en el Distrito Sur de California según la modalidad imputada:
         </p>
 
-        <div style="overflow-x:auto; margin:1.75rem 0 2.5rem;">
-          <table style="width:100%; border-collapse:collapse; text-align:left; font-size:0.92rem; border:1px solid #cbd5e1;">
+        <div class="table-container">
+          <table class="comparison-table">
             <thead>
-              <tr style="background:#0f172a; color:#ffffff;">
-                <th style="padding:0.85rem 1rem; border:1px solid #334155; width:26%;">Modalidad § 1324</th>
-                <th style="padding:0.85rem 1rem; border:1px solid #334155; width:22%;">Pena Estatutaria Base</th>
-                <th style="padding:0.85rem 1rem; border:1px solid #334155; width:26%;">Con Lucro Comercial (Financial Gain)</th>
-                <th style="padding:0.85rem 1rem; border:1px solid #334155; width:26%;">Posibilidad de Fianza CASD</th>
+              <tr>
+                <th style="width:26%;">Modalidad § 1324</th>
+                <th style="width:22%;">Pena Estatutaria Base</th>
+                <th style="width:26%;">Con Lucro Comercial (Financial Gain)</th>
+                <th style="width:26%;">Posibilidad de Fianza CASD</th>
               </tr>
             </thead>
             <tbody>
-              <tr style="background:#ffffff;">
-                <td style="padding:0.85rem 1rem; font-weight:700; border:1px solid #cbd5e1;">
-                  Traer indocumentados sin inspección<br>
-                  <span style="font-weight:400; font-size:0.82rem; color:var(--text-dim);">8 U.S.C. § 1324(a)(1)(A)(i)</span>
+              <tr>
+                <td>
+                  <strong>Traer indocumentados sin inspección</strong><br>
+                  <span style="font-size:0.82rem; color:var(--text-dim);">8 U.S.C. § 1324(a)(1)(A)(i)</span>
                 </td>
-                <td style="padding:0.85rem 1rem; border:1px solid #cbd5e1;">Multa y/o prisión hasta 5 años (10 si es reincidente).</td>
-                <td style="padding:0.85rem 1rem; border:1px solid #cbd5e1; color:#b91c1c; font-weight:600;">Hasta 10 años por cada persona transportada.</td>
-                <td style="padding:0.85rem 1rem; border:1px solid #cbd5e1; color:#0284c7; font-weight:600;">Moderada a Alta. Requiere fiadores ciudadanos con empleo formal y arraigo local.</td>
+                <td>Multa y/o prisión hasta 5 años (10 si es reincidente).</td>
+                <td style="color:#b91c1c; font-weight:600;">Hasta 10 años por cada persona transportada.</td>
+                <td style="color:var(--accent-hi); font-weight:600;">Moderada a Alta. Requiere fiadores ciudadanos con empleo formal y arraigo local.</td>
               </tr>
-              <tr style="background:#f8fafc;">
-                <td style="padding:0.85rem 1rem; font-weight:700; border:1px solid #cbd5e1;">
-                  Cruce por Garita sin autorización<br>
-                  <span style="font-weight:400; font-size:0.82rem; color:var(--text-dim);">8 U.S.C. § 1324(a)(2)</span>
+              <tr>
+                <td>
+                  <strong>Cruce por Garita sin autorización</strong><br>
+                  <span style="font-size:0.82rem; color:var(--text-dim);">8 U.S.C. § 1324(a)(2)</span>
                 </td>
-                <td style="padding:0.85rem 1rem; border:1px solid #cbd5e1;">Multa y/o prisión hasta 1 año (delito menor si no hay agravantes).</td>
-                <td style="padding:0.85rem 1rem; border:1px solid #cbd5e1; color:#b91c1c; font-weight:700;">
+                <td>Multa y/o prisión hasta 1 año (delito menor si no hay agravantes).</td>
+                <td style="color:#b91c1c; font-weight:700;">
                   Mínimo obligatorio de 3 a 10 años (1ª ofensa); 5 a 15 años si hay antecedentes.
                 </td>
-                <td style="padding:0.85rem 1rem; border:1px solid #cbd5e1; color:#16a34a; font-weight:600;">Moderada. Muy viable si no existen antecedentes penales graves y se ofrece grillete GPS.</td>
+                <td style="color:#16a34a; font-weight:600;">Moderada. Muy viable si no existen antecedentes penales graves y se ofrece grillete GPS.</td>
               </tr>
-              <tr style="background:#ffffff;">
-                <td style="padding:0.85rem 1rem; font-weight:700; border:1px solid #cbd5e1;">
-                  Transporte interno (Freeways / I-5 / I-8)<br>
-                  <span style="font-weight:400; font-size:0.82rem; color:var(--text-dim);">8 U.S.C. § 1324(a)(1)(A)(ii)</span>
+              <tr>
+                <td>
+                  <strong>Transporte interno (Freeways / I-5 / I-8)</strong><br>
+                  <span style="font-size:0.82rem; color:var(--text-dim);">8 U.S.C. § 1324(a)(1)(A)(ii)</span>
                 </td>
-                <td style="padding:0.85rem 1rem; border:1px solid #cbd5e1;">Multa y/o prisión hasta 5 años.</td>
-                <td style="padding:0.85rem 1rem; border:1px solid #cbd5e1; color:#b91c1c; font-weight:600;">Hasta 10 años por cada indocumentado.</td>
-                <td style="padding:0.85rem 1rem; border:1px solid #cbd5e1; color:#16a34a; font-weight:700;">Alta. Es la modalidad con mayor tasa de concesión de fianza bajo paquete § 3142.</td>
+                <td>Multa y/o prisión hasta 5 años.</td>
+                <td style="color:#b91c1c; font-weight:600;">Hasta 10 años por cada indocumentado.</td>
+                <td style="color:#16a34a; font-weight:700;">Alta. Es la modalidad con mayor tasa de concesión de fianza bajo paquete § 3142.</td>
               </tr>
-              <tr style="background:#f8fafc;">
-                <td style="padding:0.85rem 1rem; font-weight:700; border:1px solid #cbd5e1;">
-                  Albergar o encubrir (Stash houses)<br>
-                  <span style="font-weight:400; font-size:0.82rem; color:var(--text-dim);">8 U.S.C. § 1324(a)(1)(A)(iii)</span>
+              <tr>
+                <td>
+                  <strong>Albergar o encubrir (Stash houses)</strong><br>
+                  <span style="font-size:0.82rem; color:var(--text-dim);">8 U.S.C. § 1324(a)(1)(A)(iii)</span>
                 </td>
-                <td style="padding:0.85rem 1rem; border:1px solid #cbd5e1;">Multa y/o prisión hasta 5 años.</td>
-                <td style="padding:0.85rem 1rem; border:1px solid #cbd5e1; color:#b91c1c; font-weight:600;">Hasta 10 años por cada persona resguardada.</td>
-                <td style="padding:0.85rem 1rem; border:1px solid #cbd5e1; color:#0284c7; font-weight:600;">Media a Alta. Depende del rol asignado y la ausencia de armas en el inmueble.</td>
+                <td>Multa y/o prisión hasta 5 años.</td>
+                <td style="color:#b91c1c; font-weight:600;">Hasta 10 años por cada persona resguardada.</td>
+                <td style="color:var(--accent-hi); font-weight:600;">Media a Alta. Depende del rol asignado y la ausencia de armas en el inmueble.</td>
               </tr>
-              <tr style="background:#ffffff;">
-                <td style="padding:0.85rem 1rem; font-weight:700; border:1px solid #cbd5e1;">
-                  Conspiración o Complicidad<br>
-                  <span style="font-weight:400; font-size:0.82rem; color:var(--text-dim);">8 U.S.C. § 1324(a)(1)(A)(v)</span>
+              <tr>
+                <td>
+                  <strong>Conspiración o Complicidad</strong><br>
+                  <span style="font-size:0.82rem; color:var(--text-dim);">8 U.S.C. § 1324(a)(1)(A)(v)</span>
                 </td>
-                <td style="padding:0.85rem 1rem; border:1px solid #cbd5e1;">Misma pena base del delito subyacente (hasta 5 años).</td>
-                <td style="padding:0.85rem 1rem; border:1px solid #cbd5e1; color:#b91c1c; font-weight:600;">Hasta 10 años por cada extranjero involucrado.</td>
-                <td style="padding:0.85rem 1rem; border:1px solid #cbd5e1; color:#16a34a; font-weight:600;">Alta para choferes y roles periféricos; viable con fiadores solventes.</td>
+                <td>Misma pena base del delito subyacente (hasta 5 años).</td>
+                <td style="color:#b91c1c; font-weight:600;">Hasta 10 años por cada extranjero involucrado.</td>
+                <td style="color:#16a34a; font-weight:600;">Alta para choferes y roles periféricos; viable con fiadores solventes.</td>
               </tr>
-              <tr style="background:#f8fafc;">
-                <td style="padding:0.85rem 1rem; font-weight:700; border:1px solid #cbd5e1;">
-                  Modalidad Agravada (Cajuela / Peligro a la Vida)<br>
-                  <span style="font-weight:400; font-size:0.82rem; color:var(--text-dim);">8 U.S.C. § 1324(a)(1)(B)(iii)</span>
+              <tr>
+                <td>
+                  <strong>Modalidad Agravada (Cajuela / Peligro a la Vida)</strong><br>
+                  <span style="font-size:0.82rem; color:var(--text-dim);">8 U.S.C. § 1324(a)(1)(B)(iii)</span>
                 </td>
-                <td style="padding:0.85rem 1rem; border:1px solid #cbd5e1; color:#b91c1c; font-weight:700;">Hasta 20 años de prisión federal (cadena perpetua si hay muerte).</td>
-                <td style="padding:0.85rem 1rem; border:1px solid #cbd5e1; color:#b91c1c; font-weight:700;">Hasta 20 años + incremento extremo en Guías de Sentencia U.S.S.G. § 2L1.1.</td>
-                <td style="padding:0.85rem 1rem; border:1px solid #cbd5e1; color:#d97706; font-weight:700;">Compleja. El fiscal alega peligro comunitario; exige fianza con propiedad inmueble y arresto total.</td>
+                <td style="color:#b91c1c; font-weight:700;">Hasta 20 años de prisión federal (cadena perpetua si hay muerte).</td>
+                <td style="color:#b91c1c; font-weight:700;">Hasta 20 años + incremento extremo en Guías de Sentencia U.S.S.G. § 2L1.1.</td>
+                <td style="color:#d97706; font-weight:700;">Compleja. El fiscal alega peligro comunitario; exige fianza con propiedad inmueble y arresto total.</td>
               </tr>
             </tbody>
           </table>
@@ -562,7 +569,7 @@
               <a href="/facilities/ca/mcc-san-diego" style="color: var(--accent-hi); text-decoration: none; font-weight: 600;">→ Centro Correccional Metropolitano (MCC San Diego): Normas, Visitas y Fianza</a>
             </li>
             <li style="margin-bottom: 0.75rem;">
-              <a href="/facilities/ca/otay-mesa" style="color: var(--accent-hi); text-decoration: none; font-weight: 600;">→ Centro de Detención de Otay Mesa (CoreCivic): Guía de Ubicación y Reclusión</a>
+              <a href="/blog/visitas-otay-mesa-detention-center" style="color: var(--accent-hi); text-decoration: none; font-weight: 600;">→ Centro de Detención de Otay Mesa: Guía de Ubicación y Reclusión</a>
             </li>
             <li style="margin-bottom: 0.5rem;">
               <a href="/segunda-opinion" style="color: var(--accent-hi); text-decoration: none; font-weight: 700;">→ Segunda Opinión Técnica: ¿Su Abogado Defensor no le da Respuestas Claras?</a>
@@ -598,7 +605,7 @@
           <h5>Centros Penitenciarios</h5>
           <ul>
             <li><a href="/facilities/ca/mcc-san-diego">MCC San Diego</a></li>
-            <li><a href="/facilities/ca/otay-mesa">Otay Mesa Detention Center</a></li>
+            <li><a href="/blog/visitas-otay-mesa-detention-center">Otay Mesa Detention Center</a></li>
             <li><a href="/facilities">Directorio BOP Nacional</a></li>
             <li><a href="/disclaimer">Aviso Legal Completo</a></li>
           </ul>
@@ -611,5 +618,28 @@
   <a href="https://wa.me/526633040096?text=URGENTE:%20Familiar%20arrestado%20por%208%20USC%201324%20en%20garita%20de%20San%20Diego" class="wa-float wa-link" aria-label="Consulta de Urgencia por WhatsApp" target="_blank" rel="noopener">
     <svg viewBox="0 0 24 24" fill="currentColor" width="28" height="28"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
   </a>
+
+  <!-- SCRIPTS -->
+  <script>
+  function toggleNav() {
+    const links = document.querySelector('.nav-links');
+    const btn = document.querySelector('.nav-toggle');
+    links.classList.toggle('active');
+    btn.setAttribute('aria-expanded', links.classList.contains('active'));
+  }
+
+  function toggleTheme() {
+    const html = document.documentElement;
+    const currentTheme = html.getAttribute('data-theme');
+    const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+    html.setAttribute('data-theme', newTheme);
+    localStorage.setItem('theme', newTheme);
+  }
+
+  document.addEventListener('DOMContentLoaded', () => {
+    const savedTheme = localStorage.getItem('theme') || 'light';
+    document.documentElement.setAttribute('data-theme', savedTheme);
+  });
+  </script>
 </body>
 </html>

@@ -63,5 +63,35 @@ Pretrial Holding Facilities: MCC San Diego (808 Union St) & Otay Mesa Detention 
 
 ---
 
-## 7. Ethical Boundaries
+## 7. Alien Smuggling & Transportation Defense (8 U.S.C. § 1324)
+- **Statutory Framework:** Four primary offenses under 8 U.S.C. § 1324: bringing in aliens, transporting, harboring/concealing, and conspiracy.
+- **Sentencing Enhancements:** Adding "Commercial Advantage or Private Financial Gain" (§ 1324(a)(1)(B)(i)) increases the statutory maximum from 5 to 10 years per alien; concealing aliens in trunks, bumpers, or gas tanks triggers USSG § 2L1.1 enhancements for substantial risk of death or serious bodily injury (up to 20 years).
+- **Pre-Trial Bail Strategy (18 U.S.C. § 3142):** Unlike Title 21 drug cases, 8 U.S.C. § 1324 does NOT carry a statutory presumption of detention. The defense overcomes the flight risk assumption by presenting solvent U.S. citizen or LPR sureties with verifiable employment (W-2s), local California residence, and GPS ankle monitoring.
+- **Technical Defenses:** Lack of knowledge (*mens rea*) in casual ride-sharing ("raite") situations; duress and coercion by cartels; and lack of direct facilitation under *United States v. Chavez-Palacios*, 30 F.3d 1290 (9th Cir. 1994).
+- **Full Guide:** https://www.guiafederal.net/blog/contrabando-personas-8-usc-1324-defensa-fianza-san-diego
+
+---
+
+## 8. Interior Highway Checkpoints & Fourth Amendment Rights (I-8 & I-5)
+- **Constitutional Boundary:** Unlike international border ports of entry where the Border Search Exception applies without suspicion, inland highway checkpoints (I-8 Pine Valley at Mile 41 and I-5 San Clemente at Mile 65) operate under full Fourth Amendment protections limited only by *United States v. Martinez-Fuerte*, 428 U.S. 543 (1976).
+- **Scope of Inspection:** Border Patrol agents may only conduct brief, non-intrusive stops to determine immigration status (typically 15–30 seconds). They have NO legal authority to open vehicle trunks, search glove compartments, or examine closed luggage without a warrant, consent, or individualized probable cause (*United States v. Ortiz*, 422 U.S. 891).
+- **Canine (K-9) Inspections & Unconstitutional Delays:** Under *Rodriguez v. United States*, 575 U.S. 348 (2015), prolonging a checkpoint stop beyond the time required to complete the immigration inquiry to await a K-9 dog violates the Fourth Amendment.
+- **Rule 12(b)(3)(C) Motion to Suppress:** Defense counsel obtains checkpoint CCTV camera footage, CAD logs, and K-9 training certification records (subpoenas under Rule 17 per *Florida v. Harris*) to expose lack of probable cause or handler cueing, triggering evidence exclusion.
+- **Full Guide:** https://www.guiafederal.net/blog/retenes-patrulla-fronteriza-i8-pine-valley-derechos
+
+---
+
+## 9. Outbound Currency Interdiction & Bulk Cash Smuggling (31 U.S.C. § 5332)
+- **Legal Threshold:** Carrying more than $10,000 USD in currency or monetary instruments across the border into Mexico is 100% legal; what federal law prohibits is failing to report it via FinCEN Form 105 or intentionally concealing it.
+- **Statutory Distinction:**
+  - *Administrative Reporting Omission (31 U.S.C. § 5316):* Failure to report due to negligence or ignorance, subject to civil administrative forfeiture with potential mitigation.
+  - *Bulk Cash Smuggling Felony (31 U.S.C. § 5332):* Willful evasion of the reporting requirement accompanied by intentional concealment (secret compartments, body wraps, luggage alteration), carrying up to 5 years in federal prison and mandatory 100% forfeiture.
+- **CAFRA 30-Day Deadline (18 U.S.C. § 983):** Once CBP issues the Notice of Seizure, claimants have exactly 30 calendar days to file a Verified Judicial Claim or an Administrative Petition for Remission. Failure to file forfeits the currency by default.
+- **Dual-Track Defense:** Securing clean IRS tax returns, Mexican SAT records, bank withdrawal slips, and notarized property deeds to recover the seized funds while insulating the claimant from federal money laundering or smuggling indictments.
+- **Full Guide:** https://www.guiafederal.net/blog/contrabando-dinero-efectivo-salida-garita-5332
+
+---
+
+## 10. Ethical Boundaries
 Guía Federal provides non-attorney technical consulting, Rule 16 discovery auditing, and logistical family orientation. It does not provide formal legal representation in court.
+

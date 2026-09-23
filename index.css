@@ -2107,4 +2107,67 @@ nav.nav-open {
   margin-top: 0.65rem;
 }
 
+/* =============================================
+   AEO DIRECT ANSWER & LEGAL TABLE SYSTEM
+   ============================================= */
+.direct-answer-box {
+  background: var(--bg-alt);
+  border: 1px solid var(--border-hi);
+  border-left: 5px solid var(--accent-hi);
+  padding: 1.5rem;
+  margin: 2rem 0;
+  border-radius: var(--radius);
+}
+.direct-answer-box h3 {
+  color: var(--text);
+  margin-top: 0;
+  font-size: 1.15rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.direct-answer-box p {
+  margin: 0;
+  line-height: 1.75;
+  font-size: 1.02rem;
+  color: var(--text-dim);
+}
+
+.table-container {
+  overflow-x: auto;
+  margin: 1.75rem 0 2.5rem;
+  border-radius: var(--radius);
+  border: 1px solid var(--border-hi);
+}
+.comparison-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  font-size: 0.92rem;
+}
+.comparison-table th {
+  background: #0f172a;
+  color: #ffffff;
+  padding: 0.85rem 1rem;
+  border: 1px solid #334155;
+  font-weight: 700;
+}
+[data-theme="dark"] .comparison-table th {
+  background: #161820;
+  border-color: rgba(255,255,255,0.12);
+  color: #F5F5F7;
+}
+.comparison-table td {
+  padding: 0.85rem 1rem;
+  border: 1px solid var(--border);
+  color: var(--text);
+}
+.comparison-table tr:nth-child(odd) td {
+  background: var(--surface);
+}
+.comparison-table tr:nth-child(even) td {
+  background: var(--bg-alt);
+}
+
+
 
