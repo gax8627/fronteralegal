@@ -182,19 +182,6 @@
     <priority>0.65</priority>
   </url>
 
-  <url>
-    <loc>https://www.guiafederal.net/guia-72-horas-pdf</loc>
-    <lastmod>2026-05-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.65</priority>
-  </url>
-
-  <url>
-    <loc>https://www.guiafederal.net/reporte-keywords-pdf</loc>
-    <lastmod>2026-05-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.65</priority>
-  </url>
 
   <url>
     <loc>https://www.guiafederal.net/disclaimer</loc>
@@ -220,12 +207,6 @@
     <lastmod>2026-06-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
-  </url>
-  <url>
-    <loc>https://www.guiafederal.net/casos-mula-ciega-ejemplos-pdf</loc>
-    <lastmod>2026-06-07</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.65</priority>
   </url>
   <url>
     <loc>https://www.guiafederal.net/blog/arrestado-garita-otay-san-ysidro</loc>

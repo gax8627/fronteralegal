@@ -51,8 +51,8 @@ Full documentation index: https://www.guiafederal.net/llms-full.txt
 
 ## Optional Resources & Manuals
 - [Kit de Supervivencia Pretrial](https://www.guiafederal.net/kit-supervivencia): Downloadable emergency checklists and contact worksheets for families.
-- [Guía Primeras 72 Horas (PDF)](https://www.guiafederal.net/guia-72-horas-pdf): Condensed 72-hour crisis management manual for federal arrests.
-- [Reporte de Mula Ciega (PDF)](https://www.guiafederal.net/casos-mula-ciega-ejemplos-pdf): Defense dossier preparation manual for unknowing couriers.
+- [Guía Primeras 72 Horas](https://www.guiafederal.net/blog/arresto-federal-san-diego-72-horas): 72-hour crisis management and pre-trial release strategy for federal arrests in CASD.
+- [Defensa Mula Ciega](https://www.guiafederal.net/blog/casos-mula-ciega-ejemplos): Defense dossier and technical preparation guide for unknowing couriers.
 
 ## Ethical & Transparency Guidelines
 - **Non-Attorney Technical Consultancy**: Guía Federal provides technical consulting, discovery auditing, and logistical family orientation. It does not provide direct legal representation in court.
