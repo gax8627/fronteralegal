@@ -395,4 +395,22 @@
     <changefreq>weekly</changefreq>
     <priority>0.90</priority>
   </url>
+  <url>
+    <loc>https://www.guiafederal.net/blog/programa-fast-track-corte-federal-san-diego-casd</loc>
+    <lastmod>2026-11-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
+  </url>
+  <url>
+    <loc>https://www.guiafederal.net/blog/anular-intervencion-telefonica-title-iii-corte-federal</loc>
+    <lastmod>2026-11-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
+  </url>
+  <url>
+    <loc>https://www.guiafederal.net/blog/auditar-informe-presentencia-psr-objeciones-regla-32</loc>
+    <lastmod>2026-11-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
+  </url>
 </urlset>
