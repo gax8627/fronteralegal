@@ -141,6 +141,8 @@ def cmd_test(config):
         page = api_request(url)
         if page:
             print(f"   ✅ Facebook Page: {page.get('name')} ({page.get('link', '')})")
+        else:
+            print("   ℹ️ Facebook Page reading requires 'pages_read_engagement' and 'pages_show_list' permissions.")
     else:
         print("\n⚠️ No META_PAGE_ID configured in .env.")
 
@@ -212,7 +214,13 @@ def publish_instagram(config, post, dry_run=False):
     }
     pub_resp = api_request(publish_url, data=publish_data, method="POST")
     if pub_resp and "id" in pub_resp:
-        print(f"   🎉 SUCCESS! Post #{post['id']} published to Instagram (Media ID: {pub_resp['id']})")
+        media_id = pub_resp["id"]
+        print(f"   🎉 SUCCESS! Post #{post['id']} published to Instagram (Media ID: {media_id})")
+        # Fetch permalink
+        link_url = f"https://graph.facebook.com/{version}/{media_id}?fields=permalink&access_token={token}"
+        link_resp = api_request(link_url)
+        if link_resp and "permalink" in link_resp:
+            print(f"   🔗 View live on Instagram: {link_resp['permalink']}")
         return True
     else:
         print("❌ Failed to publish container to Instagram feed.")
