@@ -312,7 +312,7 @@
         "accountId": "1000000000",
         "containerId": "200000000",
         "triggerId": "102",
-        "name": "Click - Phone 24/7 (tel:)",
+        "name": "Click - Phone 24/7 (tel)",
         "type": "LINK_CLICK",
         "filter": [
           {
